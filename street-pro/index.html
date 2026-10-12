@@ -516,6 +516,7 @@ header.scrolled{box-shadow:0 10px 30px -20px rgba(0,0,0,.9)}
     const out = [], d = new Date();
     for (let i = 0; out.length < 14 && i < 20; i++) {
       const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+      if (C.off && C.off.includes(x.getDay())) continue;
       if (C.mode === 'slots' && !slots(iso(x)).length) continue;
       out.push(x);
     }

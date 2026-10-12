@@ -140,6 +140,9 @@ summary::-webkit-details-marker{display:none}
 summary svg{transition:transform .35s;color:var(--acc-ink)}
 details[open] summary svg{transform:rotate(45deg)}
 details p{padding:0 24px 22px;color:var(--mut);animation:fd .45s ease}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 24px;border-top:1px solid var(--line)}
+.prow span{color:var(--mut)}.prow b{white-space:nowrap;color:var(--acc-ink)}
+@media (max-width:640px){.prow{padding:12px 16px;flex-direction:column;gap:4px}}
 @keyframes fd{from{opacity:0;transform:translateY(-6px)}}
 
 .cgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:stretch}
@@ -291,7 +294,7 @@ footer a:hover{color:var(--ink)}
   <div class="aurora"><i></i><i></i><i></i></div><div class="grain"></div>
   <div class="wrap hero-split">
     <div>
-      <div class="pill reveal"><span class="dot"></span><span><b>Ежедневно с 09:00</b> · Автосервис, Набережные Челны</span></div>
+      <div class="pill reveal"><span class="dot"></span><span><b>Пн–Сб 09:00–19:00</b> · Автосервис, Набережные Челны</span></div>
       <h1 class="lg reveal" style="--i:1">Gamma-Сервис</h1>
       <p class="tagline reveal" style="--i:2">Ремонт и обслуживание легковых авто</p>
       <p class="lead reveal" style="--i:3">Диагностика, ТО и ремонт автомобилей. Честно говорим, что нужно чинить, а что может подождать.</p>
@@ -319,6 +322,7 @@ footer a:hover{color:var(--ink)}
     <button class="svc glow" data-book="Автоэлектрика"><span class="top"><span class="num">06</span><span class="go">Записаться →</span></span><h3>Автоэлектрика</h3><p>Проводка, генератор, стартер, свет</p></button>
   </div>
 </div></section>
+
 
 <section class="why" id="why"><div class="wrap wgrid">
   <div class="big reveal">
@@ -356,7 +360,7 @@ footer a:hover{color:var(--ink)}
       <a class="ci" href="https://wa.me/79377783763?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg></span><div><small>Написать</small><b>WhatsApp</b></div></a>
       <a class="ci" href="https://t.me/+79377783763" target="_blank" rel="noopener"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg></span><div><small>Написать</small><b>Telegram</b></div></a>
       
-      <div class="ci"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><small>Режим работы</small><b>Ежедневно с 09:00</b></div></div>
+      <div class="ci"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><small>Режим работы</small><b>Пн–Сб 09:00–19:00</b></div></div>
       <a class="ci" href="https://yandex.ru/maps/?text=%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%A7%D0%B5%D0%BB%D0%BD%D1%8B%2C%20%D1%83%D0%BB.%20%D0%90%D0%B1%D0%B4%D1%83%D0%BB%D0%BB%D1%8B%20%D0%90%D0%BB%D0%B8%D1%88%D0%B0%2C%206" target="_blank" rel="noopener"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg></span><div><small>Маршрут</small><b>Открыть в Яндекс Картах</b></div></a>
     </div>
     <div class="map reveal"><iframe loading="lazy" src="https://yandex.ru/map-widget/v1/?text=%D0%9D%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D1%8B%D0%B5%20%D0%A7%D0%B5%D0%BB%D0%BD%D1%8B%2C%20%D1%83%D0%BB.%20%D0%90%D0%B1%D0%B4%D1%83%D0%BB%D0%BB%D1%8B%20%D0%90%D0%BB%D0%B8%D1%88%D0%B0%2C%206&z=16" title="Gamma-Сервис на карте"></iframe></div>
@@ -373,7 +377,7 @@ footer a:hover{color:var(--ink)}
   <button class="btn btn-acc" data-book><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Записаться</button>
 </div>
 
-<script type="application/json" id="cfg">{"slug":"gamma-servis","name":"Gamma-Сервис","addr":"Набережные Челны, ул. Абдуллы Алиша, 6","phone":"+79377783763","phoneFmt":"+7 (937) 778-37-63","wa":"79377783763","tg":"https://t.me/+79377783763","services":["Компьютерная диагностика","Замена масла и ТО","Ремонт ходовой","Тормозная система","Ремонт двигателя","Автоэлектрика"],"mode":"slots","start":9,"end":19,"step":60,"field":"Марка, модель и что беспокоит","profile":"Мой автомобиль","profilePh":"Марка и модель","loyal":null,"bookTitle":"Записаться онлайн","submit":"Записаться"}</script>
+<script type="application/json" id="cfg">{"slug":"gamma-servis","name":"Gamma-Сервис","addr":"Набережные Челны, ул. Абдуллы Алиша, 6","phone":"+79377783763","phoneFmt":"+7 (937) 778-37-63","wa":"79377783763","tg":"https://t.me/+79377783763","services":["Компьютерная диагностика","Замена масла и ТО","Ремонт ходовой","Тормозная система","Ремонт двигателя","Автоэлектрика"],"mode":"slots","start":9,"end":18,"step":60,"off":[0],"field":"Марка, модель и что беспокоит","profile":"Мой автомобиль","profilePh":"Марка и модель","loyal":null,"bookTitle":"Записаться онлайн","submit":"Записаться"}</script>
 <script>
 
 (() => {
@@ -469,6 +473,7 @@ footer a:hover{color:var(--ink)}
     const out = [], d = new Date();
     for (let i = 0; out.length < 14 && i < 20; i++) {
       const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+      if (C.off && C.off.includes(x.getDay())) continue;
       if (C.mode === 'slots' && !slots(iso(x)).length) continue;
       out.push(x);
     }

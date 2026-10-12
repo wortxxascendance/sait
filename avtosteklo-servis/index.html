@@ -140,6 +140,9 @@ summary::-webkit-details-marker{display:none}
 summary svg{transition:transform .35s;color:var(--acc-ink)}
 details[open] summary svg{transform:rotate(45deg)}
 details p{padding:0 24px 22px;color:var(--mut);animation:fd .45s ease}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 24px;border-top:1px solid var(--line)}
+.prow span{color:var(--mut)}.prow b{white-space:nowrap;color:var(--acc-ink)}
+@media (max-width:640px){.prow{padding:12px 16px;flex-direction:column;gap:4px}}
 @keyframes fd{from{opacity:0;transform:translateY(-6px)}}
 
 .cgrid{display:grid;grid-template-columns:1fr 1.15fr;gap:20px;align-items:stretch}
@@ -320,6 +323,7 @@ footer a:hover{color:var(--ink)}
   </div>
 </div></section>
 
+
 <section class="why" id="why"><div class="wrap wgrid">
   <div class="big reveal">
     <div class="grain"></div>
@@ -470,6 +474,7 @@ footer a:hover{color:var(--ink)}
     const out = [], d = new Date();
     for (let i = 0; out.length < 14 && i < 20; i++) {
       const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+      if (C.off && C.off.includes(x.getDay())) continue;
       if (C.mode === 'slots' && !slots(iso(x)).length) continue;
       out.push(x);
     }
