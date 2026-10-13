@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>DDX Fitness — концепт редизайна</title>
+<meta name="description" content="Концепт нового сайта сети фитнес-клубов DDX Fitness: поиск ближайшего клуба, подбор тарифа, живая карта сети. Не официальный сайт.">
+<meta name="theme-color" content="#06191c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#06191c;--bg2:#0a2327;--panel:#0d2b30;--ink:#f3f7f7;--mut:#8fb0b3;--line:rgba(255,255,255,.09);--or:#ff6b1a;--or2:#ff9a3d;--aq:#2ee0d0;--aq2:#0fa9a0;--df:'Oswald',Impact,sans-serif;--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--or);color:#fff}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.df{font-family:var(--df);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:.005em}
+.or{color:var(--or)}.aq{color:var(--aq)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--aq)}
+.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 28px;border-radius:999px;font:800 15px Manrope,sans-serif;white-space:nowrap;overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s,color .3s}
+.btn-or{background:var(--or);color:#fff;box-shadow:0 18px 40px -16px var(--or)}
+.btn-or:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s;z-index:-1}
+.btn-or:hover:after{transform:translateX(120%)}
+.btn-gl{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-gl:hover{background:#fff;color:#06191c}
+.btn:hover{transform:translateY(-2px)}
+.concept{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:90;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;background:rgba(6,25,28,.85);border:1px solid var(--line);color:var(--mut);backdrop-filter:blur(8px);white-space:nowrap}
+.prog{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--or),var(--aq));transform-origin:0;transform:scaleX(0);z-index:100}
+header{position:fixed;inset:0 0 auto;z-index:60;transition:background .4s,transform .45s,border-color .4s;border-bottom:1px solid transparent}
+header.sc{background:rgba(6,25,28,.78);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-color:var(--line)}
+header.hide{transform:translateY(-100%)}
+header .wrap{display:flex;align-items:center;gap:22px;height:76px}
+.logo{font:700 26px/1 var(--df);letter-spacing:.02em;display:flex;align-items:center;gap:6px}
+.logo b{background:var(--or);color:#fff;padding:3px 7px 2px;border-radius:6px}
+nav{display:flex;gap:26px;font-weight:700;font-size:14px;color:rgba(255,255,255,.8);margin-left:18px}nav a:hover{color:var(--or)}
+.hsp{flex:1}
+.city{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.city select{background:transparent;border:0;color:#fff;font:700 14px Manrope,sans-serif;max-width:150px;cursor:pointer;outline:none}
+.city select option{color:#000}
+header .btn{padding:12px 20px;font-size:14px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.15);transition:opacity 1.4s ease,transform 7s linear}
+.slides img.on{opacity:1;transform:scale(1.02)}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,25,28,.75) 0%,rgba(6,25,28,.1) 30%,rgba(6,25,28,.35) 60%,var(--bg) 100%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(70% 60% at 85% 20%,rgba(255,107,26,.25),transparent 60%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:140px;padding-bottom:64px}
+.live{display:inline-flex;align-items:center;gap:10px;padding:9px 16px 9px 12px;border-radius:999px;background:rgba(6,25,28,.55);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);font-weight:700;font-size:14px;margin-bottom:26px}
+.live i{width:10px;height:10px;border-radius:50%;background:#33e07a;box-shadow:0 0 0 0 rgba(51,224,122,.6);animation:ping 1.8s infinite}
+.live.off i{background:var(--or);animation:none}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(51,224,122,0)}100%{box-shadow:0 0 0 0 rgba(51,224,122,0)}}
+h1{font-size:clamp(56px,11.5vw,184px);margin-bottom:26px}
+h1 .ln{display:block;overflow:hidden}
+h1 .ln span{display:inline-block;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2) span{animation-delay:.12s}h1 .ln:nth-child(3) span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.stroke{-webkit-text-stroke:2px #fff;color:transparent}
+.hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.hlead{max-width:520px;font-size:clamp(16px,1.5vw,19px);color:rgba(255,255,255,.85);margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hstats{display:grid;grid-template-columns:repeat(2,minmax(130px,auto));gap:10px}
+.hstats div{padding:16px 20px;border-radius:18px;background:rgba(6,25,28,.55);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(12px)}
+.hstats b{display:block;font:700 40px/1 var(--df);margin-bottom:4px}.hstats span{font-size:13px;color:var(--mut);font-weight:700}
+.fade{opacity:0;animation:fadein 1s .7s forwards}@keyframes fadein{to{opacity:1}}
+.mq{overflow:hidden;background:var(--or);color:#fff;padding:16px 0;transform:rotate(-1.2deg) scale(1.02);margin:10px 0}
+.mq .tr{display:flex;width:max-content;animation:mq 60s linear infinite}
+.mq span{font:700 28px/1 var(--df);text-transform:uppercase;padding:0 22px;white-space:nowrap}.mq i{font-style:normal;opacity:.7}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{position:relative;padding:clamp(80px,10vw,140px) 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.sh h2{font-size:clamp(44px,7vw,104px)}.sh p{max-width:460px;color:var(--mut);font-size:17px}
+.sh .eyebrow{margin-bottom:18px}
+.net{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:stretch}
+.mapbox{position:relative;border-radius:28px;background:radial-gradient(120% 120% at 30% 40%,#0d3238,#061619);border:1px solid var(--line);overflow:hidden;min-height:460px}
+.mapbox canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+.mapbox .yr{position:absolute;left:26px;top:20px;font:700 clamp(54px,7vw,96px)/1 var(--df);color:rgba(255,255,255,.1);pointer-events:none}
+.mapbox .cnt{position:absolute;left:26px;bottom:22px;pointer-events:none;white-space:nowrap}
+.mapbox .cnt span{white-space:nowrap}.mapbox .cnt b{font:700 64px/1 var(--df);color:var(--or)}.mapbox .cnt>span{display:block;color:var(--mut);font-weight:700;font-size:14px}
+.tip{position:absolute;pointer-events:none;padding:8px 12px;border-radius:10px;background:#fff;color:#06191c;font-size:13px;font-weight:700;transform:translate(-50%,-140%);opacity:0;transition:opacity .2s;white-space:nowrap;z-index:3}
+.finder{border-radius:28px;background:var(--panel);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:14px;min-height:460px}
+.finder h3{font-size:34px}
+.frow{display:flex;gap:8px}
+.frow select{flex:1;min-width:0;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:#fff;font:700 15px Manrope,sans-serif}
+.geo{padding:14px 16px;border-radius:14px;background:var(--aq);color:#04221f;font-weight:800;white-space:nowrap}
+.clist{display:grid;gap:8px;overflow:auto;max-height:340px;padding-right:4px;align-content:start}
+.club{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.club:hover{border-color:var(--or);transform:translateX(3px)}
+.club b{font-size:15.5px}.club small{grid-column:1;color:var(--mut);font-size:13px}
+.club .d{grid-row:1/3;grid-column:2;align-self:center;text-align:right;font:700 20px var(--df);color:var(--aq)}
+.club .d a{display:block;font:800 12px Manrope,sans-serif;color:var(--or);margin-top:4px}
+.soon{display:inline-block;margin-left:6px;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--aq);color:#04221f;vertical-align:middle}
+.zones{height:calc(var(--n) * 80vh);padding:0}
+.zpin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.ztrack{display:flex;gap:22px;padding:0 24px;will-change:transform}
+.zcard{position:relative;flex:0 0 min(62vw,820px);height:min(62vh,580px);border-radius:30px;overflow:hidden;background:#000}
+.zcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.zcard:hover img{transform:scale(1.05)}
+.zcard:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.85))}
+.zcard div{position:absolute;left:30px;right:30px;bottom:28px;z-index:2}
+.zcard .no{font:700 18px var(--df);color:var(--or);margin-bottom:6px}
+.zcard h3{font-size:clamp(34px,4vw,58px);margin-bottom:8px}.zcard p{color:rgba(255,255,255,.82);max-width:520px}
+.zhead{padding:0 24px;max-width:1280px;margin:0 auto 34px;width:100%;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.zhead h2{font-size:clamp(44px,7vw,104px)}
+.zbar{height:3px;background:var(--line);border-radius:3px;width:200px;overflow:hidden}.zbar i{display:block;height:100%;background:var(--or);width:0}
+.tp{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+.need{border-radius:28px;background:var(--panel);border:1px solid var(--line);padding:30px}
+.need h3{font-size:36px;margin-bottom:6px}.need p{color:var(--mut);margin-bottom:22px}
+.tg{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 0;border-top:1px solid var(--line);cursor:pointer;font-weight:700}
+.tg input{position:absolute;opacity:0;pointer-events:none}
+.sw{width:50px;height:28px;border-radius:999px;background:rgba(255,255,255,.12);position:relative;flex:0 0 auto;transition:background .3s}
+.sw:after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.tg input:checked+.sw{background:var(--or)}.tg input:checked+.sw:after{transform:translateX(22px)}
+.vis{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.vis label{display:flex;justify-content:space-between;font-weight:700;margin-bottom:12px}
+.vis input{width:100%;accent-color:var(--or)}
+.tcards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:12px}
+.tc{position:relative;border-radius:24px;padding:22px 18px;background:rgba(255,255,255,.035);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px;transition:opacity .45s,transform .45s cubic-bezier(.2,.8,.2,1),background .45s,border-color .45s,box-shadow .45s;opacity:.5}
+.tc.ok{opacity:1}
+.tc.best{background:linear-gradient(180deg,rgba(255,107,26,.22),rgba(255,107,26,.04));border-color:var(--or);transform:translateY(-10px);box-shadow:0 30px 60px -30px var(--or)}
+.tc .bb{position:absolute;top:-12px;left:18px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--or);color:#fff;opacity:0;transform:translateY(6px);transition:all .4s}
+.tc.best .bb{opacity:1;transform:none}
+.tc h3{font-size:26px}
+.tc .pr{font:700 40px/1 var(--df)}.tc .pr small{font:700 14px Manrope,sans-serif;color:var(--mut)}
+.tc .pv{font-size:13px;color:var(--aq);font-weight:800;min-height:18px}
+.tc ul{list-style:none;display:grid;gap:7px;font-size:13.5px;margin-top:4px}
+.tc li{display:flex;gap:8px;align-items:flex-start}.tc li:before{content:"✓";color:var(--aq);font-weight:900}
+.tc li.no{color:rgba(255,255,255,.3)}.tc li.no:before{content:"—";color:rgba(255,255,255,.3)}
+.tc .btn{margin-top:auto;padding:13px 10px;font-size:14px}
+.fee{margin-top:16px;display:flex;gap:8px 16px;align-items:center;flex-wrap:wrap;padding:18px 22px;border-radius:18px;border:1px dashed rgba(255,255,255,.18);color:var(--mut);font-size:14px}
+.fee b{color:#fff;font-size:18px}.fee s{opacity:.6}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.chip{padding:11px 18px;border-radius:999px;border:1px solid var(--line);font-weight:800;font-size:14px;transition:all .25s}
+.chip.on,.chip:hover{background:var(--aq);color:#04221f;border-color:var(--aq)}
+.gg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gc{position:relative;aspect-ratio:3/4;border-radius:24px;overflow:hidden;background:#000}
+.gc.hid{display:none}
+.gc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.gc:hover img{transform:scale(1.08)}
+.gc:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.9))}
+.gc div{position:absolute;left:18px;right:18px;bottom:16px;z-index:2}
+.gc .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);margin-bottom:8px}
+.gc h3{font-size:26px;margin-bottom:6px}
+.gc p{font-size:13px;color:rgba(255,255,255,.8);max-height:0;overflow:hidden;transition:max-height .5s}
+.gc:hover p{max-height:120px}
+.gc .min{position:absolute;top:14px;right:14px;z-index:2;font:700 16px var(--df);padding:6px 10px;border-radius:12px;background:var(--or)}
+.start{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.st{border-radius:24px;padding:26px;background:var(--panel);border:1px solid var(--line)}
+.st .n{font:700 64px/1 var(--df);color:transparent;-webkit-text-stroke:1.5px var(--or);margin-bottom:22px}
+.st h3{font-size:26px;margin-bottom:8px}.st p{color:var(--mut);font-size:15px}
+.spa{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:280px 280px;gap:14px}
+.sp{position:relative;border-radius:26px;overflow:hidden}
+.sp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}.sp:hover img{transform:scale(1.06)}
+.sp:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.8))}
+.sp span{position:absolute;left:20px;bottom:16px;z-index:2;font:700 28px var(--df);text-transform:uppercase}
+.sp.big{grid-row:1/3}
+.quote{grid-column:2/4;border-radius:26px;padding:30px;background:linear-gradient(135deg,var(--aq2),#0b4f4a);display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.quote p{font-size:clamp(18px,1.6vw,22px);font-weight:600;line-height:1.45}.quote small{opacity:.8;font-weight:700}
+.tw{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.tw img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;filter:grayscale(1) contrast(1.05);transition:filter .5s,transform .5s;background:#123}
+.tw img:hover{filter:none;transform:translateY(-6px) scale(1.03)}
+.acad{margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:26px 30px;border-radius:24px;background:var(--panel);border:1px solid var(--line)}
+.acad h3{font-size:30px}.acad p{color:var(--mut)}
+.act{position:relative;border-radius:34px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end}
+.act img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.act:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,25,28,.95) 0%,rgba(6,25,28,.6) 50%,transparent)}
+.act div{position:relative;z-index:2;padding:46px;max-width:620px}
+.act h2{font-size:clamp(48px,7vw,110px);margin:14px 0}.act p{color:rgba(255,255,255,.85);margin-bottom:26px;font-size:17px}
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+details{border-top:1px solid var(--line);padding:20px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-weight:800;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font:700 28px/1 var(--df);color:var(--or);transition:transform .3s}details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--mut);padding-top:12px}
+.final{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.final:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,25,28,.95) 20%,rgba(6,25,28,.3))}
+.final .wrap{position:relative;z-index:2;width:100%}
+.final h2{font-size:clamp(56px,10vw,160px);margin-bottom:22px}
+.final p{max-width:520px;font-size:18px;color:rgba(255,255,255,.88);margin-bottom:30px}
+footer{border-top:1px solid var(--line);padding:36px 0 80px;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(52px + env(safe-area-inset-bottom));z-index:70;display:none;gap:8px;padding:8px;border-radius:999px;background:rgba(6,25,28,.85);backdrop-filter:blur(16px);border:1px solid var(--line);transform:translateY(200%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mbar.on{transform:none}.mbar .btn{flex:1;padding:14px 8px;font-size:14px}
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .tc.rv.in{transform:none}.js .tc.best.rv.in{transform:translateY(-10px)}
+@media (max-width:1100px){nav{display:none}.net,.tp,.faq{grid-template-columns:1fr}.tcards{grid-template-columns:repeat(2,1fr)}.gg{grid-template-columns:repeat(2,1fr)}.start{grid-template-columns:1fr 1fr}.tw{grid-template-columns:repeat(4,1fr)}.tw img:nth-child(n+9){display:none}
+.spa{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px auto}.sp.big{grid-row:auto;grid-column:1/3}.quote{grid-column:1/3}}
+@media (max-width:760px){.wrap{padding:0 16px}header .wrap{height:64px;gap:10px}.logo{font-size:22px}.city{padding:8px 10px}.city select{max-width:110px}header .btn{display:none}
+.hero .wrap{padding-bottom:40px}.hstats{grid-template-columns:1fr 1fr;width:100%}.hstats b{font-size:30px}.cta .btn{flex:1 1 100%}.stroke{-webkit-text-stroke:1.5px #fff}
+.zones{height:auto}.zpin{position:static;height:auto;padding:80px 0}.ztrack{overflow-x:auto;scroll-snap-type:x mandatory;transform:none!important;padding-bottom:10px;scrollbar-width:none}.zcard{flex-basis:84vw;height:60vh;scroll-snap-align:center}.zbar{display:none}.zhead{padding:0 16px}
+.tcards{grid-template-columns:1fr 1fr;gap:8px}.tc{padding:18px 14px}.tc .pr{font-size:30px}.tc.best,.js .tc.best.rv.in{transform:none}.tc ul{font-size:12.5px}
+.gg{grid-template-columns:1fr 1fr;gap:10px}.gc h3{font-size:20px}.gc p{display:none}.gc .tag{display:none}
+.start{grid-template-columns:1fr}.spa{grid-template-columns:1fr;grid-template-rows:auto}.sp{height:220px}.sp.big,.quote{grid-column:auto;grid-row:auto}
+.tw{grid-template-columns:repeat(4,1fr);gap:6px}.act div{padding:26px}.act:after{background:linear-gradient(0deg,rgba(6,25,28,.95) 35%,rgba(6,25,28,.3))}
+.mbar{display:flex}.mapbox{min-height:340px}.finder{min-height:0;padding:20px}.frow{flex-direction:column}.concept{font-size:11px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}h1 .ln span{transform:none}.fade{opacity:1}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="prog"></div>
+<div class="concept">Концепт редизайна · не официальный сайт DDX Fitness</div>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><b>DDX</b>FITNESS</a>
+  <nav><a href="#clubs">Клубы</a><a href="#zones">Зоны</a><a href="#tariffs">Тарифы</a><a href="#groups">Групповые</a><a href="#spa">СПА</a><a href="#faq">Вопросы</a></nav>
+  <span class="hsp"></span>
+  <label class="city">📍<select id="citySel" aria-label="Город"><option>Москва</option></select></label>
+  <a class="btn btn-or" href="#tariffs">Купить подписку</a>
+</div></header>
+
+<section class="hero" style="padding:0">
+  <div class="slides">
+    <img src="img/hero1.jpg" alt="Тренажёрный зал DDX Fitness" class="on" fetchpriority="high">
+    <img src="img/hero3.jpg" alt="Зона CrossBox" loading="lazy">
+    <img src="img/hero2.jpg" alt="Вход в клуб DDX Fitness" loading="lazy">
+    <img src="img/hero4.jpg" alt="Зал групповых программ" loading="lazy">
+    <img src="img/hero5.jpg" alt="Зона свободных весов" loading="lazy">
+  </div>
+  <div class="wrap">
+    <div class="live fade" id="live"><i></i><span id="liveT">Клубы открыты с 6:00 до 24:00</span></div>
+    <h1><span class="ln"><span>Лучшее</span></span><span class="ln"><span class="stroke">время дня —</span></span><span class="ln"><span class="or">в движении</span></span></h1>
+    <div class="hrow">
+      <div class="fade">
+        <p class="hlead">Тренажёрные залы до 7 300 м², оборудование Technogym и Matrix, 50+ групповых тренировок и СПА с сауной и хаммамом. Подписка от 1 900 ₽ в месяц — без лимита посещений.</p>
+        <div class="cta"><a class="btn btn-or" href="#clubs">Найти клуб рядом →</a><a class="btn btn-gl" href="#tariffs">Подобрать тариф</a></div>
+      </div>
+      <div class="hstats fade">
+        <div><b data-k="clubs">179</b><span>клубов работают</span></div>
+        <div><b data-k="cities">71</b><span>город</span></div>
+        <div><b>6–24</b><span>каждый день</span></div>
+        <div><b>1 900 ₽</b><span>в месяц, от</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mq" aria-hidden="true"><div class="tr" id="mq"></div></div>
+
+<section id="clubs"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Сеть DDX</span><h2 class="rv" style="--i:1">Клуб <span class="or">рядом</span><br>с тобой</h2></div><p class="rv" style="--i:2">Смотри, как сеть росла с 2018 года. Нажми «Рядом со мной» — покажем ближайшие клубы и построим маршрут.</p></div>
+  <div class="net">
+    <div class="mapbox rv"><canvas id="map" aria-label="Карта клубов DDX Fitness"></canvas><div class="yr" id="yr">2018</div><div class="cnt"><b id="cnt">0</b><span>клубов работают · <span id="soonN">15</span>&nbsp;скоро откроются</span></div><div class="tip" id="tip"></div></div>
+    <div class="finder rv" style="--i:1">
+      <h3>Найти клуб</h3>
+      <div class="frow"><select id="fCity" aria-label="Город"><option>Москва</option></select><button class="geo" id="geo">◎ Рядом со мной</button></div>
+      <div class="clist" id="clist"></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="zones" id="zones" style="--n:7">
+  <div class="zpin">
+    <div class="zhead"><div><span class="eyebrow">Что внутри</span><h2>Зоны <span class="or">клуба</span></h2></div><div class="zbar"><i id="zbar"></i></div></div>
+    <div class="ztrack" id="ztrack">
+      <article class="zcard"><img src="img/gym.jpg" alt="Тренажёрный зал" loading="lazy"><div><div class="no">01</div><h3>Тренажёрный зал</h3><p>Профессиональные тренажёры Technogym и Matrix. Много оборудования — без очередей.</p></div></article>
+      <article class="zcard"><img src="img/weights.jpg" alt="Свободные веса" loading="lazy"><div><div class="no">02</div><h3>Свободные веса</h3><p>Отдельная зона со штангами, гантелями и стойками.</p></div></article>
+      <article class="zcard"><img src="img/crossbox.jpg" alt="Зона функционального тренинга" loading="lazy"><div><div class="no">03</div><h3>DDX Athletic</h3><p>Функциональный тренинг: интервальные тренировки на силу, выносливость и скорость.</p></div></article>
+      <article class="zcard"><img src="img/legs.jpg" alt="Зона Legs and Hips" loading="lazy"><div><div class="no">04</div><h3>Legs &amp; Hips</h3><p>Зоны для самостоятельной проработки всего тела — 30 FULLBODY и 30 LEGS&amp;HIPS.</p></div></article>
+      <article class="zcard"><img src="img/group.jpg" alt="Зал групповых программ" loading="lazy"><div><div class="no">05</div><h3>Групповые</h3><p>25+ групповых программ на каждый день: от йоги до сайкла с большим экраном.</p></div></article>
+      <article class="zcard"><img src="img/cardio.png" alt="Кардиозона" loading="lazy"><div><div class="no">06</div><h3>Кардио</h3><p>Большой выбор кардиотренажёров — разминка, жиросжигание, выносливость.</p></div></article>
+      <article class="zcard"><img src="img/sauna.jpg" alt="Финская сауна" loading="lazy"><div><div class="no">07</div><h3>СПА-зона</h3><p>Финская сауна, турецкий хаммам, соляная комната и гидромассажная ванна.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="tariffs"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Тарифы</span><h2 class="rv" style="--i:1">Собери <span class="or">свой</span><br>тариф</h2></div><p class="rv" style="--i:2">Отметь, что тебе важно, — подсветим самый выгодный тариф. Подписка помесячная: её можно отключить в любой момент.</p></div>
+  <div class="tp">
+    <div class="need rv">
+      <h3>Что важно?</h3><p>Безлимит в домашний клуб, вводная тренировка, InBody и Smart Start — на всех тарифах.</p>
+      <label class="tg">Групповые тренировки<input type="checkbox" data-f="group"><span class="sw"></span></label>
+      <label class="tg">Все клубы сети, а не один<input type="checkbox" data-f="all"><span class="sw"></span></label>
+      <label class="tg">СПА: сауна, хаммам, джакузи<input type="checkbox" data-f="spa"><span class="sw"></span></label>
+      <label class="tg">Приводить друзей и семью<input type="checkbox" data-f="guests"><span class="sw"></span></label>
+      <label class="tg">ИИ-тренер и видеотренировки<input type="checkbox" data-f="ai"><span class="sw"></span></label>
+      <div class="vis"><label><span>Тренировок в неделю</span><b id="vN">3</b></label><input type="range" id="vis" min="1" max="7" value="3" aria-label="Тренировок в неделю"></div>
+    </div>
+    <div>
+      <div class="tcards" id="tcards"></div>
+      <div class="fee rv"><span>Вступительный взнос: <b>2 500 ₽</b> <s>3 000 ₽</s> — один раз</span><span>браслет для входа и шкафчика, вводная тренировка и безлимитный InBody</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="groups" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Групповые</span><h2 class="rv" style="--i:1">Скучно <span class="or">не будет</span></h2></div><p class="rv" style="--i:2">Все групповые входят в тарифы Smart, Infinity и Infinity Plus. Залы оборудованы всем инвентарём.</p></div>
+  <div class="chips" id="chips"></div>
+  <div class="gg" id="gg"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Первый месяц</span><h2 class="rv" style="--i:1">Старт <span class="or">без стресса</span></h2></div><p class="rv" style="--i:2">Даже если ты никогда не был в зале — тебя проведут за руку.</p></div>
+  <div class="start">
+    <div class="st rv"><div class="n">01</div><h3>Вводная тренировка</h3><p>Тренер покажет клуб и все зоны, познакомит с оборудованием и даст рекомендации.</p></div>
+    <div class="st rv" style="--i:1"><div class="n">02</div><h3>InBody</h3><p>Анализ состава тела по 29 параметрам — понятно, на чём сфокусироваться.</p></div>
+    <div class="st rv" style="--i:2"><div class="n">03</div><h3>Smart Start</h3><p>Бесплатные 30-минутные занятия с тренером в группах до 10 человек — техника и нагрузка.</p></div>
+    <div class="st rv" style="--i:3"><div class="n">04</div><h3>Браслет</h3><p>Входишь в клуб и открываешь шкафчик браслетом — без ожидания на ресепшен.</p></div>
+  </div>
+</div></section>
+
+<section id="spa" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">СПА-зона</span><h2 class="rv" style="--i:1">После <span class="aq">тренировки</span></h2></div><p class="rv" style="--i:2">Безлимит на тарифах Infinity и Infinity Plus. Финская сауна есть в каждом клубе.</p></div>
+  <div class="spa">
+    <div class="sp big rv"><img src="img/sauna.jpg" alt="Финская сауна" loading="lazy"><span>Финская сауна · 80–100 °C</span></div>
+    <div class="sp rv" style="--i:1"><img src="img/hammam.jpg" alt="Турецкий хаммам" loading="lazy"><span>Хаммам</span></div>
+    <div class="sp rv" style="--i:2"><img src="img/salt.jpg" alt="Соляная комната" loading="lazy"><span>Соляная комната</span></div>
+    <div class="quote rv" style="--i:3"><p>«Всегда заканчиваю тренировку минут 20 в джакузи — реально чувствуется разница в восстановлении. Мышцы не так забиваются, и тело быстрее приходит в норму».</p><small>Asel Nubaeva · отзыв на ddxfitness.ru</small></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Команда</span><h2 class="rv" style="--i:1">Тренеры <span class="or">DDX</span></h2></div><p class="rv" style="--i:2">Персональные тренировки — у понравившегося тренера: написать ему можно прямо в приложении.</p></div>
+  <div class="tw" id="tw"></div>
+  <div class="acad rv"><div><h3>DDX Академия</h3><p>Курсы фитнес-тренера: преврати увлечение в профессию за 5 месяцев и получи диплом.</p></div><a class="btn btn-gl" href="https://www.ddxfitness.ru/" target="_blank" rel="noopener">Узнать больше</a></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="act rv"><img src="img/class.webp" alt="Групповая тренировка" loading="lazy"><div><span class="eyebrow">DDX Action</span><h2>130+ <span class="or">видео</span></h2><p>Тренировки и лекции по 20+ направлениям — для дома и зала. Входят в Infinity Plus вместе с ИИ-тренером и дневником тренировок.</p><a class="btn btn-or" href="#tariffs">Хочу Infinity Plus</a></div></div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap faq">
+  <div><span class="eyebrow rv">Вопросы</span><h2 class="rv" style="--i:1;font-size:clamp(44px,6vw,90px);margin-top:18px">Коротко <span class="or">о главном</span></h2></div>
+  <div id="faqL"></div>
+</div></section>
+
+<section class="final" style="padding:0"><img src="img/key.webp" alt="" loading="lazy"><div class="wrap">
+  <h2 class="rv">Попробуй<br><span class="or">тест-драйв</span></h2>
+  <p class="rv" style="--i:1">Гостевой визит по тарифу Infinity в любой клуб. При покупке подписки тест-драйв — бесплатно.</p>
+  <div class="cta rv" style="--i:2"><a class="btn btn-or" href="#clubs">Выбрать клуб →</a><a class="btn btn-gl" href="tel:+74993222507">+7 499 322-25-07</a></div>
+</div></section>
+
+<footer><div class="wrap"><span>Концепт редизайна для DDX Fitness. Тексты, цены, адреса и фото — с ddxfitness.ru (13.10.2026).</span><span>Сеть фитнес-клубов DDX Fitness · ООО «ИЛОН»</span></div></footer>
+<div class="mbar"><a class="btn btn-gl" href="#clubs">Клуб рядом</a><a class="btn btn-or" href="#tariffs">Тарифы</a></div>
+
+<script>
+(() => {
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const h = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const fmt = n => n.toLocaleString('ru-RU').replace(/ /g, ' ');
+const plural = (n, f) => f[n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
+
+// появление
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+const watch = () => $$('.rv:not(.in)').forEach(el => io.observe(el));
+
+// шапка, прогресс, нижняя панель, зоны
+const hdr = $('header'), prog = $('.prog'), mbar = $('.mbar'); let ly = 0;
+const zs = $('#zones'), zt = $('#ztrack'), zb = $('#zbar');
+const zones = () => { if (innerWidth <= 760) return; const r = zs.getBoundingClientRect(), max = zs.offsetHeight - innerHeight;
+  const p = Math.min(1, Math.max(0, -r.top / max)); zt.style.transform = 'translateX(' + (-p * Math.max(0, zt.scrollWidth - innerWidth + 48)) + 'px)'; zb.style.width = p * 100 + '%'; };
+const onS = () => { const y = scrollY, H = document.documentElement.scrollHeight - innerHeight;
+  hdr.classList.toggle('sc', y > 40); if (y > 700 && y > ly + 4) hdr.classList.add('hide'); if (y < ly - 4) hdr.classList.remove('hide'); ly = y;
+  prog.style.transform = 'scaleX(' + (H > 0 ? y / H : 0) + ')'; mbar.classList.toggle('on', y > innerHeight * .7); zones(); };
+addEventListener('scroll', onS, { passive: true }); addEventListener('resize', zones);
+
+// hero: смена фото и «живой» статус
+const sl = $$('.slides img'); let cur = 0;
+if (!RM) setInterval(() => { sl[cur].classList.remove('on'); cur = (cur + 1) % sl.length; sl[cur].classList.add('on'); }, 5500);
+const live = () => { const d = new Date(), hr = d.getHours(), t = d.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+  const open = hr >= 6; $('#live').classList.toggle('off', !open);
+  $('#liveT').textContent = open ? 'Сейчас ' + t + ' — клубы открыты до 24:00' : 'Откроемся в 6:00 · DDX Новый Арбат работает круглосуточно'; };
+live(); setInterval(live, 30000);
+
+// ===== клубы =====
+let CL = [], my = null, hl = [], pts = [];
+const R = d => d * Math.PI / 180, dist = (a, b, c, d) => { const x = Math.sin(R(c - a) / 2) ** 2 + Math.cos(R(a)) * Math.cos(R(c)) * Math.sin(R(d - b) / 2) ** 2; return 12742 * Math.asin(Math.sqrt(x)); };
+const setCity = c => { $('#fCity').value = c; $('#citySel').value = c; my = null; list(); };
+function list() {
+  let arr;
+  if (my) arr = CL.map(c => ({ ...c, km: dist(my[0], my[1], c.la, c.lo) })).sort((a, b) => a.km - b.km).slice(0, 8);
+  else arr = CL.filter(c => c.c === $('#fCity').value).sort((a, b) => (a.s ? 1 : 0) - (b.s ? 1 : 0) || a.n.localeCompare(b.n, 'ru'));
+  $('#clist').innerHTML = arr.map(c => '<div class="club"><b>' + h(c.n) + (c.s ? '<span class="soon">Скоро · ' + new Date(c.s).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }) + '</span>' : '') + '</b><small>' + h((my ? c.c + ', ' : '') + c.a) + ' · ' + (c.h === '24/7' ? 'круглосуточно' : '6:00–24:00') + '</small><span class="d">' + (c.km != null ? (c.km < 1 ? Math.round(c.km * 1000) + ' м' : c.km.toFixed(1).replace('.', ',') + ' км') : '') + '<a href="https://yandex.ru/maps/?rtext=~' + c.la + ',' + c.lo + '" target="_blank" rel="noopener">Маршрут →</a></span></div>').join('') || '<p style="color:var(--mut)">Клубов пока нет</p>';
+  hl = arr.map(c => c.la + ',' + c.lo);
+}
+fetch('clubs.json').then(r => r.json()).then(d => {
+  CL = d; const open = d.filter(c => !c.s), cities = [...new Set(d.map(c => c.c))].sort((a, b) => a === 'Москва' ? -1 : b === 'Москва' ? 1 : a.localeCompare(b, 'ru'));
+  $('[data-k=clubs]').textContent = open.length; $('[data-k=cities]').textContent = cities.length; $('[data-k=cities]').nextElementSibling.textContent = plural(cities.length, ['город', 'города', 'городов']);
+  $('#soonN').textContent = d.length - open.length;
+  const opts = cities.map(c => '<option>' + h(c) + '</option>').join('');
+  $('#citySel').innerHTML = opts; $('#fCity').innerHTML = opts;
+  const mqT = cities.map(c => '<span>' + h(c) + '</span><i>●</i>').join(''); $('#mq').innerHTML = mqT + mqT;
+  $('#citySel').onchange = e => { setCity(e.target.value); $('#clubs').scrollIntoView({ behavior: 'smooth' }); };
+  $('#fCity').onchange = e => setCity(e.target.value);
+  list(); drawMap();
+}).catch(() => { $('#clist').innerHTML = '<p style="color:var(--mut)">Список клубов не загрузился</p>'; });
+$('#geo').onclick = () => { if (!navigator.geolocation) return; const b = $('#geo'); b.textContent = 'Ищу…';
+  navigator.geolocation.getCurrentPosition(p => { my = [p.coords.latitude, p.coords.longitude]; b.textContent = '◎ Рядом со мной'; list(); },
+    () => { b.textContent = '◎ Рядом со мной'; $('#clist').insertAdjacentHTML('afterbegin', '<p style="color:var(--or);font-weight:700">Не получилось определить местоположение — выбери город из списка.</p>'); }, { timeout: 8000 }); };
+
+// живая карта сети: точки по реальным координатам, рост по годам открытия
+function drawMap() {
+  const cv = $('#map'), ctx = cv.getContext('2d'), box = cv.parentElement, tip = $('#tip');
+  const LON0 = 26, LON1 = 138, LAT0 = 41.5, LAT1 = 66.5;
+  let W, H, t0 = null, started = false;
+  const size = () => { const dpr = Math.min(2, devicePixelRatio || 1); W = box.clientWidth; H = box.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+  // европейская часть растянута, Сибирь и Дальний Восток сжаты — так видно и Москву, и Владивосток
+  const IW = () => W < 560 ? 0 : Math.min(300, W * .36);
+  const px = c => { const k = (c.lo - LON0) / (LON1 - LON0), kk = k < .25 ? k * 2.1 : .525 + (k - .25) * .633, mw = W - IW() - (IW() ? 40 : 0); return [30 + kk * (mw - 50), 90 + (LAT1 - c.la) / (LAT1 - LAT0) * (H - 200)]; };
+  const order = CL.slice().sort((a, b) => (a.o || '9').localeCompare(b.o || '9'));
+  const Y0 = 2018, Y1 = 2026, DUR = RM ? 1 : 5000;
+  const frame = ts => {
+    if (t0 === null) t0 = ts; const k = Math.min(1, (ts - t0) / DUR), yr = Math.min(Y1, Math.floor(Y0 + k * (Y1 - Y0 + 1)));
+    ctx.clearRect(0, 0, W, H); pts = [];
+    ctx.strokeStyle = 'rgba(255,255,255,.035)'; ctx.lineWidth = 1;
+    for (let x = 0; x < W; x += 36) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+    for (let y = 0; y < H; y += 36) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+    // врезка «Москва и область»: там больше трети клубов, на общей карте они слились бы в точку
+    const iw = IW() || Math.min(220, W * .5), ih = IW() ? Math.min(H - 36, iw * 1.15) : iw * .8, ix = W - iw - 18, iy = IW() ? (H - ih) / 2 : 18;
+    const inM = c => c.la > 55.3 && c.la < 56.2 && c.lo > 36.8 && c.lo < 38.4;
+    const pm = c => [ix + 12 + (c.lo - 36.8) / 1.6 * (iw - 24), iy + 30 + (56.2 - c.la) / .9 * (ih - 44)];
+    ctx.fillStyle = 'rgba(6,25,28,.72)'; ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.beginPath(); ctx.roundRect(ix, iy, iw, ih, 16); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.font = '700 11px Manrope'; ctx.fillText('МОСКВА И ОБЛАСТЬ', ix + 12, iy + 18);
+    // подписи крупных городов
+    ctx.font = '700 10.5px Manrope'; ctx.fillStyle = 'rgba(255,255,255,.38)';
+    for (const name of ['Санкт-Петербург', 'Казань', 'Екатеринбург', 'Новосибирск', 'Владивосток', 'Сочи', 'Самара']) {
+      const c = CL.find(x => x.c === name); if (!c) continue; const [x, y] = px(c); ctx.fillText(name, x + 8, y - 8); }
+    let n = 0;
+    const many = hl.length > 12; const dot = (x, y, c, small) => { const on = hl.includes(c.la + ',' + c.lo), pulse = on && !many ? 4 + Math.sin(ts / 240) * 3 : 0;
+      ctx.beginPath(); ctx.fillStyle = c.s ? 'rgba(46,224,208,.22)' : on ? 'rgba(255,255,255,.22)' : 'rgba(255,107,26,.14)'; ctx.arc(x, y, (on ? 8 : small ? 4 : 6) + pulse, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.fillStyle = c.s ? '#2ee0d0' : on ? '#fff' : '#ff6b1a'; ctx.arc(x, y, on ? 3.4 : small ? 1.8 : 2.3, 0, 7); ctx.fill(); };
+    for (const c of order) {
+      if (c.s ? k < 1 : +(c.o || '2026').slice(0, 4) > yr) continue;
+      if (!c.s) n++;
+      if (inM(c)) { const [x, y] = pm(c); pts.push([x, y, c]); dot(x, y, c, true); }
+      else { const [x, y] = px(c); pts.push([x, y, c]); dot(x, y, c, false); }
+    }
+    const mo = px({ la: 55.75, lo: 37.6 }); ctx.strokeStyle = 'rgba(255,107,26,.35)'; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(mo[0], mo[1]); ctx.lineTo(ix, iy + 10); ctx.stroke(); ctx.setLineDash([]);
+    ctx.beginPath(); ctx.strokeStyle = 'rgba(255,107,26,.7)'; ctx.arc(mo[0], mo[1], 7, 0, 7); ctx.stroke();
+    $('#yr').textContent = yr; $('#cnt').textContent = n;
+    requestAnimationFrame(frame);
+  };
+  size(); addEventListener('resize', size);
+  new IntersectionObserver(es => { if (es[0].isIntersecting && !started) { started = true; requestAnimationFrame(frame); } }, { threshold: .3 }).observe(box);
+  let hov = null;
+  cv.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my2 = e.clientY - r.top;
+    hov = null; let bd = 14; for (const p of pts) { const d = Math.hypot(p[0] - mx, p[1] - my2); if (d < bd) { bd = d; hov = p; } }
+    if (hov) { tip.style.left = hov[0] + 'px'; tip.style.top = hov[1] + 'px'; tip.textContent = hov[2].c + ' · ' + hov[2].n + (hov[2].s ? ' · скоро' : ''); tip.style.opacity = 1; } else tip.style.opacity = 0; });
+  cv.addEventListener('pointerleave', () => { tip.style.opacity = 0; hov = null; });
+  cv.addEventListener('click', () => { if (hov) setCity(hov[2].c); });
+}
+
+// ===== тарифы =====
+const T = [
+  { n: 'Light', p: 1900, f: [], li: ['Безлимит в домашний клуб', 'Вводная тренировка', 'InBody', 'Smart Start'], no: ['Групповые', 'СПА-зона', 'Друзья и семья'] },
+  { n: 'Smart', p: 2400, f: ['group'], li: ['Безлимит в домашний клуб', 'Вводная тренировка', 'InBody', 'Smart Start', '50+ групповых'], no: ['СПА-зона', 'Друзья и семья'] },
+  { n: 'Infinity', p: 2800, f: ['group', 'all', 'spa', 'guests'], li: ['Все клубы сети', '50+ групповых', 'СПА-зона', 'Гостевой доступ для друзей', 'Семейный доступ', 'Вводная, InBody, Smart Start'], no: ['ИИ-тренер'] },
+  { n: 'Infinity Plus', p: 3500, f: ['group', 'all', 'spa', 'guests', 'ai'], li: ['Всё из Infinity', 'ИИ-тренер', 'Дневник тренировок', 'Видеотренировки DDX Action', 'Расширенный InBody'], no: [] },
+];
+$('#tcards').innerHTML = T.map((t, i) => '<div class="tc rv" style="--i:' + i + '"><span class="bb">Тебе подходит</span><h3>' + t.n + '</h3><div class="pr">' + fmt(t.p) + ' ₽ <small>/мес</small></div><div class="pv"></div><ul>' + t.li.map(x => '<li>' + x + '</li>').join('') + t.no.map(x => '<li class="no">' + x + '</li>').join('') + '</ul><a class="btn btn-or" href="https://www.ddxfitness.ru/tariffs/" target="_blank" rel="noopener">Купить</a></div>').join('');
+const upd = () => { const need = $$('[data-f]:checked').map(x => x.dataset.f), v = +$('#vis').value; $('#vN').textContent = v;
+  const best = T.findIndex(t => need.every(f => t.f.includes(f)));
+  $$('.tc').forEach((el, i) => { const ok = need.every(f => T[i].f.includes(f)); el.classList.toggle('ok', ok); el.classList.toggle('best', i === best);
+    $('.pv', el).textContent = '≈ ' + fmt(Math.round(T[i].p / (v * 4.33))) + ' ₽ за тренировку'; }); };
+$$('[data-f]').forEach(x => x.onchange = upd); $('#vis').oninput = upd; upd();
+
+// ===== групповые =====
+const G = [
+  ['DDX Games', 'Игра «Мафия»', 55, 'Командная ролевая игра: мафия против мирных жителей.', 'g0.jpg'],
+  ['Силовая', '3D Ягодицы', 45, 'Проработка мышц ног и ягодиц во всех плоскостях. Для любого уровня подготовки.', 'g1.jpg'],
+  ['Йога', 'Yoga', 90, 'Асаны для гибкости и подвижности тела, укрепления мышц и внутренней гармонии.', 'g2.jpg'],
+  ['Йога', 'Inside Flow Yoga', 90, 'Микс йоги, хорошей музыки и танца — полноценная функциональная тренировка.', 'g3.jpg'],
+  ['Функциональная', 'DDX Athletic', 55, 'Интервальная тренировка на силу, гибкость, выносливость и скорость.', 'g4.jpg'],
+  ['Танцевальная', 'Lady Style', 45, 'Пластичные и женственные движения из разных танцевальных стилей.', 'g5.jpg'],
+  ['Cycle', 'Cycle RPM', 45, 'Велогонка, которая укрепляет сердце и заряжает эндорфином.', 'g6.jpg'],
+  ['Cycle', 'Cycle The Trip', 45, 'Сайкл с погружением в виртуальное путешествие на большом экране.', 'g7.jpg'],
+  ['Cycle', 'Cycle 45', 45, 'Кардиотренировка на велотренажёрах — максимум калорий и выносливости.', 'g8.jpg'],
+  ['Mind Body', 'Antigravity', 55, 'Йога, пилатес и ballet barre в шёлковых гамаках.', 'g9.jpg'],
+  ['Cycle', 'Cycle Party', 45, 'Сайкл под музыку — тренировка, которая пролетает незаметно.', 'g10.jpg'],
+  ['Функциональная', 'Outrace', 55, 'Функциональная тренировка с соревновательным духом.', 'g11.jpg'],
+];
+const types = ['Все', ...new Set(G.map(g => g[0]))];
+$('#chips').innerHTML = types.map((t, i) => '<button class="chip' + (i ? '' : ' on') + '">' + h(t) + '</button>').join('');
+$('#gg').innerHTML = G.map((g, i) => '<article class="gc rv" style="--i:' + (i % 4) + '" data-t="' + h(g[0]) + '"><img src="img/' + g[4] + '" alt="' + h(g[1]) + '" loading="lazy"><span class="min">' + g[2] + ' мин</span><div><span class="tag">' + h(g[0]) + '</span><h3>' + h(g[1]) + '</h3><p>' + h(g[3]) + '</p></div></article>').join('');
+$$('.chip').forEach(c => c.onclick = () => { $$('.chip').forEach(x => x.classList.toggle('on', x === c)); $$('.gc').forEach(g => g.classList.toggle('hid', c.textContent !== 'Все' && g.dataset.t !== c.textContent)); });
+
+// тренеры
+$('#tw').innerHTML = Array.from({ length: 16 }, (_, i) => '<img src="img/t' + i + '.webp" alt="Тренер DDX Fitness" loading="lazy">').join('');
+
+// FAQ — ответы с ddxfitness.ru
+const F = [
+  ['Есть ли лимит по посещениям?', 'Лимита нет. При любом тарифе можно ходить в клуб в часы работы столько, сколько хочешь. В Light и Smart — один домашний клуб, в Infinity и Infinity Plus — любые клубы сети.'],
+  ['С какого возраста можно стать членом клуба?', 'С 16 лет.'],
+  ['Помесячная оплата — это рассрочка?', 'Нет. Подписку можно в любой момент отключить и перестать вносить платежи.'],
+  ['Что такое семейный и гостевой доступ?', 'На тарифах Infinity и Infinity Plus можно бесплатно приводить родственников и друзей без подписки: в будни с 10:00 до 17:00, в выходные с 10:00 до 22:00.'],
+  ['За что вступительный взнос?', 'За браслет для входа и шкафчика, ознакомительную тренировку с тренером и безлимитный анализ состава тела InBody. Платится один раз.'],
+  ['Можно купить сейчас, а начать позже?', 'Да. При оформлении выбери дату активации — не позднее 10 дней с момента оплаты.'],
+  ['Есть полотенца и вода?', 'Полотенце лучше взять своё. В клубах есть пурифайеры с фильтрованной водой и вендинговые аппараты с напитками.'],
+  ['Когда работают клубы?', 'Ежедневно с 06:00 до 24:00, ресепшен — с 10:00 до 22:00. DDX Новый Арбат работает круглосуточно.'],
+];
+$('#faqL').innerHTML = F.map((f, i) => '<details class="rv"' + (i ? '' : ' open') + '><summary>' + f[0] + '</summary><p>' + f[1] + '</p></details>').join('');
+watch(); onS();
+})();
+</script>
+</body>
+</html>
