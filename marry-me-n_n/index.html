@@ -667,6 +667,19 @@ footer .brand{color:#fff}
   fetch('catalog.json?v=' + Date.now()).then(r => r.json()).then(d => { D = d.filter(x => !x.hide); D.forEach((x, i) => x.i = i); render(); })
     .catch(() => { grid.innerHTML = '<p style="grid-column:1/-1;text-align:center">Каталог не загрузился — обновите страницу или напишите нам в WhatsApp.</p>'; });
 
+  // остальные фото сайта (главный экран, салон, невесты) — photos.json, тоже правится в /admin; без него остаются фото из разметки
+  fetch('photos.json?v=' + Date.now()).then(r => r.ok ? r.json() : null).then(p => {
+    if (!p) return;
+    const hp = document.querySelectorAll('.hpics img');
+    (p.hero || []).slice(0, 2).forEach((n, k) => { if (hp[k] && hp[k].getAttribute('src') !== img(n)) { hp[k].src = img(n); hp[k].alt = 'Свадебный салон Marry Me'; } });
+    const gal = (sel, arr, lb, alt) => {
+      const box = document.querySelector(sel); if (!box || !arr || !arr.length) return;
+      if ([...box.querySelectorAll('img')].map(i => i.getAttribute('src')).join() === arr.map(img).join()) return;
+      box.innerHTML = arr.map(n => '<button data-lb="' + lb + '" class="reveal in"><img src="' + img(n) + '" alt="' + alt + '" loading="lazy"></button>').join('');
+    };
+    gal('.spics', p.salon, 's', 'Салон Marry Me'); gal('.bgal', p.brides, 'b', 'Невеста Marry Me');
+  }).catch(() => {});
+
   // карточка платья
   const dm = document.getElementById('dm'), gi = dm.querySelector('.gal>img'), th = dm.querySelector('.thumbs');
   const openD = i => {
@@ -694,9 +707,10 @@ footer .brand{color:#fff}
   const lb = document.getElementById('lb'), li = lb.querySelector('img');
   let set = [], cur = 0;
   const show = i => { cur = (i + set.length) % set.length; const im = set[cur].querySelector('img'); li.src = im.src; li.alt = im.alt; };
-  document.querySelectorAll('[data-lb]').forEach(b => b.addEventListener('click', () => {
-    set = [...document.querySelectorAll('[data-lb="' + b.dataset.lb + '"]')]; show(set.indexOf(b)); lb.classList.add('on'); document.body.style.overflow = 'hidden';
-  }));
+  document.addEventListener('click', e => {   // делегирование: галереи перестраиваются из photos.json
+    const b = e.target.closest('button[data-lb]'); if (!b) return;
+    set = [...document.querySelectorAll('button[data-lb="' + b.dataset.lb + '"]')]; show(set.indexOf(b)); lb.classList.add('on'); document.body.style.overflow = 'hidden';
+  });
   const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; };
   lb.querySelector('.x').onclick = close; lb.querySelector('.p').onclick = () => show(cur - 1); lb.querySelector('.nx').onclick = () => show(cur + 1);
   lb.addEventListener('click', e => { if (e.target === lb) close(); });

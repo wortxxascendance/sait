@@ -71,10 +71,16 @@ h1,h2,h3{font-family:Cormorant,serif;font-weight:700;line-height:1.1}
 @keyframes sp{to{transform:rotate(1turn)}}
 .toast{position:fixed;left:50%;top:76px;transform:translate(-50%,-20px);opacity:0;z-index:50;padding:12px 18px;border-radius:14px;background:var(--acc2);color:#fff;font-weight:700;font-size:14px;transition:all .3s;max-width:92vw;text-align:center;pointer-events:none}
 .toast.on{opacity:1;transform:translate(-50%,0)}
+.tabs{display:flex;gap:4px;margin-top:16px;padding:4px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.tabs button{flex:1;padding:11px 8px;border-radius:12px;font-weight:800;font-size:15px;color:var(--mut)}
+.tabs .on{background:var(--acc2);color:#fff}
+.sec{margin:18px 0 26px;padding:16px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.sec h3{font-size:26px;margin-bottom:2px}.sec .hint{margin-bottom:12px}
+.ph img{cursor:pointer}
 </style>
 </head>
 <body>
-<div class="top"><div class="wrap"><h1>Marry Me · каталог</h1><a href="../" target="_blank" rel="noopener">Открыть сайт →</a></div></div>
+<div class="top"><div class="wrap"><h1>Marry Me · админка</h1><a href="../" target="_blank" rel="noopener">Открыть сайт →</a></div></div>
 
 <div class="wrap" id="app"></div>
 
@@ -91,8 +97,15 @@ const $ = s => document.querySelector(s), app = $('#app');
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const rub = v => Number(v || 0).toLocaleString('ru-RU') + ' ₽';
 let KEY = ''; try { KEY = localStorage.getItem('mm-key') || ''; } catch (e) {}
-let D = [], fresh = {}, dirty = false;   // fresh: имя нового фото → data:URL (ещё не загружено на сайт)
+let D = [], P = null, tab = 'd', fresh = {}, dirty = false;   // P — photos.json (фото сайта вне каталога); fresh: имя нового фото → data:URL (ещё не загружено на сайт)
 const src = n => fresh[n] || '../img/' + n + '.jpg';
+// фото сайта вне каталога: [ключ в photos.json, заголовок, подсказка, мин., макс., подписи по номеру]
+const PDEF = { hero: ['d4621-1', 'd4235-0'], salon: ['d4240-1', 'd4370-0', 'd4331-2'], brides: ['bride-1', 'bride-10', 'bride-5', 'bride-4', 'bride-9', 'bride-6', 'bride-3', 'bride-7'] };
+const SECS = [
+  ['hero', 'Главный экран', 'Два фото в самом верху сайта: большое и маленькое.', 2, 2, ['большое', 'маленькое']],
+  ['salon', 'Салон', 'Фото рядом с блоком «Примерка в удовольствие». Первое — большое.', 1, 6, ['большое']],
+  ['brides', 'Наши невесты', 'Галерея настоящих невест. Можно добавлять сколько угодно.', 1, 60, []],
+];
 
 const toast = t => { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 3500); };
 const gh = async (path, opt = {}) => {
@@ -118,18 +131,50 @@ function login(msg) {
 async function load() {
   app.innerHTML = '<p style="margin:40px 0;text-align:center"><span class="spin"></span></p>';
   const f = await gh('/contents/catalog.json?ref=' + BRANCH);
-  D = JSON.parse(utf8b64(f.content)); fresh = {}; setDirty(false); list();
+  D = JSON.parse(utf8b64(f.content));
+  P = await gh('/contents/photos.json?ref=' + BRANCH).then(x => JSON.parse(utf8b64(x.content))).catch(() => JSON.parse(JSON.stringify(PDEF)));
+  for (const k in PDEF) if (!Array.isArray(P[k])) P[k] = PDEF[k].slice();
+  fresh = {}; setDirty(false); render();
+}
+const render = () => tab === 'p' ? photos() : list();
+const tabs = () => '<div class="tabs"><button data-t="d"' + (tab === 'd' ? ' class="on"' : '') + '>Платья</button><button data-t="p"' + (tab === 'p' ? ' class="on"' : '') + '>Фото сайта</button></div>';
+const bindTabs = () => app.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { tab = b.dataset.t; render(); scrollTo(0, 0); });
+const newName = () => 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+// выбрать фото с телефона → уменьшить → cb(имена новых фото)
+function pick(multiple, cb) {
+  const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*'; inp.multiple = multiple; inp.style.display = 'none';
+  inp.onchange = async () => { const names = [];
+    for (const f of inp.files) { try { const n = newName(); fresh[n] = await shrink(f); names.push(n); } catch (e) { toast('Не получилось открыть фото ' + f.name); } }
+    inp.remove(); if (names.length) cb(names); };
+  document.body.appendChild(inp); inp.click();
+}
+
+// ---------- фото сайта (главный экран, салон, невесты) ----------
+function photos() {
+  app.innerHTML = tabs() + '<p class="hint" style="margin-top:14px">Нажмите на фото, чтобы заменить его. ‹ › — порядок, ✕ — убрать.</p>' + SECS.map(([k, t, h, mn, mx, cap]) => '<div class="sec"><h3>' + t + '</h3><p class="hint">' + h + '</p><div class="phs">' +
+    P[k].map((n, i) => '<div class="ph"><img src="' + esc(src(n)) + '" alt="" data-s="' + k + '" data-rp="' + i + '">' + (cap[i] ? '<span class="cv">' + cap[i] + '</span>' : '') +
+      '<div class="pb"><button data-s="' + k + '" data-l="' + i + '" aria-label="Левее">‹</button>' + (P[k].length > mn ? '<button class="rm" data-s="' + k + '" data-r="' + i + '" aria-label="Убрать фото">✕</button>' : '<span></span>') +
+      '<button data-s="' + k + '" data-rr="' + i + '" aria-label="Правее">›</button></div></div>').join('') +
+    (P[k].length < mx ? '<button class="add" data-s="' + k + '" data-add>+ Фото' + (mx - P[k].length > 1 ? '<br><small style="font-weight:600">можно несколько</small>' : '') + '</button>' : '') + '</div></div>').join('');
+  bindTabs();
+  const ch = () => { setDirty(true); photos(); };
+  app.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { const a = P[b.dataset.s], i = +b.dataset.rp; pick(false, ns => { a[i] = ns[0]; ch(); }); });
+  app.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { const a = P[b.dataset.s], i = +b.dataset.l; if (i) { [a[i - 1], a[i]] = [a[i], a[i - 1]]; ch(); } });
+  app.querySelectorAll('[data-rr]').forEach(b => b.onclick = () => { const a = P[b.dataset.s], i = +b.dataset.rr; if (i < a.length - 1) { [a[i + 1], a[i]] = [a[i], a[i + 1]]; ch(); } });
+  app.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { P[b.dataset.s].splice(+b.dataset.r, 1); ch(); });
+  app.querySelectorAll('[data-add]').forEach(b => b.onclick = () => { const k = b.dataset.s, mx = SECS.find(s => s[0] === k)[4]; pick(true, ns => { P[k].push(...ns.slice(0, mx - P[k].length)); ch(); }); });
 }
 
 // ---------- список платьев ----------
 function list() {
   const vis = D.filter(x => !x.hide).length;
-  app.innerHTML = '<div class="bar"><div><h2>Платья</h2><span>На сайте ' + vis + ' из ' + D.length + '. Порядок здесь — порядок на сайте.</span></div><button class="btn b-acc" id="addD">+ Добавить платье</button></div>' +
+  app.innerHTML = tabs() + '<div class="bar"><div><h2>Платья</h2><span>На сайте ' + vis + ' из ' + D.length + '. Порядок здесь — порядок на сайте.</span></div><button class="btn b-acc" id="addD">+ Добавить платье</button></div>' +
     '<div class="list">' + D.map((x, i) => '<div class="it' + (x.hide ? ' hidden' : '') + '"><img src="' + esc(x.ph && x.ph[0] ? src(x.ph[0]) : '') + '" alt="" loading="lazy"><div><b>' + esc(x.n) + '</b><small>' + rub(x.p) + (x.d ? ' · в первый день ' + rub(x.d) : '') + '</small><small>' +
       (x.nw ? '<span class="tag">Новинка</span>' : '') + (x.hide ? '<span class="tag h">Скрыто</span>' : '') + (x.sz ? 'размер ' + esc(x.sz) : '') + '</small></div>' +
       '<div class="ctl"><button class="e" data-e="' + i + '" aria-label="Изменить">✎</button><button data-up="' + i + '" aria-label="Выше"' + (i ? '' : ' disabled') + '>↑</button><button data-dn="' + i + '" aria-label="Ниже"' + (i < D.length - 1 ? '' : ' disabled') + '>↓</button></div></div>').join('') + '</div>' +
     '<p class="hint" style="margin:18px 0">Продали платье? Откройте его и включите «Скрыть с сайта» — или удалите совсем.</p>' +
     '<button class="btn b-line" id="out" style="width:100%">Выйти на этом телефоне</button>';
+  bindTabs();
   $('#addD').onclick = () => edit(-1);
   $('#out').onclick = () => { if (dirty && !confirm('Есть несохранённые изменения. Выйти без сохранения?')) return; try { localStorage.removeItem('mm-key'); } catch (e) {} KEY = ''; setDirty(false); login(); };
   app.querySelectorAll('[data-e]').forEach(b => b.onclick = () => edit(+b.dataset.e));
@@ -146,7 +191,7 @@ function edit(i) {
   const keep = () => { x.n = $('#n').value.trim(); x.p = +$('#p').value.replace(/\D/g, '') || ''; x.d = +$('#d').value.replace(/\D/g, '') || ''; x.sz = $('#sz').value.trim(); x.sil = $('#sil').value.trim(); x.col = $('#col').value.trim(); x.ds = $('#ds').value.trim(); x.nw = $('#nw').checked ? 1 : 0; x.hide = $('#hide').checked ? 1 : 0; };
   const draw = () => {
     box.innerHTML = '<h3>' + (i < 0 ? 'Новое платье' : 'Изменить платье') + '</h3><div class="form">' +
-      '<div class="f"><label>Фото (первое — обложка)</label><div class="phs">' + x.ph.map((n, k) => '<div class="ph"><img src="' + esc(src(n)) + '" alt="">' + (k ? '' : '<span class="cv">обложка</span>') +
+      '<div class="f"><label>Фото (первое — обложка, нажмите на фото — заменить)</label><div class="phs">' + x.ph.map((n, k) => '<div class="ph"><img src="' + esc(src(n)) + '" alt="" data-rp="' + k + '">' + (k ? '' : '<span class="cv">обложка</span>') +
         '<div class="pb"><button data-l="' + k + '" aria-label="Левее">‹</button><button class="rm" data-r="' + k + '" aria-label="Удалить фото">✕</button><button data-rr="' + k + '" aria-label="Правее">›</button></div></div>').join('') +
         '<label class="add">+ Фото<br><small style="font-weight:600">можно несколько</small><input type="file" accept="image/*" multiple id="pf"></label></div></div>' +
       '<div class="f"><label for="n">Название *</label><input id="n" value="' + esc(x.n) + '" placeholder="Например, Глория"></div>' +
@@ -167,6 +212,7 @@ function edit(i) {
     box.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { keep(); const k = +b.dataset.l; if (k) { [x.ph[k - 1], x.ph[k]] = [x.ph[k], x.ph[k - 1]]; draw(); } });
     box.querySelectorAll('[data-rr]').forEach(b => b.onclick = () => { keep(); const k = +b.dataset.rr; if (k < x.ph.length - 1) { [x.ph[k + 1], x.ph[k]] = [x.ph[k], x.ph[k + 1]]; draw(); } });
     box.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { keep(); x.ph.splice(+b.dataset.r, 1); draw(); });
+    box.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { keep(); const k = +b.dataset.rp; pick(false, ns => { x.ph[k] = ns[0]; draw(); }); });
     $('#pf').onchange = async e => { keep(); const files = [...e.target.files]; if (!files.length) return; box.querySelector('.add').innerHTML = '<span class="spin"></span>';
       for (const f of files) { try { const name = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); fresh[name] = await shrink(f); x.ph.push(name); } catch (err) { toast('Не получилось открыть фото ' + f.name); } }
       draw(); };
@@ -196,12 +242,14 @@ $('#saveBtn').onclick = async () => {
   const b = $('#saveBtn'); b.disabled = true; b.innerHTML = '<span class="spin"></span> Сохраняю…';
   try {
     const ref = await gh('/git/ref/heads/' + BRANCH), base = await gh('/git/commits/' + ref.object.sha);
-    const used = new Set(D.flatMap(x => x.ph)), tree = [];
+    const used = new Set([...D.flatMap(x => x.ph), ...Object.values(P).flat()]), tree = [];
     for (const [name, url] of Object.entries(fresh)) { if (!used.has(name)) continue;
       const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: url.split(',')[1], encoding: 'base64' }) });
       tree.push({ path: 'img/' + name + '.jpg', mode: '100644', type: 'blob', sha: blob.sha }); }
     const cat = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: b64utf8(JSON.stringify(D, null, 1)), encoding: 'base64' }) });
     tree.push({ path: 'catalog.json', mode: '100644', type: 'blob', sha: cat.sha });
+    const ph = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: b64utf8(JSON.stringify(P, null, 1)), encoding: 'base64' }) });
+    tree.push({ path: 'photos.json', mode: '100644', type: 'blob', sha: ph.sha });
     const t = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree }) });
     const c = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message: 'Каталог: правки из админки', tree: t.sha, parents: [ref.object.sha] }) });
     await gh('/git/refs/heads/' + BRANCH, { method: 'PATCH', body: JSON.stringify({ sha: c.sha }) });
