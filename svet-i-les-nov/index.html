@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Свет и Лес — столярная мастерская, Новосибирск</title>
+<meta name="description" content="Свет и Лес: Интерьерные лестницы, столы, перегородки и изделия из массива по индивидуальному заказу. Рейтинг 5.0 в 2ГИС.">
+<meta name="theme-color" content="#100d0a">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#100d0a;--bg2:#17120d;--ink:#f3ebe0;--mut:#a39686;--acc:#d79a52;--acc2:#9a6328;--on:#0b0b0b;
+--line:rgba(255,255,255,.1);--card:rgba(255,255,255,.035);--glass:rgba(10,10,10,.6);--panel:#151413;
+--df:'Cormorant Garamond',Georgia,serif;--shadow:0 40px 80px -40px rgba(0,0,0,.6);--r:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--acc);color:var(--on)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--df);font-weight:500;letter-spacing:-.01em;line-height:1.02}
+em{font-style:italic;color:var(--acc)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 30px;border-radius:999px;font:700 15px Manrope,sans-serif;letter-spacing:.01em;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .35s,border-color .3s;white-space:nowrap;overflow:hidden;isolation:isolate}
+.btn:hover{transform:translateY(-2px)}
+.btn-acc{background:var(--acc);color:var(--on);box-shadow:0 18px 40px -18px var(--acc)}
+.btn-acc:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s;z-index:-1}
+.btn-acc:hover:before{transform:translateX(120%)}
+.btn-line{border:1px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn-line:hover{background:#fff;color:#111}
+.btn-gh{border:1px solid var(--line);color:var(--ink)}.btn-gh:hover{border-color:var(--acc);color:var(--acc)}
+.arr{transition:transform .3s}.btn:hover .arr{transform:translateX(4px)}
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--acc);transform-origin:0 50%;transform:scaleX(0);z-index:100}
+.glow{position:fixed;left:0;top:0;width:460px;height:460px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 14%,transparent),transparent 65%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s}
+@media (hover:hover){body:hover .glow{opacity:1}}
+header{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .4s,border-color .4s,transform .45s;border-bottom:1px solid transparent}
+header.sc{background:var(--glass);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-color:var(--line)}
+header.hide{transform:translateY(-100%)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
+.brand{font:500 26px var(--df);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;transition:color .4s}
+header.sc .brand{color:var(--ink)}
+nav{display:flex;gap:30px;font-size:14px;font-weight:600;color:rgba(255,255,255,.78);transition:color .4s}
+header.sc nav{color:var(--mut)}nav a:hover{color:var(--acc)}
+.hr{display:flex;align-items:center;gap:16px}.hphone{font-weight:700;color:#fff;white-space:nowrap;transition:color .4s}header.sc .hphone{color:var(--ink)}
+header .btn{padding:12px 20px;font-size:14px}
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:#0a0a0a;padding:0}
+.slides{position:absolute;inset:0}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.14);transition:opacity 1.6s ease,transform 8s linear}
+.slides img.on{opacity:1;transform:scale(1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.15) 32%,rgba(0,0,0,.35) 58%,rgba(0,0,0,.9) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(48px,9vh,100px);padding-top:140px}
+.hero .eyebrow{color:#fff;opacity:.85;margin-bottom:22px}
+h1{font-size:clamp(46px,8.6vw,124px);margin-bottom:26px;max-width:1120px}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}
+h1{text-shadow:0 6px 40px rgba(0,0,0,.55)}h1 em{filter:brightness(1.15)}
+.ln>span{display:inline-block;transform:translateY(110%);animation:up 1.2s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--d)}
+@keyframes up{to{transform:none}}
+.hero .sub{font-size:clamp(16px,1.6vw,20px);max-width:620px;color:rgba(255,255,255,.85);margin-bottom:34px;opacity:0;animation:fade 1s .8s forwards}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fade 1s 1s forwards}
+@keyframes fade{to{opacity:1}}
+.badge{position:absolute;right:max(24px,calc((100vw - 1240px)/2 + 24px));bottom:clamp(48px,9vh,100px);z-index:2;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:20px;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.2);opacity:0;animation:fade 1s 1.3s forwards;transition:background .3s}
+.badge:hover{background:rgba(255,255,255,.18)}
+.badge b{font:500 46px/1 var(--df)}.badge small{display:block;font-size:12.5px;opacity:.85;line-height:1.4}.badge .st{color:#ffc93c;letter-spacing:2px;font-size:13px}
+.hdots{position:absolute;left:0;right:0;top:92px;z-index:2}
+.hdots .wrap{display:flex;gap:6px;padding-top:0;padding-bottom:0}
+.hdots i{flex:1;height:2px;background:rgba(255,255,255,.25);border-radius:2px;overflow:hidden}
+.hdots i:after{content:"";display:block;height:100%;width:0;background:#fff}
+.hdots i.on:after{animation:bar 6s linear forwards}@keyframes bar{to{width:100%}}
+.hdots i.done:after{width:100%}
+.scroll{position:absolute;left:50%;bottom:16px;z-index:2;width:1px;height:46px;background:linear-gradient(#fff,transparent);opacity:.6;animation:scl 2.2s ease-in-out infinite}
+@keyframes scl{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.tick{border-block:1px solid var(--line);overflow:hidden;padding:24px 0;background:var(--bg2)}
+.tick .tr{display:flex;width:max-content;animation:mq 45s linear infinite}
+.tick span{font:400 clamp(24px,3vw,40px) var(--df);padding:0 30px;white-space:nowrap}
+.tick i{color:var(--acc);font-style:normal;align-self:center;font-size:18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(80px,11vw,150px) 0;position:relative}
+.sh{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:60px}
+.sh h2{font-size:clamp(38px,5.4vw,78px)}.sh p{color:var(--mut);font-size:17px;max-width:500px;justify-self:end}
+.sh .eyebrow{margin-bottom:20px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.nums>div{padding:40px 28px 10px 0}
+.nums b{display:block;font:400 clamp(48px,6vw,90px)/1 var(--df);margin-bottom:8px}
+.nums span{color:var(--mut);font-size:14px;font-weight:600}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.svc>article{position:relative;background:var(--bg);padding:38px 32px 34px;min-height:300px;display:flex;flex-direction:column;overflow:hidden;cursor:pointer}
+.svc>article:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--acc) 17%,transparent),transparent 60%);opacity:0;transition:opacity .4s}
+.svc>article:hover:before{opacity:1}
+.svc .no{font:400 17px var(--df);color:var(--acc);margin-bottom:auto;position:relative}
+.svc h3{font-size:clamp(26px,2.4vw,34px);margin:44px 0 12px;position:relative}
+.svc p{color:var(--mut);font-size:15px;position:relative}
+.svc .pr{margin-top:22px;font-weight:800;position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.svc .pr span{color:var(--acc)}.svc .go{width:46px;height:46px;flex:0 0 auto;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;transition:all .4s cubic-bezier(.2,.8,.2,1)}
+.svc>article:hover .go{background:var(--acc);border-color:var(--acc);color:var(--on);transform:rotate(-45deg)}
+.gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(80px,9vw,130px);gap:12px}
+.gal button{position:relative;overflow:hidden;border-radius:16px;background:var(--card)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.gal button:hover img{transform:scale(1.08)}
+.gal button:after{content:"+";position:absolute;right:14px;bottom:12px;width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font-size:22px;display:grid;place-items:center;opacity:0;transform:scale(.6);transition:all .35s}
+.gal button:hover:after{opacity:1;transform:none}
+.g0{grid-column:span 7;grid-row:span 4}.g1,.g2{grid-column:span 5;grid-row:span 2}
+.g3,.g4,.g5{grid-column:span 4;grid-row:span 3}.gx{grid-column:span 3;grid-row:span 2}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}.lb img{max-width:92vw;max-height:84vh;border-radius:10px;object-fit:contain;animation:zoom .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes zoom{from{transform:scale(.94);opacity:0}}
+.lb button{position:absolute;color:#fff;font-size:30px;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1)}
+.lb .x{top:18px;right:18px}.lb .p{left:18px}.lb .n{right:18px}.lb .c{position:absolute;bottom:22px;color:#aaa;font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+.steps:before{content:"";position:absolute;left:0;right:0;top:28px;height:1px;background:var(--line)}
+.steps .bar{position:absolute;left:0;top:28px;height:1px;background:var(--acc);width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0))}
+.steps>div{position:relative}
+.steps .n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);font:500 22px var(--df);color:var(--acc);margin-bottom:26px;transition:all .6s}
+.steps>div.in .n{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.steps h3{font-size:27px;margin-bottom:10px}.steps p{color:var(--mut);font-size:15px}
+.revs{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.rrow{display:flex;gap:18px;width:max-content;animation:mq 80s linear infinite;padding:9px 0}
+.rrow.rev{animation-direction:reverse;animation-duration:95s}
+.revs:hover .rrow{animation-play-state:paused}
+.rc{width:min(430px,84vw);flex:0 0 auto;padding:30px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.rc .st{color:#ffb800;letter-spacing:3px}
+.rc p{font:400 19px/1.45 var(--df);flex:1}
+.rc .who{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mut)}
+.rc .who b{color:var(--ink);display:block;font-size:14.5px}
+.av{width:42px;height:42px;border-radius:50%;background:var(--acc);color:var(--on);display:grid;place-items:center;font-weight:800;flex:0 0 auto}
+.rlink{display:flex;justify-content:center;margin-top:36px}
+.qz{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:32px;overflow:hidden;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow)}
+.qz .ph{position:relative;min-height:540px;background:#111}.qz .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.qz .ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.8))}
+.qz .ph div{position:absolute;left:32px;right:32px;bottom:32px;z-index:2;color:#fff}
+.qz .ph h3{font-size:clamp(32px,3vw,46px);margin-bottom:8px}.qz .ph p{opacity:.82}
+.qb{padding:clamp(28px,4vw,54px);display:flex;flex-direction:column;min-height:460px}
+.qbar{height:3px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:30px}.qbar i{display:block;height:100%;background:var(--acc);width:0;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.qstep{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.qq{font:500 clamp(28px,2.6vw,38px)/1.12 var(--df);margin-bottom:28px}
+.qo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.qo button{text-align:left;padding:18px 20px;border-radius:16px;border:1px solid var(--line);font-weight:600;transition:all .25s;background:var(--card)}
+.qo button:hover{border-color:var(--acc);transform:translateY(-2px)}
+.qo button.on{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.qin{display:grid;gap:12px;margin-bottom:16px}
+.qin input{padding:18px 20px;border-radius:16px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 16px Manrope,sans-serif}
+.qin input:focus{outline:none;border-color:var(--acc)}
+.qnav{display:flex;gap:10px;margin-top:auto;justify-content:space-between;align-items:center;padding-top:16px}
+.qnav .back{color:var(--mut);font-weight:700;padding:12px 4px}.qnav .back.hid{visibility:hidden}
+.qdone{text-align:center;margin:auto 0}.qdone b{font:500 46px var(--df);display:block;margin-bottom:10px;color:var(--acc)}
+.fine{font-size:12.5px;color:var(--mut)}
+.ct{display:grid;grid-template-columns:1fr 1.15fr;gap:24px}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:24px 26px;border-radius:20px;border:1px solid var(--line);margin-bottom:12px;transition:border-color .3s,transform .3s}
+.ci:hover{border-color:var(--acc);transform:translateX(4px)}
+.ci small{display:block;color:var(--mut);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.ci b{font:500 25px var(--df)}
+.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);min-height:440px}.map iframe{width:100%;height:100%;min-height:440px;border:0}
+.final{text-align:center;padding:clamp(100px,13vw,170px) 0;overflow:hidden;border-top:1px solid var(--line)}
+.final h2{font-size:clamp(44px,8vw,120px);margin-bottom:28px}.final p{color:var(--mut);margin:0 auto 36px;font-size:18px;max-width:560px}
+.final .bgimg{position:absolute;inset:0;opacity:.16;background-size:cover;background-position:center}
+.final .bgimg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent,var(--bg) 75%)}
+.final .wrap{position:relative}
+.foot{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}.foot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;display:none;gap:8px;padding:8px;border-radius:999px;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.mbar.on{transform:none}.mbar .btn{flex:1;padding:15px 10px}
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0) * 90ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .clip{clip-path:inset(14% 14% 14% 14% round 16px);transition:clip-path 1.3s cubic-bezier(.2,.8,.2,1)}.js .clip.in{clip-path:inset(0 0 0 0 round 16px)}
+@media (max-width:1000px){nav{display:none}.sh{grid-template-columns:1fr;gap:16px}.sh p{justify-self:start}.svc{grid-template-columns:1fr 1fr}.nums{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr;row-gap:40px}.steps:before,.steps .bar{display:none}.qz,.ct{grid-template-columns:1fr}.qz .ph{min-height:260px}.badge{display:none}}
+@media (max-width:640px){.wrap{padding:0 16px}header .wrap{height:66px}.hphone,header .btn{display:none}.svc{grid-template-columns:1fr}.svc>article{min-height:0;padding:30px 24px}.svc h3{margin-top:26px}
+.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:8px}.gal button{grid-column:span 1!important;grid-row:span 1!important}.gal .g0{grid-column:span 2!important;grid-row:span 2!important}
+.steps{grid-template-columns:1fr}.qo{grid-template-columns:1fr}.mbar{display:flex}body{padding-bottom:90px}.hero .cta .btn{flex:1 1 100%}.hdots{top:74px}.nums>div{padding:28px 12px 4px 0}.qb{min-height:0}.map,.map iframe{min-height:320px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.ln>span{transform:none}.hero .sub,.hero .cta,.badge{opacity:1}.js .rv{opacity:1;transform:none}.js .clip{clip-path:none}.slides img{transform:none}}
+
+.svc h3{margin-top:auto;padding-top:40px}.svc .no{margin-bottom:0}
+
+.sheet{position:fixed;inset:0;z-index:100;display:grid;place-items:center;pointer-events:none}
+.sheet-bg{position:absolute;inset:0;background:rgba(5,6,8,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .35s}
+.sheet-panel:focus{outline:none}
+.sheet-panel{position:relative;width:min(560px,calc(100% - 32px));max-height:min(86vh,760px);overflow:auto;overscroll-behavior:contain;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:calc(var(--r) + 8px);padding:30px;box-shadow:0 40px 100px -30px rgba(0,0,0,.6);transform:translateY(24px) scale(.98);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .35s}
+.sheet.open{pointer-events:auto}.sheet.open .sheet-bg{opacity:1}.sheet.open .sheet-panel{transform:none;opacity:1}
+.sheet-x{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--mut);font-size:22px;line-height:1;cursor:pointer;transition:color .2s,border-color .2s}
+.sheet-x:hover{color:var(--ink);border-color:var(--acc)}
+.sh-t{font:var(--hw) 24px/1.15 var(--hf);text-transform:var(--hu);letter-spacing:var(--hl);margin:0 40px 6px 0}
+.sh-s{color:var(--mut);font-size:14.5px;margin-bottom:22px}
+.sh-steps{display:flex;gap:6px;margin:10px 52px 22px 0}.sh-steps i{flex:1;height:4px;border-radius:4px;background:var(--line)}.sh-steps i.on{background:var(--acc)}
+.sh-list{display:grid;gap:8px}
+.sh-opt{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:16px 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 15.5px Manrope,sans-serif;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.sh-opt:hover{border-color:var(--acc);transform:translateX(2px)}
+.sh-opt.sel{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent)}
+.sh-opt small{color:var(--mut);font-weight:500}
+.sh-lbl{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:18px 0 10px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 66px;padding:10px 0;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-align:center;font:600 13px Manrope,sans-serif;transition:all .2s}
+.day b{display:block;font-size:20px;font-weight:800;margin:2px 0}
+.day small{color:var(--mut);font-weight:600}
+.day.sel{background:var(--acc);border-color:var(--acc);color:var(--on)}.day.sel small{color:inherit;opacity:.8}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.time{padding:12px 0;border-radius:calc(var(--r) - 4px);border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 14.5px Manrope,sans-serif;cursor:pointer;transition:all .2s}
+.time:hover{border-color:var(--acc)}.time.sel{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.sh-f{display:grid;gap:10px}
+.sh-f label{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--mut)}
+.sh-f input{width:100%;padding:15px 16px;border:1px solid var(--line);border-radius:var(--r);font:500 16px Manrope,sans-serif;background:var(--bg);color:var(--ink)}
+.sh-f input:focus{outline:0;border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 20%,transparent)}
+.sh-sum{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:color-mix(in srgb,var(--acc) 12%,transparent);color:var(--acc-ink);font-size:13.5px;font-weight:700}
+.sh-act{display:grid;gap:10px;margin-top:22px}
+.sh-act .btn{width:100%}
+.sh-link{background:none;border:0;color:var(--acc-ink);font:700 14px Manrope,sans-serif;cursor:pointer;padding:4px 0}
+.sh-note{font-size:12.5px;color:var(--mut);margin-top:14px;text-align:center}
+.okmark{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:var(--on);margin:4px auto 18px;animation:pop .6s cubic-bezier(.2,1.4,.4,1)}
+.okmark svg{stroke-dasharray:30;stroke-dashoffset:30;animation:draw .5s .25s forwards}
+@keyframes pop{from{transform:scale(.4);opacity:0}}@keyframes draw{to{stroke-dashoffset:0}}
+.center{text-align:center}
+.cab-h{display:flex;align-items:center;gap:14px;padding:0 44px 18px 0;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.ava{display:grid;place-items:center;flex:0 0 52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--accd));color:var(--on);font:800 18px Manrope,sans-serif}
+.cab-h div{flex:1;min-width:0}.cab-h b{display:block;font-size:17px}.cab-h small{color:var(--mut)}
+.bk{padding:16px 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);display:grid;gap:6px}
+.bk b{font-size:15.5px}.bk small{color:var(--mut)}
+.bk .row2{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.st-b{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc-ink)}
+.st-b.off{background:var(--line);color:var(--mut)}
+.bk .acts{display:flex;gap:16px}
+.loyal{padding:18px;border-radius:var(--r);background:linear-gradient(135deg,var(--acc),var(--accd));color:var(--on);margin-top:16px}
+.loyal b{display:block;margin-bottom:10px}
+.dots{display:flex;gap:8px}.dots i{width:22px;height:22px;border-radius:50%;border:2px solid currentColor;opacity:.5}.dots i.on{background:currentColor;opacity:1}
+.empty{padding:22px;border-radius:var(--r);border:1px dashed var(--line);text-align:center;color:var(--mut)}
+.cab-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 14px Manrope,sans-serif;cursor:pointer;transition:border-color .2s}
+.cab-btn:hover{border-color:var(--acc)}
+.cab-btn svg{color:var(--acc-ink)}
+.cab-btn .av{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:color-mix(in srgb,var(--acc) 18%,transparent);color:var(--acc-ink);font-size:11.5px;font-weight:800}
+.cab-btn .av:empty{display:none}
+.cab-btn .av:not(:empty)+svg{display:none}
+@media (max-width:640px){
+  .sheet{place-items:end center}
+  .sheet-panel{width:100%;max-height:92vh;border-radius:26px 26px 0 0;padding:26px 18px calc(22px + env(safe-area-inset-bottom));transform:translateY(100%)}
+  .times{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.sheet-panel,.sheet-bg{transition:none}.okmark,.okmark svg{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="prog"></div><div class="glow"></div>
+<header><div class="wrap">
+  <a class="brand" href="#">Свет и Лес</a>
+  <nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#calc">Расчёт</a><a href="#contacts">Контакты</a></nav>
+  <div class="hr"><a class="hphone" href="tel:+79529078660">+7 (952) 907-86-60</a><a class="btn btn-acc" href="#calc">Обсудить заказ</a></div>
+</div></header>
+
+<section class="hero">
+  <div class="slides"><img src="img/01.jpg" alt="Свет и Лес" class="on" fetchpriority="high"><img src="img/02.jpg" alt="Свет и Лес" loading="lazy"><img src="img/03.jpg" alt="Свет и Лес" loading="lazy"><img src="img/04.jpg" alt="Свет и Лес" loading="lazy"><img src="img/05.jpg" alt="Свет и Лес" loading="lazy"></div>
+  <div class="hdots"><div class="wrap"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+  <div class="wrap">
+    <span class="eyebrow">Столярная мастерская · Новосибирск</span>
+    <h1><span class="ln"><span style="--d:0.2s">Лестницы</span></span><span class="ln"><span style="--d:0.32s">и мебель</span></span><span class="ln"><span style="--d:0.44s"><em>из живого дерева</em></span></span></h1>
+    <p class="sub">Интерьерные лестницы, столы, перегородки и изделия из массива по индивидуальному заказу. Рейтинг 5.0 в 2ГИС.</p>
+    <div class="cta"><a class="btn btn-acc" href="#calc">Обсудить заказ <span class="arr">→</span></a><a class="btn btn-line" href="#works">Смотреть работы</a></div>
+  </div>
+  <a class="badge" href="https://2gis.ru/novosibirsk/firm/70000001082623093" target="_blank" rel="noopener"><b>5.0</b><span><span class="st">★★★★★</span><small>59 отзывов<br>в 2ГИС</small></span></a>
+  <div class="scroll"></div>
+</section>
+
+<div class="tick" aria-hidden="true"><div class="tr"><span>Интерьерные лестницы</span><i>✦</i><span>Столы и столешницы</span><i>✦</i><span>Перегородки</span><i>✦</i><span>Подоконники</span><i>✦</i><span>Мебель для бизнеса</span><i>✦</i><span>Подарки из дерева</span><i>✦</i><span>Интерьерные лестницы</span><i>✦</i><span>Столы и столешницы</span><i>✦</i><span>Перегородки</span><i>✦</i><span>Подоконники</span><i>✦</i><span>Мебель для бизнеса</span><i>✦</i><span>Подарки из дерева</span><i>✦</i><span>Интерьерные лестницы</span><i>✦</i><span>Столы и столешницы</span><i>✦</i><span>Перегородки</span><i>✦</i><span>Подоконники</span><i>✦</i><span>Мебель для бизнеса</span><i>✦</i><span>Подарки из дерева</span><i>✦</i></div></div>
+
+<section id="about" style="padding-bottom:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">О нас</span><h2 class="rv" style="--i:1">Индивидуальные задачи — <em>наша фишка</em></h2></div><p class="rv" style="--i:2">Рассказываем о породах дерева, их плюсах и минусах, привозим образцы колеровки и присылаем фото на каждом этапе. Даём гарантию на изделия.</p></div>
+  <div class="nums">
+    <div class="rv"><b data-count="5.0" data-dec="1">5.0</b><span>рейтинг в 2ГИС</span></div>
+    <div class="rv" style="--i:1"><b data-count="59">59</b><span>отзывов клиентов</span></div>
+    <div class="rv" style="--i:2"><b data-count="6">6</b><span>направлений работ</span></div>
+    <div class="rv" style="--i:3"><b data-count="16">16</b><span>фото наших работ</span></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Услуги</span><h2 class="rv" style="--i:1">Что мы <em>делаем</em></h2></div><p class="rv" style="--i:2">Работаем Пн–Пт с 9:00 до 18:00. Оплата наличными, переводом или через банк.</p></div>
+  <div class="svc"><article class="rv" style="--i:0" data-book="Интерьерные лестницы"><span class="no">01</span><h3>Интерьерные лестницы</h3><p>Лестницы из массива под ваш дом и интерьер</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article><article class="rv" style="--i:1" data-book="Столы и столешницы"><span class="no">02</span><h3>Столы и столешницы</h3><p>Обеденные, рабочие и журнальные столы из массива</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article><article class="rv" style="--i:2" data-book="Перегородки"><span class="no">03</span><h3>Перегородки</h3><p>Межкомнатные перегородки из дерева с разными механизмами</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article><article class="rv" style="--i:0" data-book="Подоконники"><span class="no">04</span><h3>Подоконники</h3><p>Из мебельного щита, с обработкой края</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article><article class="rv" style="--i:1" data-book="Мебель для бизнеса"><span class="no">05</span><h3>Мебель для бизнеса</h3><p>Столы, стеллажи и мебель для офисов и кафе</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article><article class="rv" style="--i:2" data-book="Подарки из дерева"><span class="no">06</span><h3>Подарки из дерева</h3><p>Разделочные доски и изделия ручной работы</p><div class="pr"><span>Расчёт бесплатно</span><i class="go">→</i></div></article></div>
+</div></section>
+
+<section id="works" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Портфолио</span><h2 class="rv" style="--i:1">Наши <em>работы</em></h2></div><p class="rv" style="--i:2">Реальные фото наших работ и от клиентов. Нажмите, чтобы посмотреть крупно.</p></div>
+  <div class="gal"><button class="clip g0" data-i="0" aria-label="Фото 1"><img src="img/01.jpg" alt="Работа Свет и Лес, фото 1" loading="lazy"></button><button class="clip g1" data-i="1" aria-label="Фото 2"><img src="img/02.jpg" alt="Работа Свет и Лес, фото 2" loading="lazy"></button><button class="clip g2" data-i="2" aria-label="Фото 3"><img src="img/03.jpg" alt="Работа Свет и Лес, фото 3" loading="lazy"></button><button class="clip g3" data-i="3" aria-label="Фото 4"><img src="img/04.jpg" alt="Работа Свет и Лес, фото 4" loading="lazy"></button><button class="clip g4" data-i="4" aria-label="Фото 5"><img src="img/05.jpg" alt="Работа Свет и Лес, фото 5" loading="lazy"></button><button class="clip g5" data-i="5" aria-label="Фото 6"><img src="img/06.jpg" alt="Работа Свет и Лес, фото 6" loading="lazy"></button><button class="clip gx" data-i="6" aria-label="Фото 7"><img src="img/07.jpg" alt="Работа Свет и Лес, фото 7" loading="lazy"></button><button class="clip gx" data-i="7" aria-label="Фото 8"><img src="img/08.jpg" alt="Работа Свет и Лес, фото 8" loading="lazy"></button><button class="clip gx" data-i="8" aria-label="Фото 9"><img src="img/09.jpg" alt="Работа Свет и Лес, фото 9" loading="lazy"></button><button class="clip gx" data-i="9" aria-label="Фото 10"><img src="img/10.jpg" alt="Работа Свет и Лес, фото 10" loading="lazy"></button><button class="clip gx" data-i="10" aria-label="Фото 11"><img src="img/11.jpg" alt="Работа Свет и Лес, фото 11" loading="lazy"></button><button class="clip gx" data-i="11" aria-label="Фото 12"><img src="img/12.jpg" alt="Работа Свет и Лес, фото 12" loading="lazy"></button><button class="clip gx" data-i="12" aria-label="Фото 13"><img src="img/13.jpg" alt="Работа Свет и Лес, фото 13" loading="lazy"></button><button class="clip gx" data-i="13" aria-label="Фото 14"><img src="img/14.jpg" alt="Работа Свет и Лес, фото 14" loading="lazy"></button></div>
+</div></section>
+
+<section id="process" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Как работаем</span><h2 class="rv" style="--i:1">От звонка до <em>результата</em></h2></div><p class="rv" style="--i:2">Понятные этапы без сюрпризов: обо всём договариваемся заранее.</p></div>
+  <div class="steps"><span class="bar"></span><div class="rv" style="--i:0"><span class="n">1</span><h3>Идея</h3><p>Пришлите фото, эскиз или просто опишите задумку</p></div><div class="rv" style="--i:1"><span class="n">2</span><h3>Дерево</h3><p>Подбираем породу и отделку, показываем образцы</p></div><div class="rv" style="--i:2"><span class="n">3</span><h3>Изготовление</h3><p>Делаем в мастерской и присылаем фото на этапах</p></div><div class="rv" style="--i:3"><span class="n">4</span><h3>Готово</h3><p>Привозим и устанавливаем, рассказываем про уход</p></div></div>
+</div></section>
+
+<section id="reviews" style="padding-top:0;overflow:hidden"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Отзывы</span><h2 class="rv" style="--i:1">5.0 из 5 — <em>59 отзывов</em></h2></div><p class="rv" style="--i:2">Настоящие отзывы клиентов из 2ГИС, без правок.</p></div></div>
+  <div class="revs"><div class="rrow"><figure class="rc"><span class="st">★★★★★</span><p>«Мастерская по изготовлению и ремонту деревянных изделий, рекомендую - ребята относятся к делу очень профессионально 💯»</p><div class="who"><span class="av">а</span><div><b>амплеев Антон</b>август 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Эти ребята - отличные ребята! Что касается дерева - справятся с любой задачей, однозначно рекомендую.»</p><div class="who"><span class="av">С</span><div><b>Степан Ювелиров</b>март 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Искал для подарка ,что нибудь интересное, необычное. Остановился на такой доске. Порадовало качество и оперативность работы. Остался очень доволен. И отделку интерьера решил делать с помощью этой мастерской.»</p><div class="who"><span class="av">Н</span><div><b>Никита Барков</b>март 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Заказывали доски в вашей компании! Нам очень понравилось с вами работать – качественный материал и выполнено все в срок! Будем заказывать еще!»</p><div class="who"><span class="av">I</span><div><b>Iren А.</b>декабрь 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Огромное спасибо компании Свет и лес. Заказали межкомнатную перегородку. Качество оказываемой услуги началось еще с обсуждения перегородки: рассказали о разных сортах дерева, плюсы и минусы каждого, посчитали перегородки с разным механизмом, привезли разные цвета колеровки дерева.»</p><div class="who"><span class="av">О</span><div><b>Ольга Герлиц</b>октябрь 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Мастерская по изготовлению и ремонту деревянных изделий, рекомендую - ребята относятся к делу очень профессионально 💯»</p><div class="who"><span class="av">а</span><div><b>амплеев Антон</b>август 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Эти ребята - отличные ребята! Что касается дерева - справятся с любой задачей, однозначно рекомендую.»</p><div class="who"><span class="av">С</span><div><b>Степан Ювелиров</b>март 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Искал для подарка ,что нибудь интересное, необычное. Остановился на такой доске. Порадовало качество и оперативность работы. Остался очень доволен. И отделку интерьера решил делать с помощью этой мастерской.»</p><div class="who"><span class="av">Н</span><div><b>Никита Барков</b>март 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Заказывали доски в вашей компании! Нам очень понравилось с вами работать – качественный материал и выполнено все в срок! Будем заказывать еще!»</p><div class="who"><span class="av">I</span><div><b>Iren А.</b>декабрь 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Огромное спасибо компании Свет и лес. Заказали межкомнатную перегородку. Качество оказываемой услуги началось еще с обсуждения перегородки: рассказали о разных сортах дерева, плюсы и минусы каждого, посчитали перегородки с разным механизмом, привезли разные цвета колеровки дерева.»</p><div class="who"><span class="av">О</span><div><b>Ольга Герлиц</b>октябрь 2025 г. · 2ГИС</div></div></figure></div><div class="rrow rev"><figure class="rc"><span class="st">★★★★★</span><p>«Уважение,Огромная Благодарность,Удивление что так все Профессионально,быстро,с искренним вниманием, вникание и совет по любым мелочам в процессе !!! Спасибо,Удачи в Вашем прекрасном деле.точно приду ещё))»</p><div class="who"><span class="av">Ю</span><div><b>Юрий Иушин</b>август 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Надо было подогнать дсп, никто не брался из-за незначительности обьема работы, а эти ребята пошли навстречу и сделали все супер. Спасибо!»</p><div class="who"><span class="av">В</span><div><b>Виталий Сивов</b>июль 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Хочу поделиться информацией. Я являюсь участником некоммерческой организации Объединения Славян, мы проводим культурно-массовые мероприятия. Нам часто требуется инвентарь и атрибутика в старом Русском стиле. Обратились в компанию Свет и Лес. Руководитель Антон очень помог нам.»</p><div class="who"><span class="av">В</span><div><b>Вячеслав</b>январь 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Обратилась по рекомендации в фирму &quot;Свет И Лес&quot;. Выражаю благодарность за профессионализм в изготовлении индивидуального заказа от &quot;А&quot; до &quot;Я&quot;, корректное общение.»</p><div class="who"><span class="av">С</span><div><b>Светлана Моисеенко</b>ноябрь 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Большое спасибо, за оказанную услугу! Необходимо было распилить мебельные щиты для подоконника и округлить край. Мастер все сделал аккуратно, проконсультировал по уходу за деревом и по установке. Будем обращаться снова!»</p><div class="who"><span class="av">Е</span><div><b>Евгения Быковских</b>февраль 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Уважение,Огромная Благодарность,Удивление что так все Профессионально,быстро,с искренним вниманием, вникание и совет по любым мелочам в процессе !!! Спасибо,Удачи в Вашем прекрасном деле.точно приду ещё))»</p><div class="who"><span class="av">Ю</span><div><b>Юрий Иушин</b>август 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Надо было подогнать дсп, никто не брался из-за незначительности обьема работы, а эти ребята пошли навстречу и сделали все супер. Спасибо!»</p><div class="who"><span class="av">В</span><div><b>Виталий Сивов</b>июль 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Хочу поделиться информацией. Я являюсь участником некоммерческой организации Объединения Славян, мы проводим культурно-массовые мероприятия. Нам часто требуется инвентарь и атрибутика в старом Русском стиле. Обратились в компанию Свет и Лес. Руководитель Антон очень помог нам.»</p><div class="who"><span class="av">В</span><div><b>Вячеслав</b>январь 2026 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Обратилась по рекомендации в фирму &quot;Свет И Лес&quot;. Выражаю благодарность за профессионализм в изготовлении индивидуального заказа от &quot;А&quot; до &quot;Я&quot;, корректное общение.»</p><div class="who"><span class="av">С</span><div><b>Светлана Моисеенко</b>ноябрь 2025 г. · 2ГИС</div></div></figure><figure class="rc"><span class="st">★★★★★</span><p>«Большое спасибо, за оказанную услугу! Необходимо было распилить мебельные щиты для подоконника и округлить край. Мастер все сделал аккуратно, проконсультировал по уходу за деревом и по установке. Будем обращаться снова!»</p><div class="who"><span class="av">Е</span><div><b>Евгения Быковских</b>февраль 2026 г. · 2ГИС</div></div></figure></div></div>
+  <div class="rlink"><a class="btn btn-gh" href="https://2gis.ru/novosibirsk/firm/70000001082623093" target="_blank" rel="noopener">Все отзывы в 2ГИС <span class="arr">→</span></a></div>
+</section>
+
+<section id="calc" style="padding-top:0"><div class="wrap">
+  <div class="qz rv">
+    <div class="ph"><img src="img/02.jpg" alt="" loading="lazy"><div><h3>Рассчитаем ваше изделие</h3><p>Ответьте на 3 вопроса: пришлём расчёт в мессенджер.</p></div></div>
+    <div class="qb" id="qb"></div>
+  </div>
+</div></section>
+
+<section id="contacts" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow rv">Контакты</span><h2 class="rv" style="--i:1">Приходите <em>в мастерскую</em></h2></div><p class="rv" style="--i:2">Новосибирск, улица Фрунзе, 19<br>Пн–Пт 09:00–18:00</p></div>
+  <div class="ct">
+    <div>
+      <a class="ci rv" href="tel:+79529078660"><div><small>Телефон</small><b>+7 (952) 907-86-60</b></div><span>→</span></a>
+      <a class="ci rv" href="https://wa.me/79529078660?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener"><div><small>Написать</small><b>WhatsApp</b></div><span>→</span></a>
+      <a class="ci rv" href="https://vk.com/svetiles" target="_blank" rel="noopener"><div><small>Соцсети</small><b>ВКонтакте</b></div><span>→</span></a>
+      <a class="ci rv" href="https://yandex.ru/maps/?text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C%2019" target="_blank" rel="noopener"><div><small>Маршрут</small><b>Яндекс Карты</b></div><span>→</span></a>
+    </div>
+    <div class="map rv"><iframe loading="lazy" src="https://yandex.ru/map-widget/v1/?text=%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C%2019&amp;z=16" title="Свет и Лес на карте"></iframe></div>
+  </div>
+</div></section>
+
+<section class="final"><div class="bgimg" style="background-image:url('img/03.jpg')"></div><div class="wrap">
+  <h2 class="rv">Дерево, <em>которое греет</em></h2>
+  <p class="rv" style="--i:1">Ответим в течение рабочего дня и честно назовём цену.</p>
+  <div class="rv" style="--i:2;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-acc" href="#calc">Обсудить заказ <span class="arr">→</span></a><a class="btn btn-gh" href="tel:+79529078660">+7 (952) 907-86-60</a></div>
+</div></section>
+
+<div class="foot"><div class="wrap"><span>© 2026 Свет и Лес · Новосибирск, улица Фрунзе, 19</span><a href="https://2gis.ru/novosibirsk/firm/70000001082623093" target="_blank" rel="noopener">Мы в 2ГИС →</a></div></div>
+<div class="mbar"><a class="btn btn-gh" href="tel:+79529078660">Позвонить</a><a class="btn btn-acc" href="#calc">Заказ</a></div>
+<div class="lb" role="dialog" aria-label="Фото"><button class="x" aria-label="Закрыть">×</button><button class="p" aria-label="Назад">‹</button><img alt=""><button class="n" aria-label="Вперёд">›</button><span class="c"></span></div>
+
+<script type="application/json" id="cfg">{"slug":"svet-i-les-nov","name":"Свет и Лес","addr":"Новосибирск, улица Фрунзе, 19","phone":"+79529078660","phoneFmt":"+7 (952) 907-86-60","wa":"79529078660","tg":"https://t.me/+79529078660","services":["Интерьерные лестницы","Столы и столешницы","Перегородки","Подоконники","Мебель для бизнеса","Подарки из дерева"],"mode":"slots","start":10,"end":18,"step":60,"field":"Что хотите изготовить","profile":null,"loyal":null,"bookTitle":"Консультация","submit":"Отправить заявку"}</script>
+<script>
+
+(() => {
+  const C = JSON.parse(document.getElementById('cfg').textContent);
+  const KEY = 'cab:' + C.slug;
+  let S = { user: null, bookings: [] };
+  try { Object.assign(S, JSON.parse(localStorage.getItem(KEY)) || {}); } catch (_) {}
+  const h = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pad = n => String(n).padStart(2, '0');
+  const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  const WD = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+  const MO = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  const fdate = s => { const d = new Date(s + 'T00:00'); return d.getDate() + ' ' + MO[d.getMonth()] + ', ' + WD[d.getDay()]; };
+  const when = b => fdate(b.date) + (b.time ? ' · ' + b.time : '');
+  const initials = n => (n || '').trim().split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  const mask = v => {
+    let d = v.replace(/\D/g, ''); if (d[0] === '8') d = '7' + d.slice(1); if (d && d[0] !== '7') d = '7' + d; d = d.slice(0, 11);
+    if (!d) return '';
+    let o = '+7'; const p = [d.slice(1, 4), d.slice(4, 7), d.slice(7, 9), d.slice(9, 11)];
+    if (p[0]) o += ' (' + p[0] + (p[0].length === 3 ? ')' : ''); if (p[1]) o += ' ' + p[1]; if (p[2]) o += '-' + p[2]; if (p[3]) o += '-' + p[3];
+    return o;
+  };
+  const okPhone = v => v.replace(/\D/g, '').length === 11;
+  const check = '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  const sync = () => document.querySelectorAll('.cab-btn').forEach(b => {
+    b.querySelector('.av').textContent = S.user ? initials(S.user.name) : '';
+    b.querySelector('.lb').textContent = S.user ? 'Кабинет' : 'Войти';
+  });
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (_) {} sync(); };
+
+  // ---------- окно ----------
+  const sheet = document.createElement('div');
+  sheet.className = 'sheet';
+  sheet.innerHTML = '<div class="sheet-bg" data-close></div><div class="sheet-panel" role="dialog" aria-modal="true" tabindex="-1"><button class="sheet-x" data-close aria-label="Закрыть">×</button><div class="sheet-body"></div></div>';
+  document.body.append(sheet);
+  const body = sheet.querySelector('.sheet-body');
+  let back = null;
+  const open = html => {
+    if (!sheet.classList.contains('open')) back = document.activeElement;
+    body.innerHTML = html; sheet.classList.add('open'); document.documentElement.style.overflow = 'hidden';
+    sheet.querySelector('.sheet-panel').scrollTop = 0;
+    setTimeout(() => { const f = body.querySelector('input:not([value]),input[value=""]') || sheet.querySelector('.sheet-panel'); f.focus({ preventScroll: true }); }, 60);
+  };
+  const close = () => { sheet.classList.remove('open'); document.documentElement.style.overflow = ''; back && back.focus && back.focus({ preventScroll: true }); };
+  sheet.addEventListener('click', e => { if (e.target.closest('[data-close]')) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.classList.contains('open')) close(); });
+  body.addEventListener('input', e => { if (e.target.type === 'tel') e.target.value = mask(e.target.value); });
+
+  // ---------- слоты ----------
+  const slots = date => {
+    const out = [], now = new Date(), today = date === iso(now);
+    for (let m = C.start * 60; m <= C.end * 60; m += C.step) {
+      if (today && m <= now.getHours() * 60 + now.getMinutes() + 60) continue;
+      out.push(pad(Math.floor(m / 60)) + ':' + pad(m % 60));
+    }
+    return out;
+  };
+  const days = () => {
+    const out = [], d = new Date();
+    for (let i = 0; out.length < 14 && i < 20; i++) {
+      const x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i);
+      if (C.off && C.off.includes(x.getDay())) continue;
+      if (C.mode === 'slots' && !slots(iso(x)).length) continue;
+      out.push(x);
+    }
+    return out;
+  };
+
+  // ---------- запись ----------
+  let B = {};
+  const steps = n => '<div class="sh-steps">' + [1, 2, 3].map(i => '<i class="' + (i <= n ? 'on' : '') + '"></i>').join('') + '</div>';
+  const book = (o = {}) => {
+    if (C.mode === 'none') return;
+    B = { svc: o.svc || null, date: o.date || null, time: o.time || null, replace: o.replace || null };
+    if (C.mode === 'request') return stepReq();
+    if (!B.svc) return stepSvc();
+    if (!B.date || (C.mode === 'slots' && !B.time)) return stepWhen();
+    stepContact();
+  };
+  const stepSvc = () => open(steps(1) + '<div class="sh-t">' + h(C.bookTitle) + '</div><div class="sh-s">Выберите услугу</div><div class="sh-list">' +
+    C.services.map(s => '<button class="sh-opt' + (s === B.svc ? ' sel' : '') + '" data-svc="' + h(s) + '">' + h(s) + ' <small>→</small></button>').join('') + '</div>');
+  const stepWhen = () => {
+    const ds = days(); if (!B.date || !ds.some(d => iso(d) === B.date)) B.date = iso(ds[0]);
+    const ts = C.mode === 'slots' ? slots(B.date) : [];
+    if (B.time && !ts.includes(B.time)) B.time = null;
+    const t0 = iso(new Date()), ready = C.mode !== 'slots' || B.time;
+    open(steps(2) + '<div class="sh-t">' + (C.mode === 'dates' ? 'Дата заезда' : 'Дата и время') + '</div>' +
+      '<div class="sh-sum"><span class="chip">' + h(B.svc) + '</span><button class="sh-link" data-go="svc">изменить</button></div>' +
+      '<div class="sh-lbl">День</div><div class="days">' + ds.map(d => { const v = iso(d);
+        return '<button class="day' + (v === B.date ? ' sel' : '') + '" data-date="' + v + '"><small>' + (v === t0 ? 'сегодня' : WD[d.getDay()]) + '</small><b>' + d.getDate() + '</b><small>' + MO[d.getMonth()].slice(0, 3) + '</small></button>'; }).join('') + '</div>' +
+      (C.mode === 'slots' ? '<div class="sh-lbl">Время</div><div class="times">' + ts.map(t => '<button class="time' + (t === B.time ? ' sel' : '') + '" data-time="' + t + '">' + t + '</button>').join('') + '</div>' : '') +
+      '<div class="sh-act"><button class="btn btn-acc" data-go="contact"' + (ready ? '' : ' disabled') + '>' + (ready ? 'Далее' : 'Выберите время') + '</button></div>' +
+      '<p class="sh-note">Время подтвердит администратор</p>');
+    const sel = body.querySelector('.day.sel'); sel && sel.scrollIntoView({ inline: 'center', block: 'nearest' });
+  };
+  const stepContact = () => {
+    const u = S.user || {};
+    open(steps(3) + '<div class="sh-t">Ваши контакты</div>' +
+      '<div class="sh-sum"><span class="chip">' + h(B.svc) + '</span><span class="chip">' + h(when(B)) + '</span><button class="sh-link" data-go="when">изменить</button></div>' +
+      '<form class="sh-f" data-form="book"><label>Имя<input name="name" required autocomplete="name" value="' + h(u.name) + '"></label>' +
+      '<label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__" value="' + h(u.phone) + '"></label>' +
+      (C.field ? '<label>' + h(C.field) + '<input name="detail" value="' + h(u.extra) + '"></label>' : '') +
+      '<button class="btn btn-acc" type="submit" style="margin-top:8px">' + h(C.submit) + '</button></form>');
+  };
+  const stepReq = () => {
+    const u = S.user || {};
+    open('<div class="sh-t">' + h(C.bookTitle) + '</div><div class="sh-s">Быстрее всего — позвонить. Или оставьте заявку, и мы перезвоним.</div>' +
+      '<a class="btn btn-acc" href="tel:' + C.phone + '" style="width:100%;margin-bottom:18px">Позвонить ' + h(C.phoneFmt) + '</a>' +
+      '<form class="sh-f" data-form="req"><label>Телефон<input name="phone" type="tel" required placeholder="+7 (___) ___-__-__" value="' + h(u.phone) + '"></label>' +
+      '<label>Где вы находитесь<input name="from" required placeholder="Улица, трасса, ориентир"></label>' +
+      '<label>Куда доставить<input name="to" placeholder="Адрес или сервис"></label>' +
+      '<button class="btn btn-gh" type="submit" style="margin-top:8px">Отправить заявку</button></form>');
+  };
+  const message = b => 'Здравствуйте! ' + (C.mode === 'request' ? 'Нужен эвакуатор.' : 'Хочу записаться через сайт.') +
+    (b.svc ? '\nУслуга: ' + b.svc : '') + (b.date ? '\nКогда: ' + when(b) : '') + (b.from ? '\nГде я: ' + b.from : '') + (b.to ? '\nКуда: ' + b.to : '') +
+    (b.name ? '\nИмя: ' + b.name : '') + '\nТелефон: ' + b.phone + (b.detail ? '\n' + C.field + ': ' + b.detail : '');
+  const done = b => {
+    const wa = C.wa ? 'https://wa.me/' + C.wa + '?text=' + encodeURIComponent(message(b)) : null;
+    open('<div class="center"><div class="okmark">' + check + '</div><div class="sh-t" style="margin:0 0 6px">' + (C.mode === 'request' ? 'Заявка принята' : 'Заявка на запись готова') + '</div>' +
+      '<div class="sh-s">' + (b.svc ? h(b.svc) + (b.date ? ' · ' + h(when(b)) : '') : 'Перезвоним в ближайшее время') + '</div></div>' +
+      '<div class="sh-act">' +
+      (wa ? '<a class="btn btn-acc" target="_blank" rel="noopener" href="' + wa + '">Отправить в WhatsApp</a>' : C.tg ? '<a class="btn btn-acc" target="_blank" rel="noopener" href="' + C.tg + '">Написать в Telegram</a>' : '<a class="btn btn-acc" href="tel:' + C.phone + '">Подтвердить по телефону</a>') +
+      (b.time ? '<button class="btn btn-gh" data-ics="' + b.id + '">Добавить в календарь</button>' : '') +
+      (C.mode !== 'request' ? '<button class="btn btn-gh" data-cab>Мои записи</button>' : '') +
+      '</div><p class="sh-note">Отправьте заявку в мессенджер или позвоните ' + h(C.phoneFmt) + ' — администратор подтвердит время</p>');
+  };
+  const ics = b => {
+    const [y, mo, d] = b.date.split('-'), [hh, mm] = (b.time || '10:00').split(':');
+    const st = y + mo + d + 'T' + hh + mm + '00', en = y + mo + d + 'T' + pad(Math.min(+hh + 1, 23)) + mm + '00';
+    const txt = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//site//RU', 'BEGIN:VEVENT', 'UID:' + b.id + '@' + C.slug, 'DTSTAMP:' + st, 'DTSTART:' + st, 'DTEND:' + en,
+      'SUMMARY:' + C.name + ' — ' + b.svc, 'LOCATION:' + C.addr, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt], { type: 'text/calendar' })); a.download = 'zapis.ics'; a.click();
+  };
+
+  // ---------- кабинет ----------
+  const card = (b, past) => '<div class="bk"><div class="row2"><b>' + h(b.svc || 'Заявка') + '</b><span class="st-b' + (b.status === 'cancelled' || past ? ' off' : '') + '">' +
+    (b.status === 'cancelled' ? 'Отменена' : past ? 'Прошла' : 'Ждёт подтверждения') + '</span></div><small>' + h(b.date ? when(b) : '') + '</small>' +
+    '<div class="acts">' + (!past && b.status !== 'cancelled' ? '<button class="sh-link" data-move="' + b.id + '">Перенести</button><button class="sh-link" data-cancel="' + b.id + '">Отменить</button>'
+      : b.svc ? '<button class="sh-link" data-again="' + h(b.svc) + '">Записаться снова</button>' : '') + '</div></div>';
+  const cabinet = () => {
+    if (!S.user) return open('<div class="sh-t">Личный кабинет</div><div class="sh-s">Ваши записи, история и данные — в одном месте</div>' +
+      '<form class="sh-f" data-form="login"><label>Имя<input name="name" required autocomplete="name"></label><label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>' +
+      '<button class="btn btn-acc" type="submit" style="margin-top:8px">Войти</button></form><p class="sh-note">Демо-версия: вход без SMS, данные хранятся только на этом устройстве</p>');
+    const today = iso(new Date());
+    const live = S.bookings.filter(b => b.status !== 'cancelled' && b.date && b.date >= today).sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+    const hist = S.bookings.filter(b => b.date && !live.includes(b)).sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time));
+    const visits = S.bookings.filter(b => b.status !== 'cancelled').length;
+    open('<div class="cab-h"><span class="ava">' + h(initials(S.user.name) || '★') + '</span><div><b>' + h(S.user.name) + '</b><small>' + h(S.user.phone) + '</small></div><button class="sh-link" data-logout>Выйти</button></div>' +
+      (C.loyal ? '<div class="loyal"><b>' + h(C.loyal.text) + '</b>' + (C.loyal.n ? '<div class="dots">' + Array.from({ length: C.loyal.n }, (_, i) => '<i class="' + (i < visits % C.loyal.n ? 'on' : '') + '"></i>').join('') + '</div>' : '') + '</div>' : '') +
+      '<div class="sh-lbl">Ближайшие записи</div><div class="sh-list">' + (live.length ? live.map(b => card(b, false)).join('') : '<div class="empty">Записей пока нет</div>') + '</div>' +
+      (hist.length ? '<div class="sh-lbl">История</div><div class="sh-list">' + hist.map(b => card(b, true)).join('') + '</div>' : '') +
+      (C.profile ? '<div class="sh-lbl">' + h(C.profile) + '</div><form class="sh-f" data-form="profile"><input name="extra" placeholder="' + h(C.profilePh) + '" value="' + h(S.user.extra) + '"></form>' : '') +
+      '<div class="sh-act"><button class="btn btn-acc" data-book>Новая запись</button></div>');
+  };
+
+  // ---------- события ----------
+  body.addEventListener('click', e => {
+    const t = e.target.closest('button'); if (!t) return;
+    const d = t.dataset;
+    if (d.svc) { B.svc = d.svc; return stepWhen(); }
+    if (d.date) { B.date = d.date; return stepWhen(); }
+    if (d.time) { B.time = d.time; return stepWhen(); }
+    if (d.go === 'svc') return stepSvc();
+    if (d.go === 'when') return stepWhen();
+    if (d.go === 'contact') return stepContact();
+    if (d.ics) return ics(S.bookings.find(b => b.id === d.ics));
+    if (d.cancel) { S.bookings.find(b => b.id === d.cancel).status = 'cancelled'; save(); return cabinet(); }
+    if (d.move) { const b = S.bookings.find(b => b.id === d.move); return book({ svc: b.svc, replace: b.id }); }
+    if (d.again) return book({ svc: d.again });
+    if ('logout' in d) { S.user = null; save(); return cabinet(); }
+  });
+  body.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = Object.fromEntries(new FormData(e.target)), kind = e.target.dataset.form;
+    if (kind === 'profile') { S.user.extra = f.extra; save(); return; }
+    if (f.phone !== undefined && !okPhone(f.phone)) { const i = e.target.querySelector('[type=tel]'); i.setCustomValidity('Введите номер полностью'); i.reportValidity(); setTimeout(() => i.setCustomValidity(''), 1500); return; }
+    if (kind === 'login') { S.user = { name: f.name.trim(), phone: f.phone }; save(); return cabinet(); }
+    const b = { id: Date.now().toString(36), svc: kind === 'req' ? null : B.svc, date: kind === 'req' ? null : B.date, time: kind === 'req' ? null : B.time,
+      name: (f.name || '').trim(), phone: f.phone, detail: f.detail || '', from: f.from, to: f.to, status: 'pending' };
+    if (B.replace) S.bookings = S.bookings.filter(x => x.id !== B.replace);
+    S.user = Object.assign(S.user || {}, { name: b.name || (S.user && S.user.name) || 'Гость', phone: b.phone }, b.detail ? { extra: b.detail } : {});
+    S.bookings.push(b); save(); done(b);
+  });
+  body.addEventListener('change', e => { if (e.target.form && e.target.form.dataset.form === 'profile') { S.user.extra = e.target.value; save(); } });
+
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-book],[data-cab]'); if (!t) return;
+    e.preventDefault();
+    if (t.matches('[data-cab]')) return cabinet();
+    book({ svc: t.dataset.book || null, date: t.dataset.bdate || null, time: t.dataset.btime || null });
+  });
+  sync();
+
+  // «ближайшее свободное время» на первом экране
+  const nx = document.getElementById('next-slots');
+  if (nx && C.mode === 'slots') {
+    const d = days()[0];
+    if (d) { const v = iso(d), ts = slots(v).slice(0, 4);
+      nx.querySelector('[data-day]').textContent = v === iso(new Date()) ? 'сегодня' : 'на ' + fdate(v);
+      nx.querySelector('.ns').innerHTML = ts.map(t => '<button class="time" data-book data-bdate="' + v + '" data-btime="' + t + '">' + t + '</button>').join(''); }
+  }
+})();
+(() => {
+  const Q = {"q":[{"q":"Что хотите заказать?","o":["Лестницу","Стол или столешницу","Подоконники","Другое изделие из дерева"]},{"q":"Какое дерево нравится?","o":["Дуб","Лиственница или сосна","Ясень или берёза","Нужна консультация"]},{"q":"Какие сроки?","o":["Срочно","В течение месяца","Не горит"]}],"wa":"79529078660","tg":"https://t.me/+79529078660","name":"Свет и Лес"};
+  const GAL = ["img/01.jpg","img/02.jpg","img/03.jpg","img/04.jpg","img/05.jpg","img/06.jpg","img/07.jpg","img/08.jpg","img/09.jpg","img/10.jpg","img/11.jpg","img/12.jpg","img/13.jpg","img/14.jpg"];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const hdr = $('header'), prog = $('.prog'), mbar = $('.mbar'), steps = $('.steps'); let ly = 0;
+  const onS = () => { const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    hdr.classList.toggle('sc', y > 40); hdr.classList.toggle('hide', y > 600 && y > ly + 2); if (y < ly - 2) hdr.classList.remove('hide'); ly = y;
+    prog.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')'; mbar.classList.toggle('on', y > innerHeight * .6);
+    if (steps) { const r = steps.getBoundingClientRect(); steps.style.setProperty('--p', Math.max(0, Math.min(1, (innerHeight * .8 - r.top) / (r.height + 120)))); } };
+  addEventListener('scroll', onS, { passive: true }); onS();
+  const sl = $$('.slides img'), dots = $$('.hdots i'); let cur = 0;
+  if (sl.length > 1 && !RM) setInterval(() => { sl[cur].classList.remove('on'); if (dots[cur]) { dots[cur].classList.remove('on'); dots[cur].classList.add('done'); }
+    cur = (cur + 1) % sl.length; if (!cur) dots.forEach(d => d.classList.remove('done'));
+    sl[cur].classList.add('on'); if (dots[cur]) dots[cur].classList.add('on'); }, 6000);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
+    $$('[data-count]', e.target).concat(e.target.matches('[data-count]') ? [e.target] : []).forEach(el => { if (RM) return; const to = parseFloat(el.dataset.count), dec = +el.dataset.dec || 0, t0 = performance.now();
+      const f = t => { const k = Math.min(1, (t - t0) / 1700), v = to * (1 - Math.pow(1 - k, 3)); el.textContent = v.toFixed(dec); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); }); }), { threshold: .15 });
+  $$('.rv,.clip,.steps>div').forEach(el => io.observe(el));
+  const glow = $('.glow'); addEventListener('pointermove', e => { glow.style.transform = 'translate(' + (e.clientX - 230) + 'px,' + (e.clientY - 230) + 'px)'; }, { passive: true });
+  $$('.svc>article').forEach(a => a.addEventListener('pointermove', e => { const r = a.getBoundingClientRect(); a.style.setProperty('--mx', e.clientX - r.left + 'px'); a.style.setProperty('--my', e.clientY - r.top + 'px'); }));
+  const lb = $('.lb'), li = $('img', lb), lc = $('.c', lb); let gi = 0;
+  const show = i => { gi = (i + GAL.length) % GAL.length; li.src = GAL[gi]; lc.textContent = (gi + 1) + ' / ' + GAL.length; };
+  $$('.gal button').forEach(bt => bt.addEventListener('click', () => { show(+bt.dataset.i); lb.classList.add('on'); document.body.style.overflow = 'hidden'; }));
+  const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; };
+  $('.x', lb).onclick = close; $('.p', lb).onclick = () => show(gi - 1); $('.n', lb).onclick = () => show(gi + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(gi - 1); if (e.key === 'ArrowRight') show(gi + 1); });
+  let tx = 0; lb.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true }); lb.addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) show(gi + (d < 0 ? 1 : -1)); });
+  const qb = $('#qb'); if (qb && Q.q.length) { const ans = []; let k = 0; const total = Q.q.length + 1;
+    const h = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+    const render = () => { const last = k === Q.q.length;
+      qb.innerHTML = '<div class="qbar"><i style="width:' + (k / total * 100) + '%"></i></div><div class="qstep">Шаг ' + (k + 1) + ' из ' + total + '</div>' +
+        (last ? '<div class="qq">Куда прислать расчёт?</div><div class="qin"><input id="qn" placeholder="Ваше имя" autocomplete="name"><input id="qp" type="tel" inputmode="tel" placeholder="Телефон" autocomplete="tel"></div><p class="fine">Ответы уйдут в мессенджер «' + h(Q.name) + '». Мы не передаём ваши данные третьим лицам.</p>'
+          : '<div class="qq">' + h(Q.q[k].q) + '</div><div class="qo">' + Q.q[k].o.map(o => '<button type="button"' + (ans[k] === o ? ' class="on"' : '') + '>' + h(o) + '</button>').join('') + '</div>') +
+        '<div class="qnav"><button class="back' + (k ? '' : ' hid') + '" type="button">← Назад</button>' + (last ? '<button class="btn btn-acc" id="qs" type="button">Получить расчёт →</button>' : '') + '</div>';
+      $$('.qo button', qb).forEach(bt => bt.onclick = () => { ans[k] = bt.textContent; bt.classList.add('on'); setTimeout(() => { k++; render(); }, 240); });
+      $('.back', qb).onclick = () => { k = Math.max(0, k - 1); render(); };
+      const qs = $('#qs', qb); if (qs) qs.onclick = () => { const n = $('#qn').value.trim(), p = $('#qp').value.trim(); if (p.replace(/\D/g, '').length < 10) { $('#qp').focus(); return; }
+        const txt = 'Здравствуйте! Хочу расчёт с сайта.\n' + Q.q.map((x, i) => x.q + ' — ' + (ans[i] || '—')).join('\n') + '\nИмя: ' + (n || '—') + '\nТелефон: ' + p;
+        const url = Q.wa ? 'https://wa.me/' + Q.wa + '?text=' + encodeURIComponent(txt) : Q.tg || '#contacts';
+        qb.innerHTML = '<div class="qbar"><i style="width:100%"></i></div><div class="qdone"><b>Спасибо!</b><p>Открываем мессенджер с вашими ответами — осталось нажать «Отправить».</p></div>';
+        window.open(url, '_blank'); }; };
+    render(); }
+})();
+</script>
+</body>
+</html>
