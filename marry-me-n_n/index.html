@@ -640,30 +640,11 @@ footer .brand{color:#fff}
   }
 })();
 (() => {
-  // каталог: только платья и цены из постов салона во ВКонтакте
-  const D = [
-    { n: 'Глория', p: 59000, d: 53100, nw: 1, ph: ['d4621-1', 'd4621-0', 'd4621-2'], ds: 'Расшитый жемчугом корсет и лёгкая мерцающая юбка. Новая коллекция.' },
-    { n: 'Элли', p: 51000, d: 45900, nw: 1, sz: '42', col: 'Lady White, Cioccolato 26', ph: ['d4620-0', 'd4620-1', 'd4620-2'], ds: 'Модель из коллекции Cioccolato 26 от Lady White.' },
-    { n: 'Virginia', p: 46000, d: 41400, sz: '42, 46', ph: ['d4564-2', 'd4564-1', 'd4564-0'], ds: 'Отлично подойдёт для свадьбы осенью.' },
-    { n: 'Андреа', p: 40900, d: 36800, sz: '44/46', sil: 'А-силуэт', ph: ['d4569-1', 'd4569-0', 'd4569-2'], ds: 'Органза с летящей юбкой и лентой хорс по низу. Пышные спущенные плечики, вырез-сердечко, драпировка по корсету с нитями пайеток и бисера.' },
-    { n: 'Флора', p: 41900, d: 37700, sz: '42/44', ph: ['d4524-0', 'd4524-2'], ds: 'Будь особенной с Marry Me.' },
-    { n: 'Астильба', p: 39000, d: 35100, sz: '42/44', sil: 'А-силуэт', ph: ['d4543-0', 'd4543-1', 'd4543-2'], ds: 'Кружевной корсет с V-образным вырезом, съёмные облегающие рукава и летящая юбка из матовой органзы со шлейфом.' },
-    { n: 'Дилана', p: 35000, d: 31500, ph: ['d4481-1', 'd4481-0', 'd4481-2'], ds: 'Классический идеальный крой, элегантный неглубокий вырез, блестящий корсет и мерцающая юбка.' },
-    { n: 'Крылышки', p: 36000, d: 32400, ph: ['d4488-1', 'd4488-0', 'd4488-2'], ds: 'Нежные ниспадающие «крылышки», трендовые чашки-бюстье и блеск.' },
-    { n: 'Воздушное облачко', p: 33000, d: 29700, ph: ['d4476-0', 'd4476-1', 'd4476-2'], ds: 'Струящаяся органза. Эксклюзивная модель от ChelsyBride — в Нижнем Новгороде только в Marry Me.' },
-    { n: 'Лодочка', p: 34900, d: 31400, ph: ['d4467-0', 'd4467-1', 'd4467-2'], ds: 'Вырез-лодочка и юбка на запах.' },
-    { n: 'Женственность', p: 39900, d: 35900, ph: ['d4432-0', 'd4432-2'], ds: 'Красота, нежность и женственность — всё в этом платье создаёт потрясающий образ.' },
-    { n: 'Для росписи', p: 22000, d: 19800, ph: ['d4498-0', 'd4498-1', 'd4498-2'], ds: 'Идеальное платье для росписи.' },
-    { n: 'Франческа', p: 36500, d: 32850, ph: ['d4370-0', 'd4370-2'], ds: 'Яркое и стильное: искрящийся блеск, съёмные рукава, идеальный крой.' },
-    { n: 'Кейтлин', p: 38900, d: 35000, ph: ['d4331-0', 'd4331-1', 'd4331-2'], ds: 'Лидер салона по количеству запросов.' },
-    { n: 'Новелла', p: 42900, d: 38600, sz: '42/44', ph: ['d4240-0', 'd4240-1', 'd4240-2'], ds: 'Идеальная посадка и невероятно красиво расшитый корсет.' },
-    { n: 'Марго', p: 32000, d: 28800, ph: ['d4246-0', 'd4246-1'], ds: 'Корсет с V-образным вырезом и кружевом в стиле рустик, разрезы на плечах зрительно уменьшают объём, шифоновая юбка добавляет лёгкости.' },
-    { n: 'Иоланта', p: 35000, d: 31500, sz: '42/44/46', ph: ['d4243-0', 'd4243-1'], ds: 'Восковая органза, летящая юбка с разрезом по ножке и лентой хорс, шлейф, съёмные рукава-буфы и корсет с прямым вырезом.' },
-    { n: 'Самия', p: 29400, d: 26400, sz: '42/44', ph: ['d4235-0', 'd4235-1', 'd4235-2'], ds: 'Очень ждёт свою невесту.' },
-  ];
-  D.forEach((x, i) => x.i = i);
+  // каталог платьев — catalog.json, его редактирует салон в /admin
+  let D = [];
   const rub = v => v.toLocaleString('ru-RU') + ' ₽';
   const img = s => 'img/' + s + '.jpg';
+  // ph: имена файлов в img/ без .jpg
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
   const WA = '79082395792';
   const waAsk = x => 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Здравствуйте! Интересует платье «' + x.n + '» (' + rub(x.p) + '). Есть ли мой размер?');
@@ -676,14 +657,15 @@ footer .brand{color:#fff}
       (x.nw ? '<span class="badge">Новинка</span>' : '') + '<img src="' + img(x.ph[0]) + '" alt="Свадебное платье ' + esc(x.n) + '" loading="lazy">' +
       (x.ph[1] ? '<img src="' + img(x.ph[1]) + '" alt="" loading="lazy">' : '') + '<span class="cnt">' + x.ph.length + ' фото</span></button>' +
       '<div class="bd"><h3>' + esc(x.n) + '</h3><div class="meta">' + esc([x.sil, x.sz ? 'размер ' + x.sz : ''].filter(Boolean).join(' · ')) + '</div>' +
-      '<div class="pr"><b>' + rub(x.p) + '</b><small>' + rub(x.d) + ' в первый день примерки</small></div>' +
+      '<div class="pr"><b>' + rub(x.p) + '</b>' + (x.d ? '<small>' + rub(x.d) + ' в первый день примерки</small>' : '') + '</div>' +
       '<div class="act"><button class="btn btn-acc" data-book="Примерка: ' + esc(x.n) + '">На примерку</button><a class="btn btn-line" href="' + waAsk(x) + '" target="_blank" rel="noopener" aria-label="Спросить в WhatsApp">WA</a></div></div></article>').join('');
   };
   document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
     document.querySelectorAll('.filters button').forEach(o => o.classList.toggle('on', o === b)); f = b.dataset.f; render();
   }));
   document.getElementById('sort').addEventListener('change', e => { sort = e.target.value; render(); });
-  render();
+  fetch('catalog.json?v=' + Date.now()).then(r => r.json()).then(d => { D = d.filter(x => !x.hide); D.forEach((x, i) => x.i = i); render(); })
+    .catch(() => { grid.innerHTML = '<p style="grid-column:1/-1;text-align:center">Каталог не загрузился — обновите страницу или напишите нам в WhatsApp.</p>'; });
 
   // карточка платья
   const dm = document.getElementById('dm'), gi = dm.querySelector('.gal>img'), th = dm.querySelector('.thumbs');
@@ -692,7 +674,7 @@ footer .brand{color:#fff}
     gi.src = img(x.ph[0]); gi.alt = 'Свадебное платье ' + x.n;
     th.innerHTML = x.ph.map((s, k) => '<button class="' + (k ? '' : 'on') + '" data-s="' + s + '" aria-label="Фото ' + (k + 1) + '"><img src="' + img(s) + '" alt=""></button>').join('');
     dm.querySelector('h3').textContent = x.n;
-    dm.querySelector('.pr').innerHTML = '<b>' + rub(x.p) + '</b><small>' + rub(x.d) + ' при покупке в первый день примерки (−10%)</small>';
+    dm.querySelector('.pr').innerHTML = '<b>' + rub(x.p) + '</b>' + (x.d ? '<small>' + rub(x.d) + ' при покупке в первый день примерки</small>' : '');
     dm.querySelector('.rows').innerHTML = [['Размер в наличии', x.sz || 'уточняйте'], ['Силуэт', x.sil], ['Коллекция', x.col]].filter(r => r[1]).map(r => '<div class="row"><span>' + r[0] + '</span><b>' + esc(r[1]) + '</b></div>').join('');
     dm.querySelector('.ds').textContent = x.ds;
     dm.querySelector('.btns [data-book]').dataset.book = 'Примерка: ' + x.n;

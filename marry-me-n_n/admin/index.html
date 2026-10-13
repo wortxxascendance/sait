@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Marry Me — управление каталогом</title>
+<meta name="theme-color" content="#3b2a22">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1ea;--card:#fff;--ink:#2b211b;--mut:#8a7b70;--line:#eadfd3;--acc:#8b5e45;--acc2:#3b2a22;--ok:#2f8f5b;--err:#c0392b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:110px}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:Cormorant,serif;font-weight:700;line-height:1.1}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.top{position:sticky;top:0;z-index:20;background:rgba(247,241,234,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:62px}
+.top h1{font-size:26px}.top a{font-size:14px;font-weight:700;color:var(--acc)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:14px;font-weight:800;font-size:15px;transition:transform .15s,opacity .2s}
+.btn:active{transform:scale(.97)}.btn[disabled]{opacity:.45;pointer-events:none}
+.b-acc{background:var(--acc2);color:#fff}.b-line{border:1.5px solid var(--line);background:#fff}.b-red{color:var(--err);border:1.5px solid #f1d0cb;background:#fff}
+.login{max-width:420px;margin:12vh auto 0;padding:28px;border-radius:24px;background:#fff;border:1px solid var(--line);display:grid;gap:14px}
+.login h2{font-size:34px}.login p{color:var(--mut);font-size:14px}
+.f{display:grid;gap:6px}.f label{font-size:13px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.f input,.f textarea{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:16px}
+.f input:focus,.f textarea:focus{outline:none;border-color:var(--acc)}
+.f textarea{min-height:96px;resize:vertical}
+.msg{font-size:14px;font-weight:700}.msg.err{color:var(--err)}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin:20px 0 14px;flex-wrap:wrap}
+.bar h2{font-size:30px}.bar span{color:var(--mut);font-size:14px}
+.list{display:grid;gap:10px}
+.it{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.it.hidden{opacity:.55}
+.it img{width:72px;height:92px;object-fit:cover;border-radius:12px;background:var(--line)}
+.it b{font-size:17px;display:block}.it small{color:var(--mut);font-size:13px;display:block}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;margin-right:4px;background:#f3e6da;color:var(--acc)}
+.tag.h{background:#eee;color:#777}
+.ctl{display:flex;flex-direction:column;gap:6px}
+.ctl button{width:40px;height:40px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-size:16px;font-weight:800}
+.ctl button[disabled]{opacity:.3}
+.ctl .e{background:var(--acc2);color:#fff;border-color:var(--acc2)}
+.save{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .3s}
+.save.on{transform:none}
+.save .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:0}
+.save span{font-size:14px;font-weight:700;color:var(--acc)}
+.ed{position:fixed;inset:0;z-index:40;background:rgba(43,33,27,.55);display:none;align-items:flex-end;justify-content:center}
+.ed.on{display:flex}
+.box{width:100%;max-width:640px;max-height:94vh;overflow:auto;background:var(--bg);border-radius:24px 24px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+@media(min-width:700px){.ed{align-items:center}.box{border-radius:24px}}
+.box h3{font-size:30px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form{display:grid;gap:14px}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:12px;background:#fff;border:1.5px solid var(--line);font-weight:700}
+.sw input{width:22px;height:22px;accent-color:var(--acc2);flex:0 0 auto}
+.phs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ph{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .cv{position:absolute;left:6px;top:6px;font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;background:var(--acc2);color:#fff}
+.ph .pb{position:absolute;bottom:6px;left:6px;right:6px;display:flex;justify-content:space-between}
+.ph .pb button{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.92);font-weight:800}
+.ph .pb .rm{color:var(--err)}
+.add{aspect-ratio:3/4;border-radius:12px;border:2px dashed #d8c7b8;display:grid;place-items:center;text-align:center;color:var(--acc);font-weight:800;font-size:14px;cursor:pointer;background:#fff}
+.add input{display:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.row .btn{flex:1}
+.hint{font-size:13px;color:var(--mut)}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(1turn)}}
+.toast{position:fixed;left:50%;top:76px;transform:translate(-50%,-20px);opacity:0;z-index:50;padding:12px 18px;border-radius:14px;background:var(--acc2);color:#fff;font-weight:700;font-size:14px;transition:all .3s;max-width:92vw;text-align:center;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><h1>Marry Me · каталог</h1><a href="../" target="_blank" rel="noopener">Открыть сайт →</a></div></div>
+
+<div class="wrap" id="app"></div>
+
+<div class="save" id="save"><div class="wrap"><span>Есть несохранённые изменения</span><button class="btn b-acc" id="saveBtn">Сохранить на сайт</button></div></div>
+
+<div class="ed" id="ed"><div class="box" id="box"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+// сайт салона лежит в репозитории GitHub; админка правит в нём catalog.json и img/
+const OWNER = 'wortxxascendance', REPO = 'marry-me', BRANCH = 'main', API = 'https://api.github.com/repos/' + OWNER + '/' + REPO;
+const $ = s => document.querySelector(s), app = $('#app');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const rub = v => Number(v || 0).toLocaleString('ru-RU') + ' ₽';
+let KEY = ''; try { KEY = localStorage.getItem('mm-key') || ''; } catch (e) {}
+let D = [], fresh = {}, dirty = false;   // fresh: имя нового фото → data:URL (ещё не загружено на сайт)
+const src = n => fresh[n] || '../img/' + n + '.jpg';
+
+const toast = t => { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 3500); };
+const gh = async (path, opt = {}) => {
+  let r;
+  try { r = await fetch(API + path, { ...opt, cache: 'no-store', headers: { Authorization: 'Bearer ' + KEY, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' } }); }
+  catch (e) { throw new Error('Нет связи с сервером. Проверьте интернет'); }
+  if (!r.ok) throw new Error(r.status === 401 ? 'Ключ не подходит' : r.status === 403 || r.status === 404 ? 'У ключа нет доступа к сайту' : r.status === 409 || r.status === 422 ? 'Сайт обновлялся одновременно. Обновите страницу' : 'Ошибка ' + r.status);
+  return r.status === 204 ? null : r.json();
+};
+const b64utf8 = s => btoa(unescape(encodeURIComponent(s)));
+const utf8b64 = s => decodeURIComponent(escape(atob(s.replace(/\s/g, ''))));
+const setDirty = v => { dirty = v; $('#save').classList.toggle('on', v); };
+addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+// ---------- вход ----------
+function login(msg) {
+  app.innerHTML = '<form class="login" id="lf"><h2>Вход</h2><p>Введите ключ доступа — его даёт разработчик сайта. На этом телефоне вводить его нужно один раз.</p>' +
+    '<div class="f"><label for="k">Ключ доступа</label><input id="k" type="password" autocomplete="current-password" required></div>' +
+    '<div class="msg err">' + esc(msg || '') + '</div><button class="btn b-acc" type="submit">Войти</button></form>';
+  $('#lf').onsubmit = async e => { e.preventDefault(); KEY = $('#k').value.trim(); const b = e.target.querySelector('button'); b.innerHTML = '<span class="spin"></span>'; b.disabled = true;
+    try { await load(); try { localStorage.setItem('mm-key', KEY); } catch (x) {} } catch (err) { login(err.message); } };
+}
+async function load() {
+  app.innerHTML = '<p style="margin:40px 0;text-align:center"><span class="spin"></span></p>';
+  const f = await gh('/contents/catalog.json?ref=' + BRANCH);
+  D = JSON.parse(utf8b64(f.content)); fresh = {}; setDirty(false); list();
+}
+
+// ---------- список платьев ----------
+function list() {
+  const vis = D.filter(x => !x.hide).length;
+  app.innerHTML = '<div class="bar"><div><h2>Платья</h2><span>На сайте ' + vis + ' из ' + D.length + '. Порядок здесь — порядок на сайте.</span></div><button class="btn b-acc" id="addD">+ Добавить платье</button></div>' +
+    '<div class="list">' + D.map((x, i) => '<div class="it' + (x.hide ? ' hidden' : '') + '"><img src="' + esc(x.ph && x.ph[0] ? src(x.ph[0]) : '') + '" alt="" loading="lazy"><div><b>' + esc(x.n) + '</b><small>' + rub(x.p) + (x.d ? ' · в первый день ' + rub(x.d) : '') + '</small><small>' +
+      (x.nw ? '<span class="tag">Новинка</span>' : '') + (x.hide ? '<span class="tag h">Скрыто</span>' : '') + (x.sz ? 'размер ' + esc(x.sz) : '') + '</small></div>' +
+      '<div class="ctl"><button class="e" data-e="' + i + '" aria-label="Изменить">✎</button><button data-up="' + i + '" aria-label="Выше"' + (i ? '' : ' disabled') + '>↑</button><button data-dn="' + i + '" aria-label="Ниже"' + (i < D.length - 1 ? '' : ' disabled') + '>↓</button></div></div>').join('') + '</div>' +
+    '<p class="hint" style="margin:18px 0">Продали платье? Откройте его и включите «Скрыть с сайта» — или удалите совсем.</p>' +
+    '<button class="btn b-line" id="out" style="width:100%">Выйти на этом телефоне</button>';
+  $('#addD').onclick = () => edit(-1);
+  $('#out').onclick = () => { if (dirty && !confirm('Есть несохранённые изменения. Выйти без сохранения?')) return; try { localStorage.removeItem('mm-key'); } catch (e) {} KEY = ''; setDirty(false); login(); };
+  app.querySelectorAll('[data-e]').forEach(b => b.onclick = () => edit(+b.dataset.e));
+  app.querySelectorAll('[data-up]').forEach(b => b.onclick = () => { const i = +b.dataset.up; [D[i - 1], D[i]] = [D[i], D[i - 1]]; setDirty(true); list(); });
+  app.querySelectorAll('[data-dn]').forEach(b => b.onclick = () => { const i = +b.dataset.dn; [D[i + 1], D[i]] = [D[i], D[i + 1]]; setDirty(true); list(); });
+}
+
+// ---------- карточка платья ----------
+const disc = p => Math.floor(p * 0.9 / 100) * 100;
+function edit(i) {
+  const x = i < 0 ? { n: '', p: '', d: '', ph: [], ds: '', nw: 1 } : JSON.parse(JSON.stringify(D[i]));
+  let autoD = i < 0 || !x.d || x.d === disc(x.p);
+  const box = $('#box'), ed = $('#ed');
+  const keep = () => { x.n = $('#n').value.trim(); x.p = +$('#p').value.replace(/\D/g, '') || ''; x.d = +$('#d').value.replace(/\D/g, '') || ''; x.sz = $('#sz').value.trim(); x.sil = $('#sil').value.trim(); x.col = $('#col').value.trim(); x.ds = $('#ds').value.trim(); x.nw = $('#nw').checked ? 1 : 0; x.hide = $('#hide').checked ? 1 : 0; };
+  const draw = () => {
+    box.innerHTML = '<h3>' + (i < 0 ? 'Новое платье' : 'Изменить платье') + '</h3><div class="form">' +
+      '<div class="f"><label>Фото (первое — обложка)</label><div class="phs">' + x.ph.map((n, k) => '<div class="ph"><img src="' + esc(src(n)) + '" alt="">' + (k ? '' : '<span class="cv">обложка</span>') +
+        '<div class="pb"><button data-l="' + k + '" aria-label="Левее">‹</button><button class="rm" data-r="' + k + '" aria-label="Удалить фото">✕</button><button data-rr="' + k + '" aria-label="Правее">›</button></div></div>').join('') +
+        '<label class="add">+ Фото<br><small style="font-weight:600">можно несколько</small><input type="file" accept="image/*" multiple id="pf"></label></div></div>' +
+      '<div class="f"><label for="n">Название *</label><input id="n" value="' + esc(x.n) + '" placeholder="Например, Глория"></div>' +
+      '<div class="grid2"><div class="f"><label for="p">Цена, ₽ *</label><input id="p" inputmode="numeric" value="' + esc(x.p) + '"></div>' +
+      '<div class="f"><label for="d">В первый день, ₽</label><input id="d" inputmode="numeric" value="' + esc(x.d) + '" placeholder="пусто — без скидки"></div></div>' +
+      '<p class="hint" style="margin-top:-6px">Цена в первый день считается сама (−10%), можно поправить вручную.</p>' +
+      '<div class="grid2"><div class="f"><label for="sz">Размеры</label><input id="sz" value="' + esc(x.sz) + '" placeholder="42/44"></div>' +
+      '<div class="f"><label for="sil">Силуэт</label><input id="sil" value="' + esc(x.sil) + '" placeholder="А-силуэт"></div></div>' +
+      '<div class="f"><label for="col">Коллекция</label><input id="col" value="' + esc(x.col) + '" placeholder="необязательно"></div>' +
+      '<div class="f"><label for="ds">Описание</label><textarea id="ds">' + esc(x.ds) + '</textarea></div>' +
+      '<label class="sw">Пометка «Новинка»<input type="checkbox" id="nw"' + (x.nw ? ' checked' : '') + '></label>' +
+      '<label class="sw">Скрыть с сайта (продано / нет в салоне)<input type="checkbox" id="hide"' + (x.hide ? ' checked' : '') + '></label>' +
+      '<div class="msg err" id="em"></div>' +
+      '<div class="row"><button class="btn b-line" id="cancel">Отмена</button><button class="btn b-acc" id="ok">Готово</button></div>' +
+      (i >= 0 ? '<button class="btn b-red" id="del" style="width:100%;margin-top:4px">Удалить платье</button>' : '') + '</div>';
+    $('#p').oninput = () => { if (autoD) { const p = +$('#p').value.replace(/\D/g, ''); $('#d').value = p ? disc(p) : ''; } };
+    $('#d').oninput = () => { autoD = false; };
+    box.querySelectorAll('[data-l]').forEach(b => b.onclick = () => { keep(); const k = +b.dataset.l; if (k) { [x.ph[k - 1], x.ph[k]] = [x.ph[k], x.ph[k - 1]]; draw(); } });
+    box.querySelectorAll('[data-rr]').forEach(b => b.onclick = () => { keep(); const k = +b.dataset.rr; if (k < x.ph.length - 1) { [x.ph[k + 1], x.ph[k]] = [x.ph[k], x.ph[k + 1]]; draw(); } });
+    box.querySelectorAll('[data-r]').forEach(b => b.onclick = () => { keep(); x.ph.splice(+b.dataset.r, 1); draw(); });
+    $('#pf').onchange = async e => { keep(); const files = [...e.target.files]; if (!files.length) return; box.querySelector('.add').innerHTML = '<span class="spin"></span>';
+      for (const f of files) { try { const name = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); fresh[name] = await shrink(f); x.ph.push(name); } catch (err) { toast('Не получилось открыть фото ' + f.name); } }
+      draw(); };
+    $('#cancel').onclick = () => ed.classList.remove('on');
+    $('#ok').onclick = () => { keep();
+      if (!x.n) return void ($('#em').textContent = 'Укажите название');
+      if (!x.p) return void ($('#em').textContent = 'Укажите цену');
+      if (!x.ph.length) return void ($('#em').textContent = 'Добавьте хотя бы одно фото');
+      for (const k of ['sz', 'sil', 'col', 'd', 'hide', 'nw']) if (!x[k]) delete x[k]; delete x.i;
+      if (i < 0) D.unshift(x); else D[i] = x; setDirty(true); ed.classList.remove('on'); list(); toast('Готово. Теперь нажмите «Сохранить на сайт»'); };
+    if ($('#del')) $('#del').onclick = () => { if (!confirm('Удалить «' + D[i].n + '»? Его не будет на сайте.')) return; D.splice(i, 1); setDirty(true); ed.classList.remove('on'); list(); };
+  };
+  draw(); ed.classList.add('on'); box.scrollTop = 0;
+}
+$('#ed').addEventListener('click', e => { if (e.target.id === 'ed') $('#ed').classList.remove('on'); });
+
+// фото с телефона весят по 5–10 МБ: уменьшаем до 1400 px по длинной стороне, JPEG
+async function shrink(file) {
+  const bmp = await createImageBitmap(file, { imageOrientation: 'from-image' });
+  const k = Math.min(1, 1400 / Math.max(bmp.width, bmp.height)), w = Math.round(bmp.width * k), h = Math.round(bmp.height * k);
+  const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(bmp, 0, 0, w, h);
+  return c.toDataURL('image/jpeg', .85);
+}
+
+// ---------- сохранение одним коммитом: новые фото + catalog.json ----------
+$('#saveBtn').onclick = async () => {
+  const b = $('#saveBtn'); b.disabled = true; b.innerHTML = '<span class="spin"></span> Сохраняю…';
+  try {
+    const ref = await gh('/git/ref/heads/' + BRANCH), base = await gh('/git/commits/' + ref.object.sha);
+    const used = new Set(D.flatMap(x => x.ph)), tree = [];
+    for (const [name, url] of Object.entries(fresh)) { if (!used.has(name)) continue;
+      const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: url.split(',')[1], encoding: 'base64' }) });
+      tree.push({ path: 'img/' + name + '.jpg', mode: '100644', type: 'blob', sha: blob.sha }); }
+    const cat = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: b64utf8(JSON.stringify(D, null, 1)), encoding: 'base64' }) });
+    tree.push({ path: 'catalog.json', mode: '100644', type: 'blob', sha: cat.sha });
+    const t = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: base.tree.sha, tree }) });
+    const c = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message: 'Каталог: правки из админки', tree: t.sha, parents: [ref.object.sha] }) });
+    await gh('/git/refs/heads/' + BRANCH, { method: 'PATCH', body: JSON.stringify({ sha: c.sha }) });
+    setDirty(false); toast('Сохранено! На сайте изменения появятся через 1–2 минуты');
+  } catch (err) { toast(err.message); }
+  b.disabled = false; b.textContent = 'Сохранить на сайт';
+};
+
+KEY ? load().catch(err => login(err.message)) : login();
+})();
+</script>
+</body>
+</html>
