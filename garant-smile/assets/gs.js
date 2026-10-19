@@ -195,13 +195,14 @@
 /* отсчёт цифр и демонстрация ползунка «до/после» */
 (() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('[data-count]').forEach(el => {
+  const runCount = () => document.querySelectorAll('[data-count]').forEach(el => {
     const to = +el.dataset.count, suf = el.dataset.suf || '';
     if (still) return;
-    const t0 = performance.now() + 500, dur = 1600;
+    const t0 = performance.now() + 250, dur = 1600;
     const step = t => { const k = Math.min(1, Math.max(0, (t - t0) / dur)), v = Math.round(to * (1 - Math.pow(1 - k, 3))); el.textContent = v.toLocaleString('ru-RU') + suf; if (k < 1) requestAnimationFrame(step); };
     el.textContent = '0' + suf; requestAnimationFrame(step);
   });
+  if (document.documentElement.classList.contains('is-loading')) addEventListener('gs-ready', runCount, { once: true }); else runCount();
   if (still) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return; io.unobserve(e.target);
