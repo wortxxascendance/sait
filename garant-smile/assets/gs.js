@@ -191,3 +191,32 @@
     }, () => { st.textContent = 'Не удалось определить местоположение — разрешите доступ к геолокации'; }, { timeout: 10000 });
   });
 })();
+
+/* отсчёт цифр и демонстрация ползунка «до/после» */
+(() => {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const to = +el.dataset.count, suf = el.dataset.suf || '';
+    if (still) return;
+    const t0 = performance.now() + 500, dur = 1600;
+    const step = t => { const k = Math.min(1, Math.max(0, (t - t0) / dur)), v = Math.round(to * (1 - Math.pow(1 - k, 3))); el.textContent = v.toLocaleString('ru-RU') + suf; if (k < 1) requestAnimationFrame(step); };
+    el.textContent = '0' + suf; requestAnimationFrame(step);
+  });
+  if (still) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const ba = e.target, r = ba.querySelector('input[type=range]'); let touched = false;
+    ['pointerdown', 'input', 'touchstart'].forEach(ev => r.addEventListener(ev, () => { touched = true; }, { once: true }));
+    const keys = [[0, 50], [700, 18], [1500, 82], [2200, 50]], t0 = performance.now() + 300;
+    const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+    const step = t => {
+      if (touched) return;
+      const dt = t - t0; let i = keys.findIndex(k => k[0] > dt); if (i === -1) { ba.style.setProperty('--p', '50%'); r.value = 50; return; }
+      if (i === 0) { requestAnimationFrame(step); return; }
+      const [a, pa] = keys[i - 1], [b, pb] = keys[i], v = pa + (pb - pa) * ease((dt - a) / (b - a));
+      ba.style.setProperty('--p', v + '%'); r.value = v; requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }), { threshold: .5 });
+  document.querySelectorAll('.ba').forEach(b => io.observe(b));
+})();

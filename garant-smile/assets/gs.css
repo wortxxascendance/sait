@@ -518,3 +518,20 @@ h2 em,.sh h1 em{font-style:normal;color:inherit}
 .br.has .dist{display:block}
 
 .cont h2 em,.tech h2 em{color:inherit;font-style:normal}
+
+/* впечатление: первый экран, раскрытие фото, лента */
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero-r>img{animation:kb 2.6s cubic-bezier(.2,.7,.2,1) both}
+.hero-l>*{animation:up 1s cubic-bezier(.2,.7,.2,1) both}
+.hero-l>*:nth-child(2){animation-delay:.12s}.hero-l>*:nth-child(3){animation-delay:.24s}.hero-l>*:nth-child(4){animation-delay:.36s}.hero-l>*:nth-child(5){animation-delay:.48s}.hero-l>*:nth-child(6){animation-delay:.6s}
+.doc-card{animation:up 1s .9s cubic-bezier(.2,.7,.2,1) both}
+.tbig.rv img,.found.rv>img,.fbox.rv>img{clip-path:inset(10% 6% 10% 6% round 22px);transform:scale(1.1);transition:clip-path 1.4s cubic-bezier(.2,.7,.2,1),transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.tbig.rv.vis img,.found.rv.vis>img,.fbox.rv.vis>img{clip-path:inset(0 0 0 0 round 0);transform:none}
+.ticker{padding:0 0 110px;background:var(--paper);overflow:hidden}
+.ticker .tr{display:flex;gap:14px;width:max-content;animation:tick 70s linear infinite}
+.ticker:hover .tr{animation-play-state:paused}
+.ticker img{height:300px;width:auto;border-radius:20px;flex:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(max-width:700px){.ticker{padding-bottom:70px}.ticker img{height:200px}}
+@media(prefers-reduced-motion:reduce){.ticker .tr{animation:none}.tbig.rv img,.found.rv>img,.fbox.rv>img{clip-path:none;transform:none}}
