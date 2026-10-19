@@ -148,3 +148,46 @@
     $$('.dgrid .dc').forEach(c => c.hidden = b.dataset.f !== 'all' && !c.dataset.sp.split(' ').includes(b.dataset.f));
   }));
 })();
+
+/* схема зубов, подбор лечения, ближайшая клиника */
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  // схема зубов: выбранные зубы задают количество в калькуляторе
+  const jaw = $('.jaw');
+  if (jaw) {
+    const out = $('#icalc-n output'), info = $('.jaw-info b'), plus = $('#icalc-n .cnt button[data-d="1"]'), minus = $('#icalc-n .cnt button[data-d="-1"]');
+    const sync = () => {
+      const k = $$('button.on', jaw).length;
+      info.textContent = k ? 'Отмечено зубов: ' + k : 'Отметьте зубы, которых нет';
+      let cur = +out.value;
+      while (cur < Math.max(1, k)) { plus.click(); cur++; }
+      while (cur > Math.max(1, k)) { minus.click(); cur--; }
+    };
+    jaw.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; b.classList.toggle('on'); b.setAttribute('aria-pressed', b.classList.contains('on')); sync(); });
+    const clr = $('.jaw-info button'); clr && clr.addEventListener('click', () => { $$('button.on', jaw).forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); }); sync(); });
+  }
+  // подбор лечения
+  const pk = $('#pick');
+  if (pk && window.GSQ) {
+    const r = $('.pk-r', pk);
+    $$('.pk-q button', pk).forEach(b => b.addEventListener('click', () => {
+      $$('.pk-q button', pk).forEach(x => x.classList.toggle('on', x === b));
+      const q = window.GSQ[b.dataset.k];
+      r.innerHTML = '<span class="eyebrow" style="color:#ff9aa1">Вам подойдёт</span><h3>' + q.t + '</h3><p>' + q.why + '</p><div class="ph">' + q.docs.map(d => '<img src="' + d.i + '" alt="' + d.n + '">').join('') + '</div><div class="doc">Ведут приём: ' + q.docs.map(d => d.n).join(', ') + '</div><div class="pr">' + q.from + '</div><div class="acts"><a class="btn btn-red" href="#" data-book="' + q.svc + '" data-note="Подбор на сайте: ' + b.querySelector('b').textContent + '">Записаться</a><a class="btn btn-ghost" href="' + q.url + '">Подробнее</a></div>';
+    }));
+  }
+  // ближайшая клиника по геолокации
+  const nb = $('#nearBtn');
+  if (nb) nb.addEventListener('click', () => {
+    const st = $('#nearSt');
+    if (!navigator.geolocation) { st.textContent = 'Геолокация недоступна в этом браузере'; return; }
+    st.textContent = 'Определяем…';
+    navigator.geolocation.getCurrentPosition(p => {
+      const d = (a, b, c, e) => { const R = 6371, x = (c - a) * Math.PI / 180, y = (e - b) * Math.PI / 180, h = Math.sin(x / 2) ** 2 + Math.cos(a * Math.PI / 180) * Math.cos(c * Math.PI / 180) * Math.sin(y / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+      const cards = $$('.br[data-lat]').map(c => ({ c, km: d(p.coords.latitude, p.coords.longitude, +c.dataset.lat, +c.dataset.lon) })).sort((a, b) => a.km - b.km);
+      cards.forEach(({ c, km }, i) => { c.classList.add('has'); c.classList.toggle('best', i === 0); $('.dist', c).textContent = (i === 0 ? 'Ближе к вам · ' : '') + (km < 1 ? Math.round(km * 1000) + ' м' : km.toFixed(1).replace('.', ',') + ' км'); });
+      st.textContent = 'Ближайшая клиника: ' + $('h3', cards[0].c).textContent;
+      $$('input[name=br][value="' + cards[0].c.dataset.k + '"]').forEach(i => i.checked = true);
+    }, () => { st.textContent = 'Не удалось определить местоположение — разрешите доступ к геолокации'; }, { timeout: 10000 });
+  });
+})();
