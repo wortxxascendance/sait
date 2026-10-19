@@ -550,3 +550,7 @@ h2 em,.sh h1 em{font-style:normal;color:inherit}
 @media(prefers-reduced-motion:reduce){.fab:before{animation:none}}
 
 @media(max-width:700px){.fab{display:none}}
+
+/* плавающая кнопка: справа, выше и крупнее */
+.fab{left:auto;right:28px;bottom:48px;height:60px;padding:0 26px 0 20px;gap:10px;font-size:16px}
+.fab svg{width:22px;height:22px}
