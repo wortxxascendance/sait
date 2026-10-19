@@ -539,3 +539,14 @@ h2 em,.sh h1 em{font-style:normal;color:inherit}
 /* финальный блок записи: фото подстраивается под высоту формы, а не растягивает блок */
 .fbox>img{height:0;min-height:100%;object-fit:cover;object-position:50% 30%}
 @media(max-width:900px){.fbox>img{height:260px;min-height:0;max-height:none}}
+
+/* плавающая кнопка записи — всегда слева снизу */
+.fab{position:fixed;left:20px;bottom:20px;z-index:65;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px 0 14px;border-radius:99px;background:var(--red);color:#fff;font:700 14px var(--bf);box-shadow:0 12px 30px -10px rgba(193,18,31,.7),0 2px 6px rgba(0,0,0,.15);transition:transform .2s,background .2s}
+.fab:hover{background:var(--red2);transform:translateY(-2px)}
+.fab svg{width:18px;height:18px}
+.fab:before{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(193,18,31,.5);animation:ring 2.4s infinite}
+@keyframes ring{70%{box-shadow:0 0 0 14px rgba(193,18,31,0)}100%{box-shadow:0 0 0 0 rgba(193,18,31,0)}}
+@media(max-width:700px){.fab{bottom:calc(84px + env(safe-area-inset-bottom));left:12px;height:44px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){.fab:before{animation:none}}
+
+@media(max-width:700px){.fab{display:none}}
