@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Проживание, баня и беседки — «Золотая подкова», Абакан</title>
+<meta name="description" content="Номера от 3 500 ₽ в сутки, юрта на 6 человек, гостевой дом на 10–12 человек, русская баня на дровах, банный чан, семь беседок, бассейн и рыбалка.">
+<meta name="theme-color" content="#1b1510">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231b1510'/%3E%3Cpath d='M15 39c-5-4-8-9-8-16 0-9 8-16 17-16s17 7 17 16c0 7-3 12-8 16' fill='none' stroke='%23e7b65a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/zp.css">
+<style>
+.crumbs{color:var(--mut-d);font-size:14px}.crumbs a{color:var(--gold2)}
+.stays{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.stay{background:#fff;border:1px solid var(--line-l);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.stay .im{aspect-ratio:4/3;overflow:hidden}
+.stay img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.stay:hover img{transform:scale(1.05)}
+.stay .t{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.stay h3{font-size:24px}
+.stay .who{color:var(--mut);font-size:14.5px;margin-top:6px}
+.stay .pr{margin-top:auto;padding-top:20px;display:flex;align-items:baseline;gap:8px}
+.stay .pr b{font:600 30px/1 var(--hf);color:var(--gold3)}
+.stay .pr span{color:var(--mut);font-size:14px}
+.amen{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.amen span{padding:10px 16px;border-radius:100px;background:var(--cream);font-size:15px}
+
+/* калькулятор */
+.calc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);margin-top:56px;border-radius:24px;overflow:hidden;border:1px solid var(--line-d)}
+.calc .l{padding:40px;background:var(--ink2)}
+.calc .r{padding:40px;background:var(--ink3);display:flex;flex-direction:column}
+.calc h3{font-size:22px;margin:28px 0 14px}
+.calc h3:first-child{margin-top:0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt div{border:1.5px solid var(--line-d);border-radius:14px;padding:14px 16px;transition:border-color .2s,background .2s;height:100%}
+.opt b{display:block;font-weight:600;font-size:15.5px}
+.opt small{color:var(--mut-d);font-size:13.5px}
+.opt input:checked+div{border-color:var(--gold2);background:rgba(231,182,90,.1)}
+.opt input:focus-visible+div{outline:2px solid var(--gold2);outline-offset:2px}
+.stepper{display:flex;align-items:center;gap:14px}
+.stepper button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line-d);font-size:22px;color:var(--tx-d)}
+.stepper button:hover{border-color:var(--gold2);color:var(--gold2)}
+.stepper output{min-width:110px;text-align:center;font:600 20px/1 var(--bf)}
+.sum{font:600 clamp(44px,5vw,64px)/1 var(--hf);color:var(--gold2);margin-top:14px}
+.lines{margin-top:22px;display:grid;gap:8px;font-size:15px;color:var(--mut-d)}
+.lines div{display:flex;justify-content:space-between;gap:12px}
+.calc .r .stk{position:sticky;top:96px}
+.calc .r .btn{width:100%}
+.calc .r p.n{margin-top:16px;font-size:13.5px;color:var(--mut-d)}
+
+.bath .g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center}
+.bath .pics{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:14px;height:560px}
+.bath .pics figure{border-radius:var(--r);overflow:hidden}
+.bath .pics figure:first-child{grid-row:span 2}
+.bath .pics img{width:100%;height:100%;object-fit:cover}
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:26px}
+.incl li{list-style:none;display:flex;gap:10px;align-items:baseline;font-size:15.5px}
+.incl li:before{content:'';width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none;transform:translateY(-1px)}
+
+.gz{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:50px;margin-top:56px;align-items:start}
+.gz .pics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gz .pics figure{border-radius:var(--r);overflow:hidden;aspect-ratio:1}
+.gz .pics figure:first-child{grid-column:span 2;aspect-ratio:16/10}
+.gz .pics img{width:100%;height:100%;object-fit:cover}
+
+.fun{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+.fun figure{border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:3/4}
+.fun img{width:100%;height:100%;object-fit:cover}
+.fun figcaption{position:absolute;inset:auto 0 0 0;padding:60px 20px 20px;background:linear-gradient(180deg,transparent,rgba(20,15,10,.85));color:var(--tx-d)}
+.fun figcaption b{display:block;font:500 23px/1.15 var(--hf)}
+.fun figcaption span{font-size:14px;color:var(--mut-d)}
+@media(max-width:1100px){.stays{grid-template-columns:1fr 1fr}.fun{grid-template-columns:1fr 1fr}}
+@media(max-width:1000px){.calc{grid-template-columns:1fr}.bath .g,.gz{grid-template-columns:1fr;gap:40px}}
+@media(max-width:640px){.stays{grid-template-columns:1fr}.opts{grid-template-columns:1fr}.calc .l,.calc .r{padding:26px 20px}.bath .pics{height:400px}.incl{grid-template-columns:1fr}.fun{grid-template-columns:1fr 1fr;gap:12px}.fun figcaption{padding:50px 14px 14px}.fun figcaption b{font-size:19px}}
+</style>
+</head>
+<body data-page="stay">
+
+<section class="ph">
+  <img src="img/hotel2.jpg" alt="Гостиничный корпус комплекса" fetchpriority="high">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Главная</a> · Отдых и баня</div>
+    <h1>Останьтесь <em>на ночь</em></h1>
+    <p class="lead">Номера, юрта и целый гостевой дом для большой компании. Утром — завтрак и прогулка верхом, вечером — баня на дровах и чан.</p>
+    <div class="row"><a class="btn btn-g" href="#calc">Посчитать отдых</a><a class="btn btn-o" href="#banya">Баня и чан</a></div>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Проживание</span><h2>Где <em>остановиться</em></h2></div><p class="lead" style="max-width:420px">Цена за сутки, из прайса комплекса. Свободные даты подтвердит администратор.</p></div>
+    <div class="stays">
+      <article class="stay rv"><div class="im"><img src="img/room.jpg" alt="Номер с двумя кроватями" loading="lazy"></div><div class="t"><h3>Трёхместный номер</h3><p class="who">до 3 гостей</p><div class="pr"><b>3 500 ₽</b><span>/ сутки</span></div></div></article>
+      <article class="stay rv d1"><div class="im"><img src="img/hotel.jpg" alt="Корпус с номерами" loading="lazy"></div><div class="t"><h3>VIP-номер</h3><p class="who">до 4 гостей</p><div class="pr"><b>5 000 ₽</b><span>/ сутки</span></div></div></article>
+      <article class="stay rv d2"><div class="im"><img src="img/sign.jpg" alt="Указатели на территории: гостиница, юрта, баня" loading="lazy"></div><div class="t"><h3>Юрта</h3><p class="who">благоустроенная, на 6 человек</p><div class="pr"><b>7 000 ₽</b><span>/ сутки</span></div></div></article>
+      <article class="stay rv d3"><div class="im"><img src="img/cottage.jpg" alt="Гостевой дом" loading="lazy"></div><div class="t"><h3>Гостевой дом</h3><p class="who">на 10–12 человек</p><div class="pr"><b>15 000 ₽</b><span>/ сутки</span></div></div></article>
+    </div>
+    <div class="amen rv"><span>Завтрак</span><span>Кондиционер в номерах</span><span>Wi‑Fi</span><span>Своя парковка</span><span>Можно с животными</span><span>Детская комната</span><span>Прачечная</span><span>Сейф</span><span>Хранение багажа</span><span>Кафе</span></div>
+  </div>
+</section>
+
+<section class="sp dark" id="calc">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Калькулятор</span><h2>Сколько выйдет <em>отдых</em></h2></div><p class="lead" style="max-width:420px">Соберите поездку — сумма посчитается сразу, а заявка уйдёт администратору в WhatsApp.</p></div>
+    <form class="calc rv" id="cf">
+      <div class="l">
+        <h3>Где жить</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="s" value="0" checked><div><b>Без ночёвки</b><small>приедем на день</small></div></label>
+          <label class="opt"><input type="radio" name="s" value="3500" data-n="Трёхместный номер"><div><b>Трёхместный номер</b><small>3 500 ₽ / сутки</small></div></label>
+          <label class="opt"><input type="radio" name="s" value="5000" data-n="VIP-номер"><div><b>VIP-номер</b><small>5 000 ₽ / сутки</small></div></label>
+          <label class="opt"><input type="radio" name="s" value="7000" data-n="Юрта на 6 человек"><div><b>Юрта на 6</b><small>7 000 ₽ / сутки</small></div></label>
+          <label class="opt"><input type="radio" name="s" value="15000" data-n="Гостевой дом на 10–12"><div><b>Гостевой дом</b><small>15 000 ₽ / сутки</small></div></label>
+        </div>
+        <h3>Ночей</h3>
+        <div class="stepper"><button type="button" data-k="n" data-d="-1" aria-label="Меньше ночей">−</button><output id="n">1</output><button type="button" data-k="n" data-d="1" aria-label="Больше ночей">+</button></div>
+        <h3>Лошади</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="h" value="0" checked><div><b>Не нужно</b><small>&nbsp;</small></div></label>
+          <label class="opt"><input type="radio" name="h" value="1900" data-n="Конная прогулка 1 час"><div><b>Прогулка 1 час</b><small>1 900 ₽ / чел.</small></div></label>
+          <label class="opt"><input type="radio" name="h" value="3600" data-n="Конная прогулка 2 часа"><div><b>Прогулка 2 часа</b><small>3 600 ₽ / чел.</small></div></label>
+          <label class="opt"><input type="radio" name="h" value="1200" data-n="Детская экскурсия"><div><b>Детская экскурсия</b><small>1 200 ₽ / чел.</small></div></label>
+        </div>
+        <div class="stepper" style="margin-top:14px"><button type="button" data-k="p" data-d="-1" aria-label="Меньше человек">−</button><output id="p">2 чел.</output><button type="button" data-k="p" data-d="1" aria-label="Больше человек">+</button></div>
+        <h3>Баня</h3>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="b" value="0" checked><div><b>Без бани</b><small>&nbsp;</small></div></label>
+          <label class="opt"><input type="radio" name="b" value="4000" data-n="Баня, 2 часа"><div><b>Баня, 2 часа</b><small>2 000 ₽ / час</small></div></label>
+          <label class="opt"><input type="radio" name="b" value="6000" data-n="Баня, 3 часа"><div><b>Баня, 3 часа</b><small>2 000 ₽ / час</small></div></label>
+          <label class="opt"><input type="radio" name="b" value="6000" data-n="Банный чан"><div><b>Банный чан</b><small>6 000 ₽, бронь от 3 часов</small></div></label>
+        </div>
+      </div>
+      <div class="r"><div class="stk">
+        <span class="eb">Итого</span>
+        <div class="sum" id="sum">0 ₽</div>
+        <div class="lines" id="lines"></div>
+        <button class="btn btn-g" type="submit" style="margin-top:34px">Забронировать</button>
+        <p class="n">Расчёт по ценам из прайса комплекса. Точную сумму и свободные даты подтвердит администратор.</p>
+      </div></div>
+    </form>
+  </div>
+</section>
+
+<section class="bath sp" id="banya">
+  <div class="wrap"><div class="g">
+    <div class="pics rv"><figure><img src="img/chan.jpg" alt="Банный чан на улице" loading="lazy"></figure><figure><img src="img/sauna.jpg" alt="Парная" loading="lazy"></figure><figure><img src="img/sauna2.jpg" alt="Полок в бане" loading="lazy"></figure></div>
+    <div class="rv d1">
+      <span class="eb">Баня · до 15 человек</span>
+      <h2 style="margin-top:20px">Русская парная <em>на дровах</em></h2>
+      <p class="lead" style="margin-top:20px">После прогулки верхом — лучшее, что можно придумать. Баня, купель и банный чан под открытым небом.</p>
+      <div class="mcard" style="padding:10px 24px;margin-top:30px">
+        <div class="mrow"><span>Баня, 1 час</span><b>2 000 ₽</b></div>
+        <div class="mrow"><span>Банный чан<small>бронирование от 3 часов</small></span><b>6 000 ₽</b></div>
+      </div>
+      <ul class="incl"><li>Купели</li><li>Комната отдыха</li><li>Веники</li><li>Полотенца и простыни</li><li>Тапочки</li><li>Чай</li><li>Караоке</li><li>Мангал рядом</li></ul>
+      <button class="btn btn-g" style="margin-top:32px" data-book="Баня или чан">Забронировать баню</button>
+    </div>
+  </div></div>
+</section>
+
+<section class="sp cream" id="besedki">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Беседки</span><h2>Семь беседок <em>для компании</em></h2></div><p class="lead" style="max-width:420px">Для шашлыков, дня рождения или просто посидеть на природе. Есть тёплая беседка и аренда мангала.</p></div>
+    <div class="gz">
+      <div class="pics rv"><figure><img src="img/gazebo2.jpg" alt="Деревянная беседка" loading="lazy"></figure><figure><img src="img/gazebo.jpg" alt="Беседка с соломенной крышей" loading="lazy"></figure><figure><img src="img/gazebo3.jpg" alt="Беседка среди зелени" loading="lazy"></figure></div>
+      <div class="mcard rv d1">
+        <div class="mrow"><span>«Тенистая»<small>до 6 человек</small></span><b>500 ₽ / час</b></div>
+        <div class="mrow"><span>«Солнечная»<small>до 8 человек</small></span><b>500 ₽ / час</b></div>
+        <div class="mrow"><span>«Уютная»<small>до 15 человек</small></span><b>1 000 ₽ / час</b></div>
+        <div class="mrow"><span>«Весенняя»<small>до 15 человек</small></span><b>1 000 ₽ / час</b></div>
+        <div class="mrow"><span>Плетёная «Здоровье и долголетие»</span><b>1 200 ₽ / час</b></div>
+        <div class="mrow"><span>VIP-беседка<small>до 20 человек</small></span><b>1 500 ₽ / час</b></div>
+        <div class="mrow"><span>«Богатство и процветание»<small>до 25 человек</small></span><b>1 800 ₽ / час</b></div>
+        <button class="btn btn-g" style="width:100%;margin:18px 0 14px" data-book="Беседка">Забронировать беседку</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">На территории</span><h2>Чем ещё <em>заняться</em></h2></div></div>
+    <div class="fun">
+      <figure class="rv"><img src="img/pool.jpg" alt="Бассейн" loading="lazy"><figcaption><b>Бассейн</b><span>уличный и детский, с подогревом</span></figcaption></figure>
+      <figure class="rv d1"><img src="img/pond.jpg" alt="Пруд для рыбалки" loading="lazy"><figcaption><b>Рыбалка</b><span>500 ₽ за удочку</span></figcaption></figure>
+      <figure class="rv d2"><img src="img/sup.jpg" alt="Сапборд на озере" loading="lazy"><figcaption><b>SUP-доски</b><span>600 ₽ за 30 минут</span></figcaption></figure>
+      <figure class="rv d3"><img src="img/bouncy.jpg" alt="Надувной батут" loading="lazy"><figcaption><b>Детская площадка</b><span>батут, горки, качели</span></figcaption></figure>
+      <figure class="rv"><img src="img/bridge.jpg" alt="Мостик и цветущий сад" loading="lazy"><figcaption><b>Сад и мостики</b><span>для прогулок и фото</span></figcaption></figure>
+      <figure class="rv d1"><img src="img/fountain.jpg" alt="Пруд с фонтаном" loading="lazy"><figcaption><b>Пруд с фонтаном</b><span>в центре территории</span></figcaption></figure>
+      <figure class="rv d2"><img src="img/slide.jpg" alt="Дети на горке" loading="lazy"><figcaption><b>Горки</b><span>для детей</span></figcaption></figure>
+      <figure class="rv d3"><img src="img/flowers.jpg" alt="Клумбы с цветами" loading="lazy"><figcaption><b>Цветники</b><span>летом всё в цвету</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<script src="assets/zp.js"></script>
+<script>
+(() => {
+  const f = document.getElementById('cf'), st = { n: 1, p: 2 };
+  const rub = v => v.toLocaleString('ru-RU') + ' ₽';
+  const pick = name => f.querySelector(`input[name=${name}]:checked`);
+  const calc = () => {
+    const s = pick('s'), h = pick('h'), b = pick('b'), L = [];
+    const stay = +s.value * st.n, ride = +h.value * st.p, bath = +b.value;
+    if (stay) L.push([`${s.dataset.n}, ${st.n} ${st.n === 1 ? 'сутки' : 'суток'}`, stay]);
+    if (ride) L.push([`${h.dataset.n} × ${st.p} чел.`, ride]);
+    if (bath) L.push([b.dataset.n, bath]);
+    document.getElementById('n').textContent = st.n;
+    document.getElementById('p').textContent = st.p + ' чел.';
+    document.getElementById('sum').textContent = rub(stay + ride + bath);
+    document.getElementById('lines').innerHTML = L.length ? L.map(([t, v]) => `<div><span>${t}</span><span>${rub(v)}</span></div>`).join('') : '<div>Выберите, что нужно, — сумма появится здесь.</div>';
+    return { L, total: stay + ride + bath };
+  };
+  f.addEventListener('change', calc);
+  f.addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (!b) return; const k = b.dataset.k; st[k] = Math.max(1, Math.min(k === 'n' ? 14 : 30, st[k] + +b.dataset.d)); calc() });
+  f.addEventListener('submit', e => {
+    e.preventDefault(); const { L, total } = calc();
+    const note = L.map(([t, v]) => `${t} — ${rub(v)}`).join('; ') + (total ? `. Итого по сайту: ${rub(total)}` : '');
+    ZP.openSheet(pick('s').value !== '0' ? 'Проживание' : 'Конная прогулка', note);
+  });
+  calc();
+})();
+</script>
+</body>
+</html>
