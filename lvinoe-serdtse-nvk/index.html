@@ -8,14 +8,14 @@
 <meta name="description" content="Гостевой дом «Львиное сердце» в Новокузнецке: дом на берегу озера, баня в доме и баня-бочка на пирсе, чан, прорубь, катамаран и сапы. 5.0 в 2ГИС. Бронь в WhatsApp.">
 <meta property="og:title" content="«Львиное сердце» — дом с баней на берегу озера">
 <meta property="og:description" content="Две бани, чан, свой пирс, катамаран и сапы. В черте Новокузнецка. Бронь в WhatsApp.">
-<meta property="og:image" content="https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/img/hero-lodge.jpg">
+<meta property="og:image" content="https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/img/poster.jpg">
 <meta property="og:url" content="https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/">
 <meta name="theme-color" content="#0f1312">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%230f1312'/%3E%3Cpath d='M15 16l-2-8 6 4 5-6 5 6 6-4-2 8z' fill='%23e3a45a'/%3E%3Cpath d='M24 42C12 34 10 29 10 25.5a7 7 0 0 1 14-2.5 7 7 0 0 1 14 2.5C38 29 36 34 24 42z' fill='none' stroke='%23e3a45a' stroke-width='2.6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-lodge.jpg" fetchpriority="high">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Львиное сердце","description":"Гостевой дом с баней на берегу озера в Новокузнецке","address":{"@type":"PostalAddress","addressLocality":"Новокузнецк","streetAddress":"СНТ Водолей, 20","addressCountry":"RU"},"geo":{"@type":"GeoCoordinates","latitude":53.763868,"longitude":87.327711},"telephone":"+79832180424","image":"https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/img/hero-lodge.jpg","url":"https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"110","bestRating":"5"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Баня","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Парковка","value":true}],"petsAllowed":true}</script>
+<link rel="preload" as="image" href="img/poster.jpg" fetchpriority="high">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Львиное сердце","description":"Гостевой дом с баней на берегу озера в Новокузнецке","address":{"@type":"PostalAddress","addressLocality":"Новокузнецк","streetAddress":"СНТ Водолей, 20","addressCountry":"RU"},"geo":{"@type":"GeoCoordinates","latitude":53.763868,"longitude":87.327711},"telephone":"+79832180424","image":"https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/img/poster.jpg","url":"https://wortxxascendance.github.io/sait/lvinoe-serdtse-nvk/","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"110","bestRating":"5"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Баня","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Парковка","value":true}],"petsAllowed":true}</script>
 <style>
 :root{--bg:#0f1312;--bg2:#151a18;--card:#1a201e;--line:rgba(227,164,90,.16);--ink:#f3ece0;--mut:#a9aa9f;--amber:#e3a45a;--amber2:#f3c98f;--ember:#c9642f;--paper:#f2ebdf;--paper2:#e8dfd0;--dk:#1c1a16;--dkm:#5f5a50;--r:22px;
 --hf:'Cormorant Garamond',Georgia,serif;--bf:'Manrope',system-ui,sans-serif}
@@ -70,10 +70,12 @@ section{position:relative}
 /* hero */
 .hero{min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#0b0e0d}
 .hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
-@media(max-width:760px){.hero picture img{object-position:30% 50%}}
-.hero picture img{animation:kb 9s cubic-bezier(.2,.6,.2,1) both;transform-origin:50% 60%}
+.hero picture img{filter:blur(28px) brightness(.55) saturate(1.2);transform:scale(1.15)}
+.hero .hp{display:block;position:relative;z-index:2;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:up 1.1s cubic-bezier(.2,.7,.2,1) both}
+@media(min-width:1000px){.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:64px;align-items:end;padding-top:120px}.hero .h-in{grid-column:1;grid-row:1}.hero .hbar{grid-column:1;grid-row:2}.hero .hp{grid-column:2;grid-row:1/3;height:min(80svh,780px);width:auto;align-self:center}.hero h1{font-size:clamp(44px,5vw,84px)}}
+@media(max-width:999px){.hero{display:block}.hero .wrap{padding-top:96px}.hero .hp{width:100%;max-width:520px;height:auto;margin:0 auto 34px}}
 @keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
-.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,14,13,.55) 0%,rgba(11,14,13,.25) 45%,rgba(11,14,13,0) 70%),linear-gradient(180deg,rgba(11,14,13,.55) 0%,rgba(11,14,13,0) 28%,rgba(11,14,13,.15) 50%,rgba(11,14,13,.92) 100%)}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,13,.35) 0%,rgba(11,14,13,0) 30%,rgba(11,14,13,.6) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:64px;padding-top:140px}
 .hero h1{font-size:clamp(52px,8.6vw,128px);max-width:1000px;text-shadow:0 2px 40px rgba(0,0,0,.35)}
 .hero .sub{margin-top:26px;font-size:clamp(17px,1.6vw,20px);max-width:600px;color:rgba(243,236,224,.88)}
@@ -340,8 +342,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <div class="mm" id="mm"><a href="#banya">Бани</a><a href="#lake">Озеро</a><a href="#house">Дом</a><a href="#party">Праздники</a><a href="#gallery">Фото</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a><a class="btn btn-a" href="#book">Забронировать</a></div>
 
 <section class="hero" id="top">
-  <picture><img src="img/hero-lodge.jpg" alt="Гостевой дом «Львиное сердце» с баней у озера на закате" fetchpriority="high"></picture>
+  <picture><img src="img/poster.jpg" alt="" aria-hidden="true"></picture>
   <div class="wrap">
+    <img class="hp" src="img/poster.jpg" alt="Гостевой дом «Львиное сердце»: дом с баней у озера, сибирский чан, мангальная зона. +7 983 218 04 24, СНТ «Водолей», 20" width="1092" height="1600" fetchpriority="high">
     <div class="h-in">
       <span class="eb">Гостевой дом · Новокузнецк</span>
       <h1>Дом с баней <em>на берегу</em> озера</h1>
