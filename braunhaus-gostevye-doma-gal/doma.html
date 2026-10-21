@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Дома и цены — БраунХаус, Усть-Сема</title>
+<meta name="description" content="Дом на 8 гостей от 8 000 ₽, семейный дом на 6 гостей от 6 000 ₽, двухместные номера летом от 4 000 ₽ за сутки. Фото, оснащение и условия заселения.">
+<meta name="theme-color" content="#2a1a10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='13' fill='%23e9a23b'/%3E%3Cpath d='M6 36 17 19l7 9 5-6 13 14' fill='none' stroke='%232a1a10' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='35' cy='13' r='3.2' fill='%232a1a10'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/bh.css">
+<style>
+.jump{display:flex;flex-wrap:wrap;gap:10px}
+.jump a{height:46px;padding:0 18px;border:1.5px solid var(--line-l);border-radius:13px;display:flex;align-items:center;gap:10px;font:500 15px/1 var(--bf);background:#fff;transition:border-color .2s}
+.jump a:hover{border-color:var(--sun)}
+.jump b{color:var(--sun3);font-weight:600}
+.unit{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start;scroll-margin-top:90px}
+.unit+.unit{margin-top:110px;padding-top:110px;border-top:1px solid var(--line-l)}
+.unit .side{position:sticky;top:100px}
+.unit h2{font-size:clamp(36px,4vw,56px);margin-top:18px}
+.unit .price{display:flex;align-items:baseline;gap:12px;margin-top:22px;flex-wrap:wrap}
+.unit .price b{font:600 44px/1 var(--hf);color:var(--sun3)}
+.unit .price span{color:var(--mut)}
+.unit .desc{margin-top:18px;color:var(--mut)}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.spec div{background:#fff;border:1px solid var(--line-l);border-radius:14px;padding:14px 16px;font-size:15px}
+.spec small{display:block;font:600 11.5px/1 var(--bf);letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+.unit .side .btn{margin-top:28px}
+.unit .gal{margin-top:0;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px}
+.unit .gal button.big{grid-column:span 2;grid-row:span 2}
+.quote{margin-top:26px;font:italic 500 19px/1.45 var(--hf);padding-left:20px;border-left:3px solid var(--sun)}
+.quote span{display:block;font:400 13.5px/1.4 var(--bf);font-style:normal;color:var(--mut);margin-top:8px}
+.cond{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.cond div{background:var(--wood2);border:1px solid var(--line-d);border-radius:20px;padding:26px}
+.cond b{display:block;font:600 30px/1.1 var(--hf);color:var(--sun2)}
+.cond span{display:block;margin-top:10px;font-size:15px;color:var(--mut-d)}
+.faq{margin-top:40px;display:grid;gap:12px;max-width:900px}
+.faq details{background:#fff;border:1px solid var(--line-l);border-radius:16px;padding:0 22px}
+.faq summary{list-style:none;cursor:pointer;padding:20px 0;font:600 18px/1.35 var(--bf);display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';font:400 26px/1 var(--bf);color:var(--sun3);transition:transform .3s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{padding:0 0 20px;color:var(--mut)}
+@media(max-width:1000px){
+  .unit{grid-template-columns:1fr;gap:34px}
+  .unit .side{position:static}
+  .cond{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .unit+.unit{margin-top:70px;padding-top:70px}
+  .unit .gal{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
+  .unit .gal button.big{grid-column:span 2;grid-row:span 2}
+  .spec{grid-template-columns:1fr}
+  .cond{grid-template-columns:1fr}
+  .unit .side .btn{width:100%}
+}
+</style>
+</head>
+<body data-page="stay">
+
+<section class="ph">
+  <img src="img/house8.jpg" alt="Двухэтажный дом на 8 гостей" fetchpriority="high">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Главная</a> · Дома и цены</div>
+    <h1>Дома <em>и номера</em></h1>
+    <p class="lead">Два дома, которые снимают целиком, и двухместные номера в деревянных домиках с террасами. Везде свой санузел, свежее бельё и полотенца.</p>
+  </div>
+</section>
+
+<section class="sp" style="padding-top:50px">
+  <div class="wrap">
+    <nav class="jump rv" aria-label="Варианты проживания">
+      <a href="#house8">Дом на 8 гостей <b>от 8 000 ₽</b></a>
+      <a href="#house6">Семейный дом на 6 <b>от 6 000 ₽</b></a>
+      <a href="#rooms">Двухместный номер <b>от 4 000 ₽</b></a>
+    </nav>
+
+    <article class="unit" id="house8" style="margin-top:70px">
+      <div class="side rv">
+        <span class="eb">Круглый год · до 8 гостей</span>
+        <h2>Двухэтажный <em>дом на 8 гостей</em></h2>
+        <div class="price"><b>от 8 000 ₽</b><span>за сутки за весь дом</span></div>
+        <p class="desc">Три спальни на втором этаже, в каждой — двуспальная кровать и шкаф. Внизу кухня-гостиная с угловым диваном и санузел с душем. Терраса со столом.</p>
+        <div class="spec">
+          <div><small>Кухня</small>Посудомоечная машина, микроволновка, холодильник, всё для готовки</div>
+          <div><small>Удобства</small>Стиральная машина, телевизор, кондиционер</div>
+          <div><small>Спальни</small>3 спальни с двуспальными кроватями</div>
+          <div><small>Санузел</small>Душ, раковина, туалет на первом этаже</div>
+        </div>
+        <p class="quote">«В доме тёплый пол, что позволяет отдыхать в любое время года, на кухне хорошая посуда и даже посудомоечная машина».<span>Дарья Филатова, апрель 2026</span></p>
+        <button class="btn btn-s" data-book="Дом на 8 гостей">Забронировать дом</button>
+      </div>
+      <div class="gal rv d1">
+        <button class="big"><img src="img/b_live.jpg" alt="Кухня-гостиная с лестницей на второй этаж" loading="lazy"></button>
+        <button><img src="img/house8.jpg" alt="Дом снаружи" loading="lazy"></button>
+        <button><img src="img/b_bed.jpg" alt="Спальня под скатной крышей" loading="lazy"></button>
+        <button><img src="img/b_lounge.jpg" alt="Гостиная с диваном и обеденной зоной" loading="lazy"></button>
+        <button><img src="img/b_kit.jpg" alt="Кухня с обеденным столом" loading="lazy"></button>
+        <button><img src="img/b_bed2.jpg" alt="Спальня с двуспальной кроватью" loading="lazy"></button>
+        <button><img src="img/b_stairs.jpg" alt="Лестница на второй этаж" loading="lazy"></button>
+        <button><img src="img/b_sofa.jpg" alt="Угловой диван у лестницы" loading="lazy"></button>
+        <button><img src="img/b_bed3.jpg" alt="Спальня с бра" loading="lazy"></button>
+        <button><img src="img/b_kit2.jpg" alt="Кухня с холодильником и микроволновкой" loading="lazy"></button>
+        <button><img src="img/b_robot.jpg" alt="Робот-пылесос в доме" loading="lazy"></button>
+      </div>
+    </article>
+
+    <article class="unit" id="house6">
+      <div class="side rv">
+        <span class="eb">Круглый год · до 6 гостей</span>
+        <h2>Семейный <em>дом на 6 гостей</em></h2>
+        <div class="price"><b>от 6 000 ₽</b><span>за сутки за весь дом</span></div>
+        <p class="desc">Две комнаты с двуспальными кроватями и гостиная с угловым диваном, совмещённая с кухней. Свой санузел.</p>
+        <div class="spec">
+          <div><small>Кухня</small>Холодильник, микроволновая печь, посуда</div>
+          <div><small>Быт</small>Стиральная машина, утюг, гладильная доска, сушилка</div>
+          <div><small>Комфорт</small>Телевизор, Wi-Fi, кондиционер</div>
+          <div><small>Парковка</small>На территории, под видеонаблюдением</div>
+        </div>
+        <p class="quote">«Снимали домик на 2 спальни, большая комната с собственной кухней, столом. Холодильник, микроволновка, чайник, стиральная машина (!!) и всё по списку».<span>Александр Дайнаков, апрель 2024</span></p>
+        <button class="btn btn-s" data-book="Семейный дом на 6 гостей">Забронировать дом</button>
+      </div>
+      <div class="gal rv d1">
+        <button class="big"><img src="img/f_lounge.jpg" alt="Гостиная с угловым диваном и столом" loading="lazy"></button>
+        <button><img src="img/f_dining.jpg" alt="Обеденный стол у окна" loading="lazy"></button>
+        <button><img src="img/f_bed2.jpg" alt="Спальня с двуспальной кроватью" loading="lazy"></button>
+        <button><img src="img/f_lounge2.jpg" alt="Гостиная-кухня" loading="lazy"></button>
+        <button><img src="img/f_bed.jpg" alt="Светлая спальня" loading="lazy"></button>
+        <button><img src="img/f_room.jpg" alt="Вид на гостиную из прихожей" loading="lazy"></button>
+        <button><img src="img/f_bed3.jpg" alt="Спальня с картинами" loading="lazy"></button>
+        <button><img src="img/f_lounge3.jpg" alt="Мягкий уголок и обеденный стол" loading="lazy"></button>
+        <button><img src="img/b_kit3.jpg" alt="Кухонный гарнитур" loading="lazy"></button>
+        <button><img src="img/bath.jpg" alt="Санузел с душевой кабиной и стиральной машиной" loading="lazy"></button>
+        <button><img src="img/f_bed4.jpg" alt="Спальня" loading="lazy"></button>
+      </div>
+    </article>
+
+    <article class="unit" id="rooms">
+      <div class="side rv">
+        <span class="eb">Только летом · на двоих</span>
+        <h2>Двухместный <em>номер</em></h2>
+        <div class="price"><b>от 4 000 ₽</b><span>за сутки за номер</span></div>
+        <p class="desc">На территории 4 деревянных домика, в каждом по два номера. В номере двуспальная кровать, стол, два стула и шкаф.</p>
+        <div class="spec">
+          <div><small>Санузел</small>В номере: душевая кабина, раковина, унитаз</div>
+          <div><small>Кухня</small>Тёплая общая кухня с летней верандой на 5 столов</div>
+          <div><small>Терраса</small>У домиков — террасы с видом на двор</div>
+          <div><small>Мангал</small>Крытая мангальная зона рядом</div>
+        </div>
+        <p class="quote">«Нас разместили в комфортном домике, принесли дополнительное место для ребёнка. Общая кухня оборудована всем необходимым».<span>Светлана Волокитина, июнь 2025</span></p>
+        <button class="btn btn-s" data-book="Двухместный номер (летом)">Забронировать номер</button>
+      </div>
+      <div class="gal rv d1">
+        <button class="big"><img src="img/r_room.jpg" alt="Номер с деревянными стенами и двуспальной кроватью" loading="lazy"></button>
+        <button><img src="img/cab.jpg" alt="Домик с террасой и лежаками" loading="lazy"></button>
+        <button><img src="img/r_room2.jpg" alt="Номер с подсветкой" loading="lazy"></button>
+        <button><img src="img/duplex.jpg" alt="Домик на два номера" loading="lazy"></button>
+        <button><img src="img/r_room7.jpg" alt="Номер с выходом на террасу" loading="lazy"></button>
+        <button><img src="img/r_bath.jpg" alt="Санузел в номере" loading="lazy"></button>
+        <button><img src="img/r_hammock.jpg" alt="Гамак на террасе домика" loading="lazy"></button>
+        <button><img src="img/r_room3.jpg" alt="Номер с картинами" loading="lazy"></button>
+        <button><img src="img/r_terr.jpg" alt="Терраса с гирляндой вечером" loading="lazy"></button>
+        <button><img src="img/ver3.jpg" alt="Общая кухня-веранда со столами" loading="lazy"></button>
+        <button><img src="img/r_room5.jpg" alt="Номер с кроватью и столиком" loading="lazy"></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sp dark">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Условия</span><h2>Коротко <em>о главном</em></h2></div></div>
+    <div class="cond">
+      <div class="rv"><b>14:00 / 11:00</b><span>Заезд с 14:00, выезд до 11:00.</span></div>
+      <div class="rv d1"><b>С питомцами</b><span>Можно, но по предварительному согласованию с хозяевами.</span></div>
+      <div class="rv d2"><b>Помесячно</b><span>Дома можно снять и на месяц — уточните условия.</span></div>
+      <div class="rv d3"><b>Оплата</b><span>Наличными или переводом с карты.</span></div>
+    </div>
+    <p class="rv" style="margin-top:26px;color:var(--mut-d);font-size:15px">БраунХаус — база семейного типа: шумные компании хозяева просят не беспокоить. Номер в реестре средств размещения: С042026024469.</p>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Вопросы</span><h2>Часто <em>спрашивают</em></h2></div></div>
+    <div class="faq rv">
+      <details><summary>Почему цена «от»?</summary><p>В 2ГИС хозяева указали стартовые цены за сутки. На конкретные даты стоимость может отличаться — напишите даты и количество гостей, и хозяева назовут точную цену.</p></details>
+      <details><summary>Работаете ли зимой?</summary><p>Да. По отзывам гостей, зимой работают два тёплых дома — на 2 и 3 спальни. Двухместные номера принимают гостей только летом.</p></details>
+      <details><summary>Можно ли с детьми?</summary><p>Да, база семейная. Для детей есть батут, песочница, детская площадка, шведская стенка и детская комната. Гости пишут, что ребёнку приносили дополнительное спальное место.</p></details>
+      <details><summary>Есть ли баня?</summary><p>Да, гости в отзывах её очень хвалят. Стоимость и время уточните у хозяев — отметьте «Баня» в заявке.</p></details>
+      <details><summary>Есть ли трансфер?</summary><p>Да, в 2ГИС указан трансфер. Откуда и сколько стоит — уточните у хозяев, отметьте «Нужен трансфер» в заявке.</p></details>
+      <details><summary>Где оставить машину?</summary><p>Парковка на территории, под видеонаблюдением. Один из гостей пишет, что туда без проблем поместился даже лимузин.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final sp">
+  <img src="img/row.jpg" alt="" loading="lazy">
+  <div class="wrap rv">
+    <span class="eb">Бронь в WhatsApp</span>
+    <h2>Выберите дом <em>и даты</em></h2>
+    <p class="lead">Сайт сразу посчитает ориентировочную сумму, а хозяева подтвердят, свободно ли.</p>
+    <div class="row"><button class="btn btn-s" data-book>Проверить даты</button><a class="btn btn-o" href="territoriya.html">Территория</a></div>
+  </div>
+</section>
+
+<script src="assets/bh.js"></script>
+</body>
+</html>
