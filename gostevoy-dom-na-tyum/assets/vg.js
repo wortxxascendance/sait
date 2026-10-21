@@ -116,7 +116,7 @@
     e.preventDefault();
     const pick = id => $$(id + ' button[aria-pressed=true]').map(b => b.textContent), v = id => $(id).value.trim();
     const stay = pick('#bk-s'), extra = pick('#bk-x');
-    const text = ['Здравствуйте! Здравствуйте! Пишу с сайта, хочу забронировать дом на Волгоградской.', stay.length && 'Повод: ' + stay.join(', '),
+    const text = ['Здравствуйте! Пишу с сайта, хочу забронировать дом на Волгоградской.', stay.length && 'Повод: ' + stay.join(', '),
       v('#bk-in') && 'Заезд: ' + fmtDate(v('#bk-in')), v('#bk-out') && 'Выезд: ' + fmtDate(v('#bk-out')),
       v('#bk-a') && 'Гостей: ' + v('#bk-a'), +v('#bk-k') > 0 && 'Детей: ' + v('#bk-k'),
       extra.length && 'Ещё: ' + extra.join(', '), v('#bk-n') && 'Имя: ' + v('#bk-n'), v('#bk-c') && v('#bk-c')].filter(Boolean).join('\n');
