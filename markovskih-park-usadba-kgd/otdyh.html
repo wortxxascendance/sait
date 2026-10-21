@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Рыбалка и отдых — парк-усадьба Марковских</title>
+<meta name="description" content="Рыбалка на водоёмах усадьбы Марковских: карп, сазан, щука, сом, окунь, линь. Прокат сапов, лодок, катамаранов, велосипедов и квадроциклов. Лес, грибы и ягоды.">
+<meta name="theme-color" content="#10231f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='13' fill='%23d9a441'/%3E%3Cpath d='M10 24 24 12l14 12M14 22v10h20V22M7 38c4-3 8 3 12 0s8 3 12 0 8 3 10 0' fill='none' stroke='%2310231f' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/mk.css">
+<style>
+.fish{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
+.fish .pp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fish .pp figure{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.fish .pp figure:first-child{grid-column:span 2;aspect-ratio:16/10}
+.fish .pp img{width:100%;height:100%;object-fit:cover}
+.kinds{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.kinds span{background:var(--sand);border-radius:10px;padding:8px 14px;font-size:14.5px;font-weight:600}
+.rent{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.rent div{border:1px solid var(--line-d);border-radius:18px;padding:22px;text-align:center}
+.rent b{display:block;font:600 26px/1.1 var(--hf);color:var(--sun2)}
+.list{list-style:none;display:grid;gap:12px;margin-top:24px}
+.list li{padding-left:24px;position:relative}
+.list li:before{content:'';position:absolute;left:2px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--sun)}
+@media(max-width:1000px){.fish{grid-template-columns:1fr;gap:40px}.rent{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.rent{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body data-page="rest">
+
+<section class="ph">
+  <img src="img/lake4.jpg" alt="Озеро с пирсом и лесом на берегу" fetchpriority="high">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Главная</a> · Рыбалка и отдых</div>
+    <h1>Озёра, лес <em>и рыбалка</em></h1>
+    <p class="lead">Три небольших озера, природное озеро Большое и лес вокруг. Рыбалка, сапы, лодки и тишина — гости пишут, что уезжать не хочется.</p>
+  </div>
+</section>
+
+<section class="sp" style="padding-top:60px">
+  <div class="wrap"><div class="fish">
+    <div class="pp rv">
+      <figure><img src="img/fish.jpg" alt="Гость с крупным карпом" loading="lazy"></figure>
+      <figure><img src="img/fish4.jpg" alt="Пойманная рыба на пирсе" loading="lazy"></figure>
+      <figure><img src="img/kid.jpg" alt="Ребёнок с удочкой и уловом" loading="lazy"></figure>
+    </div>
+    <div class="rv d1">
+      <span class="eb">Рыбалка · 1 000 ₽</span>
+      <h2 style="margin-top:20px">Рыба, которую <em>здесь вырастили</em></h2>
+      <p class="lead" style="margin-top:20px">Больше 8 лет в усадьбе восстанавливают популяцию рыбы: выращивают мальков в трёх искусственных озёрах и выпускают в естественную среду.</p>
+      <div class="kinds"><span>Окунь</span><span>Плотва</span><span>Карась</span><span>Карп</span><span>Сазан</span><span>Щука</span><span>Толстолобик</span><span>Амур</span><span>Сом</span><span>Линь</span></div>
+      <ul class="list">
+        <li>Для гостей, которые забронировали беседку или дом</li>
+        <li>С 8:00 до 21:00, на оборудованных местах у беседок с выходом к воде</li>
+        <li>Ночная рыбалка запрещена; о рыбалке нужно сказать администратору</li>
+      </ul>
+      <button class="btn btn-s" data-book="Беседка на день" data-extra="Рыбалка" style="margin-top:30px">Забронировать рыбалку</button>
+    </div>
+  </div></div>
+</section>
+
+<section class="sp dark">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Прокат</span><h2>Сапы, лодки <em>и квадроциклы</em></h2></div><button class="btn btn-s" data-book data-extra="Сапы, лодки, катамараны">Спросить про прокат</button></div>
+    <div class="rent">
+      <div class="rv"><b>Сапы</b></div>
+      <div class="rv d1"><b>Вёсельные лодки</b></div>
+      <div class="rv d2"><b>Катамараны</b></div>
+      <div class="rv d3"><b>Велосипеды</b></div>
+      <div class="rv"><b>Квадроциклы</b></div>
+    </div>
+    <p class="rv" style="margin-top:22px;color:var(--mut-d);font-size:15px">Стоимость проката уточните у администратора.</p>
+    <div class="gal rv">
+      <button class="w t"><img src="img/kayak.jpg" alt="Гости на сапах" loading="lazy"></button>
+      <button><img src="img/sup.jpg" alt="Сапы у беседки" loading="lazy"></button>
+      <button><img src="img/swim.jpg" alt="Купание в озере" loading="lazy"></button>
+      <button><img src="img/fire.jpg" alt="Костёр вечером" loading="lazy"></button>
+      <button><img src="img/food.jpg" alt="Запечённая рыба" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sp">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Природа</span><h2>Лес, озёра <em>и закаты</em></h2></div><p class="lead" style="max-width:440px">«Рыбалка, сбор ягод и грибов — что ещё для счастья надо». — Юльчик Перечёсова</p></div>
+    <div class="gal rv">
+      <button class="w t"><img src="img/lake.jpg" alt="Закат над озером" loading="lazy"></button>
+      <button><img src="img/lake2.jpg" alt="Озеро в отражениях" loading="lazy"></button>
+      <button><img src="img/birch.jpg" alt="Берёзовая роща" loading="lazy"></button>
+      <button><img src="img/mush.jpg" alt="Грибы в лесу" loading="lazy"></button>
+      <button><img src="img/lake3.jpg" alt="Озеро и зелёный берег" loading="lazy"></button>
+      <button><img src="img/lupin.jpg" alt="Люпин" loading="lazy"></button>
+      <button><img src="img/lake5.jpg" alt="Берег с пирсами" loading="lazy"></button>
+      <button><img src="img/mush2.jpg" alt="Подберёзовик в руке" loading="lazy"></button>
+      <button class="w"><img src="img/lake6.jpg" alt="Озеро летом" loading="lazy"></button>
+      <button><img src="img/path.jpg" alt="Каменные ступени к дому" loading="lazy"></button>
+      <button><img src="img/lake7.jpg" alt="Солнце над озером" loading="lazy"></button>
+      <button><img src="img/dog.jpg" alt="Овчарка на деревянной скамье" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sp sand">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eb">Зима</span><h2>Зимой <em>тоже красиво</em></h2></div><p class="lead" style="max-width:440px">«Обязательно приедем зимой!» — Станислав Юкиш. В закрытых беседках №3–6 тёплые полы.</p></div>
+    <div class="gal rv">
+      <button class="w t"><img src="img/w5.jpg" alt="Зимний вид на озеро из окна" loading="lazy"></button>
+      <button><img src="img/w1.jpg" alt="Дом под снегом" loading="lazy"></button>
+      <button><img src="img/w2.jpg" alt="Заснеженный берег" loading="lazy"></button>
+      <button><img src="img/w3.jpg" alt="Дом зимой" loading="lazy"></button>
+      <button><img src="img/w4.jpg" alt="Беседка в снегу" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="final sp">
+  <img src="img/lake8.jpg" alt="" loading="lazy">
+  <div class="wrap rv">
+    <span class="eb">Бронь в WhatsApp</span>
+    <h2>Приезжайте <em>на рыбалку</em></h2>
+    <p class="lead">Забронируйте беседку или дом — и рыбачьте с 8:00 до 21:00.</p>
+    <div class="row"><button class="btn btn-s" data-book data-extra="Рыбалка">Забронировать</button><a class="btn btn-o" href="kontakty.html">Как добраться</a></div>
+  </div>
+</section>
+
+<script src="assets/mk.js"></script>
+</body>
+</html>
