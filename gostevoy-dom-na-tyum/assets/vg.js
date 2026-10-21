@@ -1,6 +1,6 @@
 // общие шапка, подвал, бронь в WhatsApp, галерея и анимации для всех страниц гостевого дома на Волгоградской
 (() => {
-  const WA = '', TEL = '+79993432002', TEL_H = '+7 999 343-20-02', TG = 'posutki72';
+  const WA = '', TEL = '+79993432002', TEL_H = '+7 999 343-20-02', TG = 'posutki';
   const GIS = 'https://2gis.ru/tyumen/firm/70000001096326848';
   // цена «от» из 2ГИС; точную называет хозяин
   const STAY = [['Юбилей', 0], ['День рождения', 0], ['Свадьба / второй день', 0], ['Корпоратив', 0], ['Отдых компанией', 0]];
@@ -33,9 +33,9 @@
 
   document.body.insertAdjacentHTML('beforeend', `
 <footer class="ft"><div class="wrap"><div class="g">
-  <div>${logo}<p style="max-width:330px;margin-top:20px">Большой дом в черте Тюмени для праздников до 25–30 гостей: сауна, русская парная, тёплый бассейн и мангал во дворе.</p></div>
+  <div>${logo}<p style="max-width:330px;margin-top:20px">Большой дом в черте Тюмени для праздников на 25–30 гостей: сауна, тёплый бассейн и мангал во дворе.</p></div>
   <div><h4>Разделы</h4>${NAV.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</div>
-  <div><h4>Связь</h4><a href="tel:${TEL}">${TEL_H}</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">Telegram @${TG}</a></div>
+  <div><h4>Связь</h4><a href="tel:${TEL}">${TEL_H} · Max</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">Telegram @${TG}</a></div>
   <div><h4>Где мы</h4><a href="#kontakty">Тюмень, Волгоградская улица, 56</a><p style="padding-top:5px">На связи ежедневно 10:00–23:00</p></div>
 </div><div class="cp"><span>© Гостевой дом на Волгоградской, Тюмень</span><a href="${GIS}" target="_blank" rel="noopener" style="display:inline;padding:0">4.8 ★ в 2ГИС · 162 оценки</a></div></div></footer>
 <div class="mbar"><a href="tel:${TEL}">${I.ph}Звонок</a><button data-book>${I.tg}Забронировать</button></div>
