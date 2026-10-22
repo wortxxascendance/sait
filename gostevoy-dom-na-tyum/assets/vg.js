@@ -1,6 +1,6 @@
 // общие шапка, подвал, бронь в WhatsApp, галерея и анимации для всех страниц гостевого дома на Волгоградской
 (() => {
-  const WA = '', TEL = '+79993432002', TEL_H = '+7 999 343-20-02', TG = 'posutki';
+  const WA = '', TEL = '+79993432002', TEL_H = '+7 999 343-20-02', TG = 'posutki', MAX = 'https://max.ru/u/f9LHodD0cOLX24F78hDp0_dG7fwn4xtoY7cncZcghv00p2NA2NQFJMFoPNg';
   const GIS = 'https://2gis.ru/tyumen/firm/70000001096326848';
   // цена «от» из 2ГИС; точную называет хозяин
   const STAY = [['Юбилей', 0], ['День рождения', 0], ['Свадьба / второй день', 0], ['Корпоратив', 0], ['Отдых компанией', 0]];
@@ -35,14 +35,14 @@
 <footer class="ft"><div class="wrap"><div class="g">
   <div>${logo}<p style="max-width:330px;margin-top:20px">Большой дом в черте Тюмени для праздников на 25–30 гостей: сауна, тёплый бассейн и мангал во дворе.</p></div>
   <div><h4>Разделы</h4>${NAV.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}</div>
-  <div><h4>Связь</h4><a href="tel:${TEL}">${TEL_H} · Max</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">Telegram @${TG}</a></div>
+  <div><h4>Связь</h4><a href="tel:${TEL}">${TEL_H}</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">Telegram @${TG}</a><a href="${MAX}" target="_blank" rel="noopener">Max</a></div>
   <div><h4>Где мы</h4><a href="#kontakty">Тюмень, Волгоградская улица, 56</a><p style="padding-top:5px">На связи ежедневно 10:00–23:00</p></div>
 </div><div class="cp"><span>© Гостевой дом на Волгоградской, Тюмень</span><a href="${GIS}" target="_blank" rel="noopener" style="display:inline;padding:0">4.8 ★ в 2ГИС · 162 оценки</a></div></div></footer>
 <div class="mbar"><a href="tel:${TEL}">${I.ph}Звонок</a><button data-book>${I.tg}Забронировать</button></div>
 <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="bk-t"><div class="bd" data-close></div><div class="pn">
   <button class="x" aria-label="Закрыть" data-close>${I.x}</button>
   <span class="eb">Бронь</span><h3 id="bk-t">Проверим, <em>свободны ли даты</em></h3>
-  <p style="color:var(--mut);margin-top:10px">Текст заявки скопируется, и откроется Telegram хозяина — вставьте и отправьте. Он ответит, свободна ли дата, и назовёт точную цену.</p>
+  <p style="color:var(--mut);margin-top:10px">Выберите, куда отправить — в Telegram или Max. Текст заявки скопируется, откроется чат хозяина — вставьте и отправьте. Он ответит, свободна ли дата, и назовёт точную цену.</p>
   <form class="fm" id="bk" novalidate>
     <div class="lb2">Повод<div class="chips" id="bk-s">${STAY.map(([t, p]) => `<button type="button" aria-pressed="false" data-p="${p}">${t}</button>`).join('')}</div></div>
     <div class="two"><label for="bk-in">Заезд<input class="inp" id="bk-in" type="date"></label><label for="bk-out">Выезд<input class="inp" id="bk-out" type="date"></label></div>
@@ -51,10 +51,11 @@
     <p class="est" id="bk-e" aria-live="polite"></p>
     <label for="bk-n">Имя<input class="inp" id="bk-n" autocomplete="name" placeholder="Как к вам обращаться"></label>
     <label for="bk-c">Комментарий<input class="inp" id="bk-c" placeholder="Например: юбилей, нас 25, нужна колонка"></label>
-    <button class="btn btn-wa" type="submit" style="background:#2aabee;color:#fff">${I.tg}Отправить в Telegram</button>
+    <button class="btn btn-wa" type="submit" data-to="tg" style="background:#2aabee;color:#fff">${I.tg}Забронировать через Telegram</button>
+    <button class="btn btn-wa" type="submit" data-to="max" style="background:#6a3cf0;color:#fff">Забронировать через Max</button>
     <p class="note">Можно и просто позвонить: +7 999 343-20-02.</p>
   </form>
-  <div class="alt"><a href="tel:${TEL}">${I.ph}Позвонить</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">${I.tg}Telegram</a></div>
+  <div class="alt"><a href="tel:${TEL}">${I.ph}Позвонить</a><a href="https://t.me/${TG}" target="_blank" rel="noopener">${I.tg}Telegram</a><a href="${MAX}" target="_blank" rel="noopener">Max</a></div>
 </div></div>
 <div class="lb" role="dialog" aria-modal="true" aria-label="Фотография"><img alt=""><p class="cap"></p>
   <button class="x" aria-label="Закрыть" data-lbx>${I.x}</button><button class="pv" aria-label="Предыдущее фото">${I.l}</button><button class="nx" aria-label="Следующее фото">${I.r}</button></div>`);
@@ -110,7 +111,7 @@
     if (lb.classList.contains('open') && e.key === 'ArrowRight') show(at + 1);
   });
 
-  const toast2 = () => { const n = $('#bk .note'); n.textContent = 'Текст заявки скопирован — вставьте его в чат Telegram и отправьте.'; };
+  const toast2 = app => { const n = $('#bk .note'); n.textContent = `Текст заявки скопирован — вставьте его в чат ${app} и отправьте.`; };
   const fmtDate = v => v ? new Date(v + 'T12:00').toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', weekday: 'short' }) : '';
   $('#bk').addEventListener('submit', e => {
     e.preventDefault();
@@ -120,7 +121,8 @@
       v('#bk-in') && 'Заезд: ' + fmtDate(v('#bk-in')), v('#bk-out') && 'Выезд: ' + fmtDate(v('#bk-out')),
       v('#bk-a') && 'Гостей: ' + v('#bk-a'), +v('#bk-k') > 0 && 'Детей: ' + v('#bk-k'),
       extra.length && 'Ещё: ' + extra.join(', '), v('#bk-n') && 'Имя: ' + v('#bk-n'), v('#bk-c') && v('#bk-c')].filter(Boolean).join('\n');
-    try { navigator.clipboard.writeText(text) } catch (_) { } toast2(); window.open(`https://t.me/${TG}`, '_blank', 'noopener');
+    const max = e.submitter && e.submitter.dataset.to === 'max';
+    try { navigator.clipboard.writeText(text) } catch (_) { } toast2(max ? 'Max' : 'Telegram'); window.open(max ? MAX : `https://t.me/${TG}`, '_blank', 'noopener');
   });
 
   const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target) } }), { rootMargin: '0px 0px -8% 0px' });
