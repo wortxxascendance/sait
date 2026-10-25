@@ -3,7 +3,7 @@
   const WA = '79291616516', TEL = '+79291616516', TEL_H = '+7 929 161-65-16', MAIL = 'markovka130974@gmail.com';
   const GIS = 'https://2gis.ru/kaliningrad/firm/70000001056691697';
   // цены из прайса в 2ГИС, за сутки; у беседок цена в прайсе своя для каждой
-  const STAY = [['Коттедж «Панорама»', 25000], ['Половина дома «Лесной дуэт»', 17000], ['«Лесной дуэт» целиком', 30000], ['Дом с камином', 35000], ['Беседка на день', 0]];
+  const STAY = [['Коттедж «Панорама»', 25000], ['Половина дома «Лесной дуэт»', 17000], ['«Лесной дуэт» целиком', 30000], ['Дом с камином', 35000], ['Беседка на день', 0], ['Авторский тур «всё включено»', 0]];
   const EXTRA = ['Рыбалка', 'Сапы, лодки, катамараны', 'Квадроциклы', 'Приедем с питомцем', 'Нужен трансфер'];
   const I = {
     logo: '<svg viewBox="0 0 48 48" fill="none"><rect width="48" height="48" rx="13" fill="#d9a441"/><path d="M10 24 24 12l14 12M14 22v10h20V22" stroke="#10231f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 38c4-3 8 3 12 0s8 3 12 0 8 3 10 0" stroke="#10231f" stroke-width="2.6" stroke-linecap="round"/></svg>',
@@ -16,7 +16,7 @@
     r: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5l7 7-7 7"/></svg>'
   };
   const page = document.body.dataset.page;
-  const NAV = [['doma.html', 'Дома', 'stay'], ['besedki.html', 'Беседки', 'gazebo'], ['otdyh.html', 'Рыбалка и отдых', 'rest'], ['kontakty.html', 'Как добраться', 'contacts']];
+  const NAV = [['doma.html', 'Дома', 'stay'], ['besedki.html', 'Беседки', 'gazebo'], ['doma.html#tour', 'Авторский тур', 'tour'], ['otdyh.html', 'Рыбалка и отдых', 'rest'], ['kontakty.html', 'Как добраться', 'contacts']];
   const logo = `<a class="logo" href="index.html" aria-label="Усадьба Марковских — на главную">${I.logo}<div><b>Усадьба Марковских</b><span>Парк-усадьба · Логвино</span></div></a>`;
 
   document.body.insertAdjacentHTML('afterbegin', `
