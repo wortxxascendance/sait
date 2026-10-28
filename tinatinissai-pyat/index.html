@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tinatin — грузинская кухня в Пятигорске</title>
+<meta name="description" content="Хинкали, хачапури, блюда на мангале и домашнее вино. Проспект 40 лет Октября, 79, ежедневно 11:00–23:00. Заказ и бронь стола в WhatsApp.">
+<meta name="theme-color" content="#17352c">
+<meta property="og:title" content="Tinatin — грузинская кухня в Пятигорске">
+<meta property="og:description" content="Хинкали, хачапури, мангал. Заказ и бронь стола в WhatsApp.">
+<meta property="og:image" content="https://wortxxascendance.github.io/sait/tinatinissai-pyat/img/adjaruli.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%2317352c'/%3E%3Ctext x='24' y='34' font-family='Georgia' font-size='26' text-anchor='middle' fill='%23c9a25a'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f0e6;--bg2:#ece3d3;--card:#fffcf6;--green:#17352c;--green2:#204a3d;--line:rgba(23,53,44,.14);--tx:#1d2a25;--mut:#5f6a62;--acc:#8c2232;--acc2:#6f1a27;--gold:#c9a25a;--r:14px;--hf:'Cormorant Garamond',Georgia,serif;
+  /* орнамент как на полях меню кафе: ромб с лепестками */
+  --orn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Crect width='56' height='28' fill='%2317352c'/%3E%3Cpath d='M28 3 39 14 28 25 17 14Z' fill='none' stroke='%23c9a25a' stroke-width='1.6'/%3E%3Ccircle cx='28' cy='14' r='3' fill='%238c2232'/%3E%3Cpath d='M0 14c4-5 8-5 10 0-2 5-6 5-10 0ZM56 14c-4-5-8-5-10 0 2 5 6 5 10 0Z' fill='%23e8dcc6'/%3E%3C/svg%3E")}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font:17px/1.6 'Manrope',system-ui,sans-serif;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--hf);font-weight:700;line-height:1.05;letter-spacing:-.005em}
+h2{font-size:clamp(38px,5vw,58px)}
+h3{font-size:26px}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--mut);max-width:640px;margin-top:14px}
+.sp{padding:clamp(66px,8.5vw,108px) 0}
+.alt{background:var(--bg2)}
+.orn{height:28px;background:var(--orn) repeat-x center/auto 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 24px;border-radius:10px;font:700 16px/1 'Manrope',sans-serif;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.btn-p{background:var(--acc);color:#fff}
+.btn-p:hover{background:var(--acc2)}
+.btn-o{border:1px solid rgba(23,53,44,.28)}
+.btn-o:hover{border-color:var(--acc);color:var(--acc)}
+.btn-l{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-l:hover{background:rgba(255,255,255,.1)}
+
+.hd{position:sticky;top:0;z-index:50;background:rgba(23,53,44,.97);color:#f3ead9;backdrop-filter:blur(10px)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{text-decoration:none;font:700 30px/1 var(--hf);color:var(--gold);letter-spacing:.02em}
+.logo small{display:block;font:600 11.5px/1 'Manrope';color:#c4cfc6;margin-top:5px;letter-spacing:.06em;text-transform:uppercase}
+.nav{display:flex;gap:26px}
+.nav a{text-decoration:none;font-size:15px;font-weight:600;color:#d3ddd5}
+.nav a:hover{color:#fff}
+.hd .btn{height:42px;padding:0 18px;font-size:15px}
+.burger{display:none;width:44px;height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.2)}
+.burger span{display:block;width:18px;height:2px;background:#fff;margin:4px auto}
+
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--green)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,32,26,.9) 0%,rgba(14,32,26,.66) 55%,rgba(14,32,26,.3))}
+.hero .wrap{position:relative;z-index:2;padding-top:clamp(72px,10vw,136px);padding-bottom:clamp(60px,8vw,100px)}
+.hero .since{font:600 13px/1 'Manrope';letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-size:clamp(64px,10vw,124px);margin-top:14px;color:#fff}
+.hero h1 span{display:block;font-size:.3em;font-weight:600;color:#efe3c8;margin-top:10px;line-height:1.25;max-width:600px}
+.hero .lead{color:#e3e9e3;max-width:540px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:46px;max-width:880px;border-top:1px solid rgba(255,255,255,.22)}
+.facts div{padding:18px 18px 0 0}
+.facts b{display:block;font:800 22px/1.2 'Manrope';letter-spacing:-.01em}
+.facts span{font-size:14px;color:#c9d4cc}
+
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.tab{height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-weight:700;font-size:15px;background:var(--card)}
+.tab.on{background:var(--green);color:#fff;border-color:var(--green)}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;margin-top:26px}
+.item{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px dashed rgba(23,53,44,.2)}
+.item .n{flex:1;min-width:0}
+.item b{display:block;font-weight:700}
+.item small{display:block;color:var(--mut);font-size:14px;line-height:1.4;margin-top:2px}
+.item .p{font-weight:800;white-space:nowrap;text-align:right}
+.item .p i{display:block;font:500 12.5px 'Manrope';color:var(--mut);font-style:normal}
+.add{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--acc);color:var(--acc);font-size:22px;line-height:1;display:grid;place-items:center;transition:background .2s,color .2s}
+.add:hover{background:var(--acc);color:#fff}
+.qty{flex:none;display:flex;align-items:center;gap:8px;font-weight:800}
+.qty button{width:32px;height:32px;border-radius:50%;background:var(--acc);color:#fff;font-size:18px;line-height:1}
+.mnote{margin-top:18px;font-size:14.5px;color:var(--mut)}
+
+.cart{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);z-index:70;width:min(560px,calc(100% - 24px));background:var(--green);color:#fff;border-radius:16px;padding:12px 12px 12px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.3);transition:transform .35s}
+.cart.on{transform:translate(-50%,0)}
+.cart .s{flex:1;font-size:15px}
+.cart .s b{display:block;font-size:19px}
+.cart .btn{height:46px}
+
+.sheet{position:fixed;inset:0;z-index:90;background:rgba(10,24,19,.6);display:none;align-items:flex-end;justify-content:center}
+.sheet.on{display:flex}
+.sheet .box{background:var(--card);width:min(560px,100%);max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:24px}
+.sheet h3{font-size:30px}
+.lines{margin-top:14px;display:grid;gap:8px;font-size:15px}
+.lines div{display:flex;justify-content:space-between;gap:12px}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.mode{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.mode label{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-weight:700;font-size:14.5px;cursor:pointer}
+.mode input{display:none}
+.mode label:has(input:checked){border-color:var(--acc);color:var(--acc);background:rgba(140,34,50,.06)}
+.fld{display:block;margin-top:12px}
+.fld>span{display:block;font-size:13.5px;font-weight:700;color:var(--mut);margin-bottom:5px}
+.fld input,.fld textarea,.fld select{width:100%;height:50px;padding:0 14px;border-radius:10px;border:1px solid rgba(23,53,44,.22);background:#fff;font:500 16px 'Manrope',sans-serif;color:var(--tx);outline:0}
+.fld textarea{height:76px;padding:10px 14px}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--acc)}
+.sheet .btn{width:100%;margin-top:16px}
+.sheet .x{float:right;font-size:26px;line-height:1;color:var(--mut)}
+
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+.why figure{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.why img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.why figcaption{padding:20px 22px 24px}
+.why h3{font-size:27px}
+.why p{color:var(--mut);font-size:15.5px;margin-top:8px}
+.why q{display:block;margin-top:12px;font-size:14.5px;font-style:italic;color:var(--tx);quotes:"«" "»"}
+
+.ban{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pics img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--r)}
+.list{list-style:none;margin-top:22px;display:grid;gap:10px}
+.list li{padding-left:24px;position:relative}
+.list li::before{content:"";position:absolute;left:2px;top:9px;width:9px;height:9px;transform:rotate(45deg);border:1.5px solid var(--acc)}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:36px}
+.gal button{border-radius:12px;overflow:hidden;aspect-ratio:1}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.04)}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,24,19,.95);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:min(1100px,94vw);max-height:86vh;border-radius:8px}
+.lb .x,.lb .pv,.lb .nx{position:absolute;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:24px;display:grid;place-items:center}
+.lb .x{top:18px;right:18px}.lb .pv{left:18px}.lb .nx{right:18px}
+
+.rtop{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.score b{font:700 58px/1 var(--hf);color:var(--acc)}
+.score span{display:block;color:var(--mut);font-size:14px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column}
+.rev .st{color:var(--gold);letter-spacing:3px}
+.rev p{margin-top:10px;flex:1}
+.rev small{margin-top:14px;color:var(--mut);font-size:14px}
+
+.cont{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.cont>img{width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:var(--r)}
+.cont .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.cont dl{display:grid;gap:16px}
+.cont dt{font-size:13px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.cont dd{font-weight:600;font-size:18px;margin-top:2px}
+.cont dd a{text-decoration:none}
+.cont .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;margin-top:20px}
+.form h3{font-size:30px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form .btn{width:100%;margin-top:16px}
+
+.ft{background:var(--green);color:#c4cfc6;padding:32px 0 110px;font-size:14.5px}
+.ft .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.ft a{color:#fff}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .nav,.hd .btn{display:none}.burger{display:block}
+  .nav.open{display:flex;position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--green);padding:6px 20px 20px}
+  .nav.open a{padding:14px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .menu{grid-template-columns:1fr}
+  .ban,.cont{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .revs{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .facts{grid-template-columns:1fr 1fr;row-gap:6px}
+  .hero .row .btn{width:100%}
+  .why,.revs,.two{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#top">Tinatin<small>грузинская кухня · Пятигорск</small></a>
+    <nav class="nav" id="nav"><a href="#menu">Меню</a><a href="#gosti">Атмосфера</a><a href="#banket">Банкеты</a><a href="#otzyvy">Отзывы</a><a href="#kontakty">Контакты</a></nav>
+    <a class="btn btn-p" href="#kontakty">Забронировать</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="img/hall.jpg" alt="Зал кафе Tinatin с деревянными балками" fetchpriority="high">
+  <div class="wrap">
+    <p class="since">since 2011</p>
+    <h1>Tinatin<span>кафе грузинской кухни в центре Пятигорска</span></h1>
+    <p class="lead">Хинкали, хачапури, блюда на мангале и домашнее вино. Закажите домой или забронируйте стол в WhatsApp за минуту.</p>
+    <div class="row">
+      <a class="btn btn-p" href="#menu">Меню и заказ</a>
+      <a class="btn btn-l" href="#kontakty">Забронировать стол</a>
+    </div>
+    <div class="facts">
+      <div><b>5.0 ★</b><span>52 отзыва в 2ГИС</span></div>
+      <div><b>11:00–23:00</b><span>ежедневно</span></div>
+      <div><b>с 2011 года</b><span>грузинская кухня</span></div>
+      <div><b>40 лет Октября, 79</b><span>центр города</span></div>
+    </div>
+  </div>
+</section>
+<div class="orn" aria-hidden="true"></div>
+
+<section class="sp" id="menu">
+  <div class="wrap">
+    <div class="rv"><h2>Меню</h2><p class="lead">Нажмите «+» у блюд, и заказ уйдёт нам в WhatsApp: к вашему приходу, навынос или с доставкой.</p></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="menu" id="list"></div>
+    <p class="mnote">Цены по меню кафе. Напитки, соусы и сезонные блюда уточняйте у администратора.</p>
+  </div>
+</section>
+
+<section class="sp alt" id="gosti">
+  <div class="wrap">
+    <div class="rv"><h2>Как в Тбилиси</h2><p class="lead">Так гости чаще всего описывают Tinatin: национальная музыка, тёплый приём и кухня, ради которой возвращаются.</p></div>
+    <div class="why">
+      <figure class="rv"><img src="img/khinkali-fried.jpg" alt="Жареные хинкали" loading="lazy"><figcaption><h3>Хинкали и хачапури</h3><p>Хинкали варёные и жареные, пять видов хачапури, хачапури на мангале и кубдари.</p><q>Хачапури, хинкали как в Грузии.</q></figcaption></figure>
+      <figure class="rv"><img src="img/wine.jpg" alt="Красное вино на столе" loading="lazy"><figcaption><h3>Домашнее вино</h3><p>Соусы и соленья готовят сами, а к столу часто приносят комплимент от заведения.</p><q>Было приятно получить комплимент в виде домашнего вина и чачи собственного производства.</q></figcaption></figure>
+      <figure class="rv"><img src="img/sofas.jpg" alt="Зал с диванами и грузинскими подушками" loading="lazy"><figcaption><h3>Живая музыка</h3><p>Национальная музыка в зале, живые выступления и тематические вечера.</p><q>Живые выступления!!! Тематические вечера!!!</q></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sp" id="banket">
+  <div class="wrap ban">
+    <div class="rv">
+      <h2>Банкеты и праздники</h2>
+      <p class="lead">Дни рождения, юбилеи, корпоративы и семейные ужины. Подберём меню и рассадку под ваше число гостей.</p>
+      <ul class="list">
+        <li>Два зала: уютный с деревом и диванами и большой светлый зал наверху</li>
+        <li>Предзаказ блюд к назначенному времени</li>
+        <li>Блюда с мангала, хачапури и хинкали на большую компанию</li>
+      </ul>
+      <div style="margin-top:26px"><a class="btn btn-p" href="#kontakty">Обсудить банкет</a></div>
+    </div>
+    <div class="pics rv">
+      <img src="img/hall-big.jpg" alt="Большой зал с белыми скатертями" loading="lazy">
+      <img src="img/table.jpg" alt="Стол с хачапури и салатами" loading="lazy">
+      <img src="img/hall-wood.jpg" alt="Зал с деревянным декором" loading="lazy">
+      <img src="img/hall-red.jpg" alt="Зал с красными креслами" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sp alt">
+  <div class="wrap">
+    <div class="rv"><h2>Фото</h2></div>
+    <div class="gal" id="gal">
+      <button><img src="img/adjaruli.jpg" alt="Хачапури по-аджарски и салат" loading="lazy"></button>
+      <button><img src="img/khinkali.jpg" alt="Хинкали" loading="lazy"></button>
+      <button><img src="img/megruli.jpg" alt="Хачапури и горячее в сковороде" loading="lazy"></button>
+      <button><img src="img/salad.jpg" alt="Салат" loading="lazy"></button>
+      <button><img src="img/soup.jpg" alt="Суп" loading="lazy"></button>
+      <button><img src="img/khinkali-table.jpg" alt="Хинкали на столе" loading="lazy"></button>
+      <button><img src="img/coffee.jpg" alt="Кофе" loading="lazy"></button>
+      <button><img src="img/corner.jpg" alt="Уголок зала" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sp" id="otzyvy">
+  <div class="wrap">
+    <div class="rtop rv"><h2>Отзывы гостей</h2><div class="score"><b>5.0</b><span>52 отзыва в 2ГИС</span></div></div>
+    <div class="revs">
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Впечатление такое, что пришёл в кафе в Тбилиси. Ненавязчивая национальная музыка. Качество блюд отличное».</p><small>Андрей, август 2026</small></div>
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Вкусные национальные блюда, соусы, соленья, приготовленные лично хозяйкой заведения. Хозяйка лично общается с гостями, советует блюда и напитки».</p><small>Елена, июнь 2026</small></div>
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Из еды можем порекомендовать жареные хинкали и оджахури. Итоговое впечатление отличное: чисто, красиво, вкусно!»</p><small>Отзыв в 2ГИС, август 2026</small></div>
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Мы решили сделать предзаказ на определённое время, и нас приятно удивила пунктуальность: все блюда были поданы точно к назначенному часу».</p><small>Анна, январь 2026</small></div>
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Очень вкусный кофе в турке и шулюм, хлеб превосходный, кухня действительно грузинская».</p><small>Карен, июль 2026</small></div>
+      <div class="rev rv"><span class="st">★★★★★</span><p>«Лучший ресторан грузинской кухни в Пятигорске. Будем в Пятигорске — обязательно вернёмся!»</p><small>Павел, июнь 2026</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="sp alt" id="kontakty">
+  <div class="wrap">
+    <div class="rv"><h2>Контакты и бронь стола</h2></div>
+    <div class="cont">
+      <div>
+        <div class="card rv">
+          <dl>
+            <div><dt>Адрес</dt><dd>Пятигорск, проспект 40 лет Октября, 79</dd></div>
+            <div><dt>Режим</dt><dd>ежедневно 11:00–23:00</dd></div>
+            <div><dt>Телефон</dt><dd><a href="tel:+79620190008">+7 962 019-00-08</a></dd></div>
+          </dl>
+          <div class="row">
+            <a class="btn btn-p" href="https://wa.me/79054901236" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-o" href="https://t.me/tinatinissai" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn btn-o" href="https://2gis.ru/pyatigorsk/firm/70000001102934680" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+          </div>
+        </div>
+        <form class="form rv" id="tf">
+          <h3>Забронировать стол</h3>
+          <div class="two">
+            <label class="fld"><span>Дата</span><input type="date" id="tDate" required></label>
+            <label class="fld"><span>Время</span><input type="time" id="tTime" value="19:00" min="11:00" max="22:00"></label>
+          </div>
+          <div class="two">
+            <label class="fld"><span>Гостей</span><input type="number" id="tGuests" min="1" max="80" value="4"></label>
+            <label class="fld"><span>Повод</span><select id="tHall"><option>Ужин</option><option>День рождения</option><option>Банкет</option><option>Деловая встреча</option></select></label>
+          </div>
+          <label class="fld"><span>Ваше имя</span><input type="text" id="tName" required placeholder="Как к вам обращаться"></label>
+          <button class="btn btn-p" type="submit">Отправить в WhatsApp</button>
+        </form>
+      </div>
+      <img class="rv" src="img/facade.jpg" alt="Вход в кафе Tinatin на проспекте 40 лет Октября" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="orn" aria-hidden="true"></div>
+<footer class="ft">
+  <div class="wrap"><span>© Tinatin, грузинская кухня, Пятигорск</span><span>40 лет Октября, 79 · <a href="tel:+79620190008">+7 962 019-00-08</a> · <a href="https://vk.com/tinatinissai" target="_blank" rel="noopener">ВКонтакте</a></span></div>
+</footer>
+
+<div class="cart" id="cart"><div class="s"><span id="cCount"></span><b id="cSum"></b></div><button class="btn btn-p" id="cOpen">Оформить</button></div>
+
+<div class="sheet" id="sheet">
+  <form class="box" id="of">
+    <button type="button" class="x" id="sClose" aria-label="Закрыть">×</button>
+    <h3>Ваш заказ</h3>
+    <div class="lines" id="lines"></div>
+    <div class="total"><span>Итого</span><span id="oSum"></span></div>
+    <div class="mode">
+      <label><input type="radio" name="m" value="К приходу в кафе" checked><span>В кафе</span></label>
+      <label><input type="radio" name="m" value="Навынос"><span>Навынос</span></label>
+      <label><input type="radio" name="m" value="Доставка"><span>Доставка</span></label>
+    </div>
+    <label class="fld"><span>Ваше имя</span><input type="text" id="oName" required placeholder="Как к вам обращаться"></label>
+    <label class="fld" id="addrF" hidden><span>Адрес доставки</span><input type="text" id="oAddr" placeholder="Улица, дом, квартира"></label>
+    <label class="fld"><span>Комментарий</span><textarea id="oNote" placeholder="К какому времени, пожелания"></textarea></label>
+    <button class="btn btn-p" type="submit">Отправить заказ в WhatsApp</button>
+  </form>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-label="Фото"><button class="x" aria-label="Закрыть">×</button><button class="pv" aria-label="Назад">‹</button><img alt=""><button class="nx" aria-label="Вперёд">›</button></div>
+
+<script>
+const WA = '79054901236';
+// меню по фото меню кафе в 2ГИС: [название, цена, вес/выход, состав]
+const MENU = {
+  'Хинкали': [['Калакури', 450, '4 шт'], ['Хинкали с бараниной', 450, '4 шт'], ['Хинкали с телятиной', 450, '4 шт'], ['Квари', 450, '4 шт', 'с сулугуни'], ['Патара-хинкали', 450, '5 шт', 'мини-хинкали'], ['Суп с мини-хинкали в бульоне', 450, '350 г']],
+  'Хачапури и выпечка': [['Хачапури по-мегрельски', 690, '500 г'], ['Хачапури по-аджарски', 650, '400 г'], ['Хачапури по-имеретински', 610, '450 г'], ['Хачапури Пеновани', 580, '350 г'], ['Хачапури на мангале', 390, '200 г'], ['Лобиани с фасолью', 510, '400 г'], ['Ачма', 730, '400 г'], ['Мчади', 510, '400 г', 'кукурузная лепёшка с сыром'], ['Кубдари', 730, '500 г', 'нежная телятина, специи, зелень'], ['Мини-шотики', 100, '1 шт', 'свежий хлеб']],
+  'Мангал': [['Люля из курицы', 330, '100 г'], ['Люля из баранины', 370, '100 г'], ['Телятина', 580, '100 г'], ['Баранина', 480, '100 г'], ['Баранья корейка', 580, '100 г'], ['Свинина', 430, '100 г'], ['Печень говяжья в сетке', 380, '100 г'], ['Бараньи языки', 730, '250 г'], ['Крыло куриное', 320, '100 г'], ['Перепёлка на вертеле', 430, '1 шт'], ['Сёмга', 680, '100 г'], ['Осетрина', 950, '100 г'], ['Форель', 530, '100 г'], ['Овощи на мангале', 330, '100 г'], ['Картофель на вертеле', 150, '100 г']],
+  'Горячие блюда': [['Цыплёнок табака', 810, '1 шт', 'фирменный маринад, специи'], ['Чашушули', 600, '300 г', 'говяжья вырезка, тушённая с овощами'], ['Чахохбили', 530, '300 г', 'курица в томатном соусе с грузинскими приправами'], ['Чкмерули', 550, '300 г', 'цыплёнок в сливочном соусе'], ['Абхазури', 610, '250 г', 'рубленая телятина с гранатом'], ['Купаты', 600, '250 г', 'колбаски из телятины'], ['Долма', 550, '250 г', 'пряный фарш в виноградных листьях'], ['Аджапсандали', 550, '200 г', 'томаты, баклажан, перец, грибы'], ['Лобио по-грузински', 460, '300 г', 'фасоль, грецкий орех, чеснок'], ['Жареный сулугуни с томатами и мятой', 550, '200 г'], ['Соко-кецы', 580, '300 г', 'шампиньоны, запечённые с сулугуни']],
+  'Супы': [['Харчо', 580, '350 г', 'баранина, томаты, рис'], ['Чакапули', 580, '350 г', 'баранина, тархун, кинза, ткемали, белое вино'], ['Чанахи в горшочке', 600, '400 г', 'баранина, баклажаны, картофель, перец'], ['Шулюм', 500, '350 г', 'баранина, картофель, чеснок'], ['Солянка по-грузински', 580, '350 г'], ['Уха из сёмги', 580, '350 г'], ['Хаш (сезонный)', 990, '850 г']],
+  'Салаты и закуски': [['Салат «TinaTin»', 700, '220 г', 'креветка, сёмга, томаты, перец, лук порей'], ['Салат «Аджарский»', 680, '220 г', 'баклажан в кляре, томаты, творожный сыр'], ['Салат «Тамада»', 680, '220 г', 'говяжий язык, фасоль, перец, грецкий орех'], ['Салат «Грузинский»', 480, '220 г', 'огурцы, томаты, грецкий орех, гранат'], ['Салат «Тёплый»', 780, '300 г', 'куриное филе, шампиньоны, творожный сыр'], ['Пхали', 480, '200 г', 'шпинат, свёкла, морковь, грецкий орех'], ['Рулетики из баклажан с орехами', 480, '200 г'], ['Сациви из индейки', 580, '200 г'], ['Сырное ассорти', 350, '100 г', 'сулугуни, домашний сыр, чечил'], ['Мясное ассорти', 980, '360 г']],
+  'Десерты': [['Пахлава', 350, '100 г'], ['Бенто-хинкалик', 380, '100 г'], ['Чурчхела', 250, '1 шт'], ['Мёд', 350, '100 г'], ['Варенье в ассортименте', 350, '100 г'], ['Кофе по-тбилисски', 150, 'чашка'], ['Чай горный', 350, '0,5 л']],
+};
+const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+const $ = s => document.querySelector(s);
+const cart = {};
+let cur = Object.keys(MENU)[0];
+
+$('#burger').onclick = () => $('#nav').classList.toggle('open');
+document.querySelectorAll('#nav a').forEach(a => a.onclick = () => $('#nav').classList.remove('open'));
+
+function renderTabs() {
+  $('#tabs').innerHTML = Object.keys(MENU).map(c => `<button class="tab${c === cur ? ' on' : ''}" data-c="${c}">${c}</button>`).join('');
+  document.querySelectorAll('.tab').forEach(b => b.onclick = () => { cur = b.dataset.c; renderTabs(); renderList(); });
+}
+function renderList() {
+  $('#list').innerHTML = MENU[cur].map(([n, p, w, d]) => {
+    const q = cart[n] ? cart[n].q : 0;
+    const ctl = q ? `<span class="qty"><button data-d="${n}" aria-label="Убрать">−</button>${q}<button data-a="${n}" data-p="${p}" aria-label="Добавить">+</button></span>`
+      : `<button class="add" data-a="${n}" data-p="${p}" aria-label="Добавить ${n}">+</button>`;
+    return `<div class="item"><div class="n"><b>${n}</b>${d ? `<small>${d}</small>` : ''}</div><span class="p">${fmt(p)}${w ? `<i>${w}</i>` : ''}</span>${ctl}</div>`;
+  }).join('');
+  document.querySelectorAll('[data-a]').forEach(b => b.onclick = () => { const n = b.dataset.a; cart[n] = { p: +b.dataset.p, q: (cart[n] ? cart[n].q : 0) + 1 }; update(); });
+  document.querySelectorAll('[data-d]').forEach(b => b.onclick = () => { const n = b.dataset.d; if (--cart[n].q <= 0) delete cart[n]; update(); });
+}
+const sum = () => Object.values(cart).reduce((s, x) => s + x.p * x.q, 0);
+const count = () => Object.values(cart).reduce((s, x) => s + x.q, 0);
+const word = c => c % 10 === 1 && c % 100 !== 11 ? 'позиция' : [2, 3, 4].includes(c % 10) && ![12, 13, 14].includes(c % 100) ? 'позиции' : 'позиций';
+function update() {
+  renderList();
+  const c = count();
+  $('#cart').classList.toggle('on', c > 0);
+  $('#cCount').textContent = c + ' ' + word(c);
+  $('#cSum').textContent = fmt(sum());
+  $('#lines').innerHTML = Object.entries(cart).map(([n, x]) => `<div><span>${n} × ${x.q}</span><span>${fmt(x.p * x.q)}</span></div>`).join('');
+  $('#oSum').textContent = fmt(sum());
+  if (!c) $('#sheet').classList.remove('on');
+}
+renderTabs(); renderList();
+
+$('#cOpen').onclick = () => $('#sheet').classList.add('on');
+$('#sClose').onclick = () => $('#sheet').classList.remove('on');
+$('#sheet').onclick = e => { if (e.target.id === 'sheet') $('#sheet').classList.remove('on'); };
+document.querySelectorAll('[name=m]').forEach(r => r.onchange = () => { $('#addrF').hidden = document.querySelector('[name=m]:checked').value !== 'Доставка'; });
+
+$('#of').onsubmit = e => {
+  e.preventDefault();
+  const mode = document.querySelector('[name=m]:checked').value;
+  const lines = ['Здравствуйте! Заказ с сайта Tinatin.', 'Способ: ' + mode, ...Object.entries(cart).map(([n, x]) => `• ${n} × ${x.q} — ${fmt(x.p * x.q)}`), 'Итого: ' + fmt(sum()), 'Имя: ' + $('#oName').value];
+  if (mode === 'Доставка' && $('#oAddr').value.trim()) lines.push('Адрес: ' + $('#oAddr').value.trim());
+  if ($('#oNote').value.trim()) lines.push('Комментарий: ' + $('#oNote').value.trim());
+  open('https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+};
+
+const t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset()); $('#tDate').min = t.toISOString().slice(0, 10);
+$('#tf').onsubmit = e => {
+  e.preventDefault();
+  const v = $('#tDate').value;
+  const lines = ['Здравствуйте! Хочу забронировать стол в Tinatin.', 'Дата: ' + (v ? new Date(v + 'T12:00').toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', weekday: 'long' }) : '—'),
+    'Время: ' + $('#tTime').value, 'Гостей: ' + $('#tGuests').value, 'Повод: ' + $('#tHall').value, 'Имя: ' + $('#tName').value];
+  open('https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+};
+
+const imgs = [...document.querySelectorAll('#gal img')], lb = $('#lb'), li = lb.querySelector('img'); let k = 0;
+const show = i => { k = (i + imgs.length) % imgs.length; li.src = imgs[k].src; li.alt = imgs[k].alt; lb.classList.add('on'); };
+imgs.forEach((im, i) => im.parentElement.onclick = () => show(i));
+lb.querySelector('.x').onclick = () => lb.classList.remove('on');
+lb.querySelector('.pv').onclick = e => { e.stopPropagation(); show(k - 1); };
+lb.querySelector('.nx').onclick = e => { e.stopPropagation(); show(k + 1); };
+lb.onclick = e => { if (e.target === lb) lb.classList.remove('on'); };
+addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('on'); $('#sheet').classList.remove('on'); } if (!lb.classList.contains('on')) return; if (e.key === 'ArrowLeft') show(k - 1); if (e.key === 'ArrowRight') show(k + 1); });
+
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), { threshold: .12 });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
