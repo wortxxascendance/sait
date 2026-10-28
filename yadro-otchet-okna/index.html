@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Пример отчёта: контроль звонков отдела продаж — студия «Ядро»</title>
+<meta name="description" content="Пример еженедельного отчёта ИИ по звонкам менеджеров оконной компании: оценки, сорванные замеры, сводка по сотрудникам.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2308090b'/%3E%3Ccircle cx='24' cy='24' r='9' fill='%234f86ff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--line:#e3e7ee;--tx:#14171d;--mut:#5f6774;--acc:#2f6bff;--acc-l:#e9f0ff;--ok:#12a36b;--ok-l:#e3f6ee;--warn:#c27c0e;--warn-l:#fdf1dc;--bad:#d64545;--bad-l:#fde8e8;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 'Manrope',system-ui,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1{font-size:clamp(28px,3.6vw,40px);line-height:1.15;letter-spacing:-.02em;font-weight:800}
+h2{font-size:22px;letter-spacing:-.01em;font-weight:800;margin-bottom:16px}
+.mut{color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+section{margin-top:28px}
+
+.top{background:#08090b;color:#eceef2;padding:18px 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;text-decoration:none;color:inherit}
+.brand i{width:26px;height:26px;border-radius:8px;background:#12151a;display:grid;place-items:center}
+.brand i::after{content:"";width:10px;height:10px;border-radius:50%;background:#4f86ff}
+.top span{color:#9aa1ad;font-size:14px}
+.note{margin-top:22px;padding:14px 18px;border-radius:12px;background:var(--warn-l);color:#6b4708;font-size:14.5px}
+.head{padding:34px 0 0}
+.head p{margin-top:10px;font-size:17px}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:14.5px;color:var(--mut)}
+.meta b{color:var(--tx)}
+
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi .card{padding:20px}
+.kpi b{display:block;font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.kpi span{display:block;font-size:14px;color:var(--mut);margin-top:6px}
+.kpi .bad b{color:var(--bad)}.kpi .warn b{color:var(--warn)}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);font-weight:700;padding:0 12px 12px}
+td{padding:14px 12px;border-top:1px solid var(--line);vertical-align:middle}
+td:first-child,th:first-child{padding-left:0}
+.score{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:30px;padding:0 10px;border-radius:8px;font-weight:800;font-size:14.5px}
+.s-ok{background:var(--ok-l);color:var(--ok)}.s-warn{background:var(--warn-l);color:var(--warn)}.s-bad{background:var(--bad-l);color:var(--bad)}
+.bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--acc)}
+.tbl{overflow-x:auto}
+
+.chk{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}
+.chk div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.chk b{white-space:nowrap}
+
+.calls{display:grid;gap:14px}
+.call{display:grid;grid-template-columns:200px 1fr;gap:24px}
+.call .who b{display:block;font-size:16px}
+.call .who span{display:block;font-size:14px;color:var(--mut)}
+.call .who .score{margin-top:12px}
+.call h3{font-size:17px;font-weight:700}
+.call p{margin-top:8px;font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.tag{font-size:13px;font-weight:600;padding:5px 10px;border-radius:7px}
+.t-ok{background:var(--ok-l);color:var(--ok)}.t-bad{background:var(--bad-l);color:var(--bad)}
+.q{margin-top:12px;padding:12px 14px;border-left:3px solid var(--line);background:#f8f9fb;border-radius:0 8px 8px 0;font-size:14.5px}
+.q b{font-weight:700}
+.rec{margin-top:12px;font-size:14.5px;padding:10px 14px;border-radius:8px;background:var(--acc-l);color:#163a8f}
+
+.lost td:last-child{font-weight:600}
+.recs{counter-reset:r;display:grid;gap:12px}
+.recs li{list-style:none;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.recs li::before{counter-increment:r;content:counter(r);width:30px;height:30px;border-radius:8px;background:var(--acc-l);color:var(--acc);font-weight:800;display:grid;place-items:center}
+.recs b{display:block}
+.recs span{color:var(--mut);font-size:15px}
+
+.crm{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.mock{border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+.mock .h{background:#f1f3f7;padding:10px 14px;font-weight:700;display:flex;justify-content:space-between}
+.mock .b{padding:14px}
+.mock .row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line)}
+.mock .ai{margin-top:12px;padding:12px;border-radius:10px;background:var(--acc-l)}
+.mock .ai b{color:#163a8f}
+
+.cta{background:#08090b;color:#eceef2;border-radius:18px;padding:34px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+.cta h2{color:#fff;font-size:26px}
+.cta p{color:#b8bec9;margin-top:8px}
+.cta ul{list-style:none;display:grid;gap:8px;margin-top:16px;color:#d9dde4;font-size:15px}
+.cta li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:#4f86ff;margin-right:10px;vertical-align:middle}
+.btns{display:grid;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;border-radius:10px;font-weight:700;text-decoration:none}
+.btn-p{background:#4f86ff;color:#fff}
+.btn-o{border:1px solid #2e333d;color:#eceef2}
+footer{padding:30px 0 40px;color:var(--mut);font-size:14px}
+
+@media(max-width:900px){
+  .kpi{grid-template-columns:1fr 1fr}
+  .call{grid-template-columns:1fr;gap:10px}
+  .crm,.cta,.chk{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .wrap{padding:0 16px}
+  .card{padding:18px}
+  .kpi b{font-size:26px}
+  .cta{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap"><a class="brand" href="https://yadrostudio.ru" target="_blank" rel="noopener"><i></i>Ядро</a><span>ИИ-контроль качества звонков</span></div></div>
+
+<main class="wrap">
+  <div class="note">Это пример отчёта. Компания, менеджеры и звонки вымышленные. На ваших звонках отчёт выглядит так же, только с вашими данными.</div>
+
+  <div class="head">
+    <h1>Отчёт по звонкам отдела продаж</h1>
+    <p class="mut">Оконная компания · проверка по скрипту «замер, акция, сроки, следующий шаг»</p>
+    <div class="meta"><span>Период: <b>20–26 октября</b></span><span>Проверено звонков: <b>20 из 20</b></span><span>Менеджеров: <b>3</b></span></div>
+  </div>
+
+  <section class="kpi">
+    <div class="card"><b>64<small style="font-size:18px;color:var(--mut)">/100</small></b><span>средняя оценка звонка</span></div>
+    <div class="card warn"><b>7 из 14</b><span>целевых звонков записаны на замер</span></div>
+    <div class="card bad"><b>11</b><span>звонков без упоминания акции</span></div>
+    <div class="card bad"><b>5</b><span>клиентов можно вернуть на этой неделе</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Менеджеры</h2>
+    <div class="tbl"><table>
+      <tr><th>Менеджер</th><th>Звонков</th><th>Оценка</th><th>Записал на замер</th><th>Назвал акцию</th><th>Назвал сроки</th><th>Следующий шаг</th></tr>
+      <tr><td><b>Анна</b></td><td>8</td><td><span class="score s-ok">78</span></td><td>4 из 5</td><td>5 из 8</td><td>7 из 8</td><td><div class="bar"><i style="width:75%"></i></div></td></tr>
+      <tr><td><b>Дмитрий</b></td><td>7</td><td><span class="score s-warn">61</span></td><td>2 из 5</td><td>3 из 7</td><td>4 из 7</td><td><div class="bar"><i style="width:57%"></i></div></td></tr>
+      <tr><td><b>Сергей</b></td><td>5</td><td><span class="score s-bad">47</span></td><td>1 из 4</td><td>1 из 5</td><td>2 из 5</td><td><div class="bar"><i style="width:40%"></i></div></td></tr>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Чек-лист и как его выполняют</h2>
+    <div class="chk">
+      <div><span>Поздоровался и назвал компанию</span><b>19 из 20</b></div>
+      <div><span>Выяснил задачу: квартира или дом, сколько окон</span><b>16 из 20</b></div>
+      <div><span>Предложил бесплатный замер</span><b>10 из 14</b></div>
+      <div><span>Назвал действующую акцию</span><b>9 из 20</b></div>
+      <div><span>Назвал сроки изготовления</span><b>13 из 20</b></div>
+      <div><span>Отработал «дорого» или «подумаю»</span><b>4 из 9</b></div>
+      <div><span>Договорился о следующем шаге</span><b>12 из 20</b></div>
+      <div><span>Записал контакт и адрес для замера</span><b>7 из 7</b></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Разбор звонков</h2>
+    <div class="calls">
+      <article class="card call">
+        <div class="who"><b>Сергей</b><span>21 октября, 11:42</span><span>4 мин 10 с</span><span class="score s-bad">35</span></div>
+        <div>
+          <h3>Клиент спросил цену на три окна и ушёл «подумать»</h3>
+          <p>Назвал цену «от 15 000 за окно», замер не предложил. Когда клиент сказал «подумаю», разговор закончился без договорённости о перезвоне.</p>
+          <div class="tags"><span class="tag t-bad">нет замера</span><span class="tag t-bad">нет акции</span><span class="tag t-bad">нет следующего шага</span><span class="tag t-ok">выяснил задачу</span></div>
+          <div class="q"><b>Клиент:</b> Ну я тогда подумаю ещё, может перезвоню.<br><b>Менеджер:</b> Хорошо, звоните.</div>
+          <div class="rec">Что сказать: «Давайте я запишу вас на бесплатный замер. Замерщик посчитает точную цену, это ни к чему не обязывает. Вам удобнее в будни или в субботу?»</div>
+        </div>
+      </article>
+      <article class="card call">
+        <div class="who"><b>Анна</b><span>22 октября, 15:08</span><span>6 мин 32 с</span><span class="score s-ok">92</span></div>
+        <div>
+          <h3>Окна в частный дом, замер записан на субботу</h3>
+          <p>Выяснила количество окон, назвала акцию на монтаж и срок изготовления 10 рабочих дней, записала на замер и продиктовала время приезда.</p>
+          <div class="tags"><span class="tag t-ok">замер записан</span><span class="tag t-ok">назвала акцию</span><span class="tag t-ok">назвала сроки</span><span class="tag t-ok">следующий шаг</span></div>
+          <div class="rec">Хороший пример для обучения: можно использовать как эталон для остальных менеджеров.</div>
+        </div>
+      </article>
+      <article class="card call">
+        <div class="who"><b>Дмитрий</b><span>23 октября, 10:15</span><span>3 мин 05 с</span><span class="score s-warn">58</span></div>
+        <div>
+          <h3>Клиент сравнивает с конкурентом и считает, что дорого</h3>
+          <p>Замер предложил, но на возражение «у других дешевле» ответил только ценой. Преимущества и акцию не назвал, замер не записан.</p>
+          <div class="tags"><span class="tag t-ok">предложил замер</span><span class="tag t-bad">возражение не отработано</span><span class="tag t-bad">нет акции</span></div>
+          <div class="q"><b>Клиент:</b> Мне в другой фирме посчитали на 8 тысяч дешевле.<br><b>Менеджер:</b> Ну, у нас такие цены.</div>
+          <div class="rec">Что сказать: уточнить, что входит в чужую цену (монтаж, откосы, гарантия), и назвать акцию, которая сокращает разницу.</div>
+        </div>
+      </article>
+      <article class="card call">
+        <div class="who"><b>Сергей</b><span>24 октября, 18:47</span><span>1 мин 50 с</span><span class="score s-bad">29</span></div>
+        <div>
+          <h3>Входящий звонок в конце дня, перезвон обещан, но не сделан</h3>
+          <p>Менеджер пообещал перезвонить утром. В карточке сделки задачи на перезвон нет, повторного звонка за неделю не было.</p>
+          <div class="tags"><span class="tag t-bad">обещал перезвонить</span><span class="tag t-bad">задача не создана</span></div>
+          <div class="rec">Клиент в списке «вернуть» ниже. Перезвонить сегодня.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Кого вернуть на этой неделе</h2>
+    <div class="tbl"><table class="lost">
+      <tr><th>Клиент</th><th>Когда звонил</th><th>Что произошло</th><th>Что сделать</th></tr>
+      <tr><td>Окна в квартиру, 3 шт.</td><td>21 окт</td><td>«Подумаю», перезвон не назначен</td><td>Перезвонить, предложить замер</td></tr>
+      <tr><td>Балкон под ключ</td><td>22 окт</td><td>Попросил расчёт в мессенджер, не отправили</td><td>Отправить расчёт сегодня</td></tr>
+      <tr><td>Частный дом, 8 окон</td><td>23 окт</td><td>«Дорого», возражение не отработано</td><td>Перезвонить с акцией</td></tr>
+      <tr><td>Замена одного окна</td><td>24 окт</td><td>Обещали перезвонить утром, не перезвонили</td><td>Перезвонить и извиниться</td></tr>
+      <tr><td>Окна в новостройку</td><td>25 окт</td><td>Спросил сроки, ответа не получил</td><td>Назвать сроки, записать на замер</td></tr>
+    </table></div>
+  </section>
+
+  <section class="card">
+    <h2>Главное за неделю</h2>
+    <ol class="recs">
+      <li><div><b>Половина целевых звонков заканчивается без замера</b><span>7 из 14. Добавить в скрипт фразу с выбором времени замера и проверять её каждую неделю.</span></div></li>
+      <li><div><b>Акцию называют меньше чем в половине звонков</b><span>9 из 20. Повесить текущую акцию перед глазами менеджеров и добавить в чек-лист.</span></div></li>
+      <li><div><b>«Подумаю» почти всегда означает потерю</b><span>Ставить задачу на перезвон в CRM прямо во время разговора.</span></div></li>
+      <li><div><b>У Сергея самые низкие показатели</b><span>Разобрать с ним звонки Анны как пример: замер, акция, следующий шаг.</span></div></li>
+    </ol>
+  </section>
+
+  <section class="card crm">
+    <div>
+      <h2>Как это выглядит в CRM</h2>
+      <p class="mut">После каждого звонка ИИ сам добавляет в карточку сделки оценку, короткое резюме и что упущено. Руководитель получает сводку по каждому менеджеру раз в неделю или каждый день. Менеджерам ничего не нужно делать по-другому.</p>
+    </div>
+    <div class="mock">
+      <div class="h"><span>Сделка: окна в квартиру, 3 шт.</span><span class="mut">21 окт</span></div>
+      <div class="b">
+        <div class="row"><span class="mut">Ответственный</span><span>Сергей</span></div>
+        <div class="row"><span class="mut">Источник</span><span>Входящий звонок</span></div>
+        <div class="ai"><b>Оценка звонка: 35/100</b><br>Клиенту назвали цену за окно, замер не предложен, акция не названа. Клиент ушёл «подумать», перезвон не назначен.<br><b>Рекомендация:</b> перезвонить и записать на бесплатный замер.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div>
+      <h2>Такой отчёт по вашим звонкам</h2>
+      <p>Подключаем к вашей CRM и телефонии без замены систем. Проверяем 100% звонков по вашему скрипту.</p>
+      <ul><li>Пилот на неделю на всех ваших звонках</li><li>Отчёт по каждому менеджеру и список клиентов, которых можно вернуть</li><li>Записи обрабатываются конфиденциально</li></ul>
+    </div>
+    <div class="btns">
+      <a class="btn btn-p" href="https://t.me/yadrostudio" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn-o" href="tel:+79044355037">+7 904 435-50-37</a>
+      <a class="btn btn-o" href="https://yadrostudio.ru" target="_blank" rel="noopener">yadrostudio.ru</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Студия «Ядро» · пример отчёта на вымышленных данных</div></footer>
+</body>
+</html>
