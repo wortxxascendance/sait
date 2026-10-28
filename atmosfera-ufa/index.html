@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>«Атмосфера» — лофт для праздников в Уфе: дни рождения, девичники, мафия, мастер-классы</title>
 <meta name="description" content="Светлый лофт на Революционной, 111/1: дни рождения детей и взрослых, девичники, мафия, квизы, караоке и мастер-классы. Праздник под ключ от 10 000 ₽ или аренда зала.">
-<meta name="theme-color" content="#f7f3ff">
+<meta name="theme-color" content="#faf8fd">
 <meta property="og:title" content="«Атмосфера» — лофт для праздников в Уфе">
 <meta property="og:description" content="Праздник под ключ с ведущим, караоке и фотозоной — от 10 000 ₽. Или просто аренда зала.">
 <meta property="og:image" content="https://wortxxascendance.github.io/sait/atmosfera-ufa/img/hall.jpg">
@@ -34,7 +34,7 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(90deg,var(--vio2),var(-
 .btn-p:hover{box-shadow:0 16px 40px rgba(109,63,224,.45)}
 .btn-o{border:1.5px solid rgba(109,63,224,.3);background:#fff;color:var(--vio2)}
 .btn-o:hover{border-color:var(--vio2)}
-.btn-w{background:#fff;color:var(--tx)}
+.btn-w{background:#fff;color:var(--tx);border:1.5px solid #e4dcf3}
 
 /* шапка */
 .hd{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,box-shadow .3s}
@@ -44,7 +44,6 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(90deg,var(--vio2),var(-
 .logo i{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--vio),var(--pink));display:grid;place-items:center;color:#fff;font:700 20px var(--hf);font-style:normal;box-shadow:0 8px 20px rgba(138,92,246,.35)}
 .logo b{display:block;font:700 22px/1 var(--hf)}
 .logo small{display:block;font-size:12px;color:var(--mut);margin-top:4px}
-.hd:not(.on) .logo b,.hd:not(.on) .logo small,.hd:not(.on) .nav a{color:#fff}
 .nav{display:flex;gap:26px}
 .nav a{text-decoration:none;font-weight:600;font-size:15px;color:var(--mut);transition:color .2s}
 .nav a:hover{color:var(--vio2)}
@@ -53,16 +52,14 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(90deg,var(--vio2),var(-
 .burger span{display:block;width:18px;height:2px;background:var(--tx);margin:4px auto}
 
 /* первый экран */
-.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:130px 0 64px;overflow:hidden;color:#fff}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,18,70,.55),rgba(35,18,70,.15) 35%,rgba(35,18,70,.78) 80%,rgba(35,18,70,.92))}
+.hero{position:relative;min-height:88svh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden;color:var(--tx);background:radial-gradient(60% 70% at 85% 15%,#efe7ff 0%,transparent 70%),radial-gradient(50% 60% at 5% 95%,#f6eef4 0%,transparent 70%),linear-gradient(180deg,#faf8fd,#f4f0fa)}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(60,30,110,.07) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
 .hero .wrap{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
-.hero .eb{background:rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(8px)}
+
 .hero h1{font-size:clamp(40px,6.6vw,84px)}
-.hero h1 em{background:linear-gradient(90deg,#e6d6ff,#ffc3df);-webkit-background-clip:text;background-clip:text}
-.hero .lead{color:#efe8ff;margin-top:20px}
+.hero .lead{margin-top:20px}
 .hero .row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-.hcard{background:rgba(255,255,255,.95);color:var(--tx);border-radius:24px;padding:24px;box-shadow:0 30px 60px rgba(20,8,50,.35)}
+.hcard{background:#fff;color:var(--tx);border-radius:24px;padding:26px;border:1px solid var(--line);box-shadow:0 30px 60px rgba(80,40,160,.1)}
 .hcard .st{color:var(--gold);font-size:20px;letter-spacing:2px}
 .hcard b{display:block;font:700 26px/1.2 var(--hf);margin-top:6px}
 .hcard p{color:var(--mut);font-size:15px;margin-top:6px}
@@ -190,7 +187,6 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(90deg,var(--vio2),var(-
   body{font-size:16px}
   .wrap{padding:0 16px}
   .hero{padding-bottom:96px}
-  .hero::after{background:linear-gradient(180deg,rgba(35,18,70,.72),rgba(35,18,70,.7) 45%,rgba(35,18,70,.94))}
   .hero .row .btn{width:100%}
   .occ,.two,.am{grid-template-columns:1fr}
   .oc img{height:200px}
@@ -217,7 +213,6 @@ h2 em,h1 em{font-style:normal;background:linear-gradient(90deg,var(--vio2),var(-
 </header>
 
 <section class="hero" id="top">
-  <img src="img/hall.jpg" alt="Светлый зал «Атмосферы» с сервированным столом" fetchpriority="high">
   <div class="wrap">
     <div>
       <span class="eb">✦ Уфа, Революционная, 111/1</span>
