@@ -265,5 +265,99 @@ document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click
   document.querySelectorAll('.plist').forEach(p => { p.hidden = p.dataset.p !== b.dataset.t; p.classList.add('is-in') });
 }));
 </script>
+<!--demo-layer--><script>
+(function () {
+  var robots = document.querySelector('meta[name="robots"]');
+  if (!robots || !/noindex/.test(robots.content)) return;
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var title = document.title || '';
+  var name = title.split(/ [—–|-] /)[0].replace(/[«»"]/g, '').trim() || 'вашего бизнеса';
+  var descEl = document.querySelector('meta[name="description"]');
+  var desc = descEl ? descEl.content : '';
+  var slug = (location.pathname.split('/').filter(Boolean).pop() || '').replace(/-[a-z]+$/, '') || 'vash-sait';
+  var form = document.querySelector('form');
+  var wa = document.querySelector('a[href*="wa.me/"]');
+  var store = { get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} } };
+
+  var css = '.dl-pill{position:fixed;right:16px;bottom:calc(var(--dl-b,0px) + 16px);z-index:2147483000;display:flex;align-items:center;gap:8px;padding:11px 16px 11px 13px;border:0;border-radius:999px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28);cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}'
+    + '.dl-pill.dl-on{opacity:1;transform:none}.dl-pill:hover{background:#000}.dl-pill:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}'
+    + '.dl-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:dl-p 2s infinite}'
+    + '@keyframes dl-p{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}'
+    + '@media(prefers-reduced-motion:reduce){.dl-dot{animation:none}.dl-pill,.dl-tip{transition:none}}'
+    + '.dl-tip{position:fixed;right:16px;bottom:calc(var(--dl-b,0px) + 70px);z-index:2147483000;max-width:260px;padding:12px 14px;border-radius:12px;background:#fff;color:#111827;font:400 14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.18);opacity:0;transition:opacity .3s;pointer-events:none}.dl-tip.dl-on{opacity:1}'
+    + '.dl-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(17,24,39,.5);display:none;align-items:flex-end;justify-content:center}.dl-bg.dl-on{display:flex}'
+    + '@media(min-width:700px){.dl-bg{align-items:center}}'
+    + '.dl-sh{position:relative;box-sizing:border-box;width:100%;max-width:520px;max-height:92vh;overflow:auto;background:#fff;color:#111827;border-radius:18px 18px 0 0;padding:22px 20px 24px;font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:left}'
+    + '@media(min-width:700px){.dl-sh{border-radius:18px;padding:28px}}'
+    + '.dl-sh *{box-sizing:border-box}.dl-sh h2{margin:0 36px 6px 0;font:700 21px/1.25 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#111827;letter-spacing:0;text-transform:none}'
+    + '.dl-sh h3{margin:22px 0 8px;font:700 13px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#6b7280}'
+    + '.dl-sh p{margin:0;color:#374151;font:inherit}.dl-x{position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#f3f4f6;color:#111827;font:400 22px/36px system-ui,sans-serif;cursor:pointer}'
+    + '.dl-btn{display:inline-block;margin-top:10px;padding:11px 16px;border:0;border-radius:10px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer;text-decoration:none}'
+    + '.dl-serp{padding:14px;border:1px solid #e5e7eb;border-radius:12px;font-family:Arial,sans-serif}.dl-serp .u{font-size:13px;color:#15803d}.dl-serp .u i{font-style:normal;color:#9ca3af}'
+    + '.dl-serp .t{margin:3px 0 4px;font-size:17px;line-height:1.3;color:#1d4ed8}.dl-serp .d{font-size:13px;line-height:1.45;color:#4b5563}'
+    + '.dl-ul{margin:0;padding:0;list-style:none}.dl-ul li{position:relative;margin:0;padding:5px 0 5px 24px;color:#1f2937;font:inherit}.dl-ul li:before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid #16a34a;border-bottom:2px solid #16a34a;transform:rotate(-45deg)}'
+    + '@media(max-width:520px){.dl-more{display:none}.dl-pill{right:12px;padding:9px 13px 9px 11px;font-size:13px}.dl-tip{right:12px;max-width:230px;font-size:13px;bottom:calc(var(--dl-b,0px) + 62px)}}'
+    + '.dl-end{margin-top:22px;padding:14px 16px;border-radius:12px;background:#f0fdf4;color:#14532d;font-weight:600}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  var pill = document.createElement('button');
+  pill.className = 'dl-pill'; pill.type = 'button';
+  pill.innerHTML = '<span class="dl-dot"></span>Демо для вас<span class="dl-more"> · как запустить</span>';
+  var tip = document.createElement('div'); tip.className = 'dl-tip';
+  tip.textContent = 'Этот сайт собран для «' + name + '» по вашей карточке в 2ГИС. Нажмите — покажу, как он будет работать.';
+
+  var check = form || wa ? '<h3>Проверьте сами</h3><p>' + (form ? 'Заполните заявку на сайте — сообщение придёт в ваш WhatsApp. Так вам будут писать клиенты.' : 'Нажмите кнопку WhatsApp на сайте — откроется чат с вашим номером. Так вам будут писать клиенты.') + '</p><button class="dl-btn" type="button" data-dl="try">' + (form ? 'Заполнить заявку' : 'Найти кнопку') + '</button>' : '';
+  var bg = document.createElement('div'); bg.className = 'dl-bg';
+  bg.innerHTML = '<div class="dl-sh" role="dialog" aria-modal="true" aria-labelledby="dl-h">'
+    + '<button class="dl-x" type="button" aria-label="Закрыть" data-dl="x">×</button>'
+    + '<h2 id="dl-h">Сайт для «' + esc(name) + '»</h2>'
+    + '<p>Собран по вашей карточке в 2ГИС: адрес, часы, фото и отзывы — ваши. Это демо: его можно поправить и запустить на своём адресе.</p>'
+    + check
+    + '<h3>Так вас найдут в поиске</h3><div class="dl-serp"><div class="u">' + esc(slug) + '.ru <i>· пример адреса</i></div><div class="t">' + esc(title) + '</div><div class="d">' + esc(desc.slice(0, 170)) + (desc.length > 170 ? '…' : '') + '</div></div>'
+    + '<h3>Что входит</h3><ul class="dl-ul"><li>Ваши фото, цены и тексты — поправим всё, что скажете</li><li>Заявки и запись — в WhatsApp или Telegram, круглосуточно</li><li>Свой адрес сайта и хостинг на год</li><li>Новые цены, акции и фото — по одному вашему сообщению</li><li>Оплата после запуска, чек как самозанятый</li></ul>'
+    + '<div class="dl-end">Понравилось? Ответьте в чате, откуда пришла ссылка, — обсудим правки и запуск.</div></div>';
+
+  function open() { bg.classList.add('dl-on'); tip.classList.remove('dl-on'); store.set('dl-seen', '1'); bg.querySelector('[data-dl="x"]').focus(); }
+  function close() { bg.classList.remove('dl-on'); pill.focus(); }
+  pill.addEventListener('click', open);
+  bg.addEventListener('click', function (e) {
+    var a = e.target.getAttribute && e.target.getAttribute('data-dl');
+    if (e.target === bg || a === 'x') close();
+    if (a === 'try') {
+      bg.classList.remove('dl-on');
+      (form || wa).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var f = form && form.querySelector('input:not([type=hidden]),select,textarea');
+      if (f) setTimeout(function () { try { f.focus({ preventScroll: true }); } catch (err) {} }, 600);
+    }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && bg.classList.contains('dl-on')) close(); });
+
+  // поднять кнопку над закреплёнными снизу панелями сайта («Позвонить / Записаться»)
+  function lift() {
+    var h = 0, vh = innerHeight;
+    document.querySelectorAll('body *').forEach(function (el) {
+      if (el === pill || el === tip || el === bg || bg.contains(el)) return;
+      var cs = getComputedStyle(el);
+      if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return;
+      var r = el.getBoundingClientRect();
+      if (r.height > 0 && r.height < vh / 3 && r.bottom >= vh - 40 && r.right > innerWidth - 200) h = Math.max(h, vh - r.top + 4);
+    });
+    document.documentElement.style.setProperty('--dl-b', h + 'px');
+  }
+  function mount() {
+    document.body.appendChild(tip); document.body.appendChild(pill); document.body.appendChild(bg);
+    lift(); addEventListener('resize', lift);
+    addEventListener('scroll', function () { clearTimeout(mount.t); mount.t = setTimeout(lift, 150); }, { passive: true });
+    setTimeout(function () { pill.classList.add('dl-on'); lift(); }, 1200);
+    // подсказка: на компьютере через 2.5 с, на телефоне — только после первого экрана, чтобы не закрывать заголовок
+    function showTip() { if (store.get('dl-seen')) return; tip.classList.add('dl-on'); setTimeout(function () { tip.classList.remove('dl-on'); }, 7000); }
+    if (!store.get('dl-seen')) {
+      if (innerWidth > 520) setTimeout(showTip, 2500);
+      else addEventListener('scroll', function onS() { if (scrollY > innerHeight) { removeEventListener('scroll', onS); showTip(); } }, { passive: true });
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
+})();
+</script><!--/demo-layer-->
 </body>
 </html>
