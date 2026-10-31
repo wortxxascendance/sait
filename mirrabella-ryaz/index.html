@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Mirrabella — стоматология доктора Воробьевой в Рязани</title>
-<meta name="description" content="Стоматологическая клиника доктора Воробьевой Mirrabella в Рязани, Интернациональная улица, 16 к7: протезирование, удаление, имплантация, отбеливание. Пенсионерам — индивидуальная скидка. 4.9 по 36 оценкам в 2ГИС.">
+<meta name="description" content="Стоматологическая клиника Mirrabella в Рязани, Интернациональная улица, 16 к7. Врач — Наталья Григорьевна Воробьёва: протезирование, коронки, удаление, имплантация, лечение под микроскопом, неотложная помощь. Пн–Пт 10–19, Сб 10–15. 4.9 по 36 оценкам в 2ГИС.">
 <meta name="theme-color" content="#fbf6f4">
 <meta property="og:title" content="Mirrabella — стоматология доктора Воробьевой">
 <meta property="og:description" content="Рязань, Интернациональная, 16 к7. 4.9 по 36 оценкам в 2ГИС. Запись в WhatsApp.">
@@ -134,6 +134,25 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
 .score span{color:var(--mut);font-size:15px;line-height:1.4}
 .stars{color:#e0a43a;letter-spacing:2px;font-size:20px;margin-top:6px}
 .rate p{color:var(--ink2);max-width:560px;margin-bottom:18px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.quote{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.quote p{font:italic 500 17px/1.5 var(--serif);color:var(--ink);margin:0;max-width:none}
+.quote footer{margin-top:auto;font-size:14px;color:var(--mut)}
+.quote footer b{color:var(--ink2);font-weight:700}
+.qnote{margin-top:14px;font-size:13px;color:var(--mut)}
+
+/* doctor */
+.doc .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.doc-card{background:var(--plum);color:#fff;border-radius:28px 28px 28px 96px;padding:40px 36px}
+.doc-card .eyebrow{color:var(--rose)}
+.doc-card h2{margin:12px 0 6px;color:#fff}
+.doc-card small{color:#f1d9e2;font-size:15px}
+.doc-card blockquote{margin:28px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);font:italic 500 18px/1.45 var(--serif);color:#f7e3ea}
+.doc-card blockquote span{display:block;margin-top:8px;font:400 13px var(--sans);color:var(--rose)}
+.doc-list{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.doc-list li{display:grid;grid-template-columns:28px 1fr;gap:10px;color:var(--ink2)}
+.doc-list li::before{content:"";width:10px;height:10px;margin:9px 0 0 8px;border-radius:50%;background:var(--rose)}
+.doc-src{margin-top:18px;font-size:13px;color:var(--mut)}
 
 /* contacts */
 .cont .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:stretch}
@@ -166,6 +185,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
   .gal{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
   .gal figure:first-child{grid-row:span 1;grid-column:span 2}
   .rate .wrap{grid-template-columns:1fr;gap:20px}
+  .quotes{grid-template-columns:1fr 1fr}
+  .doc .wrap{grid-template-columns:1fr;gap:32px}
 }
 @media (max-width:600px){
   body{font-size:16px;padding-bottom:72px}
@@ -181,6 +202,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
   .gal figure:first-child,.gal .wide{grid-column:auto}
   .score b{font-size:68px}
   .facts{gap:20px}
+  .quotes{grid-template-columns:1fr}
+  .doc-card{padding:30px 24px;border-radius:22px 22px 22px 64px}
   .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(251,246,244,.96);border-top:1px solid var(--line)}
   .mbar .btn{min-height:46px;padding:0 10px}
 }
@@ -191,7 +214,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="logo" href="#top"><b>Mirrabella</b><small>стоматология доктора Воробьевой</small></a>
-    <nav class="nav"><a href="#services">Услуги</a><a href="#book">Запись</a><a href="#prices">Цены</a><a href="#clinic">Клиника</a><a href="#contacts">Контакты</a></nav>
+    <nav class="nav"><a href="#services">Услуги</a><a href="#doctor">Врач</a><a href="#book">Запись</a><a href="#prices">Цены</a><a href="#clinic">Клиника</a><a href="#contacts">Контакты</a></nav>
     <a class="hd-tel" href="tel:+79105038786">+7 910 503-87-86</a>
   </div>
 </header>
@@ -202,7 +225,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
     <div class="hero-txt">
       <div class="eyebrow">Рязань · Интернациональная, 16 к7</div>
       <h1>Стоматология <em>доктора Воробьевой</em> на Интернациональной</h1>
-      <p class="lead">Протезирование, удаление, имплантация и отбеливание в небольшой частной клинике. Пенсионерам — индивидуальная скидка.</p>
+      <p class="lead">Протезирование и коронки, удаление, имплантация, лечение под микроскопом и неотложная помощь в небольшой частной клинике. Пн–Пт 10–19, Сб 10–15. Пенсионерам — индивидуальная скидка.</p>
       <div class="hero-acts">
         <a class="btn btn-p" href="#book">Записаться на приём</a>
         <a class="btn" href="tel:+79105038786">Позвонить</a>
@@ -210,7 +233,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
       <div class="facts">
         <div><b>4.9</b><span>рейтинг в 2ГИС</span></div>
         <div><b>36</b><span>оценок пациентов</span></div>
-        <div><b>5</b><span>направлений лечения</span></div>
+        <div><b>33</b><span>отзыва</span></div>
       </div>
     </div>
     <div class="hero-ph rv-in">
@@ -227,12 +250,33 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
       <p class="lead">Нажмите «Записаться» на нужной услуге — она сразу подставится в заявку.</p>
     </div>
     <div class="cards">
-      <article class="card rv-in"><span class="n">01</span><h3>Протезирование</h3><p>Коронки и протезы, чтобы вернуть зубам форму и нормально жевать.</p><button type="button" data-srv="Протезирование">Записаться →</button></article>
-      <article class="card rv-in"><span class="n">02</span><h3>Удаление</h3><p>Удаление зубов, которые уже не сохранить.</p><button type="button" data-srv="Удаление зуба">Записаться →</button></article>
-      <article class="card rv-in"><span class="n">03</span><h3>Имплантация</h3><p>Восстановление утраченных зубов на имплантах.</p><button type="button" data-srv="Имплантация">Записаться →</button></article>
-      <article class="card rv-in"><span class="n">04</span><h3>Косметическое отбеливание</h3><p>Осветление эмали для более светлой улыбки.</p><button type="button" data-srv="Отбеливание">Записаться →</button></article>
-      <article class="card rv-in"><span class="n">05</span><h3>Комплексный подход</h3><p>Когда нужно сразу несколько работ — составим общий план лечения.</p><button type="button" data-srv="Комплексное лечение">Записаться →</button></article>
+      <article class="card rv-in"><span class="n">01</span><h3>Неотложная помощь</h3><p>Когда болит зуб и терпеть уже нельзя — напишите, подберут ближайшее время.</p><button type="button" data-srv="Болит зуб">Записаться →</button></article>
+      <article class="card rv-in"><span class="n">02</span><h3>Лечение под микроскопом</h3><p>Лечение зубов взрослым под микроскопом, прицельный снимок зуба — на месте.</p><button type="button" data-srv="Лечение зуба">Записаться →</button></article>
+      <article class="card rv-in"><span class="n">03</span><h3>Протезирование и коронки</h3><p>Стоматолог-ортопед: протезы и коронки, в том числе циркониевые.</p><button type="button" data-srv="Протезирование">Записаться →</button></article>
+      <article class="card rv-in"><span class="n">04</span><h3>Удаление</h3><p>Стоматолог-хирург: удаление зубов, в том числе непростые случаи.</p><button type="button" data-srv="Удаление зуба">Записаться →</button></article>
+      <article class="card rv-in"><span class="n">05</span><h3>Имплантация</h3><p>Восстановление утраченных зубов на имплантах.</p><button type="button" data-srv="Имплантация">Записаться →</button></article>
       <article class="card pens rv-in"><span class="n">Пенсионерам</span><h3>Индивидуальная скидка</h3><p>Отметьте в заявке, что вы пенсионер, — размер скидки обсудят при записи.</p><button type="button" data-pens>Записаться со скидкой →</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec doc" id="doctor">
+  <div class="wrap">
+    <div class="doc-card rv-in">
+      <div class="eyebrow">Врач клиники</div>
+      <h2>Наталья Григорьевна Воробьёва</h2>
+      <small>стоматолог, клиника доктора Воробьевой</small>
+      <blockquote>«Я знакома с доктором Натальей Воробьевой около 15 лет»<span>Вера Чиркова, отзыв в 2ГИС, ноябрь 2024</span></blockquote>
+    </div>
+    <div class="rv-in">
+      <h2>За что пациенты пишут ей «спасибо»</h2>
+      <ul class="doc-list">
+        <li><span>Протезы, с которыми удобно жевать, и циркониевые коронки</span></li>
+        <li><span>Удаления, за которые не брались в других местах</span></li>
+        <li><span>Бережное лечение для тех, кто боится стоматологов: объясняет каждый шаг</span></li>
+        <li><span>План лечения после КТ — лечит тщательно, а не «лишь бы запломбировать»</span></li>
+      </ul>
+      <p class="doc-src">По отзывам пациентов в 2ГИС.</p>
     </div>
   </div>
 </section>
@@ -246,7 +290,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
       <ol class="steps">
         <li><b>1</b><span>Выберите, с чем обращаетесь</span></li>
         <li><b>2</b><span>Укажите удобные дни и время</span></li>
-        <li><b>3</b><span>Клиника ответит и подтвердит время приёма</span></li>
+        <li><b>3</b><span>Клиника ответит и подтвердит время приёма — Пн–Пт 10–19, Сб 10–15</span></li>
       </ol>
     </div>
     <form class="form rv-in" id="bookForm" novalidate>
@@ -271,7 +315,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
   <div class="wrap">
     <div class="sec-hd">
       <div><div class="eyebrow">Цены</div><h2 style="margin-top:10px">Прайс <span class="ex">Пример</span></h2></div>
-      <p class="lead">Так будет выглядеть прайс на сайте. Цифры ниже — пример, настоящие цены клиники подставим после согласования.</p>
+      <p class="lead">Так будет выглядеть прайс на сайте. Цифры ниже — пример, настоящие цены клиники подставим после согласования. Оплата картой, наличными, переводом, по QR-коду; есть «Плати частями».</p>
     </div>
     <div class="ptable">
       <div class="prow"><span>Консультация и осмотр</span><b>от 500 ₽</b></div>
@@ -308,9 +352,20 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
     </div>
     <div>
       <h2 style="margin-bottom:14px">Пациенты ставят высокие оценки</h2>
-      <p>Почитайте отзывы о клинике в 2ГИС — там же можно оставить свой после приёма.</p>
-      <a class="btn" href="https://2gis.ru/ryazan/firm/70000001055102925/tab/reviews" target="_blank" rel="noopener">Отзывы в 2ГИС</a>
+      <p>33 отзыва в 2ГИС. Чаще всего отмечают внимательного врача, отзывчивый персонал и приемлемые цены.</p>
+      <a class="btn" href="https://2gis.ru/ryazan/firm/70000001055102925/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a>
     </div>
+  </div>
+  <div class="wrap" style="display:block">
+    <div class="quotes">
+      <figure class="quote rv-in"><p>«Наталья Григорьевна сделала мне очень хороший протез. Он лёгкий, удобный, жую всё подряд»</p><footer><b>Людмила Гиривенко</b> · август 2026</footer></figure>
+      <figure class="quote rv-in"><p>«Поставила 2 циркониевые коронки. Приятно удивило сочетание профессионализма доктора и доступных цен»</p><footer><b>Юлия Набатова</b> · февраль 2026</footer></figure>
+      <figure class="quote rv-in"><p>«Хочу, чтобы мой отзыв помог тем, кто боится лечить зубы. Вам сюда… тщательно лечит, а не сразу пломбирует»</p><footer><b>Елена Плавинская</b> · январь 2025</footer></figure>
+      <figure class="quote rv-in"><p>«Вылечили 8, за которую никто не хотел браться. Адекватные цены»</p><footer><b>Алексей Лобанов</b> · май 2026</footer></figure>
+      <figure class="quote rv-in"><p>«Была на чистке зубов, всё прошло безболезненно и комфортно. Дали рекомендации по уходу»</p><footer><b>Валерия Тарасова</b> · октябрь 2026</footer></figure>
+      <figure class="quote rv-in"><p>«Хочу выразить огромную благодарность за белоснежную улыбку, за качественное и безболезненное лечение, за то, что я больше не боюсь стоматологов»</p><footer><b>Галина Бармина</b> · октябрь 2026</footer></figure>
+    </div>
+    <p class="qnote">Отзывы из 2ГИС, сокращено.</p>
   </div>
 </section>
 
@@ -320,9 +375,10 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--plum)}
       <div class="eyebrow">Контакты</div>
       <h2 style="margin-top:10px">Как нас найти</h2>
       <dl>
-        <div><dt>Адрес</dt><dd>Рязань, Интернациональная улица, 16 к7</dd></div>
+        <div><dt>Адрес</dt><dd>Рязань, Интернациональная улица, 16 к7 — справа от Wildberries<br><span style="font-size:15px;color:var(--mut)">Канищево, остановка «3-й квартал» в 500 м, рядом 9 парковок</span></dd></div>
         <div><dt>Телефон и WhatsApp</dt><dd><a href="tel:+79105038786">+7 910 503-87-86</a></dd></div>
-        <div><dt>Часы работы</dt><dd>Уточняйте при записи</dd></div>
+        <div><dt>Часы работы</dt><dd>Пн–Пт 10:00–19:00<br>Сб 10:00–15:00 · Вс — выходной</dd></div>
+        <div><dt>Оплата</dt><dd>Карта, наличные, перевод, QR-код, «Плати частями»</dd></div>
       </dl>
       <div class="cont-acts">
         <a class="btn btn-p" href="https://wa.me/79105038786" target="_blank" rel="noopener">WhatsApp</a>
@@ -351,7 +407,7 @@ addEventListener('scroll', () => hd.classList.toggle('sc', scrollY > 8), { passi
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
 document.querySelectorAll('.rv-in').forEach(el => io.observe(el));
 
-const SRVS = ['Болит зуб', 'Протезирование', 'Удаление зуба', 'Имплантация', 'Отбеливание', 'Комплексное лечение', 'Осмотр'];
+const SRVS = ['Болит зуб', 'Лечение зуба', 'Протезирование', 'Удаление зуба', 'Имплантация', 'Отбеливание', 'Осмотр'];
 $('#srvs').innerHTML = SRVS.map((s, i) => `<label class="chip"><input type="radio" name="srv" value="${s}"${i ? '' : ' checked'}><span>${s}</span></label>`).join('');
 const DAYS = ['Сегодня', 'Завтра', 'В будни', 'В ближайшие дни'];
 $('#days').innerHTML = DAYS.map((d, i) => `<label class="chip"><input type="radio" name="day" value="${d}"${i === 1 ? ' checked' : ''}><span>${d}</span></label>`).join('');
