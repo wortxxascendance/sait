@@ -9,9 +9,13 @@
   var rub = function (v) { return Math.round(v).toLocaleString('ru-RU') + ' ₽'; };
   var num = function (v) { return String(v).replace('.', ','); };
 
-  /* шапка */
-  var hd = $('hd');
+  /* шапка и меню (на телефоне и планшете) */
+  var hd = $('hd'), mb = $('menuBtn');
   addEventListener('scroll', function () { hd.classList.toggle('sc', scrollY > 20); }, { passive: true });
+  var menu = function (on) { hd.classList.toggle('open', on); mb.setAttribute('aria-expanded', on); };
+  mb.addEventListener('click', function () { menu(!hd.classList.contains('open')); });
+  $('mnav').addEventListener('click', function (e) { if (e.target.closest('a')) menu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && hd.classList.contains('open')) { menu(false); mb.focus(); } });
   $('dealsN').textContent = D.length;
 
   /* ---------- доска сделок ---------- */
@@ -23,7 +27,22 @@
     return [d.port ? 'В порту ' + d.port.charAt(0) + d.port.slice(1).toLowerCase() : 'Куплен на аукционе', ''];
   };
   var where = function (d) { return d.where === 'Уссурийске' ? 'в Уссурийске' : 'во Владивостоке'; };
-  var filter = 'all', showAll = false, FIRST = 9;
+  // на телефоне сделки — лента со свайпом, показываем все сразу
+  var phone = matchMedia('(max-width: 640px)');
+  var filter = 'all', showAll = phone.matches, FIRST = 9;
+  phone.addEventListener && phone.addEventListener('change', function (e) { showAll = e.matches; renderDeals(); });
+
+  /* последняя сделка на первом экране и бегущая строка */
+  if (D[0]) {
+    var L = D[0], ls = STATUS(L);
+    $('latest').innerHTML = '<img src="' + esc(L.img) + '" alt="' + esc(L.model) + '" width="132" height="100">'
+      + '<div><span class="cap"><i></i>Последняя сделка</span><b>' + esc(L.model + ' ' + (L.year || '')) + '</b>'
+      + '<span>' + esc(ls[0]) + ' · ' + esc([L.vol ? num(L.vol) + ' л' : '', L.hp ? L.hp + ' л.с.' : ''].filter(Boolean).join(' · ')) + '</span>'
+      + '<strong>≈ ' + rub(L.price) + '</strong></div>';
+  }
+  var tkItem = function (d) { return '<span><i></i><b>' + esc(d.model + ' ' + (d.year || '')) + '</b>' + esc(STATUS(d)[0].toLowerCase()) + ' · ≈ ' + rub(d.price) + '</span>'; };
+  var tkRow = D.slice(0, 14).map(tkItem).join('');
+  $('tk').innerHTML = tkRow + tkRow; // дважды — для бесшовной прокрутки
   function card(d, k) {
     var st = STATUS(d);
     var spec = [d.year, d.vol ? num(d.vol) + ' л' : '', d.hp ? d.hp + ' л.с.' : '', d.km ? d.km.toLocaleString('ru-RU') + ' км' : '', d.drive, CTRY[d.country]].filter(Boolean);
@@ -117,6 +136,15 @@
     });
   }
   renderDeals();
+
+  /* калькулятор не пустой: пример — машина из свежей сделки и условная цена лота (помечено как пример) */
+  if (!$('price').value && D[0] && D[0].country === 'JP') {
+    var x = D[0], pick = function (n, v) { var el = document.querySelector('input[name="' + n + '"][value="' + v + '"]'); if (el) el.checked = true; };
+    pick('country', 'JP'); pick('age', ageOf(x.year)); pick('engine', 'ice'); pick('who', 'fiz');
+    $('cur').value = 'JPY'; $('cc').value = Math.round(x.vol * 1000); $('hp').value = x.hp; $('price').value = '1500000';
+    $('price').dispatchEvent(new Event('input', { bubbles: true }));
+    $('price-h').textContent = 'Пример: ' + x.model + ' ' + x.year + ' и цена лота 1 500 000 ¥ — подставьте свою машину';
+  }
 
   /* ---------- заявка на подбор: ошибка после ухода из поля, кнопки всегда активны ---------- */
   var m = $('pModel'), me = $('pModel-e');

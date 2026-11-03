@@ -63,14 +63,40 @@ section{padding:130px 0 0}
 .hero-bg{position:absolute;inset:-8% 0 0;z-index:-2;background:url(img/office/reception.jpg) center 40%/cover;filter:grayscale(.35) brightness(.38) contrast(1.1);will-change:transform}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
   radial-gradient(55% 60% at 78% 30%,rgb(227 38 46/.18),transparent 70%),
+  linear-gradient(90deg,rgb(11 12 14/.7) 0%,rgb(11 12 14/.35) 45%,transparent 75%),
   linear-gradient(180deg,rgb(11 12 14/.55) 0%,rgb(11 12 14/.25) 40%,var(--bg) 96%)}
 .hero h1{font-size:clamp(46px,8.6vw,138px);letter-spacing:-.055em;line-height:.9;text-transform:uppercase}
 .hero h1 span{display:block}
 .hero h1 span:nth-child(2){color:transparent;-webkit-text-stroke:1.3px var(--ink)}
 .hero h1 i{font-style:normal;color:var(--red)}
-.hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end;margin-top:40px}
-.hero-row p{max-width:560px;color:var(--ink2);font-size:18px}
+.hero-row{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:40px;align-items:end;margin-top:40px}
+.hero-row p{max-width:560px;color:var(--ink2);font-size:18px;margin-bottom:26px}
 .hero-acts{display:flex;gap:12px;flex-wrap:wrap}
+/* последняя сделка — живая карточка на первом экране */
+.latest{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:center;padding:12px;border:1px solid rgb(255 255 255/.1);border-radius:20px;background:rgb(21 23 27/.72);backdrop-filter:blur(14px);transition:border-color .3s,transform .4s var(--ease)}
+.latest:hover{border-color:var(--red);transform:translateY(-3px)}
+.latest img{width:132px;height:100px;object-fit:cover;border-radius:12px}
+.latest .cap{display:flex;align-items:center;gap:7px;margin-bottom:6px;color:var(--red2);font-size:11px}
+.latest .cap i{width:7px;height:7px;border-radius:50%;background:var(--red2);animation:blink 1.6s ease-in-out infinite}
+.latest b{display:block;font-size:18px;letter-spacing:-.02em;line-height:1.2}
+.latest span{display:block;font-size:13px;color:var(--ink2)}
+.latest strong{display:block;font-size:20px;margin-top:6px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+@keyframes blink{50%{opacity:.25}}
+/* бегущая строка свежих сделок */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg2)}
+.tk{display:flex;width:max-content;animation:tk 70s linear infinite}
+.ticker:hover .tk{animation-play-state:paused}
+.tk span{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+.tk span b{color:var(--ink);font-weight:700}
+.tk span i{width:6px;height:6px;border-radius:50%;background:var(--red)}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* меню и нижняя панель — для телефона */
+.nav-tel{display:none}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:transparent;cursor:pointer;position:relative;flex:none}
+.menu-btn span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s var(--ease)}
+.menu-btn span:first-child{top:17px}.menu-btn span:last-child{top:25px}
+.hd.open .menu-btn span:first-child{transform:translateY(4px) rotate(45deg)}.hd.open .menu-btn span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.mbar{display:none}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
 .stat{padding:22px 24px 26px 0}
 .stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
@@ -116,6 +142,7 @@ section{padding:130px 0 0}
 .deal-acts a.src:hover{color:var(--ink)}
 .more{display:flex;justify-content:center;margin-top:32px}
 .more[hidden]{display:none}
+.swipe{display:none;font-size:12px;color:var(--mut);margin:12px 0 0;letter-spacing:.06em}
 
 .steps{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
 .steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--line)}
@@ -206,7 +233,14 @@ td small{display:block;color:var(--mut);font-size:12px}
 [data-rv].in{opacity:1;transform:none}
 
 @media (max-width:1080px){
-  .nav{display:none}
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;padding:6px 28px 22px;background:rgb(11 12 14/.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .hd.open{background:rgb(11 12 14/.97);border-color:var(--line)}
+  .hd.open .nav{display:flex}
+  .nav a{padding:15px 0;font-size:19px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+  .nav .nav-tel{display:block;color:var(--red2);border-bottom:0}
+  .hero-row{grid-template-columns:1fr}
+  .latest{max-width:460px}
   .deals,.revs{grid-template-columns:1fr 1fr}
   .values{grid-template-columns:1fr 1fr}
   .calc,.cta{grid-template-columns:1fr}
@@ -215,21 +249,54 @@ td small{display:block;color:var(--mut);font-size:12px}
   .office{grid-template-columns:1fr 1fr;grid-template-rows:240px 240px 240px}.office figure:first-child{grid-column:span 2;grid-row:auto}
 }
 @media (max-width:640px){
+  :root{--dl-b:74px}
+  body{padding-bottom:76px}
   .wrap{padding:0 18px}
-  section{padding-top:92px}
+  section{padding-top:84px}
+  .head{margin-bottom:32px}
   .hd-r .tel,.hd .btn{display:none}
-  .hero-row{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr}.stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .nav{padding:6px 18px 22px}
+  .hero{min-height:auto;padding-top:118px}
+  .hero-bg{background-position:12% 40%;filter:grayscale(.4) brightness(.24) contrast(1.1)}
+  .hero h1{font-size:clamp(40px,12.5vw,58px)}
+  .hero-row{margin-top:24px;gap:22px}
+  .hero-row p{font-size:16px;margin-bottom:22px}
+  .hero-acts .btn{flex:1 1 100%}
+  .latest{grid-template-columns:104px 1fr;gap:12px;padding:10px}.latest img{width:104px;height:80px}.latest b{font-size:16px}.latest strong{font-size:18px}
+  .route{padding:34px 0 22px}
   .route ol{grid-template-columns:repeat(3,1fr)}.route li:nth-child(2),.route li:nth-child(3){display:none}
-  .deals,.revs,.values,.steps,.visit{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat{padding:16px 8px 20px 0}.stat+.stat{padding-left:12px}
+  .stat b{font-size:22px}.stat span{font-size:11px;line-height:1.35;display:block;margin-top:4px}
+  .tk span{padding:13px 20px;font-size:12px}
+  /* горизонтальные ленты со свайпом вместо длинных столбиков */
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -18px 18px;padding:0 18px;scrollbar-width:none}
+  .chip{flex:none}
+  .deals,.revs,.office{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -18px;padding:0 18px 4px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .filters::-webkit-scrollbar,.deals::-webkit-scrollbar,.revs::-webkit-scrollbar,.office::-webkit-scrollbar{display:none}
+  .deal,.rev{flex:0 0 86%;scroll-snap-align:center}
+  .office{grid-template-columns:none;grid-template-rows:none}
+  .office figure{flex:0 0 84%;height:300px;scroll-snap-align:center}.office figure:first-child{grid-column:auto;grid-row:auto}
+  .swipe{display:block}
+  .more{display:none}
+  .values{grid-template-columns:1fr 1fr;gap:26px 14px}.value h3{font-size:18px;margin-bottom:10px}.value q{font-size:14px}.value span{font-size:12px}
+  .steps,.visit{grid-template-columns:1fr}
   .row2,.row3,.acts .two{grid-template-columns:1fr}
-  .office{grid-template-columns:1fr;grid-template-rows:none}.office figure{height:240px}.office figure:first-child{grid-column:auto}
+  .panel{padding:22px;border-radius:20px}
+  .ct a{font-size:26px}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgb(11 12 14/.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;border:1px solid var(--line2);font-weight:600;font-size:15px}
+  .mbar a.wa{background:var(--red);border-color:var(--red);color:#fff}
+  .mbar svg{width:18px;height:18px}
+  .toast{bottom:92px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   [data-rv]{opacity:1;transform:none;transition:none}
   .route path{transition:none;stroke-dashoffset:0}.steps .fill{transition:none}
-  .deal,.ph img,.office img,.hero-bg{transition:none}
+  .deal,.ph img,.office img,.hero-bg,.latest{transition:none}
+  .tk{animation:none;flex-wrap:wrap;width:auto}.tk span:nth-child(n+7){display:none}
+  .latest .cap i{animation:none}
 }
 </style>
 </head>
@@ -238,12 +305,14 @@ td small{display:block;color:var(--mut);font-size:12px}
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="AlexAvto"><svg viewBox="0 0 34 20" aria-hidden="true"><path d="M1 17C9 6 20 1 33 3 22 4 13 9 7 19z" fill="#E3262E"/></svg><span>Alex<b>Avto</b></span></a>
-    <nav class="nav" aria-label="Разделы">
+    <nav class="nav" id="mnav" aria-label="Разделы">
       <a href="#deals">Сделки</a><a href="#how">Как работаем</a><a href="#calc">Калькулятор</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+      <a class="nav-tel" href="tel:+79027554040">+7 902 755-40-40</a>
     </nav>
     <div class="hd-r">
       <a class="tel" href="tel:+79027554040">+7 902 755-40-40</a>
       <a class="btn btn-r" href="#contacts">Подобрать авто</a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Меню"><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -255,23 +324,28 @@ td small{display:block;color:var(--mut);font-size:12px}
       <span class="cap red" data-rv>Автомобили под заказ · Кемерово</span>
       <h1 data-rv style="margin-top:18px"><span>Путь вашего</span><span>автомобиля</span><span>начинается <i>здесь</i></span></h1>
       <div class="hero-row" data-rv>
-        <p>Японские, корейские и китайские автомобили с аукционов и от дилеров. Подбираем, покупаем, везём через Владивосток и растамаживаем — до ключей в Кемерово.</p>
-        <div class="hero-acts">
-          <a class="btn btn-r" href="#calc">Рассчитать под ключ</a>
-          <a class="btn" href="#deals">Смотреть сделки</a>
+        <div>
+          <p>Японские, корейские и китайские автомобили с аукционов и от дилеров. Подбираем, покупаем, везём через Владивосток и растамаживаем — до ключей в Кемерово.</p>
+          <div class="hero-acts">
+            <a class="btn btn-r" href="#calc">Рассчитать под ключ</a>
+            <a class="btn" href="#deals">Смотреть сделки</a>
+          </div>
         </div>
+        <a class="latest" id="latest" href="#deals" aria-label="Последняя сделка"></a>
       </div>
       <div class="route" id="route" aria-hidden="true">
         <svg viewBox="0 0 1000 46" preserveAspectRatio="none"><path d="M2 40 C 180 40, 220 8, 420 10 S 700 38, 820 22 S 960 6, 998 8"/></svg>
         <ol><li>Япония</li><li>Корея</li><li>Китай</li><li>Владивосток</li><li>Кемерово</li></ol>
       </div>
       <div class="stats" data-rv>
-        <div class="stat"><b><em>5.0</em> · 133</b><span>оценка и отзывы в 2ГИС</span></div>
-        <div class="stat"><b id="dealsN">28</b><span>машин с итоговой ценой в нашем Telegram с 29 сентября</span></div>
-        <div class="stat"><b>Курс дня</b><span>в каждом расчёте — по курсу на момент оплаты инвойса</span></div>
+        <div class="stat"><b><em>5.0</em></b><span>133 отзыва в 2ГИС</span></div>
+        <div class="stat"><b id="dealsN">28</b><span>сделок с итоговой ценой с 29 сентября</span></div>
+        <div class="stat"><b>Курс дня</b><span>в каждом расчёте — на момент оплаты</span></div>
       </div>
     </div>
   </section>
+
+  <div class="ticker" aria-hidden="true"><div class="tk" id="tk"></div></div>
 
   <section id="deals">
     <div class="wrap">
@@ -281,6 +355,7 @@ td small{display:block;color:var(--mut);font-size:12px}
       </div>
       <div class="filters" id="filters" role="group" aria-label="Бюджет"></div>
       <div class="deals" id="dealsList"></div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
       <div class="more" id="more"><button class="btn" type="button" id="moreBtn">Показать все сделки</button></div>
     </div>
   </section>
@@ -373,6 +448,7 @@ td small{display:block;color:var(--mut);font-size:12px}
         <figure><img src="img/office/route.jpg" alt="Маршрут автомобиля на стене офиса" loading="lazy"><figcaption>Путь вашего автомобиля</figcaption></figure>
         <figure><img src="img/office/office.jpg" alt="Рабочие места менеджеров" loading="lazy"><figcaption>Менеджеры</figcaption></figure>
       </div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
       <div class="visit" data-rv>
         <div><b>ул. Баумана, 57Б к1</b><span>Кемерово, 2 этаж</span></div>
         <div><b>Пн–Пт 8:00–18:00</b><span>Сб 8:00–15:00, Вс — выходной</span></div>
@@ -385,6 +461,7 @@ td small{display:block;color:var(--mut);font-size:12px}
     <div class="wrap">
       <div class="head" data-rv><div><span class="cap">Отзывы · 2ГИС</span><h2>5.0 и <em>133 отзыва</em></h2></div><a class="btn" href="https://2gis.ru/kemerovo/firm/70000001089684800/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a></div>
       <div class="revs" id="revs"></div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
     </div>
   </section>
 
@@ -430,6 +507,10 @@ td small{display:block;color:var(--mut);font-size:12px}
   </footer>
 </main>
 <div class="toast" id="toast" role="status"></div>
+<nav class="mbar" aria-label="Быстрая связь">
+  <a href="tel:+79027554040"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Позвонить</a>
+  <a class="wa" href="https://wa.me/79027554040" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z" fill="currentColor"/></svg>WhatsApp</a>
+</nav>
 
 <script src="js/rates.js"></script>
 <script src="js/data.js"></script>
