@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Асгард Авто — честные автомобили с пробегом в Новокузнецке</title>
+<meta name="description" content="Автосалон на Кольцевой, 10: автомобили с пробегом и новые, выкуп, trade-in, тест-драйв, помощь с переоформлением. 4.7 в 2ГИС. Каждый день 10:00–20:00.">
+<meta name="theme-color" content="#070914">
+<meta property="og:title" content="Асгард Авто — честные автомобили с пробегом">
+<meta property="og:description" content="Покажем всё до покупки. Выкуп, trade-in, тест-драйв. Новокузнецк, Кольцевая, 10.">
+<meta property="og:image" content="https://wortxxascendance.github.io/sait/asgardavto-novo/img/og.jpg">
+<meta property="og:url" content="https://wortxxascendance.github.io/sait/asgardavto-novo/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23070914'/%3E%3Crect x='9' y='13' width='30' height='22' rx='2' fill='none' stroke='%23B794FF' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070914;--bg2:#0B0E1D;--card:#0F1326;--line:#1C2140;--line2:#2A3060;
+  --ink:#EEF0FF;--ink2:#A9AFD4;--mut:#6F769E;--neo:#A47BFF;--neo2:#C8B0FF;--glow:rgb(164 123 255/.55);
+  --disp:'Unbounded',system-ui,sans-serif;--font:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.cap{font:600 12px var(--font);letter-spacing:.2em;text-transform:uppercase;color:var(--neo2)}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:500;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
+h2{font-size:clamp(30px,4.2vw,56px);text-transform:uppercase}
+h2 em{font-style:normal;color:var(--neo2);text-shadow:0 0 22px var(--glow)}
+p{margin:0;text-wrap:pretty}
+section{padding:120px 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:46px}
+.head p{color:var(--ink2);max-width:430px}
+.head .cap{display:block;margin-bottom:16px}
+.ex{display:inline-block;font:700 10px var(--font);letter-spacing:.12em;text-transform:uppercase;color:#ffcf7a;border:1px solid rgb(255 207 122/.35);border-radius:999px;padding:2px 8px;vertical-align:middle;margin-left:8px}
+
+/* неоновая рамка — как вывеска на Кольцевой */
+.neon{position:relative;border:2px solid var(--neo2);border-radius:4px;box-shadow:0 0 6px var(--neo),0 0 18px var(--glow),inset 0 0 10px rgb(164 123 255/.35)}
+@keyframes hum{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.55}94%{opacity:1}96%{opacity:.7}97%{opacity:1}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;border:1px solid var(--line2);background:transparent;color:var(--ink);font:700 15px var(--font);cursor:pointer;transition:border-color .2s,background .2s,box-shadow .3s,transform .2s var(--ease)}
+.btn:hover{border-color:var(--neo2)}
+.btn:active{transform:scale(.97)}
+.btn-n{background:var(--neo);border-color:var(--neo);color:#0b0620}
+.btn-n:hover{background:var(--neo2);border-color:var(--neo2);box-shadow:0 0 26px var(--glow)}
+
+.hd{position:sticky;top:0;z-index:40;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.hd.sc,.hd.open{background:rgb(7 9 20/.88);backdrop-filter:blur(14px);border-color:var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:22px;position:relative}
+.logo{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 12px;font:500 13px/1.05 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 0 8px var(--glow);animation:hum 7s infinite}
+.nav{display:flex;gap:28px;font-size:14px;color:var(--ink2)}
+.nav a:hover{color:var(--ink)}
+.nav-tel{display:none}
+.hd-r{display:flex;align-items:center;gap:16px}
+.hd-r .tel{font-weight:700;font-variant-numeric:tabular-nums}
+.hd .btn{min-height:44px;padding:0 18px;font-size:14px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:transparent;cursor:pointer;position:relative;flex:none}
+.menu-btn span{position:absolute;left:12px;right:12px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s var(--ease)}
+.menu-btn span:first-child{top:17px}.menu-btn span:last-child{top:25px}
+.hd.open .menu-btn span:first-child{transform:translateY(4px) rotate(45deg)}.hd.open .menu-btn span:last-child{transform:translateY(-4px) rotate(-45deg)}
+
+.hero{position:relative;min-height:calc(100svh - 76px);display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-6% 0 0;z-index:-2;background:url(img/lot1.jpg) center 60%/cover;filter:saturate(.8) brightness(.22) blur(2px);will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(40% 55% at 78% 45%,rgb(164 123 255/.24),transparent 70%),
+  linear-gradient(90deg,var(--bg) 0%,rgb(7 9 20/.8) 45%,rgb(7 9 20/.45) 100%),
+  linear-gradient(180deg,transparent 60%,var(--bg) 100%)}
+.hero>.wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:56px;align-items:center;width:100%}
+.hero-in{padding:60px 0 70px}
+/* вывеска — отдельным кадром в неоновой рамке */
+.hero-pic{margin:0;aspect-ratio:3/4;border-radius:18px;overflow:hidden;border:2px solid var(--neo2);box-shadow:0 0 10px var(--neo),0 0 46px var(--glow);animation:hum 9s infinite}
+.hero-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.hero h1{font-size:clamp(38px,5.6vw,82px);text-transform:uppercase;letter-spacing:-.035em}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.4px var(--neo2);filter:drop-shadow(0 0 10px var(--glow))}
+.hero p{margin-top:26px;font-size:18px;color:var(--ink2);max-width:600px}
+.hero-acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;margin-top:52px;border-top:1px solid var(--line2)}
+.fact{padding:18px 30px 0 0}
+.fact+.fact{padding-left:30px;border-left:1px solid var(--line2)}
+.fact b{display:block;font:500 26px var(--disp);letter-spacing:-.02em}
+.fact b em{font-style:normal;color:var(--neo2);text-shadow:0 0 14px var(--glow)}
+.fact span{font-size:13px;color:var(--ink2)}
+
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--bg2)}
+.tk{display:flex;width:max-content;animation:tk 45s linear infinite}
+.ticker:hover .tk{animation-play-state:paused}
+.tk span{display:inline-flex;align-items:center;gap:22px;padding:18px 22px;font:500 14px var(--disp);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--ink2)}
+.tk span::after{content:"";width:8px;height:8px;border:1.5px solid var(--neo2);border-radius:2px;box-shadow:0 0 8px var(--glow)}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+.lot{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:12px}
+.lot figure{margin:0;position:relative;overflow:hidden;border-radius:16px;background:var(--card)}
+.lot figure.w{grid-column:span 2}.lot figure.t{grid-row:span 2}
+.lot img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.lot figure:hover img{transform:scale(1.05)}
+.lot figure::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgb(255 255 255/.06);pointer-events:none;transition:box-shadow .4s}
+.lot figure:hover::after{box-shadow:inset 0 0 0 2px var(--neo2),0 0 24px var(--glow)}
+.lot-note{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:var(--mut)}
+
+.bought{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:border-color .3s,transform .4s var(--ease)}
+.bc:hover{border-color:var(--line2);transform:translateY(-3px)}
+.bc .car{font:500 21px/1.15 var(--disp);letter-spacing:-.02em}
+.bc .meta{font-size:13px;color:var(--mut)}
+.bc q{quotes:none;color:var(--ink2);font-size:15px;line-height:1.5;border-left:2px solid var(--neo);padding-left:12px}
+.bc .who{margin-top:auto;font-size:13px;color:var(--mut)}
+.bc .who b{color:var(--ink);font-weight:600}
+.bc.big{grid-column:span 2;background:linear-gradient(135deg,rgb(164 123 255/.14),transparent 60%),var(--card)}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tr{border-top:1px solid var(--line2);padding-top:22px}
+.tr .n{font:500 13px var(--disp);color:var(--neo2)}
+.tr h3{font-size:20px;margin:16px 0 10px;line-height:1.15}
+.tr p{color:var(--ink2);font-size:15px}
+
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.sv{background:var(--bg);padding:26px 24px;transition:background .3s}
+.sv:hover{background:var(--card)}
+.sv h3{font-size:17px;letter-spacing:0;line-height:1.2}
+.sv p{margin-top:8px;font-size:14px;color:var(--ink2)}
+
+.forms{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.panel h3{font-size:22px;margin-bottom:6px}
+.panel>p{color:var(--ink2);font-size:15px;margin-bottom:20px}
+.lbl{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:0 0 10px}
+.fld{margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:42px;padding:0 15px;border:1px solid var(--line2);border-radius:10px;font-size:14px;font-weight:600;color:var(--ink2);cursor:pointer;user-select:none;transition:all .2s}
+.chips input:checked+span{border-color:var(--neo2);color:#fff;background:rgb(164 123 255/.16);box-shadow:0 0 14px rgb(164 123 255/.25)}
+.chips input:focus-visible+span{outline:2px solid var(--neo2);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=text]{width:100%;min-height:50px;padding:0 15px;border:1px solid var(--line2);border-radius:12px;background:var(--bg2);font:500 16px var(--font);color:var(--ink);color-scheme:dark}
+input::placeholder{color:var(--mut)}
+input:focus{outline:none;border-color:var(--neo2);box-shadow:0 0 0 3px rgb(164 123 255/.18)}
+input[aria-invalid=true]{border-color:#ff6b7a}
+.err{font-size:13px;color:#ff8f9b;margin:6px 0 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+
+.revs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.rev .stars{color:var(--neo2);letter-spacing:2px;font-size:13px;text-shadow:0 0 8px var(--glow)}
+.rev q{display:block;margin-top:8px;quotes:none;font-size:14.5px;line-height:1.55}
+.rev footer{font-size:13px;color:var(--mut)}.rev footer b{display:block;color:var(--ink);font-weight:600;font-size:14px}
+
+.place{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+.place figure{margin:0;border-radius:20px;overflow:hidden;min-height:380px;background:var(--card)}
+.place img{width:100%;height:100%;object-fit:cover}
+.ct{display:flex;flex-direction:column;gap:22px}
+.ct .big{font:500 clamp(24px,2.6vw,32px)/1.1 var(--disp);letter-spacing:-.02em}
+.ct .row{display:grid;gap:4px;border-top:1px solid var(--line2);padding-top:16px}
+.ct .row span{font-size:14px;color:var(--ink2)}
+.ct .row a{font-weight:700;font-size:20px;font-variant-numeric:tabular-nums}
+.chans{display:flex;flex-wrap:wrap;gap:8px}
+.chans a{display:inline-flex;align-items:center;min-height:40px;padding:0 15px;border:1px solid var(--line2);border-radius:10px;font-size:14px;color:var(--ink2);transition:all .2s}
+.chans a:hover{color:#fff;border-color:var(--neo2)}
+.ft{max-width:1240px;margin:120px auto 0;border-top:1px solid var(--line);padding:28px 28px 90px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+
+.mbar{display:none}
+.swipe{display:none;font-size:12px;color:var(--mut);margin:12px 0 0;letter-spacing:.06em}
+
+[data-rv]{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-rv].in{opacity:1;transform:none}
+
+@media (max-width:1060px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;gap:0;padding:6px 28px 22px;background:rgb(7 9 20/.97);border-bottom:1px solid var(--line)}
+  .hd.open .nav{display:flex}
+  .nav a{padding:15px 0;font-size:19px;font-weight:700;color:var(--ink);border-bottom:1px solid var(--line)}
+  .nav .nav-tel{display:block;color:var(--neo2);border-bottom:0}
+  .lot{grid-template-columns:repeat(3,1fr)}
+  .bought,.revs{grid-template-columns:1fr 1fr}
+  .trust{grid-template-columns:1fr 1fr;row-gap:30px}
+  .svc{grid-template-columns:1fr 1fr}
+  .forms,.place{grid-template-columns:1fr}
+  .hero>.wrap{grid-template-columns:minmax(0,1fr) 300px;gap:36px}
+}
+@media (max-width:820px){
+  .hero>.wrap{grid-template-columns:1fr;gap:0}
+  .hero-pic{order:-1;aspect-ratio:16/11;margin-top:22px}
+  .hero-pic img{object-position:50% 64%}
+}
+@media (max-width:640px){
+  :root{--dl-b:74px}
+  body{padding-bottom:76px}
+  .wrap{padding:0 18px}
+  section{padding-top:82px}
+  .head{margin-bottom:30px}
+  .hd-r .tel,.hd .btn{display:none}
+  .nav{padding:6px 18px 22px}
+  .hero{min-height:auto;align-items:flex-end}
+  .hero-in{padding:30px 0 46px}
+  .hero h1{font-size:clamp(30px,9.4vw,44px)}
+  .hero p{font-size:16px;margin-top:20px}
+  .hero-acts .btn{flex:1 1 100%}
+  .facts{grid-template-columns:repeat(3,1fr);margin-top:36px}
+  .fact{padding:14px 8px 0 0}.fact+.fact{padding-left:12px}
+  .fact b{font-size:18px}.fact span{font-size:11px;line-height:1.35;display:block;margin-top:4px}
+  .tk span{padding:14px 16px;font-size:12px}
+  .lot,.bought,.revs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -18px;padding:0 18px 4px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .lot::-webkit-scrollbar,.bought::-webkit-scrollbar,.revs::-webkit-scrollbar{display:none}
+  .lot figure{flex:0 0 80%;height:300px;scroll-snap-align:center}
+  .bc,.rev{flex:0 0 86%;scroll-snap-align:center}
+  .swipe{display:block}
+  .trust{grid-template-columns:1fr 1fr;gap:26px 14px}.tr h3{font-size:16px}.tr p{font-size:13.5px}
+  .svc{grid-template-columns:1fr}
+  .row2,.two{grid-template-columns:1fr}
+  .panel{padding:22px}
+  .place figure{min-height:240px}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgb(7 9 20/.92);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:12px;border:1px solid var(--line2);font-weight:700;font-size:15px}
+  .mbar a.wa{background:var(--neo);border-color:var(--neo);color:#0b0620}
+  .mbar svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-rv]{opacity:1;transform:none;transition:none}
+  .tk{animation:none;flex-wrap:wrap;width:auto}
+  .logo{animation:none}
+  .lot img,.bc,.hero-bg{transition:none}
+}
+</style>
+</head>
+<body>
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a class="logo neon" href="#top" aria-label="Асгард Авто"><span>Асгард</span><span>Авто</span></a>
+    <nav class="nav" id="mnav" aria-label="Разделы">
+      <a href="#lot">Площадка</a><a href="#bought">Купили у нас</a><a href="#services">Услуги</a><a href="#sell">Выкуп и trade-in</a><a href="#contacts">Контакты</a>
+      <a class="nav-tel" href="tel:+79133363460">+7 913 336-34-60</a>
+    </nav>
+    <div class="hd-r">
+      <a class="tel" href="tel:+79133363460">+7 913 336-34-60</a>
+      <a class="btn btn-n" href="#pick">Подобрать авто</a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Меню"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-top:0">
+    <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-in">
+        <span class="cap" data-rv>Автосалон · Новокузнецк, Кольцевая, 10</span>
+        <h1 data-rv style="margin-top:20px"><span>Честные</span><span>автомобили</span><span class="o">с пробегом</span></h1>
+        <p data-rv>Покажем машину до покупки: прокатитесь, проверьте на любом СТО, пришлём видео по запросу. Выкуп, trade-in и помощь с переоформлением.</p>
+        <div class="hero-acts" data-rv>
+          <a class="btn btn-n" href="#pick">Подобрать автомобиль</a>
+          <a class="btn" href="#sellForm">Оценить мой автомобиль</a>
+        </div>
+        <div class="facts" data-rv>
+          <div class="fact"><b><em>4.7</em></b><span>91 оценка в 2ГИС</span></div>
+          <div class="fact"><b>10–20</b><span>каждый день, без выходных</span></div>
+          <div class="fact"><b>Trade-in</b><span>и выкуп вашего авто</span></div>
+        </div>
+      </div>
+      <figure class="hero-pic" data-rv><img src="img/sign.jpg" alt="Неоновая вывеска Асгард Авто на Кольцевой, 10" width="1050" height="1400"></figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="tk" id="tk"></div></div>
+
+  <section id="lot">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Площадка</span><h2>Приезжайте <em>смотреть</em></h2></div><p>Машины стоят на нашей площадке на Кольцевой, 10 — можно осмотреть, прокатиться и показать своему мастеру.</p></div>
+      <div class="lot" data-rv>
+        <figure class="w t"><img src="img/lot1.jpg" alt="Площадка Асгард Авто" loading="lazy"></figure>
+        <figure class="t"><img src="img/car1.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure><img src="img/car3.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure><img src="img/car4.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure class="t"><img src="img/car2.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure class="w"><img src="img/car5.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure><img src="img/car7.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure class="w"><img src="img/lot2.jpg" alt="Площадка Асгард Авто" loading="lazy"></figure>
+        <figure><img src="img/car8.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure><img src="img/car9.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure class="t"><img src="img/car6.jpg" alt="Автомобиль на площадке" loading="lazy"></figure>
+        <figure class="w"><img src="img/car10.jpg" alt="Автомобили на площадке" loading="lazy"></figure>
+      </div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
+      <div class="lot-note"><span>Фото площадки — из 2ГИС <span class="ex">Пример</span></span><span>В рабочей версии — каталог с ценами, пробегом и фото каждой машины, обновляете сами с телефона.</span></div>
+    </div>
+  </section>
+
+  <section id="bought">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Купили у нас</span><h2>Реальные <em>покупки</em></h2></div><p>Машины, о которых покупатели сами написали в 2ГИС.</p></div>
+      <div class="bought">
+        <article class="bc big" data-rv><div class="car">Toyota Carina и Nissan Maxima</div><div class="meta">две машины за один визит</div><q>Мы приехали покупать к ним машину для друга, в итоге купили 2 машины! Всё честно рассказали, прокатились, обсудили небольшой торг</q><div class="who"><b>Эдуард Хасянов</b> · июнь 2026</div></article>
+        <article class="bc" data-rv><div class="car">Mazda 3</div><div class="meta">красная, мечта покупательницы</div><q>Перед покупкой мне всё честно показали и разрешили детально проверить</q><div class="who"><b>Аля</b> · август 2026</div></article>
+        <article class="bc" data-rv><div class="car">Nissan Sunny 2001</div><div class="meta">за 230 тысяч</div><q>Ребята говорили, что пороги переварены… реально пороги переварены хорошо, катаюсь уже 4 месяц, ничего не вкладываюсь</q><div class="who"><b>Шабанов Вугар</b> · ноябрь 2025</div></article>
+        <article class="bc" data-rv><div class="car">Chevrolet Aveo 2007</div><div class="meta">цена по состоянию</div><q>Цена соответствовала состоянию. Машина оправдала все мои ожидания</q><div class="who"><b>Городской житель</b> · март 2026</div></article>
+        <article class="bc" data-rv><div class="car">Под заказ из Японии</div><div class="meta">ту самую машину, которую искала</div><q>Заказали из Японии именно ту самую машину, которую я так сильно хотела</q><div class="who"><b>Анастасия Козлова</b> · июль 2026</div></article>
+      </div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
+    </div>
+  </section>
+
+  <section id="trust">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Почему нам доверяют</span><h2>Без вранья и <em>подводных камней</em></h2></div><p>Так о нас пишут покупатели — и так мы работаем с каждой машиной.</p></div>
+      <div class="trust">
+        <div class="tr" data-rv><span class="n">01</span><h3>Показываем всё как есть</h3><p>Рассказываем о машине честно, включая недостатки — до того, как вы приняли решение.</p></div>
+        <div class="tr" data-rv><span class="n">02</span><h3>Проверка на вашем СТО</h3><p>Можно детально проверить машину у своего мастера перед покупкой.</p></div>
+        <div class="tr" data-rv><span class="n">03</span><h3>Видео по запросу</h3><p>Не можете приехать — пришлём дополнительные видео и ответим на вопросы.</p></div>
+        <div class="tr" data-rv><span class="n">04</span><h3>Документы и учёт</h3><p>Помогаем с переоформлением и постановкой на учёт.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Услуги</span><h2>Всё про машину <em>в одном месте</em></h2></div></div>
+      <div class="svc" data-rv>
+        <div class="sv"><h3>Автомобили с пробегом</h3><p>Любые марки — от недорогих до премиальных.</p></div>
+        <div class="sv"><h3>Новые автомобили</h3><p>Подберём новую машину под ваш бюджет.</p></div>
+        <div class="sv"><h3>Выкуп автомобилей</h3><p>Оценим и выкупим ваш автомобиль.</p></div>
+        <div class="sv"><h3>Trade-in и обмен</h3><p>Сдаёте свой автомобиль в зачёт другого.</p></div>
+        <div class="sv"><h3>Тест-драйв</h3><p>Прокатитесь перед покупкой.</p></div>
+        <div class="sv"><h3>Переоформление</h3><p>Поможем с документами и постановкой на учёт.</p></div>
+        <div class="sv"><h3>Автокредит</h3><p>Поможем с оформлением — подробности у менеджера.</p></div>
+        <div class="sv"><h3>Заказ из Японии</h3><p>Найдём и привезём нужную модель.</p></div>
+        <div class="sv"><h3>Электромобили</h3><p>Спросите, что сейчас есть в наличии.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sell">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Заявки</span><h2>Подбор, выкуп <em>и trade-in</em></h2></div><p>Пара кликов — и откроется WhatsApp с готовым сообщением, менеджер ответит там.</p></div>
+      <div class="forms">
+        <form class="panel" id="pick" novalidate data-rv>
+          <h3>Подобрать автомобиль</h3><p>Скажите, что ищете, — предложим варианты с площадки и под заказ.</p>
+          <div class="fld"><span class="lbl">Бюджет</span><div class="chips" id="budget"></div></div>
+          <div class="fld"><span class="lbl">Кузов</span><div class="chips" id="body"></div></div>
+          <div class="fld"><label class="lbl" for="pModel">Марка или модель (если знаете)</label><input type="text" id="pModel" autocomplete="off" placeholder="Например, Toyota Corolla"></div>
+          <div class="two"><button class="btn btn-n" type="submit">Отправить в WhatsApp</button><a class="btn" href="tel:+79133363460">Позвонить</a></div>
+        </form>
+        <form class="panel" id="sellForm" novalidate data-rv>
+          <h3>Оценить мой автомобиль</h3><p>Выкуп или зачёт в trade-in — пришлите основные данные, назовём ориентир.</p>
+          <div class="fld"><span class="lbl">Что хотите</span><div class="chips" id="sellKind"></div></div>
+          <div class="fld"><label class="lbl" for="sModel">Марка и модель</label><input type="text" id="sModel" autocomplete="off" placeholder="Например, Nissan Sunny" aria-describedby="sModel-e"><p class="err" id="sModel-e" hidden></p></div>
+          <div class="row2 fld">
+            <div><label class="lbl" for="sYear">Год</label><input type="text" id="sYear" inputmode="numeric" autocomplete="off" placeholder="2012"></div>
+            <div><label class="lbl" for="sKm">Пробег, км</label><input type="text" id="sKm" inputmode="numeric" autocomplete="off" placeholder="150 000"></div>
+          </div>
+          <div class="two"><button class="btn btn-n" type="submit">Отправить в WhatsApp</button><a class="btn" href="tel:+79133363420">Позвонить</a></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Отзывы · 2ГИС</span><h2>4.7 и <em>91 оценка</em></h2></div><a class="btn" href="https://2gis.ru/novokuznetsk/firm/70000001076052729/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a></div>
+      <div class="revs" id="revs"></div>
+      <p class="swipe" aria-hidden="true">Листайте →</p>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">Контакты</span><h2>Ждём <em>на Кольцевой</em></h2></div></div>
+      <div class="place">
+        <figure data-rv><img src="img/facade.jpg" alt="Вывеска Асгард Авто на Кольцевой, 10" loading="lazy"></figure>
+        <div class="ct" data-rv>
+          <div class="big">Новокузнецк,<br>ул. Кольцевая, 10</div>
+          <div class="row"><span>Каждый день, без выходных</span><b style="font-size:20px">10:00–20:00</b></div>
+          <div class="row"><span>Телефоны</span><a href="tel:+79133363460">+7 913 336-34-60</a><a href="tel:+79133363420">+7 913 336-34-20</a></div>
+          <div class="chans">
+            <a href="https://wa.me/79133363460" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://vk.com/avto_42" target="_blank" rel="noopener">ВКонтакте</a>
+            <a href="https://2gis.ru/novokuznetsk/firm/70000001076052729" target="_blank" rel="noopener">Маршрут в 2ГИС</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ft"><span>Асгард Авто · автосалон · Новокузнецк, Кольцевая, 10</span><span>Отзывы и фото — из 2ГИС.</span></footer>
+</main>
+<nav class="mbar" aria-label="Быстрая связь">
+  <a href="tel:+79133363460"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Позвонить</a>
+  <a class="wa" href="https://wa.me/79133363460" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z" fill="currentColor"/></svg>WhatsApp</a>
+</nav>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  var $ = function (s) { return document.getElementById(s); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WA = '79133363460';
+
+  /* шапка и меню */
+  var hd = $('hd'), mb = $('menuBtn');
+  addEventListener('scroll', function () { hd.classList.toggle('sc', scrollY > 20); }, { passive: true });
+  var menu = function (on) { hd.classList.toggle('open', on); mb.setAttribute('aria-expanded', on); };
+  mb.addEventListener('click', function () { menu(!hd.classList.contains('open')); });
+  $('mnav').addEventListener('click', function (e) { if (e.target.closest('a')) menu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && hd.classList.contains('open')) { menu(false); mb.focus(); } });
+
+  /* бегущая строка: услуги с их вывески и карточки 2ГИС */
+  var T = ['Выкуп авто', 'Продажа авто', 'Trade-in', 'Тест-драйв', 'Автокредит', 'Обмен', 'Переоформление', 'Заказ из Японии'];
+  var row = T.map(function (t) { return '<span>' + t + '</span>'; }).join('');
+  $('tk').innerHTML = row + row + row + row;
+
+  /* отзывы */
+  var dt = function (s) { return new Date(s + 'T00:00:00').toLocaleDateString('ru-RU', { month: 'long', year: 'numeric' }); };
+  var cut = function (t) { return t.length > 240 ? t.slice(0, t.lastIndexOf(' ', 232)) + '…' : t; };
+  $('revs').innerHTML = (window.REVIEWS || []).map(function (r) {
+    return '<figure class="rev" data-rv><div><div class="stars" aria-label="5 из 5">★★★★★</div><q>' + esc(cut(r.text)) + '</q></div><footer><b>' + esc(r.name) + '</b>' + dt(r.date) + ' · 2ГИС</footer></figure>';
+  }).join('');
+
+  /* выбор вариантами */
+  var chips = function (id, list, v) {
+    $(id).innerHTML = list.map(function (t) { return '<label><input type="radio" name="' + id + '" value="' + t + '"' + (t === v ? ' checked' : '') + '><span>' + t + '</span></label>'; }).join('');
+  };
+  chips('budget', ['до 300 тыс.', '300–600 тыс.', '600 тыс.–1 млн', 'от 1 млн'], '300–600 тыс.');
+  chips('body', ['Седан', 'Хэтчбек', 'Кроссовер', 'Внедорожник', 'Минивэн', 'Не важно'], 'Не важно');
+  chips('sellKind', ['Выкуп', 'Trade-in', 'Обмен'], 'Выкуп');
+  var val = function (n) { var x = document.querySelector('input[name="' + n + '"]:checked'); return x ? x.value : ''; };
+  var wa = function (t) { window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(t), '_blank', 'noopener'); };
+
+  $('pick').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var m = $('pModel').value.trim(), b = val('body');
+    wa('Здравствуйте! Подбираю автомобиль: бюджет ' + val('budget') + (b && b !== 'Не важно' ? ', кузов — ' + b.toLowerCase() : '') + (m ? ', интересует ' + m : '') + '. Что есть на площадке?');
+  });
+  ['sYear', 'sKm'].forEach(function (id) {
+    $(id).addEventListener('input', function () { var d = this.value.replace(/\D/g, ''); this.value = id === 'sKm' && d ? (+d).toLocaleString('ru-RU') : d.slice(0, 4); });
+  });
+  // ошибка — только по кнопке; снимается при фокусе и вводе
+  var sm = $('sModel'), se = $('sModel-e');
+  var bad = function (on) { sm.setAttribute('aria-invalid', on ? 'true' : 'false'); se.hidden = !on; se.textContent = on ? 'Напишите марку и модель, например Nissan Sunny' : ''; };
+  sm.addEventListener('focus', function () { bad(false); }); sm.addEventListener('input', function () { bad(false); });
+  $('sellForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sm.value.trim().length < 2) { sm.focus({ preventScroll: true }); bad(true); sm.scrollIntoView({ block: 'center', behavior: still ? 'auto' : 'smooth' }); return; }
+    var y = $('sYear').value, k = $('sKm').value, kind = val('sellKind');
+    wa('Здравствуйте! Хочу ' + (kind === 'Выкуп' ? 'продать вам' : kind === 'Trade-in' ? 'сдать в trade-in' : 'обменять') + ' автомобиль: ' + sm.value.trim() + (y ? ', ' + y + ' г.' : '') + (k ? ', пробег ' + k + ' км' : '') + '. Сколько дадите?');
+  });
+
+  /* появление и параллакс */
+  var io = 'IntersectionObserver' in window && !still ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }) : null;
+  document.querySelectorAll('[data-rv]').forEach(function (el, i) { if (!io) el.classList.add('in'); else { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); } });
+  if (!still) {
+    var bg = $('heroBg'), tick = false;
+    addEventListener('scroll', function () {
+      if (tick) return; tick = true;
+      requestAnimationFrame(function () { bg.style.transform = 'translate3d(0,' + Math.min(scrollY, innerHeight) * 0.3 + 'px,0)'; tick = false; });
+    }, { passive: true });
+  }
+})();
+</script>
+<!--demo-layer--><script>
+(function () {
+  var robots = document.querySelector('meta[name="robots"]');
+  if (!robots || !/noindex/.test(robots.content)) return;
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var title = document.title || '';
+  var name = title.split(/ [—–|-] /)[0].replace(/[«»"]/g, '').trim() || 'вашего бизнеса';
+  var descEl = document.querySelector('meta[name="description"]');
+  var desc = descEl ? descEl.content : '';
+  var slug = (location.pathname.split('/').filter(Boolean).pop() || '').replace(/-[a-z]+$/, '') || 'vash-sait';
+  var form = document.querySelector('form');
+  var wa = document.querySelector('a[href*="wa.me/"]');
+  var store = { get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} } };
+
+  var css = '.dl-pill{position:fixed;left:16px;bottom:calc(var(--dl-b,0px) + 16px);z-index:2147483000;display:flex;align-items:center;gap:8px;padding:11px 16px 11px 13px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28);cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}'
+    + '.dl-pill.dl-on{opacity:1;transform:none}.dl-pill:hover{background:#000}.dl-pill:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}'
+    + '.dl-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:dl-p 2s infinite}'
+    + '@keyframes dl-p{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}'
+    + '@media(prefers-reduced-motion:reduce){.dl-dot{animation:none}.dl-pill,.dl-tip{transition:none}}'
+    + '.dl-tip{position:fixed;left:16px;bottom:calc(var(--dl-b,0px) + 70px);z-index:2147483000;max-width:260px;padding:12px 14px;border-radius:12px;background:#fff;color:#111827;font:400 14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.18);opacity:0;transition:opacity .3s;pointer-events:none}.dl-tip.dl-on{opacity:1}'
+    + '.dl-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(17,24,39,.5);display:none;align-items:flex-end;justify-content:center}.dl-bg.dl-on{display:flex}'
+    + '@media(min-width:700px){.dl-bg{align-items:center}}'
+    + '.dl-sh{position:relative;box-sizing:border-box;width:100%;max-width:520px;max-height:92vh;overflow:auto;background:#fff;color:#111827;border-radius:18px 18px 0 0;padding:22px 20px 24px;font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:left}'
+    + '@media(min-width:700px){.dl-sh{border-radius:18px;padding:28px}}'
+    + '.dl-sh *{box-sizing:border-box}.dl-sh h2{margin:0 36px 6px 0;font:700 21px/1.25 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#111827;letter-spacing:0;text-transform:none}'
+    + '.dl-sh h3{margin:22px 0 8px;font:700 13px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#6b7280}'
+    + '.dl-sh p{margin:0;color:#374151;font:inherit}.dl-x{position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#f3f4f6;color:#111827;font:400 22px/36px system-ui,sans-serif;cursor:pointer}'
+    + '.dl-btn{display:inline-block;margin-top:10px;padding:11px 16px;border:0;border-radius:10px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer;text-decoration:none}'
+    + '.dl-serp{padding:14px;border:1px solid #e5e7eb;border-radius:12px;font-family:Arial,sans-serif}.dl-serp .u{font-size:13px;color:#15803d}.dl-serp .u i{font-style:normal;color:#9ca3af}'
+    + '.dl-serp .t{margin:3px 0 4px;font-size:17px;line-height:1.3;color:#1d4ed8}.dl-serp .d{font-size:13px;line-height:1.45;color:#4b5563}'
+    + '.dl-ul{margin:0;padding:0;list-style:none}.dl-ul li{position:relative;margin:0;padding:5px 0 5px 24px;color:#1f2937;font:inherit}.dl-ul li:before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid #16a34a;border-bottom:2px solid #16a34a;transform:rotate(-45deg)}'
+    + '@media(max-width:520px){.dl-more{display:none}.dl-pill{left:12px;padding:9px 13px 9px 11px;font-size:13px}.dl-tip{left:12px;max-width:230px;font-size:13px;bottom:calc(var(--dl-b,0px) + 62px)}}'
+    + '.dl-end{margin-top:22px;padding:14px 16px;border-radius:12px;background:#f0fdf4;color:#14532d;font-weight:600}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  var pill = document.createElement('button');
+  pill.className = 'dl-pill'; pill.type = 'button';
+  pill.innerHTML = '<span class="dl-dot"></span>Демо для вас<span class="dl-more"> · как запустить</span>';
+  var tip = document.createElement('div'); tip.className = 'dl-tip';
+  tip.textContent = 'Этот сайт собран для «' + name + '» по вашей карточке в 2ГИС. Нажмите — покажу, как он будет работать.';
+
+  var check = form || wa ? '<h3>Проверьте сами</h3><p>' + (form ? 'Заполните заявку на сайте — сообщение придёт в ваш WhatsApp. Так вам будут писать клиенты.' : 'Нажмите кнопку WhatsApp на сайте — откроется чат с вашим номером. Так вам будут писать клиенты.') + '</p><button class="dl-btn" type="button" data-dl="try">' + (form ? 'Заполнить заявку' : 'Найти кнопку') + '</button>' : '';
+  var bg = document.createElement('div'); bg.className = 'dl-bg';
+  bg.innerHTML = '<div class="dl-sh" role="dialog" aria-modal="true" aria-labelledby="dl-h">'
+    + '<button class="dl-x" type="button" aria-label="Закрыть" data-dl="x">×</button>'
+    + '<h2 id="dl-h">Сайт для «' + esc(name) + '»</h2>'
+    + '<p>Собран по вашей карточке в 2ГИС: адрес, часы, фото и отзывы — ваши. Это демо: его можно поправить и запустить на своём адресе.</p>'
+    + check
+    + '<h3>Так вас найдут в поиске</h3><div class="dl-serp"><div class="u">' + esc(slug) + '.ru <i>· пример адреса</i></div><div class="t">' + esc(title) + '</div><div class="d">' + esc(desc.slice(0, 170)) + (desc.length > 170 ? '…' : '') + '</div></div>'
+    + '<h3>Что входит</h3><ul class="dl-ul"><li>Ваши фото, цены и тексты — поправим всё, что скажете</li><li>Заявки и запись — в WhatsApp или Telegram, круглосуточно</li><li>Свой адрес сайта и хостинг на год</li><li>Новые цены, акции и фото — по одному вашему сообщению</li><li>Оплата после запуска, чек как самозанятый</li></ul>'
+    + '<div class="dl-end">Понравилось? Ответьте в чате, откуда пришла ссылка, — обсудим правки и запуск.</div></div>';
+
+  function open() { bg.classList.add('dl-on'); tip.classList.remove('dl-on'); store.set('dl-seen', '1'); bg.querySelector('[data-dl="x"]').focus(); }
+  function close() { bg.classList.remove('dl-on'); pill.focus(); }
+  pill.addEventListener('click', open);
+  bg.addEventListener('click', function (e) {
+    var a = e.target.getAttribute && e.target.getAttribute('data-dl');
+    if (e.target === bg || a === 'x') close();
+    if (a === 'try') {
+      bg.classList.remove('dl-on');
+      (form || wa).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var f = form && form.querySelector('input:not([type=hidden]),select,textarea');
+      if (f) setTimeout(function () { try { f.focus({ preventScroll: true }); } catch (err) {} }, 600);
+    }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && bg.classList.contains('dl-on')) close(); });
+
+  // кнопка слева внизу: справа у сайтов обычно главные кнопки и «Далее» в формах; поднять над закреплёнными снизу панелями сайта («Позвонить / Записаться»)
+  function lift() {
+    var h = 0, vh = innerHeight;
+    document.querySelectorAll('body *').forEach(function (el) {
+      if (el === pill || el === tip || el === bg || bg.contains(el)) return;
+      var cs = getComputedStyle(el);
+      if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return;
+      var r = el.getBoundingClientRect();
+      if (r.height > 0 && r.height < vh / 3 && r.bottom >= vh - 40 && r.left < 200) h = Math.max(h, vh - r.top + 4);
+    });
+    document.documentElement.style.setProperty('--dl-b', h + 'px');
+  }
+  function mount() {
+    document.body.appendChild(tip); document.body.appendChild(pill); document.body.appendChild(bg);
+    lift(); addEventListener('resize', lift);
+    addEventListener('scroll', function () { clearTimeout(mount.t); mount.t = setTimeout(lift, 150); }, { passive: true });
+    // кнопка и подсказка появляются после первой прокрутки — первый экран сайта остаётся чистым
+    function showPill() { pill.classList.add('dl-on'); lift(); }
+    addEventListener('scroll', function onP() { if (scrollY > innerHeight * 0.6) { removeEventListener('scroll', onP); showPill(); } }, { passive: true });
+    function showTip() { if (store.get('dl-seen')) return; tip.classList.add('dl-on'); setTimeout(function () { tip.classList.remove('dl-on'); }, 7000); }
+    if (!store.get('dl-seen')) {
+      addEventListener('scroll', function onS() { if (scrollY > innerHeight) { removeEventListener('scroll', onS); showTip(); } }, { passive: true });
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
+})();
+</script><!--/demo-layer-->
+</body>
+</html>
