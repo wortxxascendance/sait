@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Вилла Венеция — коттедж на воде для праздников, Барнаул, Затон</title>
+<meta name="description" content="Вилла Венеция в Барнауле: коттедж на берегу в Затоне, банкетный зал до 45 гостей, размещение до 50 мест, баня на дровах, чан, пруд. Пароходная, 49. Круглосуточно.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Вилла Венеция — своя вилла на воде в Барнауле">
+<meta property="og:description" content="Свадьбы, юбилеи, корпоративы с ночёвкой: зал до 45 гостей, до 50 мест, баня, чан и пруд. Пароходная, 49.">
+<meta property="og:image" content="https://wortxxascendance.github.io/sait/villavenetsiya-barn/img/hero.jpg">
+<meta property="og:url" content="https://wortxxascendance.github.io/sait/villavenetsiya-barn/">
+<meta name="theme-color" content="#0d1a17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1a17;--ink2:#11221e;--ink3:#182e28;--line:rgba(236,224,200,.13);--line2:rgba(236,224,200,.24);
+  --ivory:#f2ebdd;--mut:#b3ad9d;--dim:#857f71;
+  --paper:#f3ecdf;--paper2:#e8dfcd;--tx:#1d1b16;--txm:#5d584c;--pline:rgba(29,27,22,.14);
+  --gold:#d4a35a;--gold2:#e9c584;--ember:#c9643b;
+  --serif:"Prata",Georgia,"Times New Roman",serif;--sans:"Onest",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:18px;--ease:cubic-bezier(.2,.7,.2,1)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ink);color:var(--ivory);font:400 16.5px/1.6 var(--sans);overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.06;margin:0;text-wrap:balance;letter-spacing:-.005em}
+p{margin:0;text-wrap:pretty}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.eyebrow{display:flex;align-items:center;gap:14px;font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+.h2{font-size:clamp(36px,5.6vw,76px)}
+.h2 em{font-style:normal;color:var(--gold2)}
+.lead{color:var(--mut);font-size:18px;max-width:580px}
+section{position:relative;padding:clamp(84px,11vw,140px) 0}
+.paper{background:var(--paper);color:var(--tx)}
+.paper .lead{color:var(--txm)}
+.paper .eyebrow{color:#9a6a26}
+.paper .h2 em{color:#9a6a26}
+.num{font-variant-numeric:tabular-nums}
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;border:1px solid transparent;font:600 15.5px/1 var(--sans);text-decoration:none;cursor:pointer;transition-property:transform,background-color,border-color,color;transition-duration:.18s;transition-timing-function:ease-out}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:#1b140a}
+.btn-gold:hover{background:var(--gold2)}
+.btn-line{border-color:var(--line2);color:var(--ivory);background:rgba(13,26,23,.35)}
+.btn-line:hover{border-color:var(--ivory)}
+.paper .btn-line{color:var(--tx);border-color:var(--pline);background:transparent}
+.paper .btn-line:hover{border-color:var(--tx)}
+.btn svg{width:18px;height:18px;flex:none}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+
+/* появление */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* интро */
+#intro{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;transition:opacity .8s var(--ease),visibility .8s}
+#intro.out{opacity:0;visibility:hidden}
+#intro .in{text-align:center}
+#intro .t{font:400 clamp(38px,8vw,84px)/1 var(--serif);color:var(--ivory);opacity:0;transform:translateY(12px);animation:iu 1s var(--ease) .1s forwards}
+#intro .s{margin-top:18px;font:600 12px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:0;animation:iu .9s var(--ease) .45s forwards}
+#intro .w{margin:26px auto 0;height:1px;width:0;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:iw 1.1s var(--ease) .3s forwards}
+@keyframes iu{to{opacity:1;transform:none}}
+@keyframes iw{to{width:min(320px,70vw)}}
+
+/* шапка */
+#top{position:fixed;inset:0 0 auto;z-index:50;transition:background-color .3s,border-color .3s;border-bottom:1px solid transparent}
+#top.solid{background:rgba(13,26,23,.94);border-color:var(--line)}
+#top .wrap{display:flex;align-items:center;gap:24px;height:72px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.logo b{font:400 22px/1 var(--serif)}
+.logo span{margin-top:6px;font:600 10.5px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+#top nav{display:flex;gap:26px;margin-left:auto}
+#top nav a{font-size:14.5px;color:var(--mut);text-decoration:none;transition:color .2s}
+#top nav a:hover{color:var(--ivory)}
+#top .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media (max-width:980px){#top nav{display:none}#top .btn{margin-left:auto}}
+@media (max-width:420px){#top .btn span{display:none}#top .btn{width:44px;padding:0}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:110px 0 clamp(40px,7vh,84px);overflow:hidden}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:42% 50%;transform:scale(1.06);animation:kb 14s var(--ease) forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,23,.55) 0%,rgba(13,26,23,.05) 28%,rgba(13,26,23,.25) 52%,rgba(13,26,23,.94) 88%,var(--ink) 100%)}
+.hero .wrap{position:relative}
+.hero .eyebrow{margin-bottom:22px;color:var(--gold2)}
+.hero .eyebrow,.hero h1,.hero .sub{text-shadow:0 2px 22px rgba(8,16,14,.55)}
+.hero h1{font-size:clamp(44px,6.6vw,100px);max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.4em);animation:iu 1s var(--ease) forwards;animation-delay:calc(var(--d,.2s) + var(--i,0) * .07s)}
+.hero .sub{margin-top:24px;max-width:540px;font-size:18px;color:#ddd5c4}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line2);max-width:760px;font-size:14.5px;color:#d9d1bf}
+.hero .meta b{font:400 26px/1 var(--serif);color:var(--ivory);margin-right:8px}
+.hero .meta .it{display:flex;align-items:baseline}
+.live{display:inline-flex;align-items:center;gap:9px}
+.live i{width:8px;height:8px;border-radius:50%;background:#7fd19b;box-shadow:0 0 0 0 rgba(127,209,155,.6);animation:pl 2.4s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 9px rgba(127,209,155,0)}100%{box-shadow:0 0 0 0 rgba(127,209,155,0)}}
+.stars{color:var(--gold2);letter-spacing:2px;margin-right:8px}
+
+/* факты */
+.facts{padding:0;border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.fact{padding:34px 18px 34px 0;border-right:1px solid var(--line)}
+.fact+.fact{padding-left:24px}
+.fact:last-child{border-right:0}
+.fact b{display:block;font:400 clamp(38px,4.4vw,58px)/1 var(--serif);color:var(--ivory)}
+.fact b small{font-size:.5em;color:var(--gold)}
+.fact span{display:block;margin-top:10px;font-size:14px;color:var(--mut);line-height:1.4}
+@media (max-width:900px){.facts .wrap{grid-template-columns:1fr 1fr}.fact{padding:26px 14px 26px 0;border-bottom:1px solid var(--line)}.fact:nth-child(2n){border-right:0;padding-left:18px}.fact:nth-child(2n+1){padding-left:0}.fact:last-child{grid-column:1/-1;border-bottom:0}}
+
+/* место */
+.place .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,90px);align-items:start}
+.place .pic{position:relative;border-radius:var(--r);overflow:hidden}
+.place .pic img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.place .pic figcaption{position:absolute;left:16px;bottom:16px;padding:8px 12px;border-radius:10px;background:rgba(13,26,23,.82);color:var(--ivory);font-size:13px}
+.place h2{margin:22px 0 26px}
+.bigq{margin:34px 0 0;padding:28px 0 0;border-top:1px solid var(--pline)}
+.bigq p{font:400 clamp(24px,2.6vw,32px)/1.3 var(--serif);color:var(--tx)}
+.bigq cite{display:block;margin-top:16px;font:500 13.5px/1.3 var(--sans);font-style:normal;color:var(--txm)}
+.ticks{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.ticks li{padding:13px 0;border-bottom:1px solid var(--pline);font-size:15.5px;display:flex;gap:12px}
+.ticks li:before{content:"";flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:#9a6a26}
+.place .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.place .duo img{border-radius:14px;aspect-ratio:4/3;object-fit:cover;width:100%}
+@media (max-width:900px){.place .grid{grid-template-columns:1fr}.place .pic img{aspect-ratio:4/5}.ticks{grid-template-columns:1fr}}
+
+/* конструктор */
+.build{background:var(--ink2)}
+.build .head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.build .head .lead{max-width:440px}
+.bgrid{display:grid;grid-template-columns:1.08fr .92fr;gap:28px;align-items:start}
+.panel{border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,36px);background:var(--ink)}
+.step{padding:22px 0;border-bottom:1px solid var(--line)}
+.step:first-child{padding-top:0}
+.step:last-child{border-bottom:0;padding-bottom:0}
+.step h3{font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:16px;display:flex;justify-content:space-between;gap:10px}
+.step h3 output{font:400 22px/1 var(--serif);letter-spacing:0;text-transform:none;color:var(--ivory)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line2);font-size:15px;color:#dcd4c3;cursor:pointer;transition-property:background-color,border-color,color;transition-duration:.18s;user-select:none}
+.chip span:hover{border-color:var(--ivory)}
+.chip input:checked+span{background:var(--ivory);border-color:var(--ivory);color:var(--ink)}
+.chip input:focus-visible+span{outline:2px solid var(--gold2);outline-offset:2px}
+.seg{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;border:1px solid var(--line2);border-radius:999px;padding:4px;gap:4px}
+.seg .chip span{border:0;min-height:40px;justify-content:center;min-width:92px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold) var(--p,40%),var(--line2) var(--p,40%))}
+input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:var(--line2)}
+input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:var(--gold)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-11px;border-radius:50%;background:var(--ivory);border:5px solid var(--gold);box-shadow:0 2px 10px rgba(0,0,0,.4)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ivory);border:5px solid var(--gold)}
+.scale{display:flex;justify-content:space-between;font-size:12.5px;color:var(--dim);margin-top:2px}
+.hint{margin-top:14px;font-size:15px;color:#dcd4c3;display:grid;gap:6px}
+.hint p{display:flex;gap:10px}
+.hint p:before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--gold)}
+.hint p.warn:before{background:var(--ember)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.date{width:100%;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--line2);background:var(--ink2);color:var(--ivory);color-scheme:dark}
+.result{position:sticky;top:92px;border-radius:22px;overflow:hidden;background:var(--paper);color:var(--tx)}
+.result .ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--ink3)}
+.result .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s var(--ease)}
+.result .ph img.hide{opacity:0}
+.result .ph span{position:absolute;left:14px;top:14px;padding:7px 11px;border-radius:9px;background:rgba(13,26,23,.82);color:var(--ivory);font-size:12.5px}
+.result .bd{padding:24px clamp(20px,2.6vw,30px) 28px}
+.result h3{font-size:clamp(26px,2.6vw,34px)}
+.result .msg{margin:18px 0 20px;padding:16px 18px;border-radius:14px;background:var(--paper2);font-size:14.5px;line-height:1.55;white-space:pre-line;color:#2d2a22}
+.result .btn{width:100%}
+.result .note{margin-top:14px;font-size:13px;color:var(--txm);line-height:1.5}
+@media (max-width:980px){.bgrid{grid-template-columns:1fr}.result{position:relative;top:0}}
+@media (max-width:520px){.two{grid-template-columns:1fr}.seg .chip span{min-width:0;padding:0 14px}}
+
+/* сутки на вилле */
+.day{padding:0;background:var(--ink)}
+.day .intro{padding:clamp(84px,11vw,140px) 0 50px}
+.day .pin{position:relative}
+.track{display:grid;gap:18px;padding:0 20px 90px}
+.panel-d{position:relative;border-radius:var(--r);overflow:hidden;min-height:78svh;display:flex;align-items:flex-end}
+.panel-d img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel-d:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,23,0) 30%,rgba(13,26,23,.88) 82%)}
+.panel-d .tx{position:relative;z-index:1;padding:28px 24px;max-width:620px}
+.panel-d .k{font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+.panel-d h3{margin:14px 0 14px;font-size:clamp(34px,4.6vw,64px)}
+.panel-d p{color:#ddd5c4;font-size:16.5px}
+.panel-d blockquote{margin:18px 0 0;padding-left:16px;border-left:2px solid var(--gold);font:400 18px/1.4 var(--serif);color:var(--ivory)}
+.panel-d blockquote cite{display:block;margin-top:8px;font:500 12.5px/1.3 var(--sans);font-style:normal;color:var(--mut)}
+.dprog{display:none}
+@media (min-width:981px) and (prefers-reduced-motion:no-preference){
+  .day .pin{height:calc(var(--n) * 100vh)}
+  .day .stick{position:sticky;top:0;height:100vh;overflow:hidden}
+  .track{display:flex;gap:0;padding:0;height:100vh;width:calc(var(--n) * 100vw);will-change:transform}
+  .panel-d{flex:none;width:100vw;height:100vh;min-height:0;border-radius:0}
+  .panel-d .tx{padding:0 0 110px max(40px,calc((100vw - 1240px)/2))}
+  .dprog{display:flex;position:absolute;left:max(40px,calc((100vw - 1240px)/2));right:max(40px,calc((100vw - 1240px)/2));bottom:44px;z-index:2;gap:10px}
+  .dprog button{flex:1;background:none;border:0;padding:12px 0 0;border-top:2px solid var(--line2);text-align:left;color:var(--mut);font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:color .3s,border-color .3s}
+  .dprog button.on{color:var(--ivory);border-color:var(--gold)}
+}
+
+/* баня */
+.spa .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.mosaic{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:clamp(460px,52vw,660px)}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.mosaic img:first-child{grid-row:1/3}
+.price{display:flex;align-items:baseline;gap:14px;margin:28px 0 6px;flex-wrap:wrap}
+.price b{font:400 clamp(40px,4.6vw,58px)/1 var(--serif);color:var(--gold2)}
+.price span{color:var(--mut);font-size:15px}
+.amen{display:flex;flex-wrap:wrap;gap:8px 0;margin:26px 0 0;padding:0;list-style:none;font-size:15px;color:#dcd4c3}
+.amen li:not(:last-child):after{content:"·";margin:0 12px;color:var(--dim)}
+.spa blockquote{margin:30px 0 0;padding:22px 0 0;border-top:1px solid var(--line)}
+.spa blockquote p{font:400 21px/1.4 var(--serif)}
+.spa blockquote cite{display:block;margin-top:10px;font:500 13px/1.3 var(--sans);font-style:normal;color:var(--mut)}
+@media (max-width:900px){.spa .grid{grid-template-columns:1fr}.mosaic{height:auto;grid-template-columns:1fr 1fr;grid-template-rows:auto}.mosaic img{aspect-ratio:1}.mosaic img:first-child{grid-row:auto;grid-column:1/-1;aspect-ratio:4/3}}
+
+/* поводы */
+.occ .head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.occ .rowx{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.oc{position:relative;border-radius:16px;overflow:hidden;min-height:480px;display:flex;align-items:flex-end;color:var(--ivory)}
+.oc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.oc:hover img{transform:scale(1.05)}
+.oc:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,26,23,0) 34%,rgba(13,26,23,.92) 86%)}
+.oc .tx{position:relative;z-index:1;padding:20px}
+.oc h3{font-size:28px}
+.oc p{margin-top:10px;font:400 15.5px/1.45 var(--serif);color:#e8e0cf}
+.oc cite{display:block;margin-top:10px;font:500 12px/1.3 var(--sans);font-style:normal;color:var(--mut)}
+@media (max-width:1100px){.occ .rowx{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 6px;scrollbar-width:none}.occ .rowx::-webkit-scrollbar{display:none}.oc{flex:0 0 min(78vw,330px);scroll-snap-align:start;min-height:440px}}
+
+/* галерея */
+.gal .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.gal .seg{border-color:var(--pline)}
+.gal .seg .chip span{color:var(--txm)}
+.gal .seg .chip input:checked+span{background:var(--tx);color:var(--paper)}
+.ggrid{columns:3 300px;column-gap:12px}
+@media (max-width:700px){.ggrid{columns:2;column-gap:8px}.ggrid figure{margin-bottom:8px}}
+.ggrid figure{margin:0 0 12px;break-inside:avoid;border-radius:12px;overflow:hidden;position:relative}
+.ggrid figure img{width:100%}
+.ggrid figure[hidden]{display:none}
+.ggrid figcaption{position:absolute;left:10px;bottom:10px;padding:6px 10px;border-radius:8px;background:rgba(13,26,23,.8);color:var(--ivory);font-size:12.5px}
+.gal .fade{animation:fi .6s var(--ease)}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* отзывы */
+.rev .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,6vw,90px)}
+.score{position:sticky;top:110px}
+.score b{display:block;font:400 clamp(96px,12vw,160px)/.9 var(--serif);color:var(--ivory)}
+.score .stars{display:block;margin:16px 0 10px;font-size:20px;letter-spacing:5px}
+.score p{color:var(--mut)}
+.score .btn{margin-top:26px}
+.qs{display:grid;gap:0}
+.q{padding:30px 0;border-bottom:1px solid var(--line)}
+.q:first-child{padding-top:0}
+.q p{font:400 clamp(20px,2vw,25px)/1.42 var(--serif)}
+.q cite{display:block;margin-top:14px;font:500 13.5px/1.3 var(--sans);font-style:normal;color:var(--gold)}
+@media (max-width:900px){.rev .grid{grid-template-columns:1fr}.score{position:static}}
+
+/* условия */
+.terms .grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--pline);margin-top:48px}
+.term{padding:32px 26px 32px 0;border-right:1px solid var(--pline)}
+.term+.term{padding-left:26px}
+.term:last-child{border-right:0}
+.term h3{font-size:26px}
+.term .pr{margin:14px 0 10px;font:400 36px/1 var(--serif);color:#9a6a26}
+.term p{color:var(--txm);font-size:15px}
+.terms .small{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 34px;font-size:14px;color:var(--txm);padding-top:24px;border-top:1px solid var(--pline)}
+.terms .small b{color:var(--tx);font-weight:600}
+@media (max-width:900px){.terms .grid{grid-template-columns:1fr}.term,.term+.term{padding:26px 0;border-right:0;border-bottom:1px solid var(--pline)}}
+
+/* как добраться */
+.way{padding:0;position:relative;min-height:88svh;display:flex;align-items:center}
+.way .bg{position:absolute;inset:0}
+.way .bg img{width:100%;height:100%;object-fit:cover}
+.way .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,26,23,.94) 0%,rgba(13,26,23,.7) 45%,rgba(13,26,23,.15) 100%)}
+.way .wrap{position:relative;padding:110px 0}
+.way h2{margin:22px 0 26px;max-width:12ch}
+.way dl{display:grid;grid-template-columns:auto 1fr;gap:14px 26px;margin:0 0 32px;max-width:560px;font-size:16px}
+.way dt{color:var(--mut)}
+.way dd{margin:0}
+.way .row{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:700px){.way .bg:after{background:linear-gradient(180deg,rgba(13,26,23,.55) 0%,rgba(13,26,23,.92) 55%)}.way dl{grid-template-columns:1fr;gap:4px}.way dd{margin-bottom:12px}}
+
+/* финал + подвал */
+.final{text-align:center}
+.final h2{max-width:14ch;margin:22px auto 22px}
+.final .eyebrow{justify-content:center}
+.final .eyebrow:after{content:"";width:34px;height:1px;background:currentColor}
+.final .lead{margin:0 auto}
+.final .row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
+footer{border-top:1px solid var(--line);padding:44px 0 120px;font-size:14.5px;color:var(--mut)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 50px;justify-content:space-between}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ivory)}
+footer .c{display:grid;gap:8px}
+footer .logo b{color:var(--ivory)}
+
+/* мобильная панель */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;display:none;grid-template-columns:1fr 1.3fr;gap:8px;padding:8px;border-radius:999px;background:rgba(13,26,23,.96);border:1px solid var(--line2);box-shadow:0 10px 30px rgba(0,0,0,.4);transform:translateY(140%);transition:transform .4s var(--ease)}
+.mbar.show{transform:none}
+.mbar .btn{min-height:46px;padding:0 14px;font-size:15px}
+@media (max-width:760px){.mbar{display:grid}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .w{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" hidden aria-hidden="true"><div class="in"><div class="t">Вилла Венеция</div><div class="w"></div><div class="s">Барнаул · Затон</div></div></div>
+
+<header id="top">
+  <div class="wrap">
+    <a class="logo" href="#"><b>Вилла Венеция</b><span>Барнаул · Затон</span></a>
+    <nav aria-label="Разделы">
+      <a href="#build">Ваш праздник</a>
+      <a href="#day">Сутки на вилле</a>
+      <a href="#spa">Баня и чан</a>
+      <a href="#gal">Фото</a>
+      <a href="#rev">Отзывы</a>
+      <a href="#way">Как добраться</a>
+    </nav>
+    <a class="btn btn-gold" href="https://wa.me/79646032023" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg><span>WhatsApp</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Главное">
+  <div class="bg"><img src="img/hero.jpg" width="1440" height="810" alt="Вилла Венеция на закате: трёхэтажный дом, сад и белый забор" fetchpriority="high"></div>
+  <div class="wrap">
+    <div class="eyebrow">Коттедж на берегу · Барнаул, Затон</div>
+    <h1><span class="w" style="--i:0">Своя</span> <span class="w" style="--i:1">вилла</span> <span class="w" style="--i:2">на</span> <span class="w" style="--i:3">воде</span> <span class="w" style="--i:4"><em>в&nbsp;пяти</em></span> <span class="w" style="--i:5"><em>минутах</em></span> <span class="w" style="--i:6">от&nbsp;центра</span></h1>
+    <p class="sub">Свадьба, юбилей или корпоратив с ночёвкой: банкетный зал до&nbsp;45 гостей, до&nbsp;50 спальных мест, баня на дровах, чан и&nbsp;пруд прямо за порогом.</p>
+    <div class="row">
+      <a class="btn btn-gold" href="#build" data-date>Проверить дату</a>
+      <a class="btn btn-line" href="https://wa.me/79646032023" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </div>
+    <div class="meta">
+      <div class="it"><b>4,9</b><span><span class="stars" aria-hidden="true">★★★★★</span>194 оценки в 2ГИС</span></div>
+      <div class="it live"><i aria-hidden="true"></i>Открыто круглосуточно</div>
+      <div class="it">Пароходная, 49</div>
+    </div>
+  </div>
+</section>
+
+<section class="facts" aria-label="Цифры">
+  <div class="wrap">
+    <div class="fact rv"><b class="num" data-count="45">45</b><span>гостей за столом в банкетном зале</span></div>
+    <div class="fact rv d1"><b class="num" data-count="50">50</b><span>мест, чтобы все остались на ночь</span></div>
+    <div class="fact rv d2"><b class="num" data-count="3">3</b><span>этажа, кирпичный дом</span></div>
+    <div class="fact rv d3"><b class="num" data-count="4.9" data-dec="1">4,9</b><span>рейтинг в 2ГИС, 194 оценки</span></div>
+    <div class="fact rv"><b>24<small>/7</small></b><span>на связи и открыто круглосуточно</span></div>
+  </div>
+</section>
+
+<section class="paper place" id="place">
+  <div class="wrap grid">
+    <figure class="pic rv" style="margin:0">
+      <img src="img/aerial.jpg" width="1200" height="1600" alt="Территория виллы сверху: лужайка, беседки и пруд" loading="lazy">
+      <figcaption>Лужайка, беседки и пруд — всё на одной территории</figcaption>
+    </figure>
+    <div>
+      <div class="eyebrow rv">Место</div>
+      <h2 class="h2 rv d1">Дом, сад и вода — <em>только для ваших гостей</em></h2>
+      <p class="lead rv d2">«Мы находимся в живописном месте всего в 5 минутах от центра города». Трёхэтажный коттедж в Затоне: зал для застолья, номера для ночёвки, баня, беседки на берегу — праздник не нужно разносить по разным адресам.</p>
+      <ul class="ticks rv d2">
+        <li>Банкетный зал до 45 человек</li>
+        <li>Размещение до 50 мест</li>
+        <li>Беседки и мангал на берегу</li>
+        <li>Баня на дровах, чан, купели</li>
+        <li>Парковка рядом с домом</li>
+        <li>Wi‑Fi для гостей</li>
+      </ul>
+      <blockquote class="bigq rv">
+        <p>«Уместилось уйму людей(больше 50), у нас в городе подобного места просто нет, обычно на 20-25чел. максимум предлагают.»</p>
+        <cite>Отзыв в 2ГИС · отдых с друзьями, декабрь</cite>
+      </blockquote>
+      <div class="duo rv">
+        <img src="img/house-front.jpg" width="1124" height="960" alt="Фасад виллы и ворота" loading="lazy">
+        <img src="img/gazebo-pond.jpg" width="800" height="1422" alt="Беседка на берегу пруда" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="build" id="build">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow rv">Соберите свой праздник</div>
+        <h2 class="h2 rv d1" style="margin-top:22px">Расскажите, что задумали, — <em>проверим дату</em></h2>
+      </div>
+      <p class="lead rv d2">Выберите повод, гостей и что хотите на вилле. Готовое сообщение уйдёт в WhatsApp — останется только подтвердить.</p>
+    </div>
+    <div class="bgrid">
+      <form class="panel rv" id="bf" onsubmit="return false">
+        <div class="step">
+          <h3>Повод</h3>
+          <div class="chips" id="occ">
+            <label class="chip"><input type="radio" name="occ" value="Свадьба" checked><span>Свадьба</span></label>
+            <label class="chip"><input type="radio" name="occ" value="Юбилей"><span>Юбилей</span></label>
+            <label class="chip"><input type="radio" name="occ" value="Корпоратив"><span>Корпоратив</span></label>
+            <label class="chip"><input type="radio" name="occ" value="Выпускной"><span>Выпускной</span></label>
+            <label class="chip"><input type="radio" name="occ" value="День рождения"><span>День рождения</span></label>
+            <label class="chip"><input type="radio" name="occ" value="Отдых с друзьями"><span>Отдых с друзьями</span></label>
+          </div>
+        </div>
+        <div class="step">
+          <h3><label for="gn">Гостей</label><output id="gno" class="num">30</output></h3>
+          <input type="range" id="gn" min="10" max="60" step="1" value="30" aria-describedby="hint">
+          <div class="scale num"><span>10</span><span>45 — зал</span><span>60</span></div>
+          <div class="hint" id="hint" aria-live="polite"></div>
+        </div>
+        <div class="step two">
+          <div>
+            <h3>Сезон</h3>
+            <div class="seg">
+              <label class="chip"><input type="radio" name="season" value="лето" checked><span>Лето</span></label>
+              <label class="chip"><input type="radio" name="season" value="зима"><span>Зима</span></label>
+            </div>
+          </div>
+          <div>
+            <h3>Сколько дней</h3>
+            <div class="seg">
+              <label class="chip"><input type="radio" name="days" value="1" checked><span>1</span></label>
+              <label class="chip"><input type="radio" name="days" value="2"><span>2</span></label>
+              <label class="chip"><input type="radio" name="days" value="3"><span>3</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <h3><label for="dt">Дата</label></h3>
+          <input class="date" type="date" id="dt">
+        </div>
+        <div class="step">
+          <h3>Что добавить</h3>
+          <div class="chips" id="opt">
+            <label class="chip"><input type="checkbox" value="баня на дровах"><span>Баня на дровах</span></label>
+            <label class="chip"><input type="checkbox" value="банный чан"><span>Банный чан</span></label>
+            <label class="chip"><input type="checkbox" value="бассейн и купели"><span>Бассейн и купели</span></label>
+            <label class="chip"><input type="checkbox" value="беседки и мангал"><span>Беседки и мангал</span></label>
+            <label class="chip"><input type="checkbox" value="караоке"><span>Караоке</span></label>
+            <label class="chip"><input type="checkbox" value="парильщик"><span>Парильщик</span></label>
+          </div>
+        </div>
+      </form>
+      <aside class="result rv d1" aria-label="Ваш праздник">
+        <div class="ph"><img id="rimg" src="img/arch-pond.jpg" width="1000" height="1298" alt="" loading="lazy"><img id="rimg2" class="hide" src="img/arch-pond.jpg" width="1000" height="1298" alt="" loading="lazy"><span id="rcap">Церемония у воды</span></div>
+        <div class="bd">
+          <div class="eyebrow" style="color:#9a6a26">Ваш праздник</div>
+          <h3 id="rt" style="margin-top:14px">Свадьба · 30 гостей</h3>
+          <div class="msg" id="rm"></div>
+          <a class="btn btn-gold" id="rs" href="https://wa.me/79646032023" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+          <p class="note">Цены по данным 2ГИС: коттедж — от 10 000 ₽, баня — от 1 500 ₽. Точную стоимость под вашу дату скажут в ответ. Банкетное меню — обсудим под ваш праздник.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="day" id="day">
+  <div class="wrap intro">
+    <div class="eyebrow rv">Сутки на вилле</div>
+    <h2 class="h2 rv d1" style="margin-top:22px;max-width:15ch">Праздник, который <em>не заканчивается в полночь</em></h2>
+    <p class="lead rv d2" style="margin-top:22px">Гости не разъезжаются после банкета: номера наверху, баня во дворе, утро — у воды.</p>
+  </div>
+  <div class="pin" style="--n:5">
+    <div class="stick">
+      <div class="track" id="track">
+        <article class="panel-d">
+          <img src="img/ceremony.jpg" width="1100" height="1467" alt="Выездная церемония под аркой на берегу" loading="lazy">
+          <div class="tx">
+            <div class="k">I · День</div>
+            <h3>Церемония у&nbsp;воды</h3>
+            <p>Арка на лужайке, гости на стульях у пруда — выездная регистрация без переездов.</p>
+            <blockquote>«Территория. Она просто невероятная! Очень ухоженная, облагороженная, по ней приятно гулять, видно, что сделано все с душой!»<cite>Отзыв в 2ГИС · свадьба</cite></blockquote>
+          </div>
+        </article>
+        <article class="panel-d">
+          <img src="img/banquet.jpg" width="1024" height="956" alt="Накрытые банкетные столы в зале" loading="lazy">
+          <div class="tx">
+            <div class="k">II · Вечер</div>
+            <h3>Застолье на 45&nbsp;гостей</h3>
+            <p>Банкетный зал — для стола и танцев. Меню обсудим под ваш праздник.</p>
+            <blockquote>«Банкетный зал просторный, хватает места и для стола и для танцев.»<cite>Отзыв в 2ГИС · юбилей</cite></blockquote>
+          </div>
+        </article>
+        <article class="panel-d">
+          <img src="img/chan-night.jpg" width="1125" height="1500" alt="Банный чан ночью с подсветкой" loading="lazy">
+          <div class="tx">
+            <div class="k">III · Ночь</div>
+            <h3>Баня, чан и&nbsp;пруд</h3>
+            <p>Русская парная на дровах и горячий чан во дворе — после банкета не нужно никуда ехать.</p>
+            <blockquote>«Выйти и прыгнуть в пруд после бани, а потом залезть в чан согреться, это впечатления, стоящие того!»<cite>Отзыв в 2ГИС</cite></blockquote>
+          </div>
+        </article>
+        <article class="panel-d">
+          <img src="img/sparklers-arch.jpg" width="1440" height="959" alt="Пара под аркой на лужайке в искрах, ночь" loading="lazy">
+          <div class="tx">
+            <div class="k">IV · Финал</div>
+            <h3>Вечер на лужайке</h3>
+            <p>Большой двор вмещает и танцы, и финальные фото — так праздник завершали гости виллы.</p>
+            <blockquote>«Мы искали место, где можно было по максимуму разместить на ночь гостей… всем хватило спальных мест.»<cite>Отзыв в 2ГИС · свадьба</cite></blockquote>
+          </div>
+        </article>
+        <article class="panel-d">
+          <img src="img/couple-pond.jpg" width="1000" height="1500" alt="Молодожёны на мостике у пруда" loading="lazy">
+          <div class="tx">
+            <div class="k">V · Утро</div>
+            <h3>Утро у&nbsp;воды</h3>
+            <p>Номера наверху, завтрак без спешки и второй день праздника — на берегу.</p>
+            <blockquote>«Огромный дом, много спален, в каждой туалет и душ, большая ухоженная территория с прудом, в котором мы купались весь второй день, загорали, парились в бане»<cite>Отзыв в 2ГИС · свадьба</cite></blockquote>
+          </div>
+        </article>
+      </div>
+      <div class="dprog" id="dprog" aria-hidden="true">
+        <button type="button" tabindex="-1">День</button><button type="button" tabindex="-1">Вечер</button><button type="button" tabindex="-1">Ночь</button><button type="button" tabindex="-1">Финал</button><button type="button" tabindex="-1">Утро</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spa" id="spa">
+  <div class="wrap grid">
+    <div class="mosaic rv">
+      <img src="img/chan.jpg" width="960" height="1280" alt="Банный чан на берегу пруда" loading="lazy">
+      <img src="img/bath-room.jpg" width="1024" height="768" alt="Комната отдыха в бане, деревянная отделка" loading="lazy">
+      <img src="img/chan-day.jpg" width="1024" height="743" alt="Гости в чане днём, вид на воду" loading="lazy">
+    </div>
+    <div>
+      <div class="eyebrow rv">Баня и чан</div>
+      <h2 class="h2 rv d1" style="margin-top:22px">Русская парная <em>на&nbsp;дровах</em> у&nbsp;самой воды</h2>
+      <div class="price rv d2"><b class="num">от 1 500 ₽</b><span>до 10 человек · по данным 2ГИС</span></div>
+      <ul class="amen rv d2">
+        <li>Парильщик</li><li>Бассейн</li><li>Купели</li><li>Банный чан</li><li>Комната отдыха</li><li>Караоке</li><li>Настольный теннис</li><li>Мангал</li><li>Веники</li><li>Полотенца, простыни, тапочки</li><li>Чай</li>
+      </ul>
+      <blockquote class="rv">
+        <p>«…классная банька, которая топится так быстро, что моргнуть не успеешь. Не надо ждать и предупреждать за 3 часа»</p>
+        <cite>Отзыв в 2ГИС</cite>
+      </blockquote>
+      <blockquote class="rv">
+        <p>«Баня хорошая. Вокруг тишь да гладь.»</p>
+        <cite>Отзыв в 2ГИС</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="occ" id="occ-s" style="background:var(--ink2)">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow rv">Для какого праздника</div>
+        <h2 class="h2 rv d1" style="margin-top:22px">Здесь уже <em>отмечали</em></h2>
+      </div>
+      <p class="lead rv d2" style="max-width:420px">Каждая подпись — из настоящих отзывов гостей в 2ГИС.</p>
+    </div>
+    <div class="rowx">
+      <article class="oc rv"><img src="img/presidium.jpg" width="1440" height="1480" alt="Стол молодожёнов в зелёных тонах" loading="lazy"><div class="tx"><h3>Свадьба</h3><p>«Кухня и сервис. Здесь всё на высшем уровне… А официанты - оперативны и внимательны к мелочам.»</p><cite>Отзыв в 2ГИС · свадьба 26.06.2026</cite></div></article>
+      <article class="oc rv d1"><img src="img/hall-lights.jpg" width="768" height="1024" alt="Праздничный стол в зале с гирляндами" loading="lazy"><div class="tx"><h3>Юбилей</h3><p>«Банкетный зал просторный, хватает места и для стола и для танцев.»</p><cite>Отзыв в 2ГИС · юбилей</cite></div></article>
+      <article class="oc rv d2"><img src="img/corporate.jpg" width="852" height="1500" alt="Большая компания у дома на лужайке" loading="lazy"><div class="tx"><h3>Корпоратив</h3><p>«…всем все очень понравилось (а было нас 35 человек)»</p><cite>Отзыв в 2ГИС · корпоратив</cite></div></article>
+      <article class="oc rv d3"><img src="img/guests.jpg" width="1440" height="1080" alt="Гости на лужайке у дома" loading="lazy"><div class="tx"><h3>Выпускной</h3><p>«Мы с группой отмечали выпускной и все остались довольны, погода, природа, все номера чистые и хорошее отношение.»</p><cite>Отзыв в 2ГИС · выпускной</cite></div></article>
+      <article class="oc rv"><img src="img/party-lawn.jpg" width="1003" height="1024" alt="Праздник на лужайке" loading="lazy"><div class="tx"><h3>С детьми</h3><p>«Вся территория закрыта и можно не волноваться.»</p><cite>Отзыв в 2ГИС · праздник с детьми</cite></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="paper gal" id="gal">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow rv">Фото</div>
+        <h2 class="h2 rv d1" style="margin-top:22px">Вилла <em id="galw">летом</em></h2>
+      </div>
+      <div class="seg rv d2" role="radiogroup" aria-label="Сезон">
+        <label class="chip"><input type="radio" name="gs" value="s" checked><span>Лето</span></label>
+        <label class="chip"><input type="radio" name="gs" value="w"><span>Зима</span></label>
+      </div>
+    </div>
+    <div class="ggrid" id="ggrid">
+      <figure data-s="s"><img src="img/dusk.jpg" width="1440" height="1080" alt="Вилла в сумерках" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/garden.jpg" width="960" height="1280" alt="Цветник вдоль дорожки у дома" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/gazebos.jpg" width="900" height="1200" alt="Беседки и столы на лужайке" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/arch-pond.jpg" width="1000" height="1298" alt="Свадебная арка у пруда" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/pond.jpg" width="900" height="1200" alt="Пруд и беседка на берегу" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/tent.jpg" width="1024" height="684" alt="Банкет в шатре" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/fire-heart.jpg" width="960" height="1280" alt="Молодожёны у огненного сердца вечером" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/gazebo-couple.jpg" width="1000" height="1402" alt="Пара в беседке, увитой зеленью" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/table.jpg" width="768" height="1365" alt="Длинный банкетный стол с закусками" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/house.jpg" width="1440" height="1080" alt="Дом виллы днём" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/sparklers.jpg" width="960" height="1280" alt="Гости с бенгальскими огнями ночью" loading="lazy"></figure>
+      <figure data-s="s"><img src="img/hall.jpg" width="1440" height="959" alt="Гости в банкетном зале" loading="lazy"></figure>
+      <figure data-s="w" hidden><img src="img/winter.jpg" width="1440" height="1080" alt="Зима у виллы" loading="lazy"><figcaption>Зима на вилле</figcaption></figure>
+      <figure data-s="w" hidden><img src="img/newyear.jpg" width="1125" height="1500" alt="Новогодняя ёлка в зале" loading="lazy"><figcaption>Новогодний зал</figcaption></figure>
+      <figure data-s="w" hidden><img src="img/winter-2.jpg" width="1440" height="1080" alt="Зимний двор виллы" loading="lazy"><figcaption>Зима на вилле</figcaption></figure>
+      <figure data-s="w" hidden><img src="img/chan-steam.jpg" width="768" height="1024" alt="Пар над горячим чаном" loading="lazy"><figcaption>Горячий чан</figcaption></figure>
+      <figure data-s="w" hidden><img src="img/staircase.jpg" width="948" height="1280" alt="Лестница в холле" loading="lazy"><figcaption>Холл</figcaption></figure>
+      <figure data-s="w" hidden><img src="img/banquet.jpg" width="1024" height="956" alt="Накрытые столы в зале" loading="lazy"><figcaption>Банкетный зал</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="rev" id="rev">
+  <div class="wrap grid">
+    <div class="score rv">
+      <div class="eyebrow">Отзывы</div>
+      <b class="num" style="margin-top:22px">4,9</b>
+      <span class="stars" aria-label="Рейтинг 4,9 из 5">★★★★★</span>
+      <p>194 оценки и 88 отзывов в 2ГИС. Карточка подтверждена.</p>
+      <a class="btn btn-line" href="https://2gis.ru/barnaul/firm/563479234569243/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a>
+    </div>
+    <div class="qs">
+      <div class="q rv"><p>«Отмечали свадьбу 26.06.2026 в «Вилла Венеция» и остались в полном восторге!»</p><cite>Отзыв в 2ГИС · свадьба</cite></div>
+      <div class="q rv"><p>«Кухня и сервис. Здесь всё на высшем уровне. Повара — настоящие мастера своего дела. Все блюда были очень вкусными!»</p><cite>Отзыв в 2ГИС · свадьба</cite></div>
+      <div class="q rv"><p>«Уместилось уйму людей(больше 50), у нас в городе подобного места просто нет…»</p><cite>Отзыв в 2ГИС · отдых с друзьями</cite></div>
+      <div class="q rv"><p>«Мы искали место, где можно было по максимуму разместить на ночь гостей, так как было много приезжих - всем хватило спальных мест.»</p><cite>Отзыв в 2ГИС · свадьба на 23 гостя</cite></div>
+      <div class="q rv"><p>«Выйти и прыгнуть в пруд после бани, а потом залезть в чан согреться, это впечатления, стоящие того!»</p><cite>Отзыв в 2ГИС</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper terms" id="terms">
+  <div class="wrap">
+    <div class="eyebrow rv">Стоимость</div>
+    <h2 class="h2 rv d1" style="margin-top:22px;max-width:16ch">Цены — <em>по данным 2ГИС</em></h2>
+    <p class="lead rv d2" style="margin-top:18px">Точную стоимость под вашу дату и число гостей уточняйте в WhatsApp — ответим.</p>
+    <div class="grid">
+      <div class="term rv"><h3>Коттедж на берегу</h3><div class="pr num">от 10 000 ₽</div><p>Дом целиком: банкетный зал до 45 человек, размещение до 50 мест, двор, беседки.</p></div>
+      <div class="term rv d1"><h3>Баня / сауна</h3><div class="pr num">от 1 500 ₽</div><p>До 10 человек: парная на дровах, чан, бассейн, купели, комната отдыха.</p></div>
+      <div class="term rv d2"><h3>Банкетное меню</h3><div class="pr">по запросу</div><p>Обсудим под ваш праздник, число гостей и формат.</p></div>
+    </div>
+    <div class="small rv">
+      <span><b>Оплата:</b> наличные, через банк, перевод с карты</span>
+      <span><b>Реестр средств размещения:</b> С222025018854</span>
+      <span><b>Работаем:</b> круглосуточно</span>
+    </div>
+  </div>
+</section>
+
+<section class="way" id="way">
+  <div class="bg"><img src="img/dusk.jpg" width="1440" height="1080" alt="" loading="lazy"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">Как добраться</div>
+    <h2 class="h2 rv d1">Затон, <em>5&nbsp;минут</em> от&nbsp;центра</h2>
+    <dl class="rv d2">
+      <dt>Адрес</dt><dd>Пароходная улица, 49 — м-н Затон, Центральный район, Барнаул</dd>
+      <dt>Пешком</dt><dd>От остановки «Озёрная» — около 800 м, 9 минут</dd>
+      <dt>На машине</dt><dd>Парковка рядом</dd>
+      <dt>Время</dt><dd>Круглосуточно</dd>
+    </dl>
+    <div class="row rv d3">
+      <a class="btn btn-gold" href="https://2gis.ru/barnaul/firm/563479234569243" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+      <a class="btn btn-line" href="tel:+79646032023">+7 964 603-20-23</a>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow rv">Бронирование</div>
+    <h2 class="h2 rv d1">Свободна ли <em>ваша дата?</em></h2>
+    <p class="lead rv d2">Напишите повод, дату и число гостей — подскажем, как всё устроить на вилле.</p>
+    <div class="row rv d3">
+      <a class="btn btn-gold" href="#build" data-date>Собрать праздник</a>
+      <a class="btn btn-line" href="https://wa.me/79646032023" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-line" href="https://t.me/+79646032023" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="c"><a class="logo" href="#"><b>Вилла Венеция</b><span>Барнаул · Затон</span></a></div>
+    <div class="c"><span>Пароходная улица, 49</span><span>Круглосуточно</span></div>
+    <div class="c"><a href="tel:+79646032023">+7 964 603-20-23</a><a href="https://wa.me/79646032023" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/+79646032023" target="_blank" rel="noopener">Telegram</a><a href="https://vk.com/happybaza22" target="_blank" rel="noopener">ВКонтакте</a></div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-line" href="tel:+79646032023">Позвонить</a>
+  <a class="btn btn-gold" href="https://wa.me/79646032023" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var WA='79646032023';
+  var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+  var store={get:function(k){try{return sessionStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}};
+
+  // интро — один раз за сессию
+  var intro=$('#intro'), d0='.2s';
+  if(!RM && !store.get('vv-intro')){
+    intro.hidden=false; store.set('vv-intro','1'); d0='1.5s';
+    setTimeout(function(){intro.classList.add('out')},1300);
+    setTimeout(function(){intro.remove()},2200);
+  } else intro.remove();
+  $$('.hero h1 .w').forEach(function(w){w.style.setProperty('--d',d0)});
+
+  // шапка и мобильная панель
+  var top=$('#top'), mbar=$('#mbar');
+  function onScroll(){top.classList.toggle('solid',scrollY>30); mbar.classList.toggle('show',scrollY>innerHeight*.7)}
+  onScroll(); addEventListener('scroll',onScroll,{passive:true});
+
+  // появление и счётчики
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  $$('.rv').forEach(function(el){io.observe(el)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return; co.unobserve(e.target); if(RM)return;
+    var el=e.target, to=parseFloat(el.dataset.count), dec=+(el.dataset.dec||0), t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/1300), v=to*(1-Math.pow(1-k,3)); el.textContent=v.toFixed(dec).replace('.',','); if(k<1)requestAnimationFrame(step)})(t0);
+  })},{threshold:.6});
+  $$('[data-count]').forEach(function(el){co.observe(el)});
+
+  // ===== конструктор праздника
+  var f=$('#bf'), gn=$('#gn'), gno=$('#gno'), dt=$('#dt');
+  var t=new Date(); dt.min=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  var PH={
+    'Свадьба':{s:['img/arch-pond.jpg','Церемония у воды'],w:['img/staircase.jpg','Холл виллы зимой']},
+    'Юбилей':{s:['img/presidium.jpg','Стол для юбиляра'],w:['img/hall-lights.jpg','Зал вечером']},
+    'Корпоратив':{s:['img/corporate.jpg','Корпоратив на лужайке'],w:['img/newyear.jpg','Новогодний зал']},
+    'Выпускной':{s:['img/guests.jpg','Гости у дома'],w:['img/hall.jpg','Банкетный зал']},
+    'День рождения':{s:['img/party-lawn.jpg','Праздник во дворе'],w:['img/chan-steam.jpg','Горячий чан']},
+    'Отдых с друзьями':{s:['img/chan-day.jpg','Чан у воды'],w:['img/winter-2.jpg','Зима на вилле']}
+  };
+  var rimg=$('#rimg'), rimg2=$('#rimg2'), cur='img/arch-pond.jpg';
+  function swap(src){
+    if(src===cur)return; cur=src;
+    rimg2.src=src; rimg2.onload=function(){rimg2.classList.remove('hide'); setTimeout(function(){rimg.src=src; rimg2.classList.add('hide')},520)};
+  }
+  function val(n){var x=$('input[name='+n+']:checked',f);return x?x.value:''}
+  function fmtDate(v){if(!v)return '';var p=v.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+  function plural(n,a,b,c){var m=n%10,h=n%100;return (m===1&&h!==11)?a:(m>=2&&m<=4&&(h<12||h>14))?b:c}
+  function upd(){
+    var n=+gn.value, occ=val('occ'), se=val('season'), dd=+val('days');
+    var opts=$$('#opt input:checked').map(function(x){return x.value});
+    gno.textContent=n;
+    gn.style.setProperty('--p',((n-10)/50*100)+'%');
+    var H=[];
+    if(n<=45) H.push(['Все '+n+' за одним столом — банкетный зал вмещает до 45 человек.','']);
+    else if(n<=50) H.push(['В зале до 45 мест за столом — рассадку на '+n+' уточним.','warn']);
+    if(n<=50) H.push(['На ночь разместим всех: до 50 мест.','']);
+    else H.push(['Больше 50 гостей — уточним вариант с хозяином.','warn']);
+    if(opts.indexOf('баня на дровах')>-1 && n>10) H.push(['Баня вмещает до 10 человек одновременно.','']);
+    $('#hint').innerHTML=H.map(function(h){return '<p class="'+h[1]+'">'+h[0]+'</p>'}).join('');
+    var ph=PH[occ][se==='зима'?'w':'s']; swap(ph[0]); $('#rcap').textContent=ph[1];
+    $('#rt').textContent=occ+' · '+n+' '+plural(n,'гость','гостя','гостей')+(dd>1?' · '+dd+' '+plural(dd,'день','дня','дней'):'');
+    var L=['Здравствуйте! Хочу забронировать «Вилла Венеция».','Повод: '+occ,
+      'Дата: '+(dt.value?fmtDate(dt.value):'пока не выбрали')+' ('+dd+' '+plural(dd,'день','дня','дней')+')',
+      'Гостей: '+n,'Сезон: '+se];
+    if(opts.length) L.push('Хотим: '+opts.join(', '));
+    L.push('Подскажите, свободна ли дата и сколько это будет стоить?');
+    $('#rm').textContent=L.join('\n');
+    $('#rs').href='https://wa.me/'+WA+'?text='+encodeURIComponent(L.join('\n'));
+  }
+  f.addEventListener('input',upd); f.addEventListener('change',upd); upd();
+  $$('[data-date]').forEach(function(a){a.addEventListener('click',function(){setTimeout(function(){try{dt.focus({preventScroll:true})}catch(e){}},700)})});
+
+  // ===== сутки на вилле: горизонтальный скролл на десктопе
+  var pin=$('.day .pin'), track=$('#track'), prog=$$('#dprog button'), N=5;
+  var mq=matchMedia('(min-width:981px) and (prefers-reduced-motion:no-preference)'), ticking=false;
+  function dayScroll(){
+    ticking=false;
+    if(!mq.matches){track.style.transform='';return}
+    var r=pin.getBoundingClientRect(), total=r.height-innerHeight, p=Math.min(1,Math.max(0,-r.top/total));
+    track.style.transform='translate3d('+(-p*(N-1)*100)+'vw,0,0)';
+    var i=Math.round(p*(N-1)); prog.forEach(function(b,k){b.classList.toggle('on',k===i)});
+  }
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(dayScroll)}},{passive:true});
+  addEventListener('resize',dayScroll); dayScroll();
+  prog.forEach(function(b,k){b.addEventListener('click',function(){var r=pin.getBoundingClientRect(), total=r.height-innerHeight; scrollTo({top:scrollY+r.top+total*k/(N-1),behavior:RM?'auto':'smooth'})})});
+
+  // ===== галерея лето/зима
+  var gw=$('#galw');
+  $$('input[name=gs]').forEach(function(r){r.addEventListener('change',function(){
+    var w=r.value==='w'; gw.textContent=w?'зимой':'летом';
+    $$('#ggrid figure').forEach(function(fg){var on=fg.dataset.s===(w?'w':'s'); fg.hidden=!on; if(on&&!RM){fg.classList.remove('fade');void fg.offsetWidth;fg.classList.add('fade')}});
+  })});
+})();
+</script>
+<!--demo-layer--><script>
+(function () {
+  var robots = document.querySelector('meta[name="robots"]');
+  if (!robots || !/noindex/.test(robots.content)) return;
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var title = document.title || '';
+  var name = title.split(/ [—–|-] /)[0].replace(/[«»"]/g, '').trim() || 'вашего бизнеса';
+  var descEl = document.querySelector('meta[name="description"]');
+  var desc = descEl ? descEl.content : '';
+  var slug = (location.pathname.split('/').filter(Boolean).pop() || '').replace(/-[a-z]+$/, '') || 'vash-sait';
+  var form = document.querySelector('form');
+  var wa = document.querySelector('a[href*="wa.me/"]');
+  var store = { get: function (k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} } };
+
+  var css = '.dl-pill{position:fixed;left:16px;bottom:calc(var(--dl-b,0px) + 16px);z-index:2147483000;display:flex;align-items:center;gap:8px;padding:11px 16px 11px 13px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.28);cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}'
+    + '.dl-pill.dl-on{opacity:1;transform:none}.dl-pill:hover{background:#000}.dl-pill:focus-visible{outline:3px solid #60a5fa;outline-offset:2px}'
+    + '.dl-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:dl-p 2s infinite}'
+    + '@keyframes dl-p{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}'
+    + '@media(prefers-reduced-motion:reduce){.dl-dot{animation:none}.dl-pill,.dl-tip{transition:none}}'
+    + '.dl-tip{position:fixed;left:16px;bottom:calc(var(--dl-b,0px) + 70px);z-index:2147483000;max-width:260px;padding:12px 14px;border-radius:12px;background:#fff;color:#111827;font:400 14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.18);opacity:0;transition:opacity .3s;pointer-events:none}.dl-tip.dl-on{opacity:1}'
+    + '.dl-bg{position:fixed;inset:0;z-index:2147483001;background:rgba(17,24,39,.5);display:none;align-items:flex-end;justify-content:center}.dl-bg.dl-on{display:flex}'
+    + '@media(min-width:700px){.dl-bg{align-items:center}}'
+    + '.dl-sh{position:relative;box-sizing:border-box;width:100%;max-width:520px;max-height:92vh;overflow:auto;background:#fff;color:#111827;border-radius:18px 18px 0 0;padding:22px 20px 24px;font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:left}'
+    + '@media(min-width:700px){.dl-sh{border-radius:18px;padding:28px}}'
+    + '.dl-sh *{box-sizing:border-box}.dl-sh h2{margin:0 36px 6px 0;font:700 21px/1.25 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#111827;letter-spacing:0;text-transform:none}'
+    + '.dl-sh h3{margin:22px 0 8px;font:700 13px/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:uppercase;letter-spacing:.04em;color:#6b7280}'
+    + '.dl-sh p{margin:0;color:#374151;font:inherit}.dl-x{position:absolute;top:14px;right:14px;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#f3f4f6;color:#111827;font:400 22px/36px system-ui,sans-serif;cursor:pointer}'
+    + '.dl-btn{display:inline-block;margin-top:10px;padding:11px 16px;border:0;border-radius:10px;background:#111827;color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;cursor:pointer;text-decoration:none}'
+    + '.dl-serp{padding:14px;border:1px solid #e5e7eb;border-radius:12px;font-family:Arial,sans-serif}.dl-serp .u{font-size:13px;color:#15803d}.dl-serp .u i{font-style:normal;color:#9ca3af}'
+    + '.dl-serp .t{margin:3px 0 4px;font-size:17px;line-height:1.3;color:#1d4ed8}.dl-serp .d{font-size:13px;line-height:1.45;color:#4b5563}'
+    + '.dl-ul{margin:0;padding:0;list-style:none}.dl-ul li{position:relative;margin:0;padding:5px 0 5px 24px;color:#1f2937;font:inherit}.dl-ul li:before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid #16a34a;border-bottom:2px solid #16a34a;transform:rotate(-45deg)}'
+    + '@media(max-width:520px){.dl-more{display:none}.dl-pill{left:12px;padding:9px 13px 9px 11px;font-size:13px}.dl-tip{left:12px;max-width:230px;font-size:13px;bottom:calc(var(--dl-b,0px) + 62px)}}'
+    + '.dl-end{margin-top:22px;padding:14px 16px;border-radius:12px;background:#f0fdf4;color:#14532d;font-weight:600}';
+  var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+
+  var pill = document.createElement('button');
+  pill.className = 'dl-pill'; pill.type = 'button';
+  pill.innerHTML = '<span class="dl-dot"></span>Демо для вас<span class="dl-more"> · как запустить</span>';
+  var tip = document.createElement('div'); tip.className = 'dl-tip';
+  tip.textContent = 'Этот сайт собран для «' + name + '» по вашей карточке в 2ГИС. Нажмите — покажу, как он будет работать.';
+
+  var check = form || wa ? '<h3>Проверьте сами</h3><p>' + (form ? 'Заполните заявку на сайте — сообщение придёт в ваш WhatsApp. Так вам будут писать клиенты.' : 'Нажмите кнопку WhatsApp на сайте — откроется чат с вашим номером. Так вам будут писать клиенты.') + '</p><button class="dl-btn" type="button" data-dl="try">' + (form ? 'Заполнить заявку' : 'Найти кнопку') + '</button>' : '';
+  var bg = document.createElement('div'); bg.className = 'dl-bg';
+  bg.innerHTML = '<div class="dl-sh" role="dialog" aria-modal="true" aria-labelledby="dl-h">'
+    + '<button class="dl-x" type="button" aria-label="Закрыть" data-dl="x">×</button>'
+    + '<h2 id="dl-h">Сайт для «' + esc(name) + '»</h2>'
+    + '<p>Собран по вашей карточке в 2ГИС: адрес, часы, фото и отзывы — ваши. Это демо: его можно поправить и запустить на своём адресе.</p>'
+    + check
+    + '<h3>Так вас найдут в поиске</h3><div class="dl-serp"><div class="u">' + esc(slug) + '.ru <i>· пример адреса</i></div><div class="t">' + esc(title) + '</div><div class="d">' + esc(desc.slice(0, 170)) + (desc.length > 170 ? '…' : '') + '</div></div>'
+    + '<h3>Что входит</h3><ul class="dl-ul"><li>Ваши фото, цены и тексты — поправим всё, что скажете</li><li>Заявки и запись — в WhatsApp или Telegram, круглосуточно</li><li>Свой адрес сайта и хостинг на год</li><li>Новые цены, акции и фото — по одному вашему сообщению</li><li>Оплата после запуска, чек как самозанятый</li></ul>'
+    + '<div class="dl-end">Понравилось? Ответьте в чате, откуда пришла ссылка, — обсудим правки и запуск.</div></div>';
+
+  function open() { bg.classList.add('dl-on'); tip.classList.remove('dl-on'); store.set('dl-seen', '1'); bg.querySelector('[data-dl="x"]').focus(); }
+  function close() { bg.classList.remove('dl-on'); pill.focus(); }
+  pill.addEventListener('click', open);
+  bg.addEventListener('click', function (e) {
+    var a = e.target.getAttribute && e.target.getAttribute('data-dl');
+    if (e.target === bg || a === 'x') close();
+    if (a === 'try') {
+      bg.classList.remove('dl-on');
+      (form || wa).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var f = form && form.querySelector('input:not([type=hidden]),select,textarea');
+      if (f) setTimeout(function () { try { f.focus({ preventScroll: true }); } catch (err) {} }, 600);
+    }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && bg.classList.contains('dl-on')) close(); });
+
+  // кнопка слева внизу: справа у сайтов обычно главные кнопки и «Далее» в формах; поднять над закреплёнными снизу панелями сайта («Позвонить / Записаться»)
+  function lift() {
+    var h = 0, vh = innerHeight;
+    document.querySelectorAll('body *').forEach(function (el) {
+      if (el === pill || el === tip || el === bg || bg.contains(el)) return;
+      var cs = getComputedStyle(el);
+      if (cs.position !== 'fixed' || cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return;
+      var r = el.getBoundingClientRect();
+      if (r.height > 0 && r.height < vh / 3 && r.bottom >= vh - 40 && r.left < 200) h = Math.max(h, vh - r.top + 4);
+    });
+    document.documentElement.style.setProperty('--dl-b', h + 'px');
+  }
+  function mount() {
+    document.body.appendChild(tip); document.body.appendChild(pill); document.body.appendChild(bg);
+    lift(); addEventListener('resize', lift);
+    addEventListener('scroll', function () { clearTimeout(mount.t); mount.t = setTimeout(lift, 150); }, { passive: true });
+    // кнопка и подсказка появляются после первой прокрутки — первый экран сайта остаётся чистым
+    function showPill() { pill.classList.add('dl-on'); lift(); }
+    addEventListener('scroll', function onP() { if (scrollY > innerHeight * 0.6) { removeEventListener('scroll', onP); showPill(); } }, { passive: true });
+    function showTip() { if (store.get('dl-seen')) return; tip.classList.add('dl-on'); setTimeout(function () { tip.classList.remove('dl-on'); }, 7000); }
+    if (!store.get('dl-seen')) {
+      addEventListener('scroll', function onS() { if (scrollY > innerHeight) { removeEventListener('scroll', onS); showTip(); } }, { passive: true });
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
+})();
+</script><!--/demo-layer-->
+</body>
+</html>
