@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Дапимоторс — авто из Японии, Кореи и Китая под заказ, Благовещенск</title>
+<meta name="description" content="15 лет на аукционах, более 2 000 автомобилей. Реальные сделки с ценами, калькулятор под ключ по курсу ЦБ, проверка аукционного листа, детейлинг. 5.0 в 2ГИС.">
+<meta name="theme-color" content="#16181B">
+<meta property="og:title" content="Дапимоторс — авто под заказ из Японии, Кореи и Китая">
+<meta property="og:description" content="Реальные сделки с ценами, калькулятор под ключ, проверка лота до ставки.">
+<meta property="og:image" content="https://wortxxascendance.github.io/sait/dapimotors-blag/img/cars/10783.jpg">
+<meta property="og:url" content="https://wortxxascendance.github.io/sait/dapimotors-blag/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='9' fill='%23D42A2F'/%3E%3Cpath d='M14 12h9a12 12 0 0 1 0 24h-9z' fill='none' stroke='%23fff' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"></noscript>
+<style>
+:root{
+  --paper:#F5F4F1;--card:#fff;--ink:#16181B;--ink2:#4B5058;--mut:#7E838A;--line:#E2E0DB;--line2:#CDCAC3;
+  --red:#D42A2F;--red2:#B32025;--dark:#16181B;--dark2:#202328;--dline:#30343A;
+  --font:'Golos Text',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);--r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.022em;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(28px,3.6vw,46px)}
+h2 em,h1 em{font-style:normal;color:var(--red)}
+p{margin:0;text-wrap:pretty}
+section{padding:96px 0 0;scroll-margin-top:64px}
+.cap{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.cap::before{content:"";width:22px;height:2px;background:currentColor}
+.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:40px}
+.head p{color:var(--ink2);font-size:17px}
+.mono{font-family:var(--mono)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:1px solid var(--line2);border-radius:10px;background:var(--card);font-weight:600;font-size:15px;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease);text-align:center}
+.btn:hover{border-color:var(--ink)}
+.btn:active{transform:scale(.98)}
+.btn-r{background:var(--red);border-color:var(--red);color:#fff}
+.btn-r:hover{background:var(--red2);border-color:var(--red2)}
+.btn-d{background:transparent;border-color:#4A4F57;color:#fff}
+.btn-d:hover{border-color:#fff}
+:focus-visible{outline:3px solid #2563EB;outline-offset:2px}
+.ex{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:5px;background:#FFF1D6;color:#8A5A00;font:600 11px/1.5 var(--font);vertical-align:1px}
+
+/* шапка */
+.hd{position:fixed;inset:0 0 auto;z-index:50;transition:background .25s,box-shadow .25s}
+.hd.sc,.hd.open{background:rgba(22,24,27,.96);box-shadow:0 1px 0 var(--dline);backdrop-filter:blur(8px)}
+.hd .wrap{display:flex;align-items:center;gap:22px;height:68px}
+.logo{display:flex;align-items:center;font-weight:800;font-size:19px;letter-spacing:-.01em;color:#fff;flex:none}
+.logo b{background:var(--red);padding:3px 7px 3px 8px;margin-right:2px;font-weight:800}
+.logo small{display:block;font:600 9.5px/1 var(--font);letter-spacing:.14em;color:#A9AEB5;margin-top:3px;text-transform:uppercase}
+.nav{display:flex;gap:20px;margin-left:auto}
+.nav a{color:#D5D8DC;font-size:14.5px;font-weight:500;white-space:nowrap}
+.nav a:hover{color:#fff}
+.hd-tel{color:#fff;font:700 15px/1 var(--mono);white-space:nowrap}
+.menu-b{display:none;margin-left:auto;width:46px;height:46px;border:1px solid #3A3E45;border-radius:10px;background:transparent;cursor:pointer;color:#fff}
+.menu-b span{display:block;width:18px;height:2px;margin:4px auto;background:currentColor;transition:transform .2s}
+.hd.open .menu-b span:first-child{transform:translateY(3px) rotate(45deg)}.hd.open .menu-b span:last-child{transform:translateY(-3px) rotate(-45deg)}
+.mnav{display:none}
+@media (max-width:1100px){.nav{display:none}.hd-tel{margin-left:auto}}
+@media (max-width:760px){
+  .hd-tel{display:none}.menu-b{display:block}
+  .mnav{display:block;max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+  .hd.open .mnav{max-height:80vh;overflow:auto}
+  .mnav a{display:block;padding:14px 24px;border-top:1px solid var(--dline);color:#E7E9EC;font-weight:500}
+  .mnav a.tel{font-family:var(--mono);color:#fff}
+}
+
+/* первый экран */
+.hero{background:var(--dark);color:#fff;padding:132px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(34px,4.5vw,60px);letter-spacing:-.03em}
+.hero .lead{margin-top:22px;font-size:18px;color:#C5C9CF;max-width:560px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px;border-top:1px solid var(--dline)}
+.facts div{padding:18px 16px 0 0}
+.facts b{display:block;font:700 26px/1.1 var(--mono);letter-spacing:-.02em}
+.facts span{display:block;margin-top:6px;color:#9DA2A9;font-size:13.5px;line-height:1.4}
+.lot{position:relative;background:var(--dark2);border:1px solid var(--dline);border-radius:18px;overflow:hidden}
+.lot-top{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--dline);font:500 12px/1.3 var(--mono);color:#9DA2A9;letter-spacing:.04em}
+.lot-top b{color:#fff;font-weight:700}
+.lot img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.lot-b{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:end;padding:18px}
+.lot-b h3{font-size:19px;letter-spacing:-.01em}
+.lot-b p{margin-top:6px;color:#9DA2A9;font:500 13px/1.5 var(--mono)}
+.lot-b .pr{text-align:right}
+.lot-b .pr span{display:block;color:#9DA2A9;font-size:12px}
+.lot-b .pr b{font:700 24px/1.1 var(--mono);white-space:nowrap}
+.stamp{position:absolute;top:62px;right:16px;display:grid;place-items:center;width:78px;height:78px;border:2px solid var(--red);border-radius:50%;color:#fff;background:rgba(212,42,47,.92);font:700 11px/1.2 var(--mono);text-align:center;transform:rotate(-9deg);letter-spacing:.04em}
+.lot-src{padding:0 18px 16px;color:#80858C;font-size:12.5px}
+.lot-src a{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:960px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:40px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.hero{padding:104px 0 48px}.hero .lead{font-size:16.5px}.hero .acts .btn{flex:1 1 100%}.facts b{font-size:22px}.lot-b{grid-template-columns:minmax(0,1fr)}.lot-b .pr{text-align:left}}
+
+/* направления */
+.tabs{display:flex;gap:6px;padding:5px;background:#EAE8E3;border-radius:12px;width:max-content;max-width:100%;overflow-x:auto}
+.tabs button{border:0;background:transparent;padding:11px 18px;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap;color:var(--ink2)}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.dir{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px;margin-top:20px}
+.dir-m,.dir-s{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+.dir-m h3{font-size:24px}
+.dir-m>p{margin-top:12px;color:var(--ink2)}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.ticks li{position:relative;padding-left:26px;font-size:15px;line-height:1.45}
+.ticks li::before{content:"";position:absolute;left:0;top:4px;width:14px;height:8px;border-left:2px solid var(--red);border-bottom:2px solid var(--red);transform:rotate(-45deg)}
+.dir-s dl{margin:0;display:grid}
+.dir-s dl div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.dir-s dl div:first-child{padding-top:0}
+.dir-s dt{color:var(--mut);font-size:14px}
+.dir-s dd{margin:0;font-weight:600;text-align:right;font-size:15px}
+.plat{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.plat span{padding:6px 11px;border:1px solid var(--line2);border-radius:999px;font:600 12.5px/1 var(--mono)}
+.alert{margin-top:18px;padding:14px 16px;border-left:3px solid var(--red);background:#FBEDEE;border-radius:0 10px 10px 0;font-size:14.5px;line-height:1.5}
+.alert b{display:block;margin-bottom:4px}
+.dir-s .btn{width:100%;margin-top:20px}
+@media (max-width:860px){.dir{grid-template-columns:minmax(0,1fr)}.ticks{grid-template-columns:minmax(0,1fr)}.dir-m,.dir-s{padding:24px}}
+
+/* сделки */
+.bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border:1px solid var(--line2);border-radius:999px;background:var(--card);cursor:pointer;font-weight:600;font-size:14px}
+.chips button small{font:600 12px/1 var(--mono);color:var(--mut)}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips button[aria-pressed="true"] small{color:#B9BDC3}
+.sort{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink2)}
+.sort select{width:auto;min-height:40px;padding:0 34px 0 12px;border:1px solid var(--line2);border-radius:10px;background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2316181B' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 12px center;font:500 14px var(--font);appearance:none;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.deal{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .25s}
+.deal:hover{box-shadow:0 10px 30px rgba(22,24,27,.08)}
+.deal .ph{position:relative;aspect-ratio:4/3;background:#E9E7E2;cursor:zoom-in;border:0;padding:0;width:100%;display:block}
+.deal .ph img{width:100%;height:100%;object-fit:cover}
+.deal .flag{position:absolute;left:10px;top:10px;padding:4px 8px;border-radius:6px;background:rgba(22,24,27,.82);color:#fff;font:700 11px/1.2 var(--mono);letter-spacing:.05em}
+.deal .flag.nw{background:var(--red)}
+.deal .cnt{position:absolute;right:10px;bottom:10px;padding:3px 8px;border-radius:6px;background:rgba(22,24,27,.72);color:#fff;font:600 11.5px/1.3 var(--mono)}
+.deal-b{display:flex;flex-direction:column;flex:1;padding:16px 16px 18px}
+.deal-b .lotn{font:500 11.5px/1.2 var(--mono);color:var(--mut);letter-spacing:.04em}
+.deal-b h3{margin-top:8px;font-size:16.5px;line-height:1.25;letter-spacing:-.005em}
+.spec{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:8px;color:var(--ink2);font:500 13px/1.4 var(--mono)}
+.price{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px}
+.price span{font-size:12.5px;color:var(--mut)}
+.price b{font:700 21px/1 var(--mono);letter-spacing:-.02em;white-space:nowrap}
+.deal-a{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:14px}
+.deal-a .btn{min-height:42px;padding:0 10px;font-size:14px}
+.deal-a .btn:only-child{grid-column:1/-1}
+.more{display:flex;justify-content:center;margin-top:26px}
+.src-n{margin-top:16px;color:var(--mut);font-size:13.5px;text-align:center}
+.src-n a{text-decoration:underline;text-underline-offset:3px}
+
+/* калькулятор (разметка под calc.js) */
+.calc{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:20px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.fs{border:0;margin:0 0 20px;padding:0;min-width:0}
+.lbl{display:block;margin-bottom:8px;font-weight:600;font-size:14px;color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.seg span{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--line2);border-radius:9px;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s,border-color .15s}
+.seg input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.seg input:focus-visible+span{outline:3px solid #2563EB;outline-offset:2px}
+input[type=text],input[type=tel],select,textarea{width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--line2);border-radius:10px;background:#fff;font:500 16px var(--font);color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(22,24,27,.08)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--red)}
+.row3{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:10px;align-items:start}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.hint{margin-top:6px;color:var(--mut);font-size:13px;line-height:1.45}
+.err{margin-top:6px;color:var(--red2);font-size:13px;font-weight:500}
+.demo-n{margin:0 0 20px;padding:12px 14px;border-radius:10px;background:#FFF6E5;color:#6E4A00;font-size:13.5px;line-height:1.5}
+.res{position:sticky;top:84px}
+.stale{display:none}.stale.on{display:block;margin-bottom:14px;padding:10px 12px;border-radius:9px;background:#FFF1D6;color:#8A5A00;font-size:13px}
+.total{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+.total span{font-weight:600}
+.total b{font:700 clamp(26px,3vw,34px)/1 var(--mono);letter-spacing:-.02em;white-space:nowrap}
+.res table{width:100%;border-collapse:collapse;margin-top:6px;font-size:14.5px}
+.res td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.res td:last-child{text-align:right;font-family:var(--mono);font-weight:500;white-space:nowrap;padding-left:12px}
+.res td small{display:block;color:var(--mut);font-size:12.5px;margin-top:2px;font-family:var(--font)}
+.res tr.grp td{padding:16px 0 6px;border:0;color:var(--mut);font:700 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.note{margin-top:14px;color:var(--mut);font-size:12.5px;line-height:1.5}
+.acts{display:grid;gap:8px;margin-top:18px}
+.acts .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(var(--dl-b,0px) + 24px);z-index:60;transform:translate(-50%,20px);padding:12px 18px;border-radius:10px;background:var(--ink);color:#fff;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (max-width:900px){.calc{grid-template-columns:minmax(0,1fr)}.res{position:static}}
+@media (max-width:520px){.panel{padding:20px}.row3{grid-template-columns:minmax(0,1fr) 112px}}
+
+/* аукционы */
+.auc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--dark);color:#fff;border-radius:20px;overflow:hidden}
+.auc-l{padding:44px}
+.auc-l h2{font-size:clamp(26px,3vw,38px)}
+.auc-l>p{margin-top:16px;color:#C5C9CF}
+.auc-l .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.auc-l small{display:block;margin-top:14px;color:#8E939A;font-size:13px}
+.auc-r{padding:44px;background:var(--dark2);border-left:1px solid var(--dline)}
+.auc-r h3{font-size:19px}
+.auc-r>p{margin-top:8px;color:#9DA2A9;font-size:14.5px}
+.auc-r form{display:grid;gap:10px;margin-top:20px}
+.auc-r input{background:#16181B;border-color:#3A3E45;color:#fff}
+.auc-r input::placeholder{color:#7E838A}
+.auc-r input:focus{border-color:#fff;box-shadow:none}
+.auc-r .err{color:#FF8C8F}
+@media (max-width:860px){.auc{grid-template-columns:minmax(0,1fr)}.auc-l,.auc-r{padding:28px}.auc-r{border-left:0;border-top:1px solid var(--dline)}.auc-l .acts .btn{flex:1 1 100%}}
+
+/* как работаем */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step{padding:26px 22px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step b{display:block;font:700 13px/1 var(--mono);color:var(--red)}
+.step h3{margin-top:14px;font-size:17px;line-height:1.25}
+.step p{margin-top:10px;color:var(--ink2);font-size:14.5px;line-height:1.5}
+.step .t{display:inline-block;margin-top:12px;padding:4px 8px;border-radius:6px;background:#F0EEE9;font:600 12px/1.3 var(--mono)}
+.guar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:18px}
+.guar div{padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.guar h3{font-size:16px;line-height:1.3}
+.guar p{margin-top:8px;color:var(--ink2);font-size:14.5px;line-height:1.5}
+.quote{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;margin-top:18px;padding:28px 32px;border-radius:var(--r);background:#ECEAE5}
+.quote::before{content:"«";font:700 64px/0.8 var(--font);color:var(--red)}
+.quote p{font-size:17.5px;line-height:1.55}
+.quote span{display:block;margin-top:10px;color:var(--mut);font-size:14px}
+.doc-l{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.doc-l a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--line2);border-radius:10px;background:var(--card);font-size:14px;font-weight:600}
+.doc-l a::after{content:"↗";color:var(--red);font-weight:700}
+@media (max-width:1000px){.steps{grid-template-columns:minmax(0,1fr)}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.guar{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.guar{grid-template-columns:minmax(0,1fr)}.quote{grid-template-columns:minmax(0,1fr);padding:24px;gap:6px}.quote::before{font-size:48px}}
+
+/* аукционный лист */
+.sheet{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.codes{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.codes h3{font-size:19px}
+.codes>p{margin-top:8px;color:var(--ink2);font-size:14.5px}
+.kbd{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:20px}
+.kbd button{min-height:48px;border:1px solid var(--line2);border-radius:9px;background:#fff;font:700 15px var(--mono);cursor:pointer;transition:background .15s,border-color .15s}
+.kbd button:hover{border-color:var(--ink)}
+.kbd button[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.dec{margin-top:18px;padding:18px;border-radius:12px;background:#F5F4F1;min-height:116px}
+.dec b{display:block;font:700 22px/1.1 var(--mono)}
+.dec p{margin-top:8px;font-size:15px}
+.dec .lvl{display:flex;gap:4px;margin-top:12px}
+.dec .lvl i{flex:1;height:6px;border-radius:3px;background:#DDDAD3}
+.dec .lvl i.on{background:var(--red)}
+.dec small{display:block;margin-top:8px;color:var(--mut);font-size:12.5px}
+.grade{margin-top:18px;display:grid;gap:10px}
+.grade div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:center;font-size:14.5px;line-height:1.45}
+.grade b{display:grid;place-items:center;height:36px;border:2px solid var(--ink);border-radius:8px;font:700 13.5px var(--mono)}
+.grade b.r{border-color:var(--red);color:var(--red)}
+.cases{display:grid;gap:12px;align-content:start}
+.case{padding:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.case h3{font-size:16.5px}
+.case .vs{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center;margin-top:14px}
+.case .vs div{padding:12px;border-radius:10px;background:#F5F4F1}
+.case .vs div.bad{background:#FBEDEE}
+.case .vs span{display:block;color:var(--mut);font-size:12px}
+.case .vs b{display:block;margin-top:4px;font:700 17px/1.2 var(--mono)}
+.case .vs div.bad b{color:var(--red2)}
+.case .vs i{font-style:normal;color:var(--mut);font-family:var(--mono)}
+.case p{margin-top:12px;color:var(--ink2);font-size:14px}
+.case-n{color:var(--mut);font-size:13px}
+@media (max-width:900px){.sheet{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:480px){.kbd{grid-template-columns:repeat(4,minmax(0,1fr))}.codes{padding:20px}.case .vs{grid-template-columns:minmax(0,1fr)}.case .vs i{display:none}}
+
+/* отправки */
+.cities{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.cities span{padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:14px;font-weight:500}
+.cities span b{font-family:var(--mono);color:var(--red);margin-left:4px}
+.ships{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:14px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.ship{scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ship img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ship div{padding:12px 14px 14px}
+.ship b{display:block;font-size:15px}
+.ship span{display:block;margin-top:4px;color:var(--ink2);font-size:13.5px}
+.ship time{display:block;margin-top:6px;color:var(--mut);font:500 12px var(--mono)}
+
+/* детейлинг */
+.det{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:20px;align-items:start}
+.det-ph{position:relative;border-radius:var(--r);overflow:hidden}
+.det-ph img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.det-ph .off{position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px;border-radius:12px;background:rgba(22,24,27,.9);color:#fff}
+.det-ph .off b{display:block;font:700 26px/1 var(--mono)}
+.det-ph .off span{display:block;margin-top:6px;font-size:14px;color:#C5C9CF}
+.det-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.det-thumbs img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
+.det-p{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.det-p .lbl{margin-bottom:10px}
+.sizes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.sizes button{padding:10px 8px;border:1px solid var(--line2);border-radius:9px;background:#fff;cursor:pointer;text-align:left;font-size:13px;line-height:1.3}
+.sizes button b{display:block;font:700 14px var(--mono);margin-bottom:3px}
+.sizes button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.pk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.pk button{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:16px;border:1px solid var(--line2);border-radius:12px;background:#fff;cursor:pointer;text-align:left}
+.pk button[aria-pressed="true"]{border:2px solid var(--red);padding:15px}
+.pk button span{font-weight:600;font-size:15px}
+.pk button b{font:700 19px/1 var(--mono)}
+.pk-d{margin-top:14px;color:var(--ink2);font-size:14.5px;line-height:1.55;min-height:66px}
+.svc{width:100%;border-collapse:collapse;margin-top:18px;font-size:14.5px}
+.svc td{padding:10px 0;border-bottom:1px solid var(--line)}
+.svc td:last-child{text-align:right;font:600 14.5px var(--mono);white-space:nowrap;padding-left:12px}
+.svc tr.g td{padding:16px 0 6px;color:var(--mut);font:700 11.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;border:0}
+.brands{margin-top:14px;color:var(--mut);font-size:13px}
+@media (max-width:900px){.det{grid-template-columns:minmax(0,1fr)}.det-ph img{aspect-ratio:4/3}}
+@media (max-width:560px){.det-p{padding:20px}.sizes{grid-template-columns:repeat(2,minmax(0,1fr))}.pk{gap:6px}.pk button{padding:12px 10px}.pk button[aria-pressed="true"]{padding:11px 9px}.pk button span{font-size:13px}.pk button b{font-size:14.5px}.pk-d{min-height:0}}
+.rev-more{display:flex;justify-content:center;margin-top:6px}
+
+/* отзывы */
+.rate{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-bottom:24px}
+.rate b{font:700 44px/1 var(--mono)}
+.rate .st{color:var(--red);letter-spacing:2px;font-size:18px}
+.rate span{color:var(--ink2);font-size:15px}
+.rate a{font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.revs{columns:3 300px;column-gap:18px}
+.rev{break-inside:avoid;margin:0 0 18px;padding:22px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.rev .st{color:var(--red);letter-spacing:2px;font-size:14px}
+.rev q{display:block;margin-top:10px;quotes:none;font-size:15px;line-height:1.6}
+.rev button{margin-top:8px;padding:0;border:0;background:none;color:var(--red2);font-weight:600;font-size:14px;cursor:pointer}
+.rev footer{margin-top:14px;color:var(--mut);font-size:13.5px}
+.rev footer b{color:var(--ink);font-weight:600}
+
+/* новости */
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.nw{display:flex;flex-direction:column;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.nw time{font:500 12px var(--mono);color:var(--mut)}
+.nw h3{margin-top:10px;font-size:18px;line-height:1.25}
+.nw p{margin-top:10px;color:var(--ink2);font-size:14.5px;line-height:1.55}
+.nw .fx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}
+.nw .fx div{padding:10px;border-radius:9px;background:#F5F4F1}
+.nw .fx span{display:block;font-size:12px;color:var(--mut)}
+.nw .fx b{font:700 16px var(--mono)}
+.nw .fx small{font:600 11.5px var(--mono);color:#2F7D4F;margin-left:4px}
+.nw a{margin-top:auto;padding-top:16px;font-weight:600;font-size:14px;color:var(--red2)}
+@media (max-width:900px){.news{grid-template-columns:minmax(0,1fr)}}
+
+/* вопросы */
+.faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px;align-items:start}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px}
+.faq summary{display:flex;justify-content:space-between;gap:16px;padding:18px 20px;cursor:pointer;font-weight:600;font-size:15.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 22px/1 var(--mono);color:var(--red);flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 20px 18px;color:var(--ink2);font-size:15px}
+@media (max-width:860px){.faq{grid-template-columns:minmax(0,1fr)}}
+
+/* заявка и контакты */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px}
+.form h3{font-size:22px}
+.form>p{margin-top:8px;color:var(--ink2);font-size:15px}
+.form form{display:grid;gap:14px;margin-top:22px}
+.chk{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;font-size:13.5px;line-height:1.45;color:var(--ink2);cursor:pointer}
+.chk input{width:20px;height:20px;margin:0;accent-color:var(--red)}
+.chk a{text-decoration:underline;text-underline-offset:2px}
+.form small{color:var(--mut);font-size:12.5px}
+.ct{background:var(--dark);color:#fff;border-radius:var(--r);padding:32px}
+.ct h3{font-size:22px}
+.ct dl{margin:20px 0 0;display:grid}
+.ct dl div{padding:14px 0;border-bottom:1px solid var(--dline)}
+.ct dt{color:#8E939A;font-size:13px}
+.ct dd{margin:4px 0 0;font-size:16px;font-weight:500}
+.ct dd a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:#5A5F66}
+.ct .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.ct .acts .btn{flex:1 1 140px}
+@media (max-width:900px){.contact{grid-template-columns:minmax(0,1fr)}.form,.ct{padding:24px}}
+
+/* подвал */
+.ft{margin-top:96px;background:var(--dark);color:#9DA2A9;padding:40px 0 calc(40px + var(--dl-b,0px));font-size:14px}
+.ft .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+.ft nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.ft a:hover{color:#fff}
+.up{position:fixed;right:16px;bottom:calc(var(--dl-b,0px) + 16px);z-index:40;width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;background:var(--card);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.up.on{opacity:1;pointer-events:auto}
+.up::before{content:"";display:block;width:10px;height:10px;margin:4px auto 0;border-left:2px solid var(--ink);border-top:2px solid var(--ink);transform:rotate(45deg)}
+.mbar{display:none}
+@media (max-width:760px){
+  body{--dl-b:64px}
+  .mbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:fixed;inset:auto 0 0;z-index:45;height:64px;padding-bottom:env(safe-area-inset-bottom);background:var(--dark);border-top:1px solid var(--dline)}
+  .mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;font-size:12px;font-weight:600}
+  .mbar a+a{border-left:1px solid var(--dline)}
+  .mbar a.r{background:var(--red)}
+  .mbar svg{width:20px;height:20px}
+  section{padding-top:72px}
+  .head{grid-template-columns:minmax(0,1fr);gap:14px;margin-bottom:28px}
+  .wrap{padding:0 18px}
+  .ft{margin-top:72px}
+}
+
+/* фото-просмотр */
+dialog.lb{width:min(980px,calc(100vw - 24px));max-height:calc(100vh - 24px);padding:0;border:0;border-radius:16px;background:var(--dark);color:#fff;overflow:auto}
+dialog.lb::backdrop{background:rgba(10,11,13,.82)}
+.lb-i{position:relative;background:#000}
+.lb-i img{width:100%;max-height:70vh;object-fit:contain}
+.lb-n{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;border-radius:50%;background:rgba(22,24,27,.75);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.lb-n.p{left:12px}.lb-n.n{right:12px}
+.lb-b{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px}
+.lb-b b{font-size:16px}
+.lb-b span{display:block;color:#9DA2A9;font:500 13px var(--mono);margin-top:4px}
+.lb-x{position:absolute;top:12px;right:12px;width:42px;height:42px;border:0;border-radius:50%;background:rgba(22,24,27,.75);color:#fff;font-size:24px;line-height:1;cursor:pointer;z-index:2}
+
+/* появление */
+[data-rv]{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+[data-rv].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-rv]{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hd" id="hd">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Дапимоторс — наверх"><span><b>DAPI</b>MOTORS<small>Автоаукционы и детейлинг</small></span></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#deals">Сделки</a><a href="#calc">Калькулятор</a><a href="#auc">Аукционы</a><a href="#how">Как работаем</a><a href="#sheet">Аукционный лист</a><a href="#det">Детейлинг</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="hd-tel" href="tel:+79145533115">+7 914 553-31-15</a>
+    <button class="menu-b" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Меню"><span></span><span></span></button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Меню">
+    <a href="#dirs">Направления</a><a href="#deals">Сделки с ценами</a><a href="#calc">Калькулятор под ключ</a><a href="#auc">Аукционы и статистика</a><a href="#how">Как работаем</a><a href="#sheet">Аукционный лист</a><a href="#ships">Отправки</a><a href="#det">Детейлинг</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a><a class="tel" href="tel:+79145533115">+7 914 553-31-15</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="cap">Благовещенск · с 2010 года</span>
+        <h1>Авто из Японии, Кореи и Китая под заказ <em>с честной ценой до торгов</em></h1>
+        <p class="lead">Сначала считаем реальный бюджет по статистике торгов, потом ищем машину. Проверяем лот до ставки, а возврат депозита прописываем в договоре.</p>
+        <div class="acts">
+          <a class="btn btn-r" href="#calc">Посчитать цену под ключ</a>
+          <a class="btn btn-d" href="#deals">Смотреть сделки</a>
+        </div>
+        <div class="facts">
+          <div><b>15 лет</b><span>на аукционном рынке</span></div>
+          <div><b>2 000+</b><span>автомобилей доставлено клиентам</span></div>
+          <div><b id="hRate">5.0</b><span id="hRateN">отзывы в 2ГИС</span></div>
+          <div><b>до 5</b><span>ставок на заказ без доплаты</span></div>
+        </div>
+      </div>
+      <div class="lot" id="heroLot"></div>
+    </div>
+  </section>
+
+  <section id="dirs">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">01 · Направления</span><h2>Три страны — <em>один исполнитель</em></h2></div><p>Для каждой страны свой способ проверки: в Японии это аукционный лист, в Корее и Китае — независимый осмотр на месте и проверка по базам.</p></div>
+      <div class="tabs" role="tablist" aria-label="Страна">
+        <button type="button" role="tab" id="t-JP" aria-controls="p-dir" aria-selected="true" data-c="JP">Япония</button>
+        <button type="button" role="tab" id="t-KR" aria-controls="p-dir" aria-selected="false" tabindex="-1" data-c="KR">Южная Корея</button>
+        <button type="button" role="tab" id="t-CN" aria-controls="p-dir" aria-selected="false" tabindex="-1" data-c="CN">Китай</button>
+      </div>
+      <div class="dir" id="p-dir" role="tabpanel" aria-labelledby="t-JP"></div>
+    </div>
+  </section>
+
+  <section id="deals">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">02 · Сделки</span><h2>Машины, которые <em>мы уже привезли</em></h2></div><p>Каждая карточка — закрытая сделка из нашего Telegram-канала: модель, год, пробег и цена из поста. Найдите похожую и посчитайте свою.</p></div>
+      <div class="bar">
+        <div class="chips" id="dChips" role="group" aria-label="Фильтр сделок"></div>
+        <label class="sort">Сначала <select id="dSort"><option value="new">свежие</option><option value="cheap">дешевле</option><option value="exp">дороже</option></select></label>
+      </div>
+      <div class="grid" id="dGrid"></div>
+      <div class="more"><button class="btn" type="button" id="dMore">Показать ещё</button></div>
+      <p class="src-n">Цены — из постов <a href="https://t.me/dapimotors" target="_blank" rel="noopener">t.me/dapimotors</a> на дату публикации. Сегодня такая же машина может стоить иначе — посчитаем по текущему курсу.</p>
+    </div>
+  </section>
+
+  <section id="calc">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">03 · Калькулятор</span><h2>Сколько будет <em>под ключ</em></h2></div><p>Пошлина, утильсбор и таможенный сбор — по действующим ставкам и курсу ЦБ на сегодня. Видно каждую строку, без цены «от».</p></div>
+      <div class="calc" data-rv>
+        <form class="panel" id="f" novalidate>
+          <p class="demo-n" id="demoNote" hidden>Пример: расходы в стране и услуги здесь условные, в рабочей версии будут тарифы Дапимоторс. Доставка автовозом из Владивостока в ваш город считается отдельно.</p>
+          <fieldset class="fs"><legend class="lbl">Страна</legend><div class="seg" id="country"></div></fieldset>
+          <fieldset class="fs">
+            <legend class="lbl">Цена автомобиля</legend>
+            <div class="row3">
+              <div>
+                <input type="text" id="price" inputmode="decimal" autocomplete="off" placeholder="0" aria-describedby="price-h price-e" aria-label="Цена автомобиля">
+                <p class="hint" id="price-h">Ставка на аукционе или цена продавца</p>
+                <p class="err" id="price-e" hidden></p>
+              </div>
+              <select id="cur" aria-label="Валюта"></select>
+            </div>
+          </fieldset>
+          <fieldset class="fs"><legend class="lbl">Возраст</legend><div class="seg" id="age"></div></fieldset>
+          <fieldset class="fs"><legend class="lbl">Двигатель</legend><div class="seg" id="engine"></div><p class="hint" id="engine-h"></p></fieldset>
+          <div class="row2 fs">
+            <div id="ccBox"><label class="lbl" for="cc">Объём, см³</label><input type="text" id="cc" inputmode="numeric" autocomplete="off" placeholder="1500" aria-describedby="cc-e"><p class="err" id="cc-e" hidden></p></div>
+            <div><label class="lbl" for="hp">Мощность, л.с.</label><input type="text" id="hp" inputmode="numeric" autocomplete="off" placeholder="150" aria-describedby="hp-h hp-e"><p class="hint" id="hp-h">Из аукционного листа или документов</p><p class="err" id="hp-e" hidden></p></div>
+          </div>
+          <fieldset class="fs" style="margin-bottom:0"><legend class="lbl">Кто ввозит</legend><div class="seg" id="who"></div><p class="hint" id="who-h"></p></fieldset>
+        </form>
+        <div class="panel res" aria-live="polite" aria-labelledby="totalLbl">
+          <p class="stale" id="stale"></p>
+          <div class="total"><span id="totalLbl">Итого под ключ</span><b id="total">—</b></div>
+          <table><tbody id="rows"></tbody></table>
+          <p class="note" id="note"></p>
+          <div class="acts">
+            <a class="btn btn-r" id="waBtn" href="#" target="_blank" rel="noopener">Отправить расчёт в WhatsApp</a>
+            <div class="two"><button class="btn" type="button" id="tgBtn">Telegram</button><a class="btn" id="telBtn" href="#">Позвонить</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="auc">
+    <div class="wrap">
+      <div class="auc" data-rv>
+        <div class="auc-l">
+          <span class="cap">04 · Аукционы Японии</span>
+          <h2>Торги и статистика продаж — <em>в одном кабинете</em></h2>
+          <p>Тысячи лотов каждый день и цены, по которым уходили такие же машины. В лоте работает встроенный калькулятор: он показывает итог с таможней и доставкой.</p>
+          <div class="acts">
+            <a class="btn btn-r" href="http://auctions.dapimotors.ru/auctions/?p=project/searchform&amp;searchtype=max&amp;s&amp;ld" target="_blank" rel="noopener">Аукционы онлайн</a>
+            <a class="btn btn-d" href="http://auctions.dapimotors.ru/stats/?p=project/searchform&amp;searchtype=max&amp;s&amp;ld" target="_blank" rel="noopener">Статистика продаж</a>
+          </div>
+          <small>Вход по логину и паролю, которые выдаём после регистрации.</small>
+        </div>
+        <div class="auc-r">
+          <h3>Нашли лот? Пришлите номер</h3>
+          <p>Переведём аукционный лист, проверим историю по номеру кузова и скажем, стоит ли ставить.</p>
+          <form id="lotForm" novalidate>
+            <div><input type="text" id="lotNo" autocomplete="off" placeholder="Например: 20401 HAA Kobe" aria-label="Номер лота и аукцион" aria-describedby="lotNo-e"><p class="err" id="lotNo-e" hidden></p></div>
+            <input type="text" id="lotNote" autocomplete="off" placeholder="Бюджет или вопрос (необязательно)" aria-label="Бюджет или вопрос">
+            <button class="btn btn-r" type="submit">Отправить на проверку в WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">05 · Как работаем</span><h2>От заявки до ключей — <em>каждый шаг по договору</em></h2></div><p>Вы видите, что происходит на каждом этапе: расчёт, договор, фото из порта, дата отправки, выпуск с таможни, лаборатория, автовоз.</p></div>
+      <div class="steps" data-rv>
+        <div class="step"><b>01</b><h3>Модель и расчёт</h3><p>Смотрим статистику продаж и считаем реальный итог с таможней и доставкой до вашего города.</p></div>
+        <div class="step"><b>02</b><h3>Договор и депозит</h3><p>Договор приходит на почту. Аванс входит в стоимость и возвращается полностью, если вы передумали до покупки лота.</p></div>
+        <div class="step"><b>03</b><h3>Торги</h3><p>До пяти ставок одновременно. Перед каждой переводим аукционный лист. За неуспешные ставки не берём.</p><span class="t">результат в тот же день</span></div>
+        <div class="step"><b>04</b><h3>Оплата и порт</h3><p>Оплата в течение двух рабочих дней. Через 7–14 дней машина в порту отправки, присылаем фото.</p><span class="t">7–14 дней до порта</span></div>
+        <div class="step"><b>05</b><h3>Таможня и передача</h3><p>Судно Ro-Ro до Владивостока, таможня, СБКТС и ЭПТС. Дальше автовоз в ваш город.</p><span class="t">20–30 дней до Владивостока</span></div>
+      </div>
+      <div class="guar" data-rv>
+        <div><h3>До пяти ставок на заказ</h3><p>Торгуемся сразу по нескольким подходящим лотам. Не сыграло — продолжаем на следующий день без комиссии за попытки.</p></div>
+        <div><h3>Перевод листа перед ставкой</h3><p>Не покупаем вслепую. Если в листе скрытые проблемы, предупредим и посоветуем не ставить.</p></div>
+        <div><h3>Торг после аукциона</h3><p>Если лот не ушёл на торгах, можно договориться с продавцом напрямую. Ещё один шанс получить именно эту машину.</p></div>
+        <div><h3>Платежи по этапам</h3><p>По Китаю — пять платежей по мере работы: от аванса до таможни и перевозки в регион.</p></div>
+      </div>
+      <div class="quote" data-rv><div><p>Когда человек впервые покупает через аукцион, его главный страх — «а вдруг обманут». Поэтому мы выстроили процесс так, чтобы клиент видел каждый этап. Мы всегда на связи.</p><span>Руководитель Дапимоторс</span></div></div>
+      <div class="doc-l" data-rv>
+        <a href="https://dapimotors.ru/dogovor" target="_blank" rel="noopener">Агентский договор</a>
+        <a href="https://dapimotors.ru/politika-konfidencialnosti" target="_blank" rel="noopener">Политика конфиденциальности</a>
+        <a href="https://dapimotors.ru/users/agreement" target="_blank" rel="noopener">Согласие на обработку данных</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sheet">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">06 · Аукционный лист</span><h2>Прочитать лист <em>до ставки</em></h2></div><p>Лист составляет независимый инспектор до торгов. Высокая оценка ещё не значит удачную покупку: решаем по всему листу, а не по одной цифре.</p></div>
+      <div class="sheet">
+        <div class="codes" data-rv>
+          <h3>Расшифровка схемы кузова</h3>
+          <p>Нажмите на обозначение из листа. Цифра после буквы — степень: чем она больше, тем серьёзнее ремонт.</p>
+          <div class="kbd" id="kbd" role="group" aria-label="Обозначения повреждений"></div>
+          <div class="dec" id="dec" aria-live="polite"></div>
+          <div class="grade">
+            <div><b>4–4,5</b><span>Обычно достойное состояние, но расходы всё равно возможны. Смотрим комментарии инспектора.</span></div>
+            <div><b class="r">R / RA</b><span>Машина после восстановления. Берём только после оценки ремонта и геометрии кузова.</span></div>
+            <div><b>C / D</b><span>Оценка салона с заметным износом. Учитываем в бюджете.</span></div>
+          </div>
+        </div>
+        <div class="cases" data-rv>
+          <p class="case-n">Почему на рынке «дешевле»: объявления, которые мы проверили по статистике торгов.</p>
+          <div class="case"><h3>Toyota Probox 2009, Владивосток</h3><div class="vs"><div><span>В объявлении</span><b>74 609 км</b></div><i>→</i><div class="bad"><span>По статистике торгов</span><b>149 609 км</b></div></div><p>Оценка 4 балла, цена 337 тыс. ₽. Нашли лот по номеру кузова — пробег смотан вдвое.</p></div>
+          <div class="case"><h3>Toyota Corolla Fielder 2009, Владивосток</h3><div class="vs"><div><span>В объявлении</span><b>65 023 км · 3,5</b></div><i>→</i><div class="bad"><span>По статистике торгов</span><b>169 723 км · R</b></div></div><p>Лот №222 TAA Chubu. Куплена в аварийном состоянии, продавалась как отличная.</p></div>
+          <div class="case"><h3>Toyota Estima Hybrid 2008, Владивосток</h3><div class="vs"><div><span>В объявлении</span><b>67 000 км</b></div><i>→</i><div class="bad"><span>По статистике торгов</span><b>465 933 км</b></div></div><p>«Без пробега по РФ, любые проверки за ваш счёт». Реальная цена такой машины во Владивостоке была 540–550 тыс. ₽.</p></div>
+          <a class="btn btn-r" href="#auc">Отправить лот на проверку</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ships">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">07 · Отправки</span><h2>Готово, <em>передали в ТК</em></h2></div><p>Последние машины, которые ушли заказчикам автовозом. Возим по всей России: от Хабаровска до Москвы, Санкт-Петербурга и Сочи.</p></div>
+      <div class="cities" id="cities"></div>
+      <div class="ships" id="shipList" tabindex="0" aria-label="Последние отправки, листается вбок"></div>
+    </div>
+  </section>
+
+  <section id="det">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">08 · Студия детейлинга</span><h2>Детейлинг <em>в Благовещенске</em></h2></div><p>Химчистка, полировка, керамика Everglass, антидождь. Мастер заранее согласует объём работ и называет цену. Работаем с любыми марками.</p></div>
+      <div class="det">
+        <div data-rv>
+          <div class="det-ph"><img src="img/det10500.jpg" alt="Mazda Roadster после полировки в студии Дапимоторс" loading="lazy"><div class="off"><b>−10%</b><span>на детейлинг в первые 2 месяца, если заказали авто у нас</span></div></div>
+          <div class="det-thumbs">
+            <img src="img/det10732.jpg" alt="Полировка Lexus LX570" loading="lazy"><img src="img/det10678.jpg" alt="Toyota Wish после комплекса «Базовый»" loading="lazy"><img src="img/det10569.jpg" alt="Мойка перед предпродажной подготовкой" loading="lazy"><img src="img/det10451.jpg" alt="Toyota Harrier перед полировкой и керамикой" loading="lazy">
+          </div>
+        </div>
+        <div class="det-p" data-rv>
+          <span class="lbl" id="szL">Размер автомобиля</span>
+          <div class="sizes" id="sizes" role="group" aria-labelledby="szL"></div>
+          <div class="pk" id="pk" role="group" aria-label="Комплекс"></div>
+          <p class="pk-d" id="pkD"></p>
+          <table class="svc"><tbody id="svc"></tbody></table>
+          <p class="brands">Полировка: Sonax, Meguiar’s, Menzerna, Farecla, 3D. Защита: Everglass. Химчистка: LERATON, Shine Systems. * — цена может вырасти в зависимости от размера и состояния.</p>
+          <div class="acts"><a class="btn btn-r" id="detWa" href="#" target="_blank" rel="noopener">Записаться на детейлинг</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">09 · Отзывы</span><h2>Берут <em>вторую, третью, шестую</em> машину</h2></div><p>Отзывы из 2ГИС без правок. Многие заказывают повторно и приводят друзей.</p></div>
+      <div class="rate" data-rv><b id="rVal">5.0</b><div><div class="st" aria-hidden="true">★★★★★</div><span id="rCnt">отзывы в 2ГИС</span></div><a href="https://2gis.ru/blagoveshensk/firm/70000001083613215/tab/reviews" target="_blank" rel="noopener">Все отзывы в 2ГИС</a><a href="https://yandex.ru/maps/org/dapimotors/209983602042/reviews/" target="_blank" rel="noopener">Отзывы на Яндекс Картах</a></div>
+      <div class="revs" id="revs"></div>
+      <div class="rev-more"><button class="btn" type="button" id="rMore" hidden>Ещё отзывы</button></div>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">10 · Новости авторынка</span><h2>Из нашего <em>канала</em></h2></div><p>Курсы валют каждую неделю, изменения правил ввоза и новые машины к заказу — в Telegram и MAX.</p></div>
+      <div class="news">
+        <article class="nw" data-rv><time datetime="2026-10-26">26.10.2026 · #курсы</time><h3>Курсы валют за 17–24 октября</h3>
+          <div class="fx"><div><span>Иена</span><b>51,48</b><small>−1,39</small></div><div><span>Юань</span><b>12,06</b><small>−0,44</small></div><div><span>Вона</span><b>60,80</b><small>−1,21</small></div><div><span>Доллар</span><b>80,54</b><small>−3,08</small></div></div>
+          <a href="https://t.me/dapimotors/10733" target="_blank" rel="noopener">Читать в Telegram →</a></article>
+        <article class="nw" data-rv><time datetime="2026-10-16">16.10.2026</time><h3>С 1 января 2027 Китай ужесточает вывоз новых авто</h3><p>Карантин 180 дней на учёте в Китае, не менее 50 сервисных точек у производителя в стране импорта, контроль переделок. Пока некоторые новые модели можно заказать без ожидания 180 дней.</p><a href="https://t.me/dapimotors/10656" target="_blank" rel="noopener">Читать в Telegram →</a></article>
+        <article class="nw" data-rv><time datetime="2026-09-01">01.09.2026</time><h3>Работает реферальная система</h3><p>Рекомендуйте нас друзьям и знакомым и получайте бонусы.</p><a href="https://t.me/dapimotors/10364" target="_blank" rel="noopener">Читать в Telegram →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="head" data-rv><div><span class="cap">11 · Вопросы</span><h2>Сомнения лучше снять <em>до договора</em></h2></div><p>Короткие ответы о цене, доставке, предоплате и проверке пробега.</p></div>
+      <div class="faq" data-rv>
+        <details><summary>Сколько стоит и от чего зависит цена?</summary><p>От ставки на аукционе, возраста, объёма и мощности, курса валют, пошлины и логистики. Бюджет считаем до торгов по статистике похожих продаж, без рекламной цены «от».</p></details>
+        <details><summary>Входит ли доставка до моего города?</summary><p>В сопровождение входят консультация, поиск, торги, перевозка в Россию, таможня, лаборатория, СБКТС и ЭПТС. Автовоз из Владивостока в регион считаем и оплачиваем отдельно.</p></details>
+        <details><summary>Можно ли вернуть предоплату?</summary><p>Да. Если вы передумали до фактической покупки лота, депозит возвращается полностью. Это прописано в договоре.</p></details>
+        <details><summary>Как понять, что пробег честный?</summary><p>Перед ставкой изучаем оригинальный аукционный лист, прошлые продажи, страховые случаи и данные по номеру кузова. Замечания японского инспектора переводим и объясняем простым языком.</p></details>
+        <details><summary>Сколько нужно внести, чтобы начать по Китаю?</summary><p>После договора — аванс от 50 000 до 70 000 ₽. Остальное делится на пять этапов. Поставка — до 60 суток с покупки, оформление на СВХ — до 15 суток.</p></details>
+        <details><summary>Чем Корея отличается от японских аукционов?</summary><p>В Корее нет единой системы аукционных оценок. Поэтому машину на месте осматривает независимый эксперт, а историю проверяем по страховым и дилерским базам.</p></details>
+        <details><summary>Стоит ли брать машину с оценкой R или RA?</summary><p>Это машины после восстановления. Брать можно только после оценки ремонта, геометрии кузова и разницы в цене с целыми вариантами.</p></details>
+        <details><summary>Почему у вас выходит дороже, чем на рынке?</summary><p>На рынке часто продают машины с низкой оценкой, после аварии или со смотанным пробегом. Проверяем такие объявления по статистике торгов: «дешёвый» вариант обычно оказывается проблемным.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="wrap">
+      <div class="contact">
+        <div class="form" data-rv>
+          <h3>Оставить заявку на расчёт</h3>
+          <p>Напишите марку, модель и бюджет. Ответим, какие варианты реально купить за эту сумму.</p>
+          <form id="leadForm" novalidate>
+            <div><label class="lbl" for="lName">Имя</label><input type="text" id="lName" autocomplete="name" aria-describedby="lName-e"><p class="err" id="lName-e" hidden></p></div>
+            <div><label class="lbl" for="lTel">Телефон</label><input type="tel" id="lTel" autocomplete="tel" inputmode="tel" placeholder="+7" aria-describedby="lTel-e"><p class="err" id="lTel-e" hidden></p></div>
+            <div><label class="lbl" for="lCar">Какую машину ищете</label><textarea id="lCar" placeholder="Например: Toyota Corolla Cross, гибрид, до 2,5 млн, в Хабаровск"></textarea></div>
+            <label class="chk"><input type="checkbox" id="lOk" aria-describedby="lOk-e"><span>Согласен на обработку персональных данных по <a href="https://dapimotors.ru/politika-konfidencialnosti" target="_blank" rel="noopener">политике конфиденциальности</a></span></label>
+            <p class="err" id="lOk-e" hidden></p>
+            <label class="chk"><input type="checkbox" id="lNews"><span>Хочу получать новости авторынка и новые машины к заказу</span></label>
+            <button class="btn btn-r" type="submit">Отправить заявку</button>
+            <small>В демо заявка открывается готовым сообщением в WhatsApp.</small>
+          </form>
+        </div>
+        <div class="ct" data-rv>
+          <h3>Контакты</h3>
+          <dl>
+            <div><dt>Телефон</dt><dd><a class="mono" href="tel:+79145533115">+7 914 553-31-15</a></dd></div>
+            <div><dt>Адрес</dt><dd>Амурская обл., Благовещенск, с. Чигири, ул. Василенко, Л73</dd></div>
+            <div><dt>Почта</dt><dd><a href="mailto:info@dapimotors.ru">info@dapimotors.ru</a></dd></div>
+            <div><dt>Каналы</dt><dd><a href="https://t.me/dapimotors" target="_blank" rel="noopener">Telegram</a> · <a href="https://max.ru/c/-70981328688582/AZ0DtBWfQ8U" target="_blank" rel="noopener">MAX</a></dd></div>
+          </dl>
+          <div class="acts">
+            <a class="btn btn-r" id="ctWa" href="https://wa.me/79145533115" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-d" href="https://yandex.ru/maps/org/dapimotors/209983602042/" target="_blank" rel="noopener">Как проехать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <span>© 2010–2026 Дапимоторс</span>
+    <nav aria-label="Документы"><a href="https://dapimotors.ru/dogovor" target="_blank" rel="noopener">Договор</a><a href="https://dapimotors.ru/politika-konfidencialnosti" target="_blank" rel="noopener">Политика конфиденциальности</a><a href="https://dapimotors.ru/soglasie-na-poluchenie-reklamnyh-i-informacionnyh-rassylok" target="_blank" rel="noopener">Согласие на рассылку</a><a href="https://dapimotors.ru/politika-obrabotki-fajlov-kuki" target="_blank" rel="noopener">Файлы cookie</a></nav>
+  </div>
+</footer>
+
+<button class="up" id="up" type="button" aria-label="Наверх"></button>
+<div class="toast" id="toast" role="status"></div>
+
+<nav class="mbar" aria-label="Быстрые действия">
+  <a href="tel:+79145533115"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить</a>
+  <a href="https://wa.me/79145533115" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="r" href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h2M14 19h2"/></svg>Посчитать</a>
+</nav>
+
+<dialog class="lb" id="lb" aria-label="Фото автомобиля">
+  <button class="lb-x" type="button" id="lbX" aria-label="Закрыть">×</button>
+  <div class="lb-i"><img id="lbImg" alt=""><button class="lb-n p" type="button" id="lbP" aria-label="Предыдущее фото">‹</button><button class="lb-n n" type="button" id="lbN" aria-label="Следующее фото">›</button></div>
+  <div class="lb-b"><div><b id="lbT"></b><span id="lbS"></span></div><a class="btn btn-r" id="lbWa" href="#" target="_blank" rel="noopener">Хочу такую</a></div>
+</dialog>
+
+<script src="js/data.js"></script>
+<script src="js/rates.js"></script>
+<script>
+var CONFIG = {
+  demo: true,
+  company: 'Дапимоторс',
+  phone: '+79145533115',
+  whatsapp: '79145533115',
+  telegram: 'AntohaSD',
+  costs: {
+    JP: { cur: 'JPY', abroad: 150000, delivery: 0, note: 'аукцион, доставка по Японии, экспорт, фрахт до Владивостока' },
+    KR: { cur: 'KRW', abroad: 200000, delivery: 0, note: 'осмотр экспертом, выкуп, доставка до Владивостока' },
+    CN: { cur: 'CNY', abroad: 200000, delivery: 0, note: 'осмотр экспертом, выкуп, доставка в Россию' }
+  },
+  service: 70000,
+  broker: 90000,
+  freightInCustomsValue: false
+};
+</script>
+<script src="js/calc.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
