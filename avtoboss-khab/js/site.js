@@ -107,7 +107,7 @@
       return true;
     });
     var cmp = { cheap: function (a, c) { return a.p - c.p; }, exp: function (a, c) { return c.p - a.p; }, 'new': function (a, c) { return c.y - a.y; }, km: function (a, c) { return (a.km || 1e9) - (c.km || 1e9); } }[s];
-    return cmp ? list.slice().sort(cmp) : list;
+    return list.slice().sort(function (a, c) { return ((a.n ? 0 : 1) - (c.n ? 0 : 1)) || (cmp ? cmp(a, c) : 0); }); /* машины без фото в конце */
   }
   function renderCars() {
     var list = filtered(), show = list.slice(0, (page + 1) * perPage());
