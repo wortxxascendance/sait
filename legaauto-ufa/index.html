@@ -298,9 +298,10 @@ td small{display:block;color:#8a8a8a;font-size:12px}
   .cta{padding:28px 22px;border-radius:24px;gap:36px}
   .lf .btn{width:100%;min-width:0}
   .cinfo .btns .btn{flex:1 1 auto}
-  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgb(244 242 238/.96);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgb(244 242 238/.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);transition:transform .25s ease}
+  .mbar.off{transform:translateY(110%)}
   .mbar a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;border:1.5px solid var(--ink);font:700 15px var(--disp)}
-  .mbar a.wa{background:var(--red);border-color:var(--red);color:#fff}
+  .mbar a.go{background:var(--red);border-color:var(--red);color:#fff}
   .toast{bottom:92px}
   .ck{left:10px;right:10px;bottom:84px;max-width:none}
 }
@@ -539,7 +540,7 @@ html.pp-lock{overflow:hidden}
     <p class="lf-st pp-st" id="ppSt" role="status" hidden></p>
   </div>
 </div>
-<nav class="mbar" aria-label="Быстрая связь"><a data-c="call" href="tel:+79191473633">Позвонить</a><a class="wa" data-c="wa" href="https://wa.me/79191473633" target="_blank" rel="noopener">WhatsApp</a></nav>
+<nav class="mbar" aria-label="Заявка"><a class="go" href="#contacts" data-goal="bar_form">Оставить заявку</a></nav>
 
 <script src="js/rates.js"></script>
 <script src="js/calc.js"></script>

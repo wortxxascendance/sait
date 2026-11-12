@@ -517,6 +517,9 @@
     if (f.reviews) renderReviews(C.reviews);
     if (f.form) initForm(C.form);
     if (bool(C.popup.enabled)) initPopup(C.popup, C.form);
+    // нижняя кнопка «Оставить заявку» ведёт к форме; у самой формы прячется, чтобы не закрывать «Отправить заявку»
+    var bar = document.querySelector('.mbar'), cs = document.getElementById('contacts');
+    if (bar && cs && 'IntersectionObserver' in window) new IntersectionObserver(function (e) { bar.classList.toggle('off', e[0].isIntersecting); }).observe(cs);
     initMetrika(C.metrika);
     reveal();
     // ссылка с #разделом: после отрисовки блоков прокрутить заново, высота страницы изменилась
