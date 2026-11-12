@@ -54,12 +54,20 @@
   }
   reveal();
 
-  /* ---------- метки рекламы: сохраняем при входе, прикладываем к заявке ---------- */
+  /* ---------- метки рекламы: utm_*, ya_*, yclid и т. п. сохраняем при входе на 30 дней, прикладываем к заявке ---------- */
   var UTM = (function () {
-    var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'yclid'], got = [];
-    keys.forEach(function (k) { if (Q.get(k)) got.push(k + '=' + Q.get(k)); });
-    try { if (got.length) sessionStorage.setItem('lega-utm', got.join(', ')); return sessionStorage.getItem('lega-utm') || ''; } catch (e) { return got.join(', '); }
+    var p = {}, n = 0, ext = '';
+    Q.forEach(function (v, k) { if (v && (/^(utm_|ya_)/i.test(k) || /^(yclid|ysclid|gclid|fbclid|_openstat)$/i.test(k))) { p[k] = v.slice(0, 300); n++; } });
+    try { if (document.referrer && new URL(document.referrer).host !== location.host) ext = document.referrer; } catch (e) { /* пустой или кривой referrer */ }
+    var now = { p: p, ref: ext, land: location.href.split('#')[0], t: Date.now() };
+    try {
+      if (n) { localStorage.setItem('lega-utm', JSON.stringify(now)); return now; }
+      var old = JSON.parse(localStorage.getItem('lega-utm') || 'null');
+      if (old && old.p && Date.now() - old.t < 30 * 864e5) return old;
+    } catch (e) { /* хранилище закрыто */ }
+    return now;
   })();
+  var utmText = function () { return Object.keys(UTM.p).map(function (k) { return k + '=' + UTM.p[k]; }).join(', '); };
 
   /* ---------- Яндекс Метрика и цели ---------- */
   var MID = 0;
@@ -111,6 +119,7 @@
     results: { enabled: true, items: [] },
     reviews: { enabled: true, rating: '', count: 0, source: '2ГИС', link: '', items: [] },
     form: { enabled: true, endpoint: '', success: 'Спасибо! Заявка отправлена.' },
+    popup: { enabled: true, delay: 30, repeatDays: 3, title: '', text: '', button: 'Оставить', success: '' },
     metrika: { id: '', webvisor: true, cookieNotice: true }
   };
   function merge(a, b) {
@@ -218,9 +227,9 @@
   function renderCatalog(c, f) {
     var models = list(c.models, 'catalog.models'), sub = $('catSub');
     sub.textContent = c.subtitle || (f.prices
-      ? 'Модели из прайса «Привоз авто под ключ из Китая» с ценами. Нажмите на модель — уточним наличие и сроки.'
-      : f.calc ? 'Из прайса «Привоз авто под ключ из Китая». Нажмите на модель — объём и мощность подставятся в калькулятор, останется цена.'
-        : 'Из прайса «Привоз авто под ключ из Китая». Нажмите на модель — пришлём цену и сроки.');
+      ? 'Модели из прайса на привоз авто под ключ из Китая с ценами. Нажмите на модель — уточним наличие и сроки.'
+      : f.calc ? 'Из прайса на привоз авто под ключ из Китая. Нажмите на модель — объём и мощность подставятся в калькулятор, останется цена.'
+        : 'Из прайса на привоз авто под ключ из Китая. Нажмите на модель — пришлём цену и сроки.');
     var noPrice = 0;
     $('catList').innerHTML = models.map(function (m, k) {
       var info = [m.year, m.trim].filter(Boolean).join(' ');
@@ -280,7 +289,34 @@
     });
   }
 
-  /* ---------- форма обратной связи ---------- */
+  /* ---------- заявки: одна запись для обеих форм, REST-запрос POST JSON на form.endpoint ---------- */
+  // Что уходит — README.md, раздел «Форма обратной связи». Метки рекламы — объектом utm, строкой utm_text и отдельными полями utm_source, ya_campaign…
+  function lead(form, title, x) {
+    var d = {
+      lead_id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7), created_at: new Date().toISOString(),
+      form: form, form_title: title, name: x.name || '', phone: x.phone || '', message: x.message || '', calc: x.calc || '',
+      page: location.href.split('#')[0], landing: UTM.land, referrer: UTM.ref, utm: UTM.p, utm_text: utmText(), consent: true, website: x.website || ''
+    };
+    Object.keys(UTM.p).forEach(function (k) { if (!(k in d)) d[k] = UTM.p[k]; });
+    return d;
+  }
+  function post(endpoint, d) {
+    var ctrl = 'AbortController' in window ? new AbortController() : null, timer = ctrl && setTimeout(function () { ctrl.abort(); }, 15000);
+    if (CHECK) console.log('[форма] POST ' + endpoint, d);
+    return fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(d), signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) {
+        // успех — любой ответ 2xx; если сервер вернул JSON с ok: false, это ошибка
+        return r.text().then(function (t) {
+          var j = null;
+          try { j = JSON.parse(t); } catch (e) { /* не JSON — смотрим только на код ответа */ }
+          if (!r.ok || (j && j.ok === false)) throw new Error((j && j.error) || 'ответ сервера ' + r.status);
+        });
+      })
+      .then(function () { clearTimeout(timer); }, function (e) { clearTimeout(timer); throw e; });
+  }
+  var phoneLink = function () { return TEL ? ' или позвоните <a href="' + esc(TEL) + '">' + esc(PHONE) + '</a>' : ''; };
+  var sentMark = function () { try { localStorage.setItem('lega-pp', 'sent:' + Date.now()); } catch (e) { /* не страшно */ } };
+
   function initForm(fc) {
     var form = $('leadForm'), btn = $('lfBtn'), st = $('lfSt');
     var endpoint = String(fc.endpoint || '').trim(), label = endpoint ? 'Отправить заявку' : 'Отправить в WhatsApp';
@@ -298,7 +334,6 @@
     });
     $('lfOk').addEventListener('change', function () { bad('lfOk', ''); });
     function say(html, kind) { st.innerHTML = html; st.className = 'lf-st' + (kind ? ' ' + kind : ''); st.hidden = false; }
-    var phoneLink = function () { return TEL ? ' или позвоните <a href="' + esc(TEL) + '">' + esc(PHONE) + '</a>' : ''; };
     var busy = false;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -307,10 +342,7 @@
       Object.keys(F).forEach(function (id) { if (!F[id].ok($(id).value)) { bad(id, F[id].msg); first = first || $(id); } });
       if (!$('lfOk').checked) { bad('lfOk', 'Нужно согласие, чтобы отправить заявку'); first = first || $('lfOk'); }
       if (first) { first.focus(); return; }
-      var d = {
-        name: $('lfName').value.trim(), phone: $('lfPhone').value.trim(), message: $('lfMsg').value.trim(),
-        calc: CALC ? CALC.summary() : '', page: location.href.split('#')[0], utm: UTM, consent: true, website: $('lfWeb').value
-      };
+      var d = lead('contacts', 'Заявка из блока «Контакты»', { name: $('lfName').value.trim(), phone: $('lfPhone').value.trim(), message: $('lfMsg').value.trim(), calc: CALC ? CALC.summary() : '', website: $('lfWeb').value });
       var text = 'Здравствуйте! Меня зовут ' + d.name + ', телефон ' + d.phone + '.' + (d.message ? '\n' + d.message : '') + (d.calc ? '\nМой расчёт на сайте: ' + d.calc : '');
       if (!endpoint) {
         var url = waUrl(text);
@@ -320,20 +352,119 @@
         return;
       }
       busy = true; btn.setAttribute('aria-busy', 'true'); btn.textContent = 'Отправляем…';
-      var ctrl = 'AbortController' in window ? new AbortController() : null, timer = ctrl && setTimeout(function () { ctrl.abort(); }, 15000);
-      fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d), signal: ctrl ? ctrl.signal : undefined })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j || j.ok !== true) throw new Error((j && j.error) || 'ответ сервера ' + r.status); }); })
-        .then(function () {
-          form.reset();
-          say(esc(fc.success || 'Спасибо! Заявка отправлена.'), 'ok');
-          goal('lead_form', { channel: 'server' });
-        }, function (err) {
-          console.error('[форма] заявка не отправлена:', err);
-          say('Не получилось отправить заявку. Напишите нам в <a href="' + esc(waUrl(text)) + '" target="_blank" rel="noopener">WhatsApp</a>' + phoneLink() + ' — ответим так же быстро.', 'bad');
-          goal('lead_form_error');
-        })
-        .then(function () { clearTimeout(timer); busy = false; btn.removeAttribute('aria-busy'); btn.textContent = label; });
+      post(endpoint, d).then(function () {
+        form.reset(); sentMark();
+        say(esc(fc.success || 'Спасибо! Заявка отправлена.'), 'ok');
+        goal('lead_form', { channel: 'server' });
+      }, function (err) {
+        console.error('[форма] заявка не отправлена:', err);
+        say('Не получилось отправить заявку. Напишите нам в <a href="' + esc(waUrl(text)) + '" target="_blank" rel="noopener">WhatsApp</a>' + phoneLink() + ' — ответим так же быстро.', 'bad');
+        goal('lead_form_error');
+      }).then(function () { busy = false; btn.removeAttribute('aria-busy'); btn.textContent = label; });
     });
+  }
+
+  /* ---------- всплывающее окно «бесплатная консультация», как на прежнем сайте: только телефон ---------- */
+  // +7 999 123-45-67; восьмёрку или семёрку в начале считаем кодом страны
+  function maskPhone(v) {
+    var d = digits(v);
+    if (!d) return '';
+    if (d.charAt(0) === '8' || d.charAt(0) === '7') d = d.slice(1);
+    // после готового «+7 » по привычке набирают 8 900…: лишняя цифра видна, когда номер стал длиннее 10 цифр
+    d = d.length > 10 && /^[78]/.test(d) ? d.slice(1, 11) : d.slice(0, 10);
+    return '+7' + (d ? ' ' + d.slice(0, 3) : '') + (d.length > 3 ? ' ' + d.slice(3, 6) : '') + (d.length > 6 ? '-' + d.slice(6, 8) : '') + (d.length > 8 ? '-' + d.slice(8, 10) : '');
+  }
+  function initPopup(pc, fc) {
+    var box = $('pp'), form = $('ppForm'), ph = $('ppPhone'), err = $('ppPhone-e'), btn = $('ppBtn'), st = $('ppSt');
+    var endpoint = String(fc.endpoint || '').trim(), label = String(pc.button || 'Оставить');
+    if (pc.title) $('ppH').textContent = pc.title;
+    if (pc.text) $('ppT').textContent = pc.text;
+    btn.textContent = label;
+    $('ppB').textContent = label;
+    var back = null, busy = false, done = false;
+    var keep = function (v) { try { localStorage.setItem('lega-pp', v); } catch (e) { /* не страшно */ } };
+    var seen = function () {
+      try { var v = localStorage.getItem('lega-pp') || '', t = +v.split(':')[1] || 0; return /^sent/.test(v) || Date.now() - t < Math.max(0, +pc.repeatDays || 0) * 864e5; }
+      catch (e) { return false; }
+    };
+    function open(auto) {
+      if (!box.hidden) return;
+      back = document.activeElement;
+      box.hidden = false; document.documentElement.classList.add('pp-lock');
+      requestAnimationFrame(function () { box.classList.add('on'); });
+      (done ? $('ppX') : ph).focus({ preventScroll: true });
+      goal('popup_open', { auto: !!auto });
+    }
+    function close() {
+      if (box.hidden) return;
+      box.classList.remove('on'); box.hidden = true; document.documentElement.classList.remove('pp-lock');
+      if (!done) keep('closed:' + Date.now());
+      if (back && back.focus) back.focus({ preventScroll: true });
+    }
+    box.addEventListener('click', function (e) { if (e.target.closest('[data-ppx]')) close(); });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      var f = $$('button,input:not([tabindex="-1"]),a[href]', box).filter(function (el) { return el.offsetParent; });
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+    });
+    // ссылка на сайт с #consult (например, в рекламе) или кнопка с href="#consult" открывает окно
+    document.addEventListener('click', function (e) { var a = e.target.closest('a[href="#consult"]'); if (a) { e.preventDefault(); open(false); } });
+
+    var okPhone = function (v) { var d = digits(v); return d.length === 11 && /^[78]/.test(d); };
+    function bad(msg) { ph.setAttribute('aria-invalid', msg ? 'true' : 'false'); err.hidden = !msg; err.textContent = msg || ''; }
+    ph.addEventListener('focus', function () { if (!ph.value) ph.value = '+7 '; });
+    ph.addEventListener('blur', function () { if (digits(ph.value).length <= 1) ph.value = ''; else if (!okPhone(ph.value)) bad('Не хватает цифр: нужен номер вида +7 900 000-00-00'); });
+    ph.addEventListener('input', function () {
+      bad('');
+      if (ph.selectionStart !== ph.value.length) return;     // правят середину номера — не мешаем
+      var m = maskPhone(ph.value);
+      if (m && m !== ph.value) ph.value = m;
+    });
+    function say(html, kind) { st.innerHTML = html; st.className = 'lf-st pp-st' + (kind ? ' ' + kind : ''); st.hidden = false; }
+    function finish(html, kind) {
+      done = kind === 'ok'; say(html, kind);
+      if (done) { form.hidden = true; sentMark(); $('ppX').focus({ preventScroll: true }); }
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (busy) return;
+      if (digits(ph.value).length > 1) ph.value = maskPhone(ph.value);
+      if (!okPhone(ph.value)) { bad('Проверьте номер: нужен номер вида +7 900 000-00-00'); ph.focus(); return; }
+      var d = lead('popup', $('ppH').textContent, { phone: ph.value, message: 'Бесплатная консультация', website: $('ppWeb').value });
+      var text = 'Здравствуйте! Хочу бесплатную консультацию автоспециалиста. Мой телефон: ' + d.phone;
+      if (!endpoint) {
+        var url = waUrl(text);
+        window.open(url, '_blank', 'noopener');
+        finish('Открыли WhatsApp с готовым сообщением — осталось нажать «Отправить». <a href="' + esc(url) + '" target="_blank" rel="noopener">Открыть ещё раз</a>', 'ok');
+        goal('lead_popup', { channel: 'whatsapp' });
+        return;
+      }
+      busy = true; btn.setAttribute('aria-busy', 'true'); btn.textContent = 'Отправляем…';
+      post(endpoint, d).then(function () {
+        form.reset();
+        finish(esc(pc.success || fc.success || 'Спасибо! Перезвоним в рабочее время.'), 'ok');
+        goal('lead_popup', { channel: 'server' });
+      }, function (er) {
+        console.error('[окно] заявка не отправлена:', er);
+        finish('Не получилось отправить. Напишите нам в <a href="' + esc(waUrl(text)) + '" target="_blank" rel="noopener">WhatsApp</a>' + phoneLink() + '.', 'bad');
+        goal('lead_form_error', { form: 'popup' });
+      }).then(function () { busy = false; btn.removeAttribute('aria-busy'); btn.textContent = label; });
+    });
+
+    // ?popup — открыть сразу (проверка), #consult — тоже
+    if (Q.has('popup') || location.hash === '#consult') { setTimeout(function () { open(false); }, 300); return; }
+    // само: через delay секунд, если человек не оставлял заявку и не закрывал окно последние repeatDays дней; delay 0 — только по ссылке
+    var delay = Math.max(0, +pc.delay || 0);
+    if (!delay || CHECK || seen()) return;
+    setTimeout(function tryOpen() {
+      var a = document.activeElement, typing = a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName);
+      var other = document.querySelector('.dl-bg.dl-on') || $('hd').classList.contains('open');
+      if (typing || other || document.hidden) { setTimeout(tryOpen, 8000); return; }
+      if (!seen()) open(true);
+    }, delay * 1000);
   }
 
   /* ---------- панель проверки config.json (?check) ---------- */
@@ -385,6 +516,7 @@
     if (f.results) renderResults(C.results);
     if (f.reviews) renderReviews(C.reviews);
     if (f.form) initForm(C.form);
+    if (bool(C.popup.enabled)) initPopup(C.popup, C.form);
     initMetrika(C.metrika);
     reveal();
     // ссылка с #разделом: после отрисовки блоков прокрутить заново, высота страницы изменилась

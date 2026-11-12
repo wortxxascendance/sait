@@ -304,6 +304,32 @@ td small{display:block;color:#8a8a8a;font-size:12px}
   .toast{bottom:92px}
   .ck{left:10px;right:10px;bottom:84px;max-width:none}
 }
+/* окно «бесплатная консультация» */
+.pp{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:16px}
+.pp[hidden]{display:none}
+.pp-bg{position:absolute;inset:0;background:rgb(20 20 20/.55);opacity:0;transition:opacity .3s}
+.pp-box{position:relative;width:100%;max-width:440px;max-height:calc(100svh - 32px);overflow:auto;background:#fff;border-radius:24px;padding:36px 30px 26px;box-shadow:0 30px 80px rgb(0 0 0/.25);opacity:0;transform:translateY(16px) scale(.98);transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.pp.on .pp-bg{opacity:1}.pp.on .pp-box{opacity:1;transform:none}
+.pp-x{position:absolute;top:12px;right:12px;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--bg);color:var(--ink);font:400 26px/1 var(--font);cursor:pointer}
+.pp-x:hover{background:var(--line)}
+.pp h2{font-size:clamp(22px,5.6vw,27px);line-height:1.15;letter-spacing:-.03em;text-transform:none;margin:0 30px 0 0}
+.pp-t{margin:12px 0 0;color:var(--ink2);font-size:16px}
+.pp form{display:grid;gap:12px;margin-top:22px}
+.pp input[type=tel]{display:block;width:100%;min-height:56px;padding:0 18px;border:1.5px solid var(--line2);border-radius:14px;background:#fff;color:var(--ink);font:600 18px var(--font);letter-spacing:.02em}
+.pp input[type=tel]:focus{outline:none;border-color:var(--ink)}
+.pp input[aria-invalid=true]{border-color:var(--red)}
+.pp .err{margin:0}
+.pp .btn{width:100%;min-height:56px;font-size:16px}
+.pp-n{margin:2px 0 0;font-size:12.5px;line-height:1.5;color:var(--mut);text-align:center}
+.pp-n a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.pp-st{margin-top:20px;border-color:var(--line);background:var(--bg);color:var(--ink)}
+.pp-st.ok{border-color:#9fd3b1;background:#ecf8f0;color:#14532d}
+.pp-st.bad{border-color:#f0b4b6;background:#fdf0f0;color:#7a1d21}
+.pp-st a{color:inherit}
+html.pp-lock{overflow:hidden}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:560px){.pp{align-items:flex-end;padding:0}.pp-box{max-width:none;border-radius:24px 24px 0 0;padding:32px 20px calc(22px + env(safe-area-inset-bottom));max-height:92svh}}
+@media (prefers-reduced-motion:reduce){.pp-bg,.pp-box{transition:none}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js [data-rv]{opacity:1;transform:none;transition:none}
@@ -403,7 +429,7 @@ td small{display:block;color:#8a8a8a;font-size:12px}
 
   <section id="catalog" data-block="catalog">
     <div class="wrap">
-      <div class="head" data-rv><div><span class="cap">Что привозим</span><h2>Модели <em>из нашего прайса</em></h2></div><p id="catSub">Из прайса «Привоз авто под ключ из Китая».</p></div>
+      <div class="head" data-rv><div><span class="cap">Что привозим</span><h2>Модели <em>из нашего прайса</em></h2></div><p id="catSub">Из прайса на привоз авто под ключ из Китая.</p></div>
       <div class="cat" id="catList" data-rv></div>
       <div class="cat-imgs" id="catImgs" data-rv></div>
     </div>
@@ -496,6 +522,23 @@ td small{display:block;color:#8a8a8a;font-size:12px}
   </footer>
 </main>
 <div class="toast" id="toast" role="status"></div>
+<div class="pp" id="pp" hidden>
+  <div class="pp-bg" data-ppx></div>
+  <div class="pp-box" role="dialog" aria-modal="true" aria-labelledby="ppH" aria-describedby="ppT">
+    <button class="pp-x" type="button" id="ppX" data-ppx aria-label="Закрыть">×</button>
+    <h2 id="ppH">Мы дарим вам бесплатную консультацию у автоспециалиста</h2>
+    <p class="pp-t" id="ppT">Оставьте ваш номер телефона, и с вами свяжутся!</p>
+    <form id="ppForm" novalidate>
+      <label class="vh" for="ppPhone">Номер телефона</label>
+      <input type="tel" id="ppPhone" name="phone" autocomplete="tel" inputmode="tel" maxlength="18" placeholder="+7 900 000-00-00" aria-describedby="ppPhone-e">
+      <p class="err" id="ppPhone-e" hidden></p>
+      <div class="hp" aria-hidden="true"><label for="ppWeb">Сайт</label><input type="text" id="ppWeb" name="website" tabindex="-1" autocomplete="off"></div>
+      <button class="btn btn-r" type="submit" id="ppBtn">Оставить</button>
+      <p class="pp-n">Нажимая кнопку «<span id="ppB">Оставить</span>», вы соглашаетесь на <a href="soglasie/" target="_blank">обработку персональных данных</a></p>
+    </form>
+    <p class="lf-st pp-st" id="ppSt" role="status" hidden></p>
+  </div>
+</div>
 <nav class="mbar" aria-label="Быстрая связь"><a data-c="call" href="tel:+79191473633">Позвонить</a><a class="wa" data-c="wa" href="https://wa.me/79191473633" target="_blank" rel="noopener">WhatsApp</a></nav>
 
 <script src="js/rates.js"></script>
